@@ -1,0 +1,70 @@
+{
+  "gitbook": "3.2.2",
+  "title": "linux-notes",
+  "description": "linux 学习笔记",
+  "author": "Zhang Peng",
+  "language": "zh-hans",
+  "root": "./docs",
+  "links": {
+    "sidebar": {
+      "linux-notes": "https://github.com/dunwu/linux-notes"
+    }
+  },
+  "plugins": [
+    "-lunr",
+    "-search",
+    "advanced-emoji@^0.2.2",
+    "anchor-navigation-ex@1.0.10",
+    "anchors@^0.7.1",
+    "edit-link@^2.0.2",
+    "expandable-chapters-small@^0.1.7",
+    "github@^2.0.0",
+    "search-plus@^0.0.11",
+    "simple-page-toc@^0.1.1",
+    "splitter@^0.0.8",
+    "tbfed-pagefooter@^0.0.1"
+  ],
+  "pluginsConfig": {
+    "anchor-navigation-ex": {
+      "showLevel": false,
+      "associatedWithSummary": true,
+      "multipleH1": true,
+      "mode": "float",
+      "isRewritePageTitle": false,
+      "float": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
+      },
+      "pageTop": {
+        "showLevelIcon": false,
+        "level1Icon": "fa fa-hand-o-right",
+        "level2Icon": "fa fa-hand-o-right",
+        "level3Icon": "fa fa-hand-o-right"
+      }
+    },
+    "edit-link": {
+      "base": "https://github.com/dunwu/linux-notes/blob/master/docs",
+      "label": "编辑此页面"
+    },
+    "github": {
+      "url": "https://github.com/dunwu"
+    },
+    "simple-page-toc": {
+      "maxDepth": 4,
+      "skipFirstH1": true
+    },
+    "sharing": {
+      "weibo": true,
+      "all": [
+        "weibo"
+      ]
+    },
+    "tbfed-pagefooter": {
+      "copyright": "Copyright © Zhang Peng 2017",
+      "modify_label": "该文件上次修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  }
+}

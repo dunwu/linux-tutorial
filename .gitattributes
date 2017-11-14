@@ -1,0 +1,75 @@
+* text=auto eol=lf
+
+# plan text
+*.txt text
+*.java text
+*.scala text
+*.groovy text
+*.gradle text
+*.xml text
+*.xsd text
+*.tld text
+*.yaml text
+*.yml text
+*.wsdd text
+*.wsdl text
+*.jsp text
+*.jspf text
+*.js text
+*.jsx text
+*.json text
+*.css text
+*.less text
+*.sql text
+*.properties text
+
+# unix style
+*.sh text eol=lf
+
+# win style
+*.bat text eol=crlf
+
+# don't handle
+*.der -text
+*.jks -text
+*.pfx -text
+*.map -text
+*.patch -text
+*.dat -text
+*.data -text
+*.db -text
+
+# binary
+*.jar binary
+*.war binary
+*.zip binary
+*.tar binary
+*.tar.gz binary
+*.gz binary
+*.apk binary
+*.bin binary
+*.exe binary
+
+# images
+*.png binary
+*.jpg binary
+*.ico binary
+*.gif binary
+
+# medias
+*.mp3 binary
+*.swf binary
+
+# fonts
+*.eot binary
+*.svg binary
+*.ttf binary
+*.woff binary
+
+# others
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
+*.xmind binary
