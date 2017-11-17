@@ -11,6 +11,9 @@
 
 ## Vim
 
+* [Vim 学习笔记](vim.md)
+* [Vim 快捷键图](vim-keyboards.md)
+
 ## 附录
 
 * [资源](resources.md)
