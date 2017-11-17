@@ -8,6 +8,9 @@
 ## Shell
 
 * [awesome-shell](https://github.com/alebcay/awesome-shell)
+* [bash-handbook](https://github.com/denysdovhan/bash-handbook)
+* [bash-guide](https://github.com/vuuihc/bash-guide)
+* [Runoob Shell 教程](http://www.runoob.com/linux/linux-shell.html)
 
 ## Vim
 
