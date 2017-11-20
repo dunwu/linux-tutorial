@@ -1,5 +1,7 @@
 # Shell 快速指南
 
+![image.png](http://upload-images.jianshu.io/upload_images/3101171-4b6e2a6b64bb4722.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ## 概述
 
 Bash 是一个 Unix Shell，作为 [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell) 的 free software 替代品，由 [Brian Fox](https://en.wikipedia.org/wiki/Brian_Fox_(computer_programmer)) 为GNU项目编写。它发布于1989年，在很长一段时间，Linux 系统和 macOS 系统都把 Bash 作为默认的 shell。
@@ -92,6 +94,12 @@ echo "Hello, world!"
 
 ## Shell 编程
 
+在 bash 脚本文件中的第一行被叫做 `shebang`。这一行决定了脚本可以像一个独立的可执行文件一样执行，而不用在终端之前输入`sh`, `bash`, `python`, `php`等。
+
+```
+#!/bin/bash
+```
+
 ### 注释
 
 脚本中可以包含 注释。注释是特殊的语句，会被 shell 解释器忽略。它们以 `#` 开头，到行尾结束。
@@ -110,7 +118,9 @@ whoami
 
 跟许多程序设计语言一样，你可以在 bash 中创建变量。
 
-Bash 中没有数据类型。变量只能包含数字或者由一个或多个字符组成的字符串。你可以创建三种变量：**局部变量**，**环境变量**以及作为**位置参数**的变量。
+Bash 中没有数据类型，bash 中的变量可以保存一个数字、一个字符、一个字符串等等。同时无需提前声明变量，给变量赋值会直接创建变量。
+
+你可以创建三种变量：**局部变量**，**环境变量**以及作为**位置参数**的变量。
 
 #### 局部变量
 
@@ -119,7 +129,7 @@ Bash 中没有数据类型。变量只能包含数字或者由一个或多个字
 局部变量可以用 `=` 声明（作为一种约定，变量名、`=`、变量的值之间**不应该**有空格），其值可以用`$` 访问到。举个例子：
 
 ```bash
-username="denysdovhan"  ### 声明变量
+username="zhangpeng"  ### 声明变量
 echo $username          ### 输出变量的值
 unset username          ### 删除变量
 ```
@@ -135,7 +145,7 @@ local local_var="I'm a local value"
 **环境变量**是对当前 shell 会话内所有的程序或脚本都可见的变量。创建它们跟创建局部变量类似，但使用的是 `export` 关键字。
 
 ```bash
-export GLOBAL_VAR="I'm a global variable"
+export GLOBAL_VAR="I'm a global value"
 ```
 
 bash 中有非常多的环境变量。你会非常频繁地遇到它们，这里有一张速查表，记录了在实践中最常见的环境变量。
@@ -272,20 +282,16 @@ cat "$FILE" ### 输出一个文件: `Favorite Things.txt`
 
 跟数组打交道时，要注意一个特殊的环境变量`IFS`。**IFS**，全称 **Input Field Separator**，保存了数组中元素的分隔符。它的默认值是一个空格`IFS=' '`。
 
-#### 声明数组
+#### 创建数组
 
-在 bash 中，可以通过简单地给数组变量的某个下标赋值来创建一个数组：
-
-```bash
-animals[0]=Cat
-animals[1]=Dog
-animals[2]=Fish
-```
-
-数组变量也可以通过复合赋值的方式来创建，比如：
+在 bash 中有好几种方法创建一个数组
 
 ```bash
-colors=(Red Green Blue)
+array[0] = val
+array[1] = val
+array[2] = val
+array=([2]=val [0]=val [1]=val)
+array=(val val val)
 ```
 
 #### 数组扩展
@@ -360,7 +366,7 @@ echo ${colors[@]:0:2} ### Red Dark Green
 向数组中添加元素也非常简单。复合赋值在这里显得格外有用。我们可以这样做：
 
 ```bash
-colors=(Orange "${colors[@]}" Banana Cherry)
+colors=(Yellow "${colors[@]}" Pink Black)
 echo ${colors[@]}
 
 # 输出：
@@ -642,7 +648,7 @@ fi
 
 变量 file 表示文件"/var/www/runoob/test.sh"，它的大小为100字节，具有 rwx 权限。下面的代码，将检测该文件的各种属性：
 
-```
+```bash
 file="./operatorDemo.sh"
 if [ -r $file ]
 then
@@ -687,112 +693,6 @@ else
    echo "文件不存在"
 fi
 ```
-
-### 流，管道以及序列
-
-Bash有很强大的工具来处理程序之间的协同工作。使用流，我们能将一个程序的输出发送到另一个程序或文件，因此，我们能方便地记录日志或做一些其它我们想做的事。
-
-管道给了我们创建传送带的机会，控制程序的执行成为可能。
-
-学习如何使用这些强大的、高级的工具是非常非常重要的。
-
-#### 流
-
-Bash接收输入，并以字符序列或 **字符流** 的形式产生输出。这些流能被重定向到文件或另一个流中。
-
-有三个文件描述符：
-
-| 代码   | 描述符      | 描述     |
-| ---- | -------- | ------ |
-| `0`  | `stdin`  | 标准输入   |
-| `1`  | `stdout` | 标准输出   |
-| `2`  | `stderr` | 标准错误输出 |
-
-重定向让我们可以控制一个命令的输入来自哪里，输出结果到什么地方。这些运算符在控制流的重定向时会被用到：
-
-| Operator | Description                              |
-| -------- | ---------------------------------------- |
-| `>`      | 重定向输出                                    |
-| `&>`     | 重定向输出和错误输出                               |
-| `&>>`    | 以附加的形式重定向输出和错误输出                         |
-| `<`      | 重定向输入                                    |
-| `<<`     | [Here文档](http://tldp.org/LDP/abs/html/here-docs.html) 语法 |
-| `<<<`    | [Here字符串](http://www.tldp.org/LDP/abs/html/x17837.html) |
-
-以下是一些使用重定向的例子：
-
-```bash
-### ls的结果将会被写到list.txt中
-ls -l > list.txt
-
-### 将输出附加到list.txt中
-ls -a >> list.txt
-
-### 所有的错误信息会被写到errors.txt中
-grep da * 2> errors.txt
-
-### 从errors.txt中读取输入
-less < errors.txt
-```
-
-#### 管道
-
-我们不仅能将流重定向到文件中，还能重定向到其它程序中。**管道** 允许我们把一个程序的输出当做另一个程序的输入。
-
-在下面的例子中，`command1`把它的输出发送给了`command2`，然后输出被传递到`command3`：
-
-```bash
-command1 | command2 | command3
-```
-
-这样的结构被称作 **管道**。
-
-在实际操作中，这可以用来在多个程序间依次处理数据。在下面的例子中，`ls -l`的输出被发送给了`grep`，来打印出扩展名是`.md`的文件，它的输出最终发送给了`less`：
-
-```bash
-ls -l | grep .md$ | less
-```
-
-管道的返回值通常是管道中最后一个命令的返回值。shell会等到管道中所有的命令都结束后，才会返回一个值。如果你想让管道中任意一个命令失败后，管道就宣告失败，那么需要用下面的命令设置pipefail选项：
-
-```bash
-set -o pipefail
-```
-
-#### 命令序列
-
-命令序列是由`;`，`&`，`&&`或者`||`运算符分隔的一个或多个管道序列。
-
-如果一个命令以`&`结尾，shell将会在一个子shell中异步执行这个命令。换句话说，这个命令将会在后台执行。
-
-以`;`分隔的命令将会依次执行：一个接着一个。shell会等待直到每个命令执行完。
-
-```bash
-### command2 会在 command1 之后执行
-command1 ; command2
-
-### 等同于这种写法
-command1
-command2
-```
-
-以`&&`和`||`分隔的命令分别叫做 *与* 和 *或* 序列。
-
-*与序列* 看起来是这样的：
-
-```bash
-### 当且仅当command1执行成功（返回0值）时，command2才会执行
-command1 && command2
-```
-
-*或序列* 是下面这种形式：
-
-```bash
-### 当且仅当command1执行失败（返回错误码）时，command2才会执行
-command1 || command2
-```
-
-*与* 或 *或* 序列的返回值是序列中最后一个执行的命令的返回值。
 
 ### 语句
 
@@ -1070,7 +970,7 @@ done
 
 在脚本中，我们可以定义并调用函数。跟其它程序设计语言类似，函数是一个代码块，但有所不同。
 
-bash中，函数是一个命令序列，这个命令序列组织在某个名字下面，即 *函数名* 。调用函数跟其它语言一样，写下函数名字，函数就会被 *调用* 。
+bash 中，函数是一个命令序列，这个命令序列组织在某个名字下面，即 *函数名* 。调用函数跟其它语言一样，写下函数名字，函数就会被 *调用* 。
 
 我们可以这样声明函数：
 
@@ -1105,7 +1005,113 @@ greeting        ### Hello, stranger!
 
 我们之前已经介绍过[返回值](https://github.com/denysdovhan/bash-handbook/blob/master/translations/zh-CN/README.md#%E8%BF%94%E5%9B%9E%E5%80%BC)。不带任何参数的`return`会返回最后一个执行的命令的返回值。上面的例子，`return 0`会返回一个成功表示执行的值，`0`。
 
-#### Debugging
+### 流，管道以及序列
+
+Bash有很强大的工具来处理程序之间的协同工作。使用流，我们能将一个程序的输出发送到另一个程序或文件，因此，我们能方便地记录日志或做一些其它我们想做的事。
+
+管道给了我们创建传送带的机会，控制程序的执行成为可能。
+
+学习如何使用这些强大的、高级的工具是非常非常重要的。
+
+#### 流
+
+Bash接收输入，并以字符序列或 **字符流** 的形式产生输出。这些流能被重定向到文件或另一个流中。
+
+有三个文件描述符：
+
+| 代码   | 描述符      | 描述     |
+| ---- | -------- | ------ |
+| `0`  | `stdin`  | 标准输入   |
+| `1`  | `stdout` | 标准输出   |
+| `2`  | `stderr` | 标准错误输出 |
+
+重定向让我们可以控制一个命令的输入来自哪里，输出结果到什么地方。这些运算符在控制流的重定向时会被用到：
+
+| Operator | Description                              |
+| -------- | ---------------------------------------- |
+| `>`      | 重定向输出                                    |
+| `&>`     | 重定向输出和错误输出                               |
+| `&>>`    | 以附加的形式重定向输出和错误输出                         |
+| `<`      | 重定向输入                                    |
+| `<<`     | [Here文档](http://tldp.org/LDP/abs/html/here-docs.html) 语法 |
+| `<<<`    | [Here字符串](http://www.tldp.org/LDP/abs/html/x17837.html) |
+
+以下是一些使用重定向的例子：
+
+```bash
+### ls的结果将会被写到list.txt中
+ls -l > list.txt
+
+### 将输出附加到list.txt中
+ls -a >> list.txt
+
+### 所有的错误信息会被写到errors.txt中
+grep da * 2> errors.txt
+
+### 从errors.txt中读取输入
+less < errors.txt
+```
+
+#### 管道
+
+我们不仅能将流重定向到文件中，还能重定向到其它程序中。**管道** 允许我们把一个程序的输出当做另一个程序的输入。
+
+在下面的例子中，`command1`把它的输出发送给了`command2`，然后输出被传递到`command3`：
+
+```bash
+command1 | command2 | command3
+```
+
+这样的结构被称作 **管道**。
+
+在实际操作中，这可以用来在多个程序间依次处理数据。在下面的例子中，`ls -l`的输出被发送给了`grep`，来打印出扩展名是`.md`的文件，它的输出最终发送给了`less`：
+
+```bash
+ls -l | grep .md$ | less
+```
+
+管道的返回值通常是管道中最后一个命令的返回值。shell会等到管道中所有的命令都结束后，才会返回一个值。如果你想让管道中任意一个命令失败后，管道就宣告失败，那么需要用下面的命令设置pipefail选项：
+
+```bash
+set -o pipefail
+```
+
+#### 命令序列
+
+命令序列是由`;`，`&`，`&&`或者`||`运算符分隔的一个或多个管道序列。
+
+如果一个命令以`&`结尾，shell将会在一个子shell中异步执行这个命令。换句话说，这个命令将会在后台执行。
+
+以`;`分隔的命令将会依次执行：一个接着一个。shell会等待直到每个命令执行完。
+
+```bash
+### command2 会在 command1 之后执行
+command1 ; command2
+
+### 等同于这种写法
+command1
+command2
+```
+
+以`&&`和`||`分隔的命令分别叫做 *与* 和 *或* 序列。
+
+*与序列* 看起来是这样的：
+
+```bash
+### 当且仅当command1执行成功（返回0值）时，command2才会执行
+command1 && command2
+```
+
+*或序列* 是下面这种形式：
+
+```bash
+### 当且仅当command1执行失败（返回错误码）时，command2才会执行
+command1 || command2
+```
+
+*与* 或 *或* 序列的返回值是序列中最后一个执行的命令的返回值。
+
+### Debugging
 
 shell提供了用于debugging脚本的工具。如果我们想以debug模式运行某脚本，可以在其shebang中使用一个特殊的选项：
 
@@ -1166,23 +1172,6 @@ echo "xtrace is enabled"
 set +x
 echo "xtrace is turned off again"
 ```
-
-### 后记
-
-我希望这本小小的册子能很有趣且很有帮助。老实说，我写这本小册子是为了自己不会忘了bash的基础知识。我尽量让文字简明达意，希望你们会喜欢。
-
-这本小册子讲述了我自己的Bash经验。它并非全面综合，因此如果你想了解更多，请运行`man bash`，从那里开始。
-
-非常欢迎您的贡献，任何指正和问题我都非常感激。这些都可以通过创建一个issue来进行。
-
-感谢您的阅读！
-
-### 想了解更多？
-
-下面是一些其它有关Bash的资料：
-
-- Bash的man页面。在Bash可以运行的众多环境中，通过运行`man bash`可以借助帮助系统`man`来显示Bash的帮助信息。有关`man`命令的更多信息，请看托管在[The Linux Information Project](http://www.linfo.org/)上的网页["The man Command"](http://www.linfo.org/man.html)。
-- ["Bourne-Again SHell manual"](https://www.gnu.org/software/bash/manual/)，有很多可选的格式，包括HTML，Info，Tex，PDF，以及Textinfo。托管在<https://www.gnu.org/>上。截止到2016/01，它基于的是Bash的4.3版本，最后更新日期是2015/02/02。
 
 ### 资料
 

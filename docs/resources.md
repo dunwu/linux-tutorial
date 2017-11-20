@@ -7,9 +7,12 @@
 
 ## Shell
 
-* [awesome-shell](https://github.com/alebcay/awesome-shell)
+* [awesome-shell](https://github.com/alebcay/awesome-shell)，shell 资源列表
+* [awesome-bash](https://github.com/awesome-lists/awesome-bash)，bash 资源列表
 * [bash-handbook](https://github.com/denysdovhan/bash-handbook)
-* [bash-guide](https://github.com/vuuihc/bash-guide)
+* [bash-guide](https://github.com/vuuihc/bash-guide) ，bash 基本用法指南
+* [bash-it](https://github.com/Bash-it/bash-it)，为你日常使用，开发以及维护 shell 脚本和自定义命令提供了一个可靠的框架
+* [dotfiles.github.io](http://dotfiles.github.io/)，上面有bash和其它shell的各种dotfiles集合以及shell框架的链接
 * [Runoob Shell 教程](http://www.runoob.com/linux/linux-shell.html)
 
 ## Vim

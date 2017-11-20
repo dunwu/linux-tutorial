@@ -9,6 +9,8 @@
 
 ## Shell
 
+* [Shell 快速指南](shell/shell-quickstart.md)
+
 ## Vim
 
 * [Vim 学习笔记](vim.md)
