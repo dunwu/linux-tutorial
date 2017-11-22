@@ -1,3 +1,13 @@
+---
+title: Vim 学习笔记
+date: 2017-11-17
+categories:
+- linux
+tags:
+- linux
+- vim
+---
+
 # Vim 学习笔记
 
 ## 概念

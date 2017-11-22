@@ -1,3 +1,14 @@
+---
+title: Shell 快速指南
+date: 2017-11-20
+categories:
+- linux
+tags:
+- linux
+- shell
+- bash
+---
+
 # Shell 快速指南
 
 ```

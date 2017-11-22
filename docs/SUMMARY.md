@@ -9,7 +9,7 @@
 
 ## Shell
 
-* [Shell 快速指南](shell/shell-quickstart.md)
+* [Shell 快速指南](shell.md)
 
 ## Vim
 
