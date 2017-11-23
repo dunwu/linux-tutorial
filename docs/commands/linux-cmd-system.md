@@ -68,58 +68,6 @@ $ useradd -d /home/myd tt
 $ useradd caojh -u 544
 ```
 
-## passwd 命令
-
-> passwd 命令用来更改使用者的密码。
-
-### 语法
-
-```
-passwd [-k] [-l] [-u [-f]] [-d] [-S] [username]
-```
-
-**必要参数**：
-
-- -d 删除密码
-- -f 强制执行
-- -k 更新只能发送在过期之后
-- -l 停止账号使用
-- -S 显示密码信息
-- -u 启用已被停止的账户
-- -x 设置密码的有效期
-- -g 修改群组密码
-- -i 过期后停止用户账号
-
-**选择参数**：
-
-- --help 显示帮助信息
-- --version 显示版本信息
-
-### 实例
-
-修改用户密码
-
-```sh
-$ passwd w3cschool  //设置w3cschool用户的密码
-Enter new UNIX password:  //输入新密码，输入的密码无回显
-Retype new UNIX password:  //确认密码
-passwd: password updated successfully
-```
-
-显示账号密码信息
-
-```sh
-$ passwd -S w3cschool
-w3cschool P 05/13/2010 0 99999 7 -1
-```
-
-删除用户密码
-
-```sh
-$ passwd -d lx138 
-passwd: password expiry information changed.
-```
-
 ## userdel 命令
 
 > userdel 命令用于删除用户帐号。
@@ -183,6 +131,60 @@ usermod [-LU][-c <备注>][-d <登入目录>][-e <有效期限>][-f <缓冲天�
 ```sh
 # usermod -u 777 root
 ```
+
+## passwd 命令
+
+> passwd 命令用来更改使用者的密码。
+
+### 语法
+
+```
+passwd [-k] [-l] [-u [-f]] [-d] [-S] [username]
+```
+
+**必要参数**：
+
+- -d 删除密码
+- -f 强制执行
+- -k 更新只能发送在过期之后
+- -l 停止账号使用
+- -S 显示密码信息
+- -u 启用已被停止的账户
+- -x 设置密码的有效期
+- -g 修改群组密码
+- -i 过期后停止用户账号
+
+**选择参数**：
+
+- --help 显示帮助信息
+- --version 显示版本信息
+
+### 实例
+
+修改用户密码
+
+```sh
+$ passwd w3cschool  //设置w3cschool用户的密码
+Enter new UNIX password:  //输入新密码，输入的密码无回显
+Retype new UNIX password:  //确认密码
+passwd: password updated successfully
+```
+
+显示账号密码信息
+
+```sh
+$ passwd -S w3cschool
+w3cschool P 05/13/2010 0 99999 7 -1
+```
+
+删除用户密码
+
+```sh
+$ passwd -d lx138 
+passwd: password expiry information changed.
+```
+
+## 
 
 ## su 命令
 
@@ -613,4 +615,24 @@ $ kill -l
 ```sh
 $ kill -9 $(ps -ef | grep hnlinux) //方法一 过滤出hnlinux用户进程 
 $ kill -u hnlinux //方法二
+```
+
+## exit 命令
+
+> exit 命令用于退出目前的shell。
+
+执行exit可使shell以指定的状态值退出。若不设置状态值参数，则shell以预设值退出。状态值0代表执行成功，其他值代表执行失败。exit也可用在script，离开正在执行的script，回到shell。
+
+### 语法
+
+```
+exit [状态值]
+```
+
+### 实例
+
+退出终端
+
+```
+# exit
 ```
