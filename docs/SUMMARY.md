@@ -13,12 +13,12 @@
 
 ## Shell
 
-* [Shell 快速指南](shell.md)
+* [Shell 快速指南](shell/shell.md)
 
 ## Vim
 
-* [Vim 学习笔记](vim.md)
-* [Vim 快捷键图](vim-keyboards.md)
+* [Vim 学习笔记](vim/vim.md)
+* [Vim 快捷键图](vim/vim-keyboards.md)
 
 ## 附录
 
