@@ -4,12 +4,12 @@
 
 ## Linux
 
-* [Linux 常用命令](commands/README.md)
-  * [Linux 常用命令-系统设置](commands/linux-cmd-system.md)
-  * [Linux 常用命令-文件目录](commands/linux-cmd-file-and-folder.md)
-  * [Linux 常用命令-磁盘管理](commands/linux-cmd-disk.md)
-  * [Linux 常用命令-网络管理](commands/linux-cmd-network.md)
-  * [Linux 常用命令-压缩](commands/linux-cmd-compress.md)
+* [Linux 常用命令](linux/commands/README.md)
+  * [Linux 常用命令-系统设置](linux/commands/linux-cmd-system.md)
+  * [Linux 常用命令-文件目录](linux/commands/linux-cmd-file-and-folder.md)
+  * [Linux 常用命令-磁盘管理](linux/commands/linux-cmd-disk.md)
+  * [Linux 常用命令-网络管理](linux/commands/linux-cmd-network.md)
+  * [Linux 常用命令-压缩](linux/commands/linux-cmd-compress.md)
 
 ## Shell
 
