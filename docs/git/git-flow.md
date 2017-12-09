@@ -11,21 +11,69 @@ tags:
 
 # git-flow 工作流
 
+## 集中式 vs 分布式
+
+在分布式版本控制工具 [**Git**](https://git-scm.com/) 之前，我一直用的是集中式版本控制工具，具体来说，我用过 **[ClearCase](http://www-03.ibm.com/software/products/en/clearcase)**（简称 cc）、**[Subversion](https://tortoisesvn.net/)**（简称 svn）。
+
+这里，结合我的一点个人经验，谈谈这几个工具的特点。
+
+### 集中式版本控制
+
+**[ClearCase](http://www-03.ibm.com/software/products/en/clearcase)** 是 IBM 的产品。IBM 的产品总给人一种过于重型化的感觉，似乎它们的产品什么都想做，结果反而让人觉得太复杂，不好用（想想曾经被 Notes 邮箱支配的恐惧吧）。**[ClearCase](http://www-03.ibm.com/software/products/en/clearcase)** 一如既往，功能复杂，但是操作很繁琐。
+
+**[Subversion](https://tortoisesvn.net/)** 由于 logo 是乌龟，所以也常被称为小乌龟。它的优点是：GUI 工具做的很细致，易于上手；安全控制和权限控制非常细粒度（目录级别的管控）；对于特别大型的项目，每个开发者都拷贝完整的镜像到本地，会占用较大的磁盘空间，还不如将所有数据都存放在大型服务器上。
+
+### 分布式版本控制
+
+分布式版本控制工具当然不止 Git，但是受 Github 的影响，Git 无疑是最火，用户最广的工具。
+
+Git 的优点主要就体现在分布式设计上：
+
+- 支持离线工作。除了同步远程仓库，基本都是在本地完成工作。
+- 安全稳定。集中式版本控制工具，要求所有机器将每次修改都推送到中央服务器，一旦中央服务器宕机，所有人都不能工作。分布式版本控制工具的每台机器克隆远程仓库到本地后，都拥有完整的镜像，一台机器宕机，不影响其他人工作，而且数据容易恢复。
+- Git 自身有着优秀的分支模型，拉分支、打标签都非常便捷。
+
+### 小结
+
+**[ClearCase](http://www-03.ibm.com/software/products/en/clearcase)** 比较难用，谁用谁知道。
+
+**[Subversion](https://tortoisesvn.net/)** 由于自身的优点，还是有不少公司仍在使用的。不能说不使用分布式版本控制就一定是 out 了，很多时候也是基于公司应用场景的考量（大公司往往更看重安全和权限控制）。个人认为 svn 还是挺好用的，除了拉分支确实比较麻烦些，但这也是基于 svn 本身权限控制的考虑。
+
+[**Git**](https://git-scm.com/) 由于其开源免费、分布式特性，深受互联网公司的青睐。
+
+## 版本管理的挑战
+
+Git 是一个非常优秀的版本控制工具，但是在实际版本管理中，仍然会遇到一些问题：
+
+1. 如何开始一个Feature的开发，而不影响别的Feature？
+2. 由于很容易创建新分支，分支多了如何管理，时间久了，如何知道每个分支是干什么的？
+3. 哪些分支已经合并回了主干？
+4. 如何进行Release的管理？开始一个Release的时候如何冻结Feature, 如何在Prepare Release的时候，开发人员可以继续开发新的功能？
+5. 线上代码出Bug了，如何快速修复？而且修复的代码要包含到开发人员的分支以及下一个Release?
+
+大部分开发人员现在使用Git就只是用三个甚至两个分支，一个是Master, 一个是Develop, 还有一个是基于Develop打得各种分支。这个在小项目规模的时候还勉强可以支撑，因为很多人做项目就只有一个Release, 但是人员一多，而且项目周期一长就会出现各种问题。
+
 ## git-flow 模型
 
-[@nvie](http://twitter.com/nvie) 同学发表了博客 [“一种有效的Git分支模型”](http://nvie.com/git-model), 文章讲解了他是如何让自己的[Git](http://www.oschina.net/p/git)仓库保持整洁，除此之外，他发布了git-flow; 一个可以轻松实现该模型的Git扩展。
+[Vincent Driessen](http://nvie.com/about/) 同学发表了博客 [A successful Git branching model](http://nvie.com/git-model) ，文章讲解了他是如何让自己的[Git](http://www.oschina.net/p/git)仓库保持整洁，除此之外，他发布了git-flow; 一个可以轻松实现该模型的Git扩展。
+
+这个最佳实践已经成为最为流行的 git 分支模型，一些 GUI 工具甚至已经支持建立这种模型。
+
+下面，来介绍一下 git-flow 模型。
 
 ![git-flow.png](http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-flow.png)
 
 `Gitflow`工作流仍然用中央仓库作为所有开发者的交互中心。和其它的工作流一样，开发者在本地工作并`push`分支到要中央仓库中。
 
-### 历史分支
+### 核心分支
 
-相对使用仅有的一个`master`分支，`Gitflow`工作流使用2个分支来记录项目的历史。`master`分支存储了正式发布的历史，而`develop`分支作为功能的集成分支。这样也方便`master`分支上的所有提交分配一个版本号。
+`Gitflow`工作流使用2个分支来记录项目的历史。
+
+`master` 分支对应线上实际的发布版本。
+
+`develop` 分支作为功能的集成分支。
 
 ![img](https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-1historical.png)
-
-剩下要说明的问题围绕着这2个分支的区别展开。
 
 ### 功能分支
 
@@ -56,172 +104,155 @@ tags:
 
 为`Bug`修复使用专门分支，让团队可以处理掉问题而不用打断其它工作或是等待下一个发布循环。你可以把维护分支想成是一个直接在`master`分支上处理的临时发布。
 
-## 安装
+## git-flow 代码示例
 
-- 你需要有一个可以工作的 git 作为前提。
-- Git flow 可以工作在 OSX, Linux 和 Windows之下
+a. 创建develop分支
 
-### OSX Homebrew
+```sh
+git branch develop
+git push -u origin develop    
+```
+
+b. 开始新Feature开发
+
+```sh
+git checkout -b some-feature develop
+# Optionally, push branch to origin:
+git push -u origin some-feature    
+
+# 做一些改动    
+git status
+git add some-file
+git commit    
+```
+
+c. 完成Feature
+
+```sh
+git pull origin develop
+git checkout develop
+git merge --no-ff some-feature
+git push origin develop
+
+git branch -d some-feature
+
+# If you pushed branch to origin:
+git push origin --delete some-feature    
+```
+
+d. 开始Relase
+
+```sh
+git checkout -b release-0.1.0 develop
+
+# Optional: Bump version number, commit
+# Prepare release, commit
+```
+
+e. 完成Release
+
+```sh
+git checkout master
+git merge --no-ff release-0.1.0
+git push
+
+git checkout develop
+git merge --no-ff release-0.1.0
+git push
+
+git branch -d release-0.1.0
+
+# If you pushed branch to origin:
+git push origin --delete release-0.1.0   
+
+
+git tag -a v0.1.0 master
+git push --tags
+```
+
+f. 开始Hotfix
+
+```sh
+git checkout -b hotfix-0.1.1 master    
+```
+
+g. 完成Hotfix
+
+```sh
+git checkout master
+git merge --no-ff hotfix-0.1.1
+git push
+
+
+git checkout develop
+git merge --no-ff hotfix-0.1.1
+git push
+
+git branch -d hotfix-0.1.1
+
+git tag -a v0.1.1 master
+git push --tags
+```
+
+## git-flow 工具
+
+实际上，当你理解了上面的流程后，你完全不用使用工具，但是实际上我们大部分人很多命令就是记不住呀，流程就是记不住呀，肿么办呢？
+
+总有聪明的人创造好的工具给大家用, 那就是Git flow script.
+
+### git-flow
+
+#### 安装
+
+你需要有一个可以工作的 git 作为前提。
+
+Git flow 可以工作在 OSX, Linux 和 Windows之下
+
+- OSX Homebrew
 
 ```
 $ brew install git-flow
-
 ```
 
-### OSX Macports
+- OSX Macports
 
 ```
 $ port install git-flow
-
 ```
 
-### Linux
+- Linux
 
 ```
 $ apt-get install git-flow
-
 ```
 
-### Windows (Cygwin):
+- Windows (Cygwin):
 
 安装 git-flow, 你需要 wget 和 util-linux。
 
 ```
 $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
 ```
-## Git Flow代码示例
+
+#### 使用
+
+- **初始化:** git flow init
+- **开始新Feature:** git flow feature start MYFEATURE
+- **Publish一个Feature(也就是push到远程):** git flow feature publish MYFEATURE
+- **获取Publish的Feature:** git flow feature pull origin MYFEATURE
+- **完成一个Feature:** git flow feature finish MYFEATURE
+- **开始一个Release:** git flow release start RELEASE [BASE]
+- **Publish一个Release:** git flow release publish RELEASE
+- **发布Release:** git flow release finish RELEASE
+  别忘了git push --tags
+- **开始一个Hotfix:** git flow hotfix start VERSION [BASENAME]
+- **发布一个Hotfix:** git flow hotfix finish VERSION
 
 ![git-flow-commands.png](http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-flow-commands.png)
 
-### 开始
+### Source Tree
 
-- 为了自定义你的项目，Git flow 需要初始化过程。
-- 使用 git-flow，从初始化一个现有的 git 库内开始。
-- 初始化，你必须回答几个关于分支的命名约定的问题。建议使用默认值。
-
-```
-git flow init
-
-```
-
-### 特性
-
-- 为即将发布的版本开发新功能特性。
-- 这通常只存在开发者的库中。
-
-##### 创建一个新特性:
-
-下面操作创建了一个新的feature分支，并切换到该分支
-
-```
-git flow feature start MYFEATURE
-
-```
-
-##### 完成新特性的开发:
-
-完成开发新特性。这个动作执行下面的操作：
-
-1. 合并 MYFEATURE 分支到 'develop'
-2. 删除这个新特性分支
-3. 切换回 'develop' 分支
-
-```
-git flow feature finish MYFEATURE
-
-```
-
-##### 发布新特性:
-
-你是否合作开发一项新特性？ 发布新特性分支到远程服务器，所以，其它用户也可以使用这分支。
-
-```
-git flow feature publish MYFEATURE
-
-```
-
-##### 取得一个发布的新特性分支:
-
-取得其它用户发布的新特性分支。
-
-```
-git flow feature pull origin MYFEATURE
-
-```
-
-##### 追溯远端上的特性:
-
-通过下面命令追溯远端上的特性
-
-```
-git flow feature track MYFEATURE
-
-```
-
-### 做一个release版本
-
-- 支持一个新的用于生产环境的发布版本。
-- 允许修正小问题，并为发布版本准备元数据。
-
-##### 开始创建release版本:
-
-- 开始创建release版本，使用 git flow release 命令。
-- 'release' 分支的创建基于 'develop' 分支。
-- 你可以选择提供一个 [BASE]参数，即提交记录的 sha-1 hash 值，来开启动 release 分支。
-- 这个提交记录的 sha-1 hash 值必须是'develop' 分支下的。
-
-```
-git flow release start RELEASE [BASE]
-
-```
-
-创建 release 分支之后立即发布允许其它用户向这个 release 分支提交内容是个明智的做法。命令十分类似发布新特性：
-
-```
-git flow release publish RELEASE
-
-```
-
-(你可以通过 `git flow release track RELEASE` 命令追溯远端的 release 版本)
-
-##### 完成 release 版本:
-
-完成 release 版本是一个大 git 分支操作。它执行下面几个动作：
-
-1. 归并 release 分支到 'master' 分支。
-2. 用 release 分支名打 Tag
-3. 归并 release 分支到 'develop'
-4. 移除 release 分支。
-
-```
-git flow release finish RELEASE
-
-```
-
-不要忘记使用`git push --tags`将tags推送到远端
-
-### 紧急修复
-
-紧急修复来自这样的需求：生产环境的版本处于一个不预期状态，需要立即修正。有可能是需要修正 master 分支上某个 TAG 标记的生产版本。
-
-##### 开始 git flow 紧急修复:
-
-像其它 git flow 命令一样, 紧急修复分支开始自：
-
-```
-$ git flow hotfix start VERSION [BASENAME]
-
-```
-
-VERSION 参数标记着修正版本。你可以从 `[BASENAME]开始，`[BASENAME]`为finish release时填写的版本号
-
-##### 完成紧急修复:
-
-当完成紧急修复分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。
-
-```
-git flow hotfix finish VERSION
-```
+[Source Tree](https://www.sourcetreeapp.com/) 支持Mac, Windows, Linux，是一个不过的 git-flow GUI 工具。
 
 ## 资料
 
