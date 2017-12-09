@@ -184,7 +184,7 @@ $ git config --global user.email johndoe@example.com
 
 在这里，你可以找到很多常用的模板，如：Java、Nodejs、C++ 的 `.gitignore` 模板等等。
 
-## 使用
+## 命令
 
 国外网友制作了一张 Git Cheat Sheet，总结很精炼，各位不妨收藏一下。
 
@@ -339,7 +339,7 @@ $ git push <remote> --delete <branch> (since Git v1.7.0)
 $ git push --tags
 ```
 
-### 显示信息
+### 查看信息
 
 #### 显示工作路径下已修改的文件
 
@@ -511,6 +511,12 @@ NrRFi9wrf+M7Q== schacon@mylaptop.local
 ![The key field](https://help.github.com/assets/images/help/settings/ssh-key-paste.png)
 
 如果觉得我的讲解还不够细致，可以参考：https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+## 小结
+
+最后，放一张我总结的脑图总结一下以上的知识点。
+
+![Git.png](http://upload-images.jianshu.io/upload_images/3101171-2044cc669d78eef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 资料
 
