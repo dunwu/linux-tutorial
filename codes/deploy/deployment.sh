@@ -7,7 +7,6 @@ init() {
   echo "${IP} 机器环境部署开始" |tee ${DEPLOY_LOG_PATH}
   touch ${DEPLOY_LOG_PATH}
   chmod 777 ${DEPLOY_LOG_PATH}
-  git clone git@github.com:dunwu/linux-notes.git ${SOURCE_PATH}/linux-notes
 }
 
 # 获取当前机器 IP
@@ -30,7 +29,10 @@ initEnviromentConfig() {
   then
     cp /etc/profile /etc/profile.bak
   fi
-  cat ${SOURCE_PATH}/linux-notes/codes/deploy/profile >> /etc/profile
+  cd ${TMP_PATH}
+  wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://github.com/dunwu/linux-notes/blob/master/codes/deploy/profile
+  cat ${TMP_PATH}/profile >> /etc/profile
+  rm -rf ${TMP_PATH}/profile
   source /etc/profile
 }
 
@@ -75,11 +77,13 @@ installNginx() {
 }
 
 installNodejsAndNvm() {
-  echo "安装 Nodejs" | tee ${DEPLOY_LOG_PATH}
-  yum install -y nodejs npm --enablerepo=epel
+  echo "安装 Nvm 和 Nodejs" | tee ${DEPLOY_LOG_PATH}
+  rm -rf /home/admin/.nvm
 
   git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm
   source ~/.nvm/nvm.sh
+
+  nvm install 0.10.48
 }
 
 shutdownFirewall() {
@@ -99,7 +103,7 @@ setPrivilegeForUserIns() {
 }
 ##############################__MAIN__########################################
 DEPLOY_LOG_PATH=/home/zp/deploy.log
-SOURCE_PATH=/home/zp/source
+TMP_PATH=/home/zp/
 SOFTWARE_PATH=/usr/lib
 
 init
