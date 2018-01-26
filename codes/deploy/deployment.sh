@@ -40,14 +40,14 @@ installGit() {
 copyXyzdeploy() {
   echo "克隆 xyzdeploy 项目到本地" | tee ${DEPLOY_LOG_PATH}
   rm -rf ${SOFTWARE_ROOT}*
-  rm -rf ${XYZDEPLOY_ROOT}
-  git clone ssh://git@git.xyz.cn:10022/dream/xyzdeploy.git ${XYZDEPLOY_ROOT}
-  chmod -R 755 ${XYZDEPLOY_ROOT}/*
-  cp -rf ${XYZDEPLOY_ROOT}/software ${SOFTWARE_ROOT}
-  cp -rf ${XYZDEPLOY_ROOT}/config/ /home/xyz/
-  cp -rf ${XYZDEPLOY_ROOT}/script/ /home/xyz/
+  rm -rf ${DEPLOY_ROOT}
+  git clone git@github.com:dunwu/linux-notes.git ${DEPLOY_ROOT}
+  chmod -R 755 ${DEPLOY_ROOT}/*
+  cp -rf ${DEPLOY_ROOT}/software ${SOFTWARE_ROOT}
+  cp -rf ${DEPLOY_ROOT}/config/ /home/zp/
+  cp -rf ${DEPLOY_ROOT}/script/ /home/zp/
 
-  sed -i 's/127.0.0.1/'"${IP}"'/g' /home/xyz/config/nginx/vmhosts/*.conf
+  sed -i 's/127.0.0.1/'"${IP}"'/g' /home/zp/config/nginx/vmhosts/*.conf
 }
 
 initEnviromentConfig() {
@@ -56,14 +56,14 @@ initEnviromentConfig() {
   then
     cp -f /etc/profile /etc/profile.bak
   fi
-  cp -f ${XYZDEPLOY_ROOT}/config/enviroment/profile /etc/profile
+  cp -f ${DEPLOY_ROOT}/config/enviroment/profile /etc/profile
   source /etc/profile
 
   if [ ! -f /etc/hosts.bak ]
   then
     cp -f /etc/hosts /etc/hosts.bak
   fi
-  cp -f ${XYZDEPLOY_ROOT}/config/enviroment/hosts /etc/hosts
+  cp -f ${DEPLOY_ROOT}/config/enviroment/hosts /etc/hosts
   sed -i 's/0.0.0.0/'"${IP}"'/g' /etc/hosts
 }
 
@@ -118,6 +118,7 @@ installNodejsAndNvm() {
 }
 
 installNtp() {
+  echo "************************同步时钟************************" |tee -a /home/depoly.log
   yum install -y ntp
   vi /etc/crontab
   echo "*/30 * * * * /usr/local/bin/ntpdate 192.168.16.182" | tee /etc/crontab
@@ -145,7 +146,7 @@ setPrivilegeForUserIns() {
 }
 ##############################__MAIN__########################################
 DEPLOY_LOG_PATH=/home/zp/log/deploy.log
-XYZDEPLOY_ROOT=/home/xyz/source/xyzdeploy
+DEPLOY_ROOT=/home/zp/source/xyzdeploy
 SOFTWARE_ROOT=/opt/software
 
 init
