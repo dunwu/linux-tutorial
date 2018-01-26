@@ -1,39 +1,70 @@
 #!/usr/bin/env bash
 
+#######################################################################
+# 启动退出开关：当执行命令返回非0（0表示成功）状态码时，脚本退出执行。
 # 次脚本适用于 Centos/RedHat
-
-
-init() {
-  echo "${IP} 机器环境部署开始" |tee ${DEPLOY_LOG_PATH}
-  touch ${DEPLOY_LOG_PATH}
-  chmod 777 ${DEPLOY_LOG_PATH}
-}
+#######################################################################
 
 # 获取当前机器 IP
-IP="127.0.0.1"
+IP=""
 getDeviceIp() {
   IP=`ifconfig eth0 | grep "inet addr" | awk '{ print $2}' | awk -F: '{print $2}'`
-  if [ "$IP" ==  "" ]; then
-    IP=`ifconfig ens32 | grep "inet"|grep "broadcast" | awk '{ print $2}' | awk -F: '{print $1}'`
+  if [ "$IP" ==  "" ]
+  then
+      IP=`ifconfig ens32 | grep "inet"|grep "broadcast" | awk '{ print $2}' | awk -F: '{print $1}'`
+  fi
+
+  echo "${IP} 机器环境部署开始" |tee ${DEPLOY_LOG_PATH}
+  if [ "$IP" ==  "" ]
+  then
+      IP=`echo $1`
+  fi
+
+  if [ "${IP}" ==  "" ]
+    then
+          echo "     "
+          echo " 请输入服务器IP地址................ "
+          echo "     "
+      exit 0
   fi
 }
 
+touch ${DEPLOY_LOG_PATH}
+chmod 777 ${DEPLOY_LOG_PATH}
 installGit() {
   echo "安装 git" |tee ${DEPLOY_LOG_PATH}
+  yum install -y git-core
   yum install -y git
+}
+
+copyXyzdeploy() {
+  echo "克隆 xyzdeploy 项目到本地" | tee ${DEPLOY_LOG_PATH}
+  rm -rf ${SOFTWARE_ROOT}*
+  rm -rf ${XYZDEPLOY_ROOT}
+  git clone ssh://git@git.xyz.cn:10022/dream/xyzdeploy.git ${XYZDEPLOY_ROOT}
+  chmod -R 755 ${XYZDEPLOY_ROOT}/*
+  cp -rf ${XYZDEPLOY_ROOT}/software ${SOFTWARE_ROOT}
+  cp -rf ${XYZDEPLOY_ROOT}/config/ /home/xyz/
+  cp -rf ${XYZDEPLOY_ROOT}/script/ /home/xyz/
+
+  sed -i 's/127.0.0.1/'"${IP}"'/g' /home/xyz/config/nginx/vmhosts/*.conf
 }
 
 initEnviromentConfig() {
   echo "修改环境配置文件 profile 和 hosts" | tee ${DEPLOY_LOG_PATH}
   if [ ! -f /etc/profile.bak ]
   then
-    cp /etc/profile /etc/profile.bak
+    cp -f /etc/profile /etc/profile.bak
   fi
-  cd ${TMP_PATH}
-  wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://github.com/dunwu/linux-notes/blob/master/codes/deploy/profile
-  cat ${TMP_PATH}/profile >> /etc/profile
-  rm -rf ${TMP_PATH}/profile
+  cp -f ${XYZDEPLOY_ROOT}/config/enviroment/profile /etc/profile
   source /etc/profile
+
+  if [ ! -f /etc/hosts.bak ]
+  then
+    cp -f /etc/hosts /etc/hosts.bak
+  fi
+  cp -f ${XYZDEPLOY_ROOT}/config/enviroment/hosts /etc/hosts
+  sed -i 's/0.0.0.0/'"${IP}"'/g' /etc/hosts
 }
 
 installJava() {
@@ -79,11 +110,17 @@ installNginx() {
 installNodejsAndNvm() {
   echo "安装 Nvm 和 Nodejs" | tee ${DEPLOY_LOG_PATH}
   rm -rf /home/admin/.nvm
-
   git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm
   source ~/.nvm/nvm.sh
 
+  # 使用 nvm 安装 Node 指定版本
   nvm install 0.10.48
+}
+
+installNtp() {
+  yum install -y ntp
+  vi /etc/crontab
+  echo "*/30 * * * * /usr/local/bin/ntpdate 192.168.16.182" | tee /etc/crontab
 }
 
 shutdownFirewall() {
@@ -93,22 +130,28 @@ shutdownFirewall() {
 }
 
 setPrivilegeForUserIns() {
-  userdel zp
-  groupdel coder
-  groupadd coder
-  useradd -g coder zp
-  chown -R coder.zp /home/zp
-  chown -R coder.zp /opt/
-  chown -R coder.zp /tmp/
+  userdel INS
+  groupdel INS
+  groupadd INS
+  useradd -g INS INS
+  mkdir -p /search/statistics
+  mkdir -p /home/mic
+  mkdir -p /home/INS/logs
+  chown -R INS.INS /home/mic
+  chown -R INS.INS /search/
+  chown -R INS.INS /home/INS/
+  chown -R INS.INS /opt/
+  chown -R INS.INS /tmp/
 }
 ##############################__MAIN__########################################
-DEPLOY_LOG_PATH=/home/zp/deploy.log
-TMP_PATH=/home/zp/
-SOFTWARE_PATH=/usr/lib
+DEPLOY_LOG_PATH=/home/zp/log/deploy.log
+XYZDEPLOY_ROOT=/home/xyz/source/xyzdeploy
+SOFTWARE_ROOT=/opt/software
 
 init
 getDeviceIp
 installGit
+copyXyzdeploy
 initEnviromentConfig
 installJava
 installGcc
@@ -118,5 +161,6 @@ installPcre
 installNginx
 installMaven
 installNodejsAndNvm
+installNtp
 shutdownFirewall
 setPrivilegeForUserIns
