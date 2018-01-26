@@ -108,7 +108,6 @@ replaceFilebeatConfig() {
   cp ${ELASTIC_SOFTWARE_PATH}/filebeat-${version}-linux-x86_64/filebeat.yml ${ELASTIC_SOFTWARE_PATH}/filebeat-${version}-linux-x86_64/filebeat.yml.bak
   cd ${ELASTIC_SOFTWARE_PATH}/filebeat-${version}-linux-x86_64
   wget https://github.com/dunwu/linux-notes/blob/master/codes/deploy/elk/config/filebeat.yml
-  cp /home/zp/config/elk/filebeat.yml ${ELASTIC_SOFTWARE_PATH}/filebeat-${version}-linux-x86_64/filebeat.yml
   sed -i 's/127.0.0.1/'"${IP}"'/g' ${ELASTIC_SOFTWARE_PATH}/filebeat-${version}-linux-x86_64/filebeat.yml
 }
 
