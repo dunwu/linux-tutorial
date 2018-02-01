@@ -42,7 +42,7 @@ function checkOsVersion(){
 function showMenu() {
 cat << EOF
 
-====================================== Deploy Menu ======================================
+=================================== Deploy Menu ===================================
 【1 - System Environment】
     [1-2 | libs] install commonly libs.
 
@@ -52,8 +52,8 @@ cat << EOF
     [2-3 | maven] install maven.             [2-4 | nginx] install nginx.
     [2-5 | nodejs] install node.js.          [2-6 | tomcat] install tomcat8.
 
-按下 <CTRL-D> 退出。
-请输入 key：
+Press <CTRL-D> to exit
+Please input key：
 EOF
 }
 

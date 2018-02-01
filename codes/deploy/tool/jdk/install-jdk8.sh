@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -e "\n>>>>>>>>> install jdk8"
+
 yum -y install java-1.8.0-openjdk-devel-debug.x86_64
 
 cat >/etc/profile.d/jdk.sh<<EOF
