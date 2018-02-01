@@ -44,6 +44,8 @@ cat << EOF
 
 ====================================== Deploy Menu ======================================
 【1 - System Environment】
+    [1-2 | libs] install commonly libs.
+
 【2 - Common Tools】
     [2 | tools] install all tools.
     [2-1 | git] install git.                 [2-2 | jdk8] install jdk8.
@@ -61,6 +63,8 @@ function chooseOper() {
   while read key
   do
     case ${key} in
+      1-2 | libs) ${filepath}/lib/install-libs.sh;;
+
       2 | tools) ${filepath}/tool/install-all.sh;;
       2-1 | git) ${filepath}/tool/git/install-git.sh;;
       2-2 | jdk8) ${filepath}/tool/jdk/install-jdk8.sh;;
