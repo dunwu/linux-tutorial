@@ -73,7 +73,7 @@ function chooseOper() {
       git) ${filepath}/tool/git/install-git.sh;;
       svn) ${filepath}/tool/svn/install-svn.sh;;
       jdk8) ${filepath}/tool/jdk/install-jdk8.sh;;
-      maven) ${filepath}/tool/maven/install-maven.sh;;
+      maven) ${filepath}/tool/maven/install-maven3.sh;;
       nginx) ${filepath}/tool/nginx/install-nginx.sh;;
       nodejs) ${filepath}/tool/nodejs/install-nodejs.sh;;
       tomcat) ${filepath}/tool/tomcat/install-tomcat8.sh;;
