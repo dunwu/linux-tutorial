@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+  <property name="FILE_NAME" value="javatool"/>
+
+  <!-- 将记录日志打印到控制台 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] [%-5p] %c{36}.%M - %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- RollingFileAppender begin -->
+  <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- 根据时间来制定滚动策略 -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${user.dir}/logs/${FILE_NAME}-all.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+
+    <!-- 根据文件大小来制定滚动策略 -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>30MB</maxFileSize>
+    </triggeringPolicy>
+
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] [%-5p] %c{36}.%M - %m%n</pattern>
+    </encoder>
+  </appender>
+  <appender name="ELK-TCP" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+    <!--
+    destination 是 logstash 服务的 host:port，
+    相当于和 logstash 建立了管道，将日志数据定向传输到 logstash
+    -->
+    <destination>192.168.28.32:9251</destination>
+    <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
+      <customFields>{"appname":"javatool"}</customFields>
+    </encoder>
+  </appender>
+
+  <!-- RollingFileAppender end -->
+
+  <!-- logger begin -->
+  <!-- 本项目的日志记录，分级打印 -->
+  <logger name="cn.xyz" level="TRACE">
+    <appender-ref ref="ELK-TCP"/>
+    <appender-ref ref="ALL"/>
+  </logger>
+
+  <root level="TRACE">
+    <appender-ref ref="STDOUT"/>
+  </root>
+  <!-- logger end -->
+
+</configuration>

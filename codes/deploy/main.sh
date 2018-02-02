@@ -1,12 +1,13 @@
 #!/bin/bash
 ###################################################################################
-# 环境部署脚本
+# Linux Centos 环境部署脚本
+# Author: Zhang Peng
 ###################################################################################
 
 function printBeginning() {
 cat << EOF
 ***********************************************************************************
-* Welcome to using the deployment script for linux.
+* Welcome to using the deployment script for Centos.
 * Author: Zhang Peng
 ***********************************************************************************
 EOF
@@ -44,13 +45,16 @@ cat << EOF
 
 =================================== Deploy Menu ===================================
 【1 - System Environment】
-    [1-2 | libs] install commonly libs.
+    [sys] initial system environment
+    [libs] install commonly libs
 
 【2 - Common Tools】
     [2 | tools] install all tools.
-    [2-1 | git] install git.                 [2-2 | jdk8] install jdk8.
-    [2-3 | maven] install maven.             [2-4 | nginx] install nginx.
-    [2-5 | nodejs] install node.js.          [2-6 | tomcat] install tomcat8.
+    [git] install git                          [svn] install svn
+    [jdk8] install jdk8                        [jdk8] install jdk8
+    [maven] install maven                      [nginx] install nginx
+    [nodejs] install node.js                   [tomcat] install tomcat8
+    [elk] install elk
 
 Press <CTRL-D> to exit
 Please input key：
@@ -63,15 +67,18 @@ function chooseOper() {
   while read key
   do
     case ${key} in
-      1-2 | libs) ${filepath}/lib/install-libs.sh;;
+      sys) ${filepath}/sys/init.sh;;
+      libs) ${filepath}/lib/install-libs.sh;;
 
       2 | tools) ${filepath}/tool/install-all.sh;;
-      2-1 | git) ${filepath}/tool/git/install-git.sh;;
-      2-2 | jdk8) ${filepath}/tool/jdk/install-jdk8.sh;;
-      2-3 | maven) ${filepath}/tool/maven/install-maven.sh;;
-      2-4 | nginx) ${filepath}/tool/nginx/install-nginx.sh;;
-      2-5 | nodejs) ${filepath}/tool/nodejs/install-nodejs.sh;;
-      2-6 | tomcat) ${filepath}/tool/tomcat/install-tomcat8.sh;;
+      git) ${filepath}/tool/git/install-git.sh;;
+      svn) ${filepath}/tool/git/install-svn.sh;;
+      jdk8) ${filepath}/tool/jdk/install-jdk8.sh;;
+      maven) ${filepath}/tool/maven/install-maven.sh;;
+      nginx) ${filepath}/tool/nginx/install-nginx.sh;;
+      nodejs) ${filepath}/tool/nodejs/install-nodejs.sh;;
+      tomcat) ${filepath}/tool/tomcat/install-tomcat8.sh;;
+      elk) ${filepath}/tool/elk/install-elk.sh;;
       * ) echo "invalid key";;
     esac
 
