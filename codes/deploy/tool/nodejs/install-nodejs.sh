@@ -3,7 +3,7 @@
 echo -e "\n>>>>>>>>> install Node.js"
 
 # 安装 nvm
-rm -rf /home/admin/.nvm
+rm -rf ~/.nvm
 git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm
 source ~/.nvm/nvm.sh
 

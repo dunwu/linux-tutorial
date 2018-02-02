@@ -51,10 +51,9 @@ cat << EOF
 【2 - Common Tools】
     [2 | tools] install all tools.
     [git] install git                          [svn] install svn
-    [jdk8] install jdk8                        [jdk8] install jdk8
-    [maven] install maven                      [nginx] install nginx
-    [nodejs] install node.js                   [tomcat] install tomcat8
-    [elk] install elk
+    [jdk8] install jdk8                        [maven] install maven
+    [tomcat] install tomcat8                   [nginx] install nginx
+    [nodejs] install node.js                   [elk] install elk
 
 Press <CTRL-D> to exit
 Please input key：
@@ -72,7 +71,7 @@ function chooseOper() {
 
       2 | tools) ${filepath}/tool/install-all.sh;;
       git) ${filepath}/tool/git/install-git.sh;;
-      svn) ${filepath}/tool/git/install-svn.sh;;
+      svn) ${filepath}/tool/svn/install-svn.sh;;
       jdk8) ${filepath}/tool/jdk/install-jdk8.sh;;
       maven) ${filepath}/tool/maven/install-maven.sh;;
       nginx) ${filepath}/tool/nginx/install-nginx.sh;;
