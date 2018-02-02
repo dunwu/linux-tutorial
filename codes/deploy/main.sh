@@ -79,7 +79,7 @@ function chooseOper() {
       nodejs) ${filepath}/tool/nodejs/install-nodejs.sh;;
       tomcat) ${filepath}/tool/tomcat/install-tomcat8.sh;;
       elk) ${filepath}/tool/elk/install-elk.sh;;
-      * ) echo "invalid key";;
+      * ) echo "${key} is invalid key";;
     esac
 
     showMenu

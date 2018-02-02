@@ -1,19 +1,12 @@
 #!/bin/bash -li
 
-app=$1
-
-ELASTICSEARCH_BIN_PATH=/opt/software/elastic/elasticsearch-6.1.1/bin
-LOGSTASH_BIN_PATH=/opt/software/elastic/logstash-6.1.1/bin
-KIBANA_BIN_PATH=/opt/software/elastic/kibana-6.1.1-linux-x86_64/bin
-FILEBEAT_PATH=/opt/software/elastic/filebeat-6.1.1-linux-x86_64
-
-
 # 检查脚本输入参数
 checkInput() {
-  if [ "${app}" == "" ]; then
+  if [ "${app}" == "" ] || [ "${oper}" == "" ]; then
     echo "请输入脚本参数：name"
-    echo "    name: 要启动的进程关键字（必填）。可选值：elasticsearch|logstash|kibana|filebeat"
-    echo "例：./shutdown.sh logstash"
+    echo "    app: 要启动的进程关键字（必填）。可选值：elasticsearch|logstash|kibana|filebeat"
+    echo "    oper: 执行操作（必填）。可选值：start|stop"
+    echo "例：./boot-elk.sh logstash start"
     exit 0
   fi
 
@@ -39,7 +32,7 @@ startup() {
     nohup sh ${ELASTICSEARCH_BIN_PATH}/elasticsearch >>${ELASTICSEARCH_BIN_PATH}/nohup.out 2>&1 &
   elif  [ "${app}" == "logstash" ]; then
     checkFileExist ${LOGSTASH_BIN_PATH}/logstash
-    nohup sh ${LOGSTASH_BIN_PATH}/logstash -f ${LOGSTASH_BIN_PATH}/logstash-input-tcp.conf >>${LOGSTASH_BIN_PATH}/nohup.out 2>&1 &
+    nohup sh ${LOGSTASH_BIN_PATH}/logstash -f ${LOGSTASH_BIN_PATH}/logstash.conf >>${LOGSTASH_BIN_PATH}/nohup.out 2>&1 &
   elif  [ "${app}" == "kibana" ]; then
     checkFileExist ${KIBANA_BIN_PATH}/kibana
     nohup sh ${KIBANA_BIN_PATH}/kibana >> ${KIBANA_BIN_PATH}/nohup.out 2>&1 &
@@ -50,6 +43,31 @@ startup() {
   fi
 }
 
+shutdown() {
+  pid=`ps -ef | grep java | grep ${app} | awk '{print $2}'`
+  kill -9 ${pid}
+}
+
 ##############################__MAIN__########################################
+app=$1
+oper=$2
+
+version=6.1.1
+ELASTICSEARCH_BIN_PATH=/opt/software/elastic/elasticsearch-${version}/bin
+LOGSTASH_BIN_PATH=/opt/software/elastic/logstash-${version}/bin
+KIBANA_BIN_PATH=/opt/software/elastic/kibana-${version}-linux-x86_64/bin
+FILEBEAT_PATH=/opt/software/elastic/filebeat-${version}-linux-x86_64
+
 checkInput
-startup
+case ${oper} in
+  start)
+    echo "启动 ${app}"
+    startup
+    ;;
+  stop)
+    echo "终止 ${app}"
+    shutdown
+    ;;
+  * ) echo "${oper} is invalid oper";;
+esac
+

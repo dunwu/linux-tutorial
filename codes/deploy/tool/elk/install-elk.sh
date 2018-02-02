@@ -91,7 +91,7 @@ replaceLogstashConfig() {
   sed -i "s/# http.host: \"127.0.0.1\"/ http.host: ${IP}/g" ${ELASTIC_SOFTWARE_PATH}/logstash-${version}/config/logstash.yml
   touch ${ELASTIC_SOFTWARE_PATH}/logstash-${version}/bin/nohup.out
   cd ${ELASTIC_SOFTWARE_PATH}/logstash-${version}/bin
-  wget https://github.com/dunwu/linux-notes/blob/master/codes/deploy/tool/elk/config/logstash-input-tcp.conf
+  wget https://github.com/dunwu/linux-notes/blob/master/codes/deploy/tool/elk/config/logstash.conf
 }
 
 # 替换 Kibana 配置
@@ -138,5 +138,8 @@ replaceKibanaConfig
 installFilebeat
 replaceFilebeatConfig
 
+# 最后，将启动脚本下载到本地
+mkdir -p /home/zp/script
+wget -P /home/zp/script "https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/elk/boot-elk.sh"
 #setPrivilegeForUser
 
