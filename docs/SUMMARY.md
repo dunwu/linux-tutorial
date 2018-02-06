@@ -4,6 +4,7 @@
 
 * [简介](README.md)
 * [Linux](linux/README.md)
+  * [命令行的艺术（转载）](linux/the-art-of-command-line.md)
   * [Linux 常用命令](linux/commands/README.md)
   * [Linux 常用命令-系统设置](linux/commands/linux-cmd-system.md)
   * [Linux 常用命令-文件目录](linux/commands/linux-cmd-file-and-folder.md)
