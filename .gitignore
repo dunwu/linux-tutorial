@@ -3,7 +3,6 @@
 node_modules
 
 # temp folders
-build
 dist
 _book
 _jsdoc
