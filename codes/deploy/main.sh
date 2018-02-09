@@ -4,7 +4,7 @@
 # Author: Zhang Peng
 ###################################################################################
 
-function printBeginning() {
+function printHeadInfo() {
 cat << EOF
 ***********************************************************************************
 * Welcome to using the deployment script for Centos.
@@ -13,7 +13,7 @@ cat << EOF
 EOF
 }
 
-function printEnding() {
+function printFootInfo() {
 cat << EOF
 ***********************************************************************************
 * Deployment is over.
@@ -54,22 +54,27 @@ cat << EOF
     [jdk8] install jdk8                        [maven] install maven
     [tomcat] install tomcat8                   [nginx] install nginx
     [nodejs] install node.js                   [elk] install elk
+
+【3 - Recommended Tools】
     [sdk] install sdkman
+    [springboot] install spring boot cli
 
 Press <CTRL-D> to exit
 Please input key：
 EOF
 }
 
-key=""
-filepath=$(cd "$(dirname "$0")"; pwd)
 function chooseOper() {
+  key=""
+  filepath=$(cd "$(dirname "$0")"; pwd)
   while read key
   do
     case ${key} in
+      # 2 - System Environment
       sys ) ${filepath}/sys/init.sh;;
       libs ) ${filepath}/lib/install-libs.sh;;
 
+      # 2 - Common Tools
       2 | tools ) ${filepath}/tool/install-all.sh;;
       git ) ${filepath}/tool/git/install-git.sh;;
       svn ) ${filepath}/tool/svn/install-svn.sh;;
@@ -79,7 +84,11 @@ function chooseOper() {
       nodejs ) ${filepath}/tool/nodejs/install-nodejs.sh;;
       tomcat ) ${filepath}/tool/tomcat/install-tomcat8.sh;;
       elk ) ${filepath}/tool/elk/install-elk.sh;;
+
+      # 3 - Recommended Tools
       sdk ) ${filepath}/tool/sdk/install-sdk.sh;;
+      springboot ) ${filepath}/tool/springboot/install-springboot.sh;;
+
       * ) echo "${key} is invalid key";;
     esac
 
@@ -87,11 +96,9 @@ function chooseOper() {
   done
 }
 
-
-
 ######################################## MAIN ########################################
-printBeginning
+printHeadInfo
 checkOsVersion 0
 showMenu
 chooseOper
-printEnding
+printFootInfo
