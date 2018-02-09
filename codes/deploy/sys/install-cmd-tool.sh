@@ -20,6 +20,7 @@
 # 编辑工具：emacs、vim
 # 流量工具：iftop、nethogs
 # 抓包工具：tcpdump
+# 压缩工具：unzip、zip
 ###################################################################################
 # 核心工具
 echo -e "\n>>>>>>>>> install coreutils(df、du)"
@@ -78,3 +79,6 @@ yum install -y nethogs
 # 抓包工具
 echo -e "\n>>>>>>>>> install tcpdump"
 yum install -y tcpdump
+
+# 压缩工具
+yum install -y unzip

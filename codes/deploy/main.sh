@@ -54,6 +54,7 @@ cat << EOF
     [jdk8] install jdk8                        [maven] install maven
     [tomcat] install tomcat8                   [nginx] install nginx
     [nodejs] install node.js                   [elk] install elk
+    [sdk] install sdkman
 
 Press <CTRL-D> to exit
 Please input key：
@@ -66,18 +67,19 @@ function chooseOper() {
   while read key
   do
     case ${key} in
-      sys) ${filepath}/sys/init.sh;;
-      libs) ${filepath}/lib/install-libs.sh;;
+      sys ) ${filepath}/sys/init.sh;;
+      libs ) ${filepath}/lib/install-libs.sh;;
 
-      2 | tools) ${filepath}/tool/install-all.sh;;
-      git) ${filepath}/tool/git/install-git.sh;;
-      svn) ${filepath}/tool/svn/install-svn.sh;;
-      jdk8) ${filepath}/tool/jdk/install-jdk8.sh;;
-      maven) ${filepath}/tool/maven/install-maven3.sh;;
-      nginx) ${filepath}/tool/nginx/install-nginx.sh;;
-      nodejs) ${filepath}/tool/nodejs/install-nodejs.sh;;
-      tomcat) ${filepath}/tool/tomcat/install-tomcat8.sh;;
-      elk) ${filepath}/tool/elk/install-elk.sh;;
+      2 | tools ) ${filepath}/tool/install-all.sh;;
+      git ) ${filepath}/tool/git/install-git.sh;;
+      svn ) ${filepath}/tool/svn/install-svn.sh;;
+      jdk8 ) ${filepath}/tool/jdk/install-jdk8.sh;;
+      maven ) ${filepath}/tool/maven/install-maven3.sh;;
+      nginx ) ${filepath}/tool/nginx/install-nginx.sh;;
+      nodejs ) ${filepath}/tool/nodejs/install-nodejs.sh;;
+      tomcat ) ${filepath}/tool/tomcat/install-tomcat8.sh;;
+      elk ) ${filepath}/tool/elk/install-elk.sh;;
+      sdk ) ${filepath}/tool/sdk/install-sdk.sh;;
       * ) echo "${key} is invalid key";;
     esac
 
