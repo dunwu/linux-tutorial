@@ -20,8 +20,4 @@
   * [git 快速指南](git/git-quickstart.md)
   * [git-flow 工作流](git/git-flow.md)
 
-## 附录
-
-* [资源](resources.md)
-
 ------

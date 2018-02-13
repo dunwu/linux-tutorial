@@ -1,13 +1,13 @@
 {
   "gitbook": "3.2.2",
-  "title": "linux-notes",
-  "description": "linux 学习笔记",
+  "title": "linux",
+  "description": "linux 教程",
   "author": "Zhang Peng",
   "language": "zh-hans",
   "root": "./docs",
   "links": {
     "sidebar": {
-      "linux-notes": "https://github.com/dunwu/linux-notes"
+      "linux": "https://github.com/dunwu/linux"
     }
   },
   "plugins": [
@@ -45,7 +45,7 @@
       }
     },
     "edit-link": {
-      "base": "https://github.com/dunwu/linux-notes/blob/master/docs",
+      "base": "https://github.com/dunwu/linux/blob/master/docs",
       "label": "编辑此页面"
     },
     "github": {
