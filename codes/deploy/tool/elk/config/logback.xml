@@ -44,7 +44,7 @@
 
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
-  <logger name="cn.xyz" level="TRACE">
+  <logger name="io.github.zp" level="TRACE">
     <appender-ref ref="ELK-TCP"/>
     <appender-ref ref="ALL"/>
   </logger>
