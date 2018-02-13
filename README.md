@@ -12,7 +12,7 @@
   <a href="https://dunwu.gitbooks.io/linux/" target="_blank">:point_right: 电子书</a>
 </p>
 
-## 内容
+## 教程
 
 * [简介](docs/README.md)
 * [Linux](docs/linux/README.md)
@@ -31,3 +31,7 @@
 * [Git](docs/git/README.md)
   * [git 快速指南](docs/git/git-quickstart.md)
   * [git-flow 工作流](docs/git/git-flow.md)
+
+## 工具
+
+[环境部署工具](codes/deploy/README.md) ：适合开发、运维人员，在 [CentOS](https://www.centos.org/) 机器上安装常用命令工具或开发软件。
