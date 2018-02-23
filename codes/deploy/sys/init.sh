@@ -14,7 +14,10 @@ EOF
 filepath=$(cd "$(dirname "$0")"; pwd)
 
 # 设置环境配置，不了解具体修改内容的情况下，请勿执行
-# ./set-config.sh
+# ${filepath}/set-config.sh
+
+# 替换 yum 镜像
+${filepath}/yum/change-yum-repo.sh
 
 # 安装命令行工具
 ${filepath}/install-cmd-tool.sh
