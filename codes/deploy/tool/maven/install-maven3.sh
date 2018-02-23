@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+###################################################################################
+# 安装 Maven 脚本
+# 适用于所有 linux 发行版本。
+# Maven 会被安装到 /opt/software/maven 路径。
+# 注意：Maven 要求必须先安装 JDK
+# Author: Zhang Peng
+###################################################################################
+
 echo -e "\n>>>>>>>>> install maven"
 
 mkdir -p /opt/software/maven
@@ -10,9 +18,7 @@ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-
 tar -zxvf apache-maven-${version}-bin.tar.gz
 
 cat >> /etc/profile << EOF
-MAVEN_HOME=/opt/software/maven/apache-maven-\${version}
-PATH=\${MAVEN_HOME}/bin:\${PATH}
-export MAVEN_HOME
-export PATH
+export MAVEN_HOME=/opt/software/maven/apache-maven-${version}
+export PATH=\$MAVEN_HOME/bin:\$PATH
 EOF
 source /etc/profile

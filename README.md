@@ -45,4 +45,5 @@
 > DOCS: 安装配置文档，说明安装的方法以及一些注意事项。
 
 * JDK 安装和配置：| [CODES](codes/deploy/tool/jdk) | [DOCS](docs/deploy/tool/jdk/install-jdk.md) |
+* Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/maven/install-maven.md) |
 
