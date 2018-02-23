@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/usr/bin/env bash
 
 echo -e "\n>>>>>>>>> install springboot"
 

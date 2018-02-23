@@ -1,4 +1,4 @@
-#!/bin/bash -li
+#!/usr/bin/env bash
 
 # 检查脚本输入参数
 checkInput() {
