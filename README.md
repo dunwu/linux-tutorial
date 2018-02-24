@@ -49,3 +49,4 @@
 * Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/nginx/install-nginx.md) |
 * Nodejs 安装和配置：| [CODES](codes/deploy/tool/nodejs) | [DOCS](docs/deploy/tool/nodejs/install-nodejs.md) |
 * Redis 安装和配置：| [CODES](codes/deploy/tool/redis) | [DOCS](docs/deploy/tool/redis/install-redis.md) |
+* Tomcat 安装和配置：| [CODES](codes/deploy/tool/tomcat) | [DOCS](docs/deploy/tool/tomcat/install-tomcat.md) |
