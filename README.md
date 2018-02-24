@@ -46,4 +46,5 @@
 
 * JDK 安装和配置：| [CODES](codes/deploy/tool/jdk) | [DOCS](docs/deploy/tool/jdk/install-jdk.md) |
 * Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/maven/install-maven.md) |
+* Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/nginx/install-nginx.md) |
 
