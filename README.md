@@ -40,11 +40,11 @@
 
 ### 常见软件安装配置详述
 
-> CODES：安装配置脚本，按照说明即可安装使用。
+> *`CODES`：安装配置脚本，按照说明安装使用即可。*
 >
-> DOCS: 安装配置文档，说明安装的方法以及一些注意事项。
+> *`DOCS`: 安装配置文档，说明安装的方法以及一些注意事项。*
 
 * JDK 安装和配置：| [CODES](codes/deploy/tool/jdk) | [DOCS](docs/deploy/tool/jdk/install-jdk.md) |
 * Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/maven/install-maven.md) |
 * Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/nginx/install-nginx.md) |
-
+* Nodejs 安装和配置：| [CODES](codes/deploy/tool/nodejs) | [DOCS](docs/deploy/tool/nodejs/install-nodejs.md) |
