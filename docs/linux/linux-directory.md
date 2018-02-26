@@ -9,4 +9,4 @@ tags:
 
 linux 目录结构是树形结构，其根目录是 `/` 。一张思维导图说明各个目录的作用：
 
-![linux 目录.png](http://upload-images.jianshu.io/upload_images/3101171-41f68e76ea693321.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![linux目录.png](https://raw.githubusercontent.com/dunwu/linux/master/docs/linux/images/linux-folders.png)
