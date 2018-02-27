@@ -46,6 +46,7 @@
 
 * JDK 安装和配置：| [CODES](codes/deploy/tool/jdk) | [DOCS](docs/deploy/tool/jdk/install-jdk.md) |
 * Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/maven/install-maven.md) |
+* Mongodb 安装和配置：| [CODES](codes/deploy/tool/mongodb) | [DOCS](docs/deploy/tool/mongodb/install-mongodb.md) |
 * Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/nginx/install-nginx.md) |
 * Nodejs 安装和配置：| [CODES](codes/deploy/tool/nodejs) | [DOCS](docs/deploy/tool/nodejs/install-nodejs.md) |
 * Redis 安装和配置：| [CODES](codes/deploy/tool/redis) | [DOCS](docs/deploy/tool/redis/install-redis.md) |
