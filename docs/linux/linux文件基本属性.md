@@ -7,6 +7,19 @@ tags:
 - linux
 ---
 
+<!-- TOC -->
+
+- [linux 文件基本属性](#linux-%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7)
+    - [linux 文件基本属性](#linux-%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7)
+    - [linux 文件属主和属组](#linux-%E6%96%87%E4%BB%B6%E5%B1%9E%E4%B8%BB%E5%92%8C%E5%B1%9E%E7%BB%84)
+        - [更改文件属性](#%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7)
+            - [chgrp：更改文件属组](#chgrp%EF%BC%9A%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E7%BB%84)
+            - [chown：更改文件属主，也可以同时更改文件属组](#chown%EF%BC%9A%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E4%B8%BB%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%90%8C%E6%97%B6%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E7%BB%84)
+            - [chmod：更改文件9个属性](#chmod%EF%BC%9A%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B69%E4%B8%AA%E5%B1%9E%E6%80%A7)
+            - [符号类型改变文件权限](#%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E6%94%B9%E5%8F%98%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90)
+
+<!-- /TOC -->
+
 # linux 文件基本属性
 
 ## linux 文件基本属性

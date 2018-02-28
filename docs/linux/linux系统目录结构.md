@@ -1,11 +1,13 @@
 ---
-title: Linux 目录结构
+title: linux 系统目录结构
 date: 2017/12/15
 categories:
 - linux
 tags:
 - linux
 ---
+
+# linux 系统目录结构
 
 linux 目录结构是树形结构，其根目录是 `/` 。一张思维导图说明各个目录的作用：
 
