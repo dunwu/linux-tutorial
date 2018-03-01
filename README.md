@@ -19,7 +19,8 @@
 * [linux 系统目录结构](docs/linux/linux系统目录结构.md)
 * [linux 文件基本属性](docs/linux/linux文件基本属性.md)
 * [linux 监控](docs/linux/linux监控.md)
-* [yum 命令](docs/linux/yum.md)
+* [linux 软件](docs/linux/软件/README.md)
+  * [samba使用详解](docs/linux/软件/samba使用详解.md)
 * [linux 常用命令](docs/linux/commands/README.md)
   * [命令行的艺术（转载）](docs/linux/commands/命令行的艺术.md)
   * [linux 常用命令-文件目录管理](docs/linux/commands/文件目录管理/README.md)
@@ -38,6 +39,7 @@
     * [linux 常用命令-系统性能管理](docs/linux/commands/系统管理/系统性能管理.md)
   * [linux 常用命令-网络管理](docs/linux/commands/网络管理/README.md)
     * [linux 常用命令-网络应用](docs/linux/commands/网络管理/网络应用.md)
+* [yum 命令](docs/linux/yum.md)
 
 ## [shell](docs/shell/README.md)
 
