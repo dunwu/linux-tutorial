@@ -46,6 +46,35 @@ java -jar jenkins.war --httpPort=8080
 
 执行命令 `cat /root/.jenkins/secrets/initialAdminPassword`，打印出来的即是初始登录密码。
 
+### 忘记密码
+
+1.执行 `vim /root/.jenkins/config.xml` ，删除以下内容
+
+```xml
+<useSecurity>true</useSecurity>
+<authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+  <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+</authorizationStrategy>
+<securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+  <disableSignup>true</disableSignup>
+  <enableCaptcha>false</enableCaptcha>
+</securityRealm>
+```
+
+2.重启Jenkins服务；
+
+3.进入首页>“系统管理”>“Configure Global Security”；
+
+4.勾选“启用安全”；
+
+5.点选“Jenkins专有用户数据库”，并点击“保存”；
+
+6.重新点击首页>“系统管理”,发现此时出现“管理用户”；
+
+7.点击进入展示“用户列表”；
+
+8.点击右侧进入修改密码页面，修改后即可重新登录。
+
 ### 卡在 check 页面
 
 **现象**：输入密码后，卡在 check 页面
@@ -80,3 +109,4 @@ sed -i '/^<url>/s/.*/<url>http:\/\/mirror.xmission.com\/jenkins\/updates\/update
 
 * https://jenkins.io/doc/pipeline/tour/getting-started/
 * https://www.cnblogs.com/austinspark-jessylu/p/6894944.html
+* http://blog.csdn.net/jlminghui/article/details/54952148
