@@ -12,7 +12,8 @@ echo -e "\n>>>>>>>>> 替换 yum repo 源"
 cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
 
 # 执行 lsb_release 命令，获取系统发行版本
-version=`lsb_release -r | awk '{print substr($2,1,1)}'`
+# version=`lsb_release -r | awk '{print substr($2,1,1)}'` # 很多机器没有 lsb_release 命令
+version=`cat /etc/redhat-release | awk '{print substr($4,1,1)}'`
 
 # 根据发型版本选择相应 yum 镜像
 if [ ${version} == 5 ]; then
