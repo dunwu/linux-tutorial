@@ -3,8 +3,8 @@
 ## 知识大纲
 
 * 简介（introduction）
-* 快速上手（quickstart）
-* 入门篇（basics）
+* [Docker 快速指南](docker-quickstart.md)
+* 基础篇（basics）
   * 环境（environment）
   * [Docker 安装](basics/installation.md)
   * 配置（configuration）
