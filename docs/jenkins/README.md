@@ -2,7 +2,7 @@
 
 ## 知识大纲
 
-* [Jenkins 介绍](jenkins-introduction.md)
+* [Jenkins 介绍](jenkins-quickstart.md)
 * 快速指南(quickstart)
 * 基础篇（basics）
   * 环境（environment）
