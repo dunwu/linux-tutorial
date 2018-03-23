@@ -31,7 +31,7 @@ wget -O /opt/software/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/l
 
 ```
 cd /opt/software/jenkins
-java -jar jenkins.war --httpPort=8080
+nohup java -jar jenkins.war --httpPort=8080 >> nohup.out 2>&1 &
 ```
 
 ## 脚本
