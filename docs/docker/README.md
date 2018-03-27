@@ -12,8 +12,7 @@
   * 设计（design）
 * 实践篇（practice）
 * 常见问题（faq）
-* 附录（appendix）
-  * 命令（command）
-  * [Docker 资源](appendix/resource.md)
-  * [Docker 术语](appendix/glossary.md)
-  * 技巧（recipe）
+* [附录](appendix/README.md)
+  * [Docker 命令](appendix/docker-cli.md)
+  * [Docker 资源](appendix/docker-resource.md)
+  * [Docker 术语](appendix/docker-glossary.md)

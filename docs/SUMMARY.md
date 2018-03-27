@@ -36,5 +36,6 @@
 * [git](git/README.md)
   * [git 快速指南](git/git-quickstart.md)
   * [git-flow 工作流](git/git-flow.md)
+* [shell](docker/README.md)
 
 ------
