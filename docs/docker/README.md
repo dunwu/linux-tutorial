@@ -11,12 +11,13 @@
   - [x] [Docker 安装](basics/docker-install.md)
   - [ ] 配置（configuration）
 - [ ] 进阶篇（advanced）
-  - [ ] 设计（design）
+  - [x] [Docker 的设计](advanced/docker-design.md)
 - [ ] 实践篇（practice）
 - [ ] 常见问题（faq）
 - [x] [附录](appendix/README.md)
   - [x] [Docker 命令](appendix/docker-cli.md)
   - [x] [Docker 资源](appendix/docker-resource.md)
   - [x] [Docker 术语](appendix/docker-glossary.md)
+  - [x] [Docker 技巧](appendix/docker-recipe.md)
 
 _知识点仍在完善中。。。_
