@@ -2,7 +2,6 @@
 
 ## 教程
 
-* [简介](README.md)
 * [linux](linux/README.md)
   * [linux 系统目录结构](linux/linux系统目录结构.md)
   * [linux 文件基本属性](linux/linux文件基本属性.md)
@@ -36,6 +35,6 @@
 * [git](git/README.md)
   * [git 快速指南](git/git-quickstart.md)
   * [git-flow 工作流](git/git-flow.md)
-* [shell](docker/README.md)
+* [docker](docker/README.md)
 
 ------

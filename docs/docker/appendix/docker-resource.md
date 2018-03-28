@@ -13,6 +13,10 @@
 * Docker Hub: https://hub.docker.com/
 * Docker 开源： https://www.docker.com/open-source
 
+## 资源整理
+
+* Awesome Docker： https://github.com/veggiemonk/awesome-docker
+
 ## Docker 中文资源
 
 * Docker中文网站：https://www.docker-cn.com/
