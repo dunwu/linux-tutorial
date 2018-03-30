@@ -8,7 +8,9 @@
 
 - [x] [Docker 快速指南](docker-quickstart.md)
 - [ ] 基础篇（basics）
+  - [x] [Docker 简介](basics/docker-introduction.md)
   - [x] [Docker 安装](basics/docker-install.md)
+  - [x] [Docker 之 Hello World](basics/docker-helloworld.md)
   - [ ] 配置（configuration）
 - [ ] 进阶篇（advanced）
   - [x] [Docker 的设计](advanced/docker-design.md)
