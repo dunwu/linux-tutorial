@@ -14,7 +14,9 @@
   - [ ] 配置（configuration）
 - [ ] 进阶篇（advanced）
   - [x] [Docker 的设计](advanced/docker-design.md)
-- [ ] 实践篇（practice）
+- [x] 实践篇（practice）
+  - [x] [Docker 安装 MySQL](practice/docker-install-mysql.md)
+  - [x] [Docker 安装 Nginx](practice/docker-install-nginx.md)
 - [ ] 常见问题（faq）
 - [x] [附录](appendix/README.md)
   - [x] [Docker 命令](appendix/docker-cli.md)
