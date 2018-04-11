@@ -2,19 +2,13 @@
 
 ## 目录
 
-### [快速指南](git-quickstart.md)
-
-### 基础篇（basics）
-
-* [安装](basics/git-installation.md)
-* 配置（configuration）
-
-### 进阶篇（advanced）
-
-* [安装](advanced/git-flow.md)
-
-### 附录（appendix）
-
-* [命令](appendix/git-command.md)
-* [常见问题](appendix/git-faq.md)
-* [资源](appendix/git-resource.md)
+* [快速指南（quickstart）](git-quickstart.md)
+* 基础篇（basics）
+  * [安装（installation）](basics/git-installation.md)
+  * [配置（configuration）](basics/git-configuration.md)
+* 进阶篇（advanced）
+  * [git-flow 工作流](advanced/git-flow.md)
+* 附录（appendix）
+  * [常见问题（faq）](appendix/git-faq.md)
+  * [命令（command）](appendix/git-command.md)
+  * [资源（resource）](appendix/git-resource.md)
