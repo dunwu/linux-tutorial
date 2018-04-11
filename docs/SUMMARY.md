@@ -34,7 +34,7 @@
   * [vim 快捷键图](vim/vim-keyboards.md)
 * [git](git/README.md)
   * [git 快速指南](git/git-quickstart.md)
-  * [git-flow 工作流](git/git-flow.md)
+  * [git-flow 工作流](git/advanced/git-flow.md)
 * [docker](docker/README.md)
 
 ------
