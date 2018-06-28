@@ -6,7 +6,7 @@
 
 ## [linux 教程](docs/linux/README.md)
 
-## [shell 教程](docs/shell/README.md)
+## [shell 教程](docs/shell.md)
 
 ## [vim 教程](docs/vim/README.md)
 

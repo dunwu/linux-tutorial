@@ -4,7 +4,7 @@
   "description": "linux 教程",
   "author": "Zhang Peng",
   "language": "zh-hans",
-  "root": "./docs",
+  "root": ".",
   "links": {
     "sidebar": {
       "linux": "https://github.com/dunwu/linux"
