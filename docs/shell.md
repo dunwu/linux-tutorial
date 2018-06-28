@@ -1,6 +1,6 @@
 ---
 title: Shell 快速指南
-date: 2017-11-20
+date: 2017/11/20
 categories:
 - linux
 tags:
@@ -18,6 +18,28 @@ tags:
 ╚════██║██╔══██║██╔══╝  ██║     ██║                           
 ███████║██║  ██║███████╗███████╗███████╗
 ```
+<!-- TOC depthFrom:2 depthTo:3 -->
+
+- [概述](#概述)
+    - [什么是 shell](#什么是-shell)
+    - [什么是 shell 脚本](#什么是-shell-脚本)
+    - [Shell 环境](#shell-环境)
+    - [模式](#模式)
+- [Shell 编程](#shell-编程)
+    - [解释器](#解释器)
+    - [注释](#注释)
+    - [变量](#变量)
+    - [Shell扩展](#shell扩展)
+    - [数组](#数组)
+    - [运算符](#运算符)
+    - [语句](#语句)
+    - [函数](#函数)
+    - [流和重定向](#流和重定向)
+    - [Debugging](#debugging)
+    - [资料](#资料)
+
+<!-- /TOC -->
+
 
 ## 概述
 
@@ -1175,5 +1197,6 @@ echo "xtrace is turned off again"
 - [bash-it](https://github.com/Bash-it/bash-it)，为你日常使用，开发以及维护 shell 脚本和自定义命令提供了一个可靠的框架
 - [dotfiles.github.io](http://dotfiles.github.io/)，上面有bash和其它shell的各种dotfiles集合以及shell框架的链接
 - [Runoob Shell 教程](http://www.runoob.com/linux/linux-shell.html)
+- [shellcheck](https://github.com/koalaman/shellcheck) 一个静态 shell 脚本分析工具，本质上是 bash／sh／zsh 的 lint。
 
 最后，Stack Overflow上 [bash 标签下](https://stackoverflow.com/questions/tagged/bash)有很多你可以学习的问题，当你遇到问题时，也是一个提问的好地方。
