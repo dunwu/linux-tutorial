@@ -8,6 +8,8 @@
 
 ## [shell 教程](docs/shell.md)
 
+## [python 教程](docs/python.md)
+
 ## [vim 教程](docs/vim/README.md)
 
 ## [git 教程](docs/git/README.md)
