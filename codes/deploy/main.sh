@@ -55,6 +55,7 @@ cat << EOF
     [tomcat] install tomcat8                   [nginx] install nginx
     [nodejs] install node.js                   [elk] install elk
     [redis] install redis                      [mongodb] install mongodb
+    [kafka] install kafka
 
 【3 - Recommended Tools】
     [sdk] install sdkman
@@ -87,6 +88,7 @@ function chooseOper() {
       elk ) ${filepath}/tool/elk/install-elk.sh;;
       redis ) ${filepath}/tool/redis/install-redis.sh;;
       mongodb ) ${filepath}/tool/mongodb/install-mongodb.sh;;
+      kafka ) ${filepath}/tool/kafka/install-kafka.sh;;
 
       # 3 - Recommended Tools
       sdk ) ${filepath}/tool/sdk/install-sdk.sh;;
