@@ -1,8 +1,4 @@
-# linux
-
-> 这是一个后端程序员的linux学习之路。
-
-## 教程
+# OS
 
 ## [linux 教程](docs/linux/README.md)
 
