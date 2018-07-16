@@ -20,7 +20,7 @@
 
 ## 下载解压
 
-进入官方下载地址：http://rocketmq.apache.org/release_notes/release-notes-4.2.0/
+进入官方下载地址：https://rocketmq.apache.org/dowloading/releases/，选择合适版本
 
 建议选择 binary 版本。
 
