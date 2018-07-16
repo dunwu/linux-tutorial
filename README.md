@@ -25,9 +25,13 @@
 > *`DOCS`: 安装配置文档，说明安装的方法以及一些注意事项。*
 
 * JDK 安装和配置：| [CODES](codes/deploy/tool/jdk) | [DOCS](docs/deploy/tool/jdk/install-jdk.md) |
+* Jenkins 安装和配置：| [CODES](codes/deploy/tool/jenkins) | [DOCS](docs/deploy/tool/mongodb/install-jenkins.md) |
+* Kafka 安装和配置：| [CODES](codes/deploy/tool/kafka) | [DOCS](docs/deploy/tool/kafka/install-kafka.md) |
 * Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/maven/install-maven.md) |
 * Mongodb 安装和配置：| [CODES](codes/deploy/tool/mongodb) | [DOCS](docs/deploy/tool/mongodb/install-mongodb.md) |
 * Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/nginx/install-nginx.md) |
 * Nodejs 安装和配置：| [CODES](codes/deploy/tool/nodejs) | [DOCS](docs/deploy/tool/nodejs/install-nodejs.md) |
 * Redis 安装和配置：| [CODES](codes/deploy/tool/redis) | [DOCS](docs/deploy/tool/redis/install-redis.md) |
+* RocketMQ 安装和配置：| [CODES](codes/deploy/tool/rocketmq) | [DOCS](docs/deploy/tool/rocketmq/install-rocketmq.md) |
 * Tomcat 安装和配置：| [CODES](codes/deploy/tool/tomcat) | [DOCS](docs/deploy/tool/tomcat/install-tomcat.md) |
+* Zookeeper 安装和配置：| [CODES](codes/deploy/tool/zookeeper) | [DOCS](docs/deploy/tool/zookeeper/install-zookeeper.md) |
