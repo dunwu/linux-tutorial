@@ -119,5 +119,5 @@ nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &
 
 ## 资料
 
-- [RocketMQ 官方 Quick Start](https://rocketmq.apache.org/docs/quick-start/)
+- [RocketMQ 官方文档](http://rocketmq.apache.org/docs/quick-start/)
 - [RocketMQ 搭建及刨坑](http://laciagin.me/2017/12/07/RocketMQ%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%88%A8%E5%9D%91/)
