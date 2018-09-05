@@ -508,7 +508,7 @@ NrRFi9wrf+M7Q== schacon@mylaptop.local
 
 后面，你在克隆你的 Github 项目时使用 SSH 方式即可。
 
-![The key field](https://help.github.com/assets/images/help/settings/ssh-key-paste.png)
+![The key field](https://help.github.chttps://raw.githubusercontent.com/dunwu/design/master/images/refactor/help/settings/ssh-key-paste.png)
 
 如果觉得我的讲解还不够细致，可以参考：https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
