@@ -7,6 +7,7 @@
 ## 知识大纲
 
 - [x] [Docker 快速指南](docker-quickstart.md)
+- [x] [Docker Cheat Sheet](docker-cheat-sheet.md)
 - [ ] 基础篇（basics）
   - [x] [Docker 简介](basics/docker-introduction.md)
   - [x] [Docker 安装](basics/docker-install.md)
@@ -19,6 +20,7 @@
   - [x] [Docker 安装 Nginx](practice/docker-install-nginx.md)
 - [ ] 常见问题（faq）
 - [x] [附录](appendix/README.md)
+
   - [x] [Docker 命令](appendix/docker-cli.md)
   - [x] [Docker 资源](appendix/docker-resource.md)
   - [x] [Docker 术语](appendix/docker-glossary.md)
