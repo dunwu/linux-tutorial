@@ -19,7 +19,7 @@
   - [Linux 用户管理命令](commands/Linux用户管理命令.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
   - [Linux 系统管理命令](commands/Linux系统管理命令.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`
   - [Linux 性能管理命令](commands/Linux性能管理命令.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-  - [linux 常用命令-进程和作业管理](commands/进程和作业管理.md)
+  - [Linux 进程管理命令](commands/Linux进程管理命令.md) - 关键词：`ps`, `kill`, `systemctl`, `service`, `crontab`
   - [Linux 网络应用命令](commands/Linux网络应用命令.md) - 关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `iptables`
   - [Linux 网络测试命令](commands/Linux网络测试命令.md) - 关键词：`host`, `nslookup`, `nc`/`netcat`, `dig`, `ping`, `traceroute`, `netstat`
 - [yum 命令](yum.md)
