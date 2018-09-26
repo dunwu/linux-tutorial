@@ -16,12 +16,10 @@
     - [linux 常用命令-文件权限属性设置](commands/文件目录管理/文件权限属性设置.md)
     - [linux 常用命令-文件查找和比较](commands/文件目录管理/文件查找和比较.md)
     - [linux 常用命令-目录基本操作](commands/文件目录管理/目录基本操作.md)
-  - [linux 常用命令-系统管理](commands/系统管理/README.md)
-    - [linux 常用命令-系统操作](commands/系统管理/系统操作.md)
-    - [linux 常用命令-系统设置](commands/系统管理/系统设置.md)
-    - [linux 常用命令-用户和工作组管理](commands/系统管理/用户和工作组管理.md)
-    - [linux 常用命令-进程和作业管理](commands/系统管理/进程和作业管理.md)
-    - [linux 常用命令-系统性能管理](commands/系统管理/系统性能管理.md)
+  - [Linux 用户管理命令](commands/Linux用户管理命令.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
+  - [Linux 系统管理命令](commands/Linux系统管理命令.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`
+  - [Linux 性能管理命令](commands/Linux性能管理命令.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
+  - [linux 常用命令-进程和作业管理](commands/进程和作业管理.md)
   - [Linux 网络应用命令](commands/Linux网络应用命令.md) - 关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `iptables`
   - [Linux 网络测试命令](commands/Linux网络测试命令.md) - 关键词：`host`, `nslookup`, `nc`/`netcat`, `dig`, `ping`, `traceroute`, `netstat`
 - [yum 命令](yum.md)
@@ -32,3 +30,4 @@
 - [awesome-linux-software](https://github.com/LewisVo/Awesome-Linux-Software)
 - [linux-tutorial](https://github.com/judasn/Linux-Tutorial)
 - [菜鸟教程-Linux](http://www.runoob.com/linux/linux-tutorial.html)
+- [Linux Tools Quick Tutorial](https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/index.html)
