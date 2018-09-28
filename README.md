@@ -35,3 +35,4 @@
 * RocketMQ 安装和配置：| [CODES](codes/deploy/tool/rocketmq) | [DOCS](docs/deploy/tool/rocketmq/install-rocketmq.md) |
 * Tomcat 安装和配置：| [CODES](codes/deploy/tool/tomcat) | [DOCS](docs/deploy/tool/tomcat/install-tomcat.md) |
 * Zookeeper 安装和配置：| [CODES](codes/deploy/tool/zookeeper) | [DOCS](docs/deploy/tool/zookeeper/install-zookeeper.md) |
+* Svn 安装和配置：| [DOCS](docs/deploy/tool/svn/install-svn.md) |

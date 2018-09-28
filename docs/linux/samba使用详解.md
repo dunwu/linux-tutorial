@@ -41,7 +41,7 @@ tags:
 
 本文将以一个完整的示例来展示如何配置 samba 来实现 Linux 和 Windows 的文件共享。
 
-目标：假设希望共享 Linux 服务器上的 /fs 目录。
+目标：假设希望共享 Linux 服务器上的 /share/fs 目录。
 
 ### 1.1. 查看是否已经安装 samba
 
@@ -101,7 +101,7 @@ vim /etc/samba/smb.conf
 
 [fs]
         comment = share folder
-        path = /fs
+        path = /share/fs
         browseable = yes
         writable = yes
         read only = no
@@ -115,7 +115,7 @@ vim /etc/samba/smb.conf
 > 说明：
 >
 > - 我在这里添加了一个 **[fs]** 标签，这就是共享区域的配置。
-> - 这里设置 `path` 属性为 `/fs`，意味着准备共享 `/fs` 目录，需要根据实际需要设置路径。`/fs` 目录的权限要设置为 **777**：`chmod 777 /fs`。
+> - 这里设置 `path` 属性为 `/share/fs`，意味着准备共享 `/share/fs` 目录，需要根据实际需要设置路径。`/share/fs` 目录的权限要设置为 **777**：`chmod 777 /share/fs`。
 > - `browseable`、`writable` 等属性就比较容易理解了，即配置共享目录的访问权限。
 > - `valid users` 属性指定允许访问的用户，需要注意的是指定的用户必须是 Linux 机器上实际存在的用户。
 
