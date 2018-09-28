@@ -3,11 +3,9 @@
 ## 内容
 
 - [查看 Linux 命令帮助信息](01.查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `man`
-- [Linux 文件目录管理](02.Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `cp`, `mv`, `rm`
+- [Linux 文件目录管理](02.Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `cp`, `mv`, `rm`
 - [Linux 文件内容查看命令](Linux文件内容查看命令.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`
-- [Linux 文件处理命令](Linux文件处理命令.md) - 关键词：`touch`, `ln`, `rename`
 - [Linux 文件编辑命令](Linux文件编辑命令.md) - 关键词：`sed`, `vi`
-- [Linux 文件权限管理命令](Linux文件权限管理命令.md) - 关键词：`chmod`, `chown`, `stat`, `file`
 - [Linux 文件查找和比较命令](Linux文件查找和比较命令.md) - 关键词：`diff`, `locate`/`slocate`, `find`, `which`, `whereis`
 - [Linux 文件压缩与解压命令](Linux文件压缩与解压命令.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
 - [Linux 用户管理命令](Linux用户管理命令.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
