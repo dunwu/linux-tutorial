@@ -1,64 +1,202 @@
 ---
 title: samba 使用详解
-date: 2018/03/01
+date: 2018/09/28
 categories:
-- linux
+  - linux
 tags:
-- linux
-- windows
+  - linux
+  - windows
 ---
-
-<!-- TOC -->
-
-- [samba](#samba)
-  - [安装](#%E5%AE%89%E8%A3%85)
-  - [配置](#%E9%85%8D%E7%BD%AE)
-    - [默认配置](#%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE)
-    - [配置说明](#%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E)
-      - [全局参数 [global]](#%E5%85%A8%E5%B1%80%E5%8F%82%E6%95%B0-global)
-      - [共享参数 [共享名]](#%E5%85%B1%E4%BA%AB%E5%8F%82%E6%95%B0-%E5%85%B1%E4%BA%AB%E5%90%8D)
-    - [配置samba服务](#%E9%85%8D%E7%BD%AEsamba%E6%9C%8D%E5%8A%A1)
-      - [服务规划](#%E6%9C%8D%E5%8A%A1%E8%A7%84%E5%88%92)
-      - [创建文件夹和用户](#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E7%94%A8%E6%88%B7)
-      - [启动 samba 服务](#%E5%90%AF%E5%8A%A8-samba-%E6%9C%8D%E5%8A%A1)
-  - [FAQ](#faq)
-  - [资料](#%E8%B5%84%E6%96%99)
-
-<!-- /TOC -->
 
 # samba 使用详解
 
-samba 使得在 Linux 和 Windows 系统中进行文件共享、打印机共享更容易实现。
+> samba 是在 Linux 和 UNIX 系统上实现 SMB 协议的一个免费软件。
+>
+> samba 提供了在不同计算机（即使操作系统不同）上共享服务的能力。
+>
+> 关键词：`samba`, `selinux`
 
-## 安装
+<!-- TOC depthFrom:2 depthTo:3 -->
 
-**查看是否已安装：**
+- [1. 安装配置 samba](#1-安装配置-samba)
+    - [1.1. 查看是否已经安装 samba](#11-查看是否已经安装-samba)
+    - [1.2. 安装 samba 工具](#12-安装-samba-工具)
+    - [1.3. 配置 samba](#13-配置-samba)
+    - [1.4. 创建 samba 用户](#14-创建-samba-用户)
+    - [1.5. 启动 samba 服务](#15-启动-samba-服务)
+    - [1.6. 为 samba 添加防火墙规则](#16-为-samba-添加防火墙规则)
+    - [1.7. 测试 samba 服务](#17-测试-samba-服务)
+    - [1.8. 访问 samba 服务共享的目录](#18-访问-samba-服务共享的目录)
+- [2. 配置说明](#2-配置说明)
+    - [2.1. samba 默认配置](#21-samba-默认配置)
+    - [2.2. 全局参数 [global]](#22-全局参数-global)
+    - [2.3. 共享参数 [共享名]](#23-共享参数-共享名)
+- [3. 常见问题](#3-常见问题)
+    - [3.1. 你可能没有权限访问网络资源](#31-你可能没有权限访问网络资源)
+- [4. 参考资料](#4-参考资料)
 
-* CentOS：`rpm -qa | grep samba`
-* Ubuntu：`dpkg -l | grep samba`
+<!-- /TOC -->
 
-**安装：**
+## 1. 安装配置 samba
 
-* CentOS 6：`yum install -y samba samba-client samba-common`
+本文将以一个完整的示例来展示如何配置 samba 来实现 Linux 和 Windows 的文件共享。
 
-* Ubuntu：`sudo apt-get install -y samba samba-client`
+目标：假设希望共享 Linux 服务器上的 /fs 目录。
 
-## 配置
+### 1.1. 查看是否已经安装 samba
 
-### 默认配置
+- CentOS：`rpm -qa | grep samba`
+- Ubuntu：`dpkg -l | grep samba`
+
+### 1.2. 安装 samba 工具
+
+- CentOS：`yum install -y samba samba-client samba-common`
+- Ubuntu：`sudo apt-get install -y samba samba-client`
+
+### 1.3. 配置 samba
 
 samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 samba 无法启动。
+
+执行以下命令，编辑配置文件：
+
+```sh
+vim /etc/samba/smb.conf
+```
+
+修改配置如下：
+
+```ini
+[global]
+        workgroup = SAMBA
+        security = user
+
+        passdb backend = tdbsam
+
+        printing = cups
+        printcap name = cups
+        load printers = yes
+        cups options = raw
+
+[homes]
+        comment = Home Directories
+        valid users = %S, %D%w%S
+        browseable = No
+        read only = No
+        inherit acls = Yes
+
+[printers]
+        comment = All Printers
+        path = /var/tmp
+        printable = Yes
+        create mask = 0600
+        browseable = No
+
+[print$]
+        comment = Printer Drivers
+        path = /var/lib/samba/drivers
+        write list = @printadmin root
+        force group = @printadmin
+        create mask = 0664
+        directory mask = 0775
+
+[fs]
+        comment = share folder
+        path = /fs
+        browseable = yes
+        writable = yes
+        read only = no
+        guest ok = yes
+        create mask = 0777
+        directory mask = 0777
+        public = yes
+        valid users = root
+```
+
+> 说明：
+>
+> - 我在这里添加了一个 **[fs]** 标签，这就是共享区域的配置。
+> - 这里设置 `path` 属性为 `/fs`，意味着准备共享 `/fs` 目录，需要根据实际需要设置路径。`/fs` 目录的权限要设置为 **777**：`chmod 777 /fs`。
+> - `browseable`、`writable` 等属性就比较容易理解了，即配置共享目录的访问权限。
+> - `valid users` 属性指定允许访问的用户，需要注意的是指定的用户必须是 Linux 机器上实际存在的用户。
+
+### 1.4. 创建 samba 用户
+
+创建的 samba 用户必须是 Linux 机器上实际存在的用户。
+
+```sh
+$ sudo smbpasswd -a root
+New SMB password:
+Retype new SMB password:
+Added user root.
+```
+
+根据提示输入 samba 用户的密码。当 samba 服务成功安装、启动后，通过 Windows 系统访问机器共享目录时，就要输入这里配置的用户名、密码。
+
+### 1.5. 启动 samba 服务
+
+CentOS 6
+
+```sh
+$ sudo service samba restart  # 重启 samba
+$ sudo service smb restart    # 重启 samba
+```
+
+CentOS 7
+
+```sh
+$ sudo systemctl start smb.service     # 启动 samba
+$ sudo systemctl restart smb.service   # 重启 samba
+$ sudo systemctl enable smb.service    # 设置开机自动启动
+$ sudo systemctl status smb.service    # 查询 samba 状态
+```
+
+Ubuntu 16.04.3
+
+```
+$ sudo service smbd restart
+```
+
+### 1.6. 为 samba 添加防火墙规则
+
+```
+$ sudo firewall-cmd --permanent --zone=public --add-service=samba
+$ sudo firewall-cmd --reload
+```
+
+### 1.7. 测试 samba 服务
+
+```
+$ smbclient //localhost/fs -U root
+```
+
+输入 samba 用户的密码，如果成功，就会进入 `smb: \>`。
+
+### 1.8. 访问 samba 服务共享的目录
+
+Windows：
+
+访问：`\\<你的ip>\<你的共享路径>` ：
+
+![](http://oyz7npk35.bkt.clouddn.com/images/20180920180928161334.png)
+
+Mac：
+
+与 Windows 类似，直接在 Finder 中访问 `smb://<你的ip>/<你的共享路径>` 即可。
+
+## 2. 配置说明
+
+### 2.1. samba 默认配置
 
 你可以从 [这里](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) 获取到默认配置文件：
 
 ```
-cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
-wget "https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD" -O /etc/samba/smb.conf
+$ cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+$ wget "https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD" -O /etc/samba/smb.conf
 ```
 
-smb.conf 内容如下：
+smb.conf 默认内容如下：
 
-```
+```ini
 [global]
         workgroup = SAMBA
         security = user
@@ -92,11 +230,9 @@ smb.conf 内容如下：
         directory mask = 0775
 ```
 
-### 配置说明
+### 2.2. 全局参数 [global]
 
-#### 全局参数 [global]
-
-```
+```ini
 [global]
 
 config file = /usr/local/samba/lib/smb.conf.%m
@@ -217,48 +353,48 @@ printing = cups
 说明：设置Samba共享打印机的类型。现在支持的打印系统有：bsd, sysv, plp, lprng, aix, hpux, qnx
 ```
 
-#### 共享参数 [共享名]
+### 2.3. 共享参数 [共享名]
 
-```
+```ini
 [共享名]
- 
+
 comment = 任意字符串
 说明：comment是对该共享的描述，可以是任意字符串。
- 
+
 path = 共享目录路径
 说明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于[homes]共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目录，这样path就可以写成：path = /home/share/%u; 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以这样写：path = /home/share/%m 。
- 
+
 browseable = yes/no
 说明：browseable用来指定该共享是否可以浏览。
- 
+
 writable = yes/no
 说明：writable用来指定该共享路径是否可写。
- 
+
 available = yes/no
 说明：available用来指定该共享资源是否可用。
- 
+
 admin users = 该共享的管理者
 说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成“security=share”时，此项无效。
 例如：admin users =bobyuan，jane（多个用户中间用逗号隔开）。
- 
+
 valid users = 允许访问该共享的用户
 说明：valid users用来指定允许访问该共享资源的用户。
 例如：valid users = bobyuan，@bob，@tech（多个用户或者组中间用逗号隔开，如果要加入一个组就用“@+组名”表示。）
- 
+
 invalid users = 禁止访问该共享的用户
 说明：invalid users用来指定不允许访问该共享资源的用户。
 例如：invalid users = root，@bob（多个用户或者组中间用逗号隔开。）
- 
+
 write list = 允许写入该共享的用户
 说明：write list用来指定可以在该共享下写入文件的用户。
 例如：write list = bobyuan，@bob
- 
+
 public = yes/no
 说明：public用来指定该共享是否允许guest账户访问。
- 
+
 guest ok = yes/no
 说明：意义同“public”。
- 
+
 几个特殊共享：
 [homes]
 comment = Home Directories
@@ -266,7 +402,7 @@ browseable = no
 writable = yes
 valid users = %S
 ; valid users = MYDOMAIN\%S
- 
+
 [printers]
 comment = All Printers
 path = /var/spool/samba
@@ -274,183 +410,54 @@ browseable = no
 guest ok = no
 writable = no
 printable = yes
- 
+
 [netlogon]
 comment = Network Logon Service
 path = /var/lib/samba/netlogon
 guest ok = yes
 writable = no
 share modes = no
- 
+
 [Profiles]
 path = /var/lib/samba/profiles
 browseable = no
 guest ok = yes
 ```
 
-### 配置samba服务
+## 3. 常见问题
 
-#### 服务规划
+### 3.1. 你可能没有权限访问网络资源
 
-系统分区时，单独划分一个/storage的分区，分区下有logger和shared两个文件夹;
-logger文件夹/storage/logger下对应的管理员账号为logadmin，用户账号为loguser;
-shared文件夹/storage/shared下对应的管理员账号为admin，用户账户号为shared;
+问题现象：
 
-#### 创建文件夹和用户
+- 出现 **NT_STATUS_ACCESS_DENIED** 错误
+- Windows 下成功登陆 samba 后，点击共享目录仍然提示——你可能没有权限访问网络资源。
 
-创建文件夹
+解决步骤：
 
-```
-# 创建文件夹
-[root@Linuxidc-Server storage]# cd /storage
-[root@Linuxidc-Server storage]# mkdir logger  shared
-[root@Linuxidc-Server storage]# ls
-total 0
-drwxr-xr-x. 2 root root 6 Aug  3 10:12 logger
-drwxr-xr-x. 2 root root 6 Aug  3 10:12 shared
-```
+1. 检查是否配置了防火墙规则
 
-创建用户
+```sh
+# 一种方法是强行关闭防火墙
+$ sudo service iptables stop
 
-```
-# 创建用户
-[root@Linuxidc-Server storage]# useradd -s /sbin/nologin logadmin
-[root@Linuxidc-Server storage]# useradd -s /sbin/nologin admin
-[root@Linuxidc-Server storage]# useradd -g admin -s /sbin/nologin shared
-[root@Linuxidc-Server storage]# cat /etc/passwd
-root:x:0:0:root:/root:/bin/bash
-bin:x:1:1:bin:/bin:/sbin/nologin
-daemon:x:2:2:daemon:/sbin:/sbin/nologin
-adm:x:3:4:adm:/var/adm:/sbin/nologin
-lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-sync:x:5:0:sync:/sbin:/bin/sync
-shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-halt:x:7:0:halt:/sbin:/sbin/halt
-nobody:x:99:99:Nobody:/:/sbin/nologin
-systemd-bus-proxy:x:999:998:systemd Bus Proxy:/:/sbin/nologin
-systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
-dbus:x:81:81:System message bus:/:/sbin/nologin
-polkitd:x:998:997:User for polkitd:/:/sbin/nologin
-tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
-sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-postfix:x:89:89::/var/spool/postfix:/sbin/nologin
-tcpdump:x:72:72::/:/sbin/nologin
-logadmin:x:1000:1000::/home/logadmin:/sbin/nologin
-loguser:x:1001:1000::/home/loguser:/sbin/nologin
-admin:x:1002:1002::/home/admin:/sbin/nologin
-shared:x:1003:1002::/home/shared:/sbin/nologin
+# 另一种方法是配置防火墙规则
+$ sudo firewall-cmd --permanent --zone=public --add-service=samba
+$ sudo firewall-cmd --reload
 ```
 
-建立samba用户
+2. 关闭 selinux
 
-```
-[root@Linuxidc-Server storage]# smbpasswd -a logadmin
-New SMB password:
-Retype new SMB password:
-Added user logadmin.
-[root@Linuxidc-Server storage]# smbpasswd -a loguser
-New SMB password:
-Retype new SMB password:
-Added user loguser.
-[root@Linuxidc-Server storage]# smbpasswd -a admin
-New SMB password:
-Retype new SMB password:
-Added user admin.
-[root@Linuxidc-Server storage]# smbpasswd -a shared
-New SMB password:
-Retype new SMB password:
-Added user shared.
+```sh
+# 将 /etc/selinux/config 文件中的 SELINUX 设为 disabled
+$ sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+
+# 重启生效
+$ reboot
 ```
 
-更改目录属性
+## 4. 参考资料
 
-```
-[root@Linuxidc-Server storage]# chown logadmin.logadmin logger
-[root@Linuxidc-Server storage]# chown admin.admin shared
-[root@Linuxidc-Server storage]# chmod -R 777 logger
-[root@Linuxidc-Server storage]# chmod -R 777 shared
-```
-
-#### 启动 samba 服务
-
-1. 配置
-
-以下就是一个可用的 `/etc/samba/smb.conf` 配置
-
-```
-#============================ Global Definitions ==============================
-
-[global]
-	workgroup = MYGROUP
-	server string = Samba Server
-	security = share
-	passdb backend = tdbsam
-	load printers = yes
-	cups options = raw
-
-#============================ Share Definitions ==============================
-
-[homes]
-	comment = Home Directories
-	browseable = no
-	writable = yes
-
-[printers]
-	comment = All Printers
-	path = /var/spool/samba
-	browseable = no
-	guest ok = no
-	writable = no
-	printable = yes
-
-[public]
-	comment = public stuffs
-	path = /home/public
-	writable = yes
-	printable = no
-	browseable = yes
-	read only = no
-	public = yes
-	guest ok = yes
-
-```
-
-2. 启动服务
-
-* CentOS 6、Ubuntu 启动方式
-
-执行以下命令：
-
-```
-sudo service samba restart # 启动 samba
-```
-
-* CentOS 7 启动方式
-
-```
-systemctl start smb.service # 启动 samba
-systemctl enable smb.service # 激活
-systemctl status smb.service # 查询 samba 状态（启动 samba 前后可以用查询验证）
-```
-
-* 脚本命令启动方式
-
-```
-/etc/init.d/smb restart
-```
-
-## FAQ
-
-如果在 windows 访问 samba 路径，执行写操作时，出现 `目标文件夹访问被拒绝` 错误。
-
-解决方法：为共享的目录分配写权限
-
-例：将 samba 共享路径 `/home/public` 设为可读可写可执行
-
-```
-chmod -r 777 /home/public
-```
-
-## 资料
-
-http://blog.51cto.com/yuanbin/115761
+- http://blog.51cto.com/yuanbin/115761
+- https://www.jianshu.com/p/750be209a6f0
+- https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Samba.md
