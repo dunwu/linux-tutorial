@@ -19,8 +19,8 @@ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 我选择的是 8.35 版本：http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
 
 ```
-wget -O /opt/software/pcre/pcre-8.35.tar.gz http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
-cd /opt/software/pcre
+wget -O /opt/pcre/pcre-8.35.tar.gz http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
+cd /opt/pcre
 tar zxvf pcre-8.35.tar.gz
 ```
 
@@ -29,7 +29,7 @@ tar zxvf pcre-8.35.tar.gz
 执行以下命令：
 
 ```
-cd /opt/software/pcre/pcre-8.35
+cd /opt/pcre/pcre-8.35
 ./configure
 make && make install
 ```
@@ -49,8 +49,8 @@ make && make install
 我选择的是 1.12.2 版本：http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
 
 ```
-wget -O /opt/software/nginx/nginx-1.12.2.tar.gz http://nginx.org/download/nginx-1.12.2.tar.gz
-cd /opt/software/nginx
+wget -O /opt/nginx/nginx-1.12.2.tar.gz http://nginx.org/download/nginx-1.12.2.tar.gz
+cd /opt/nginx
 tar zxvf nginx-1.12.2.tar.gz
 ```
 
@@ -59,8 +59,8 @@ tar zxvf nginx-1.12.2.tar.gz
 执行以下命令：
 
 ```
-cd /opt/software/nginx/nginx-1.12.2
-./configure --with-http_stub_status_module --with-http_ssl_module --with-pcre=/opt/software/pcre/pcre-8.35
+cd /opt/nginx/nginx-1.12.2
+./configure --with-http_stub_status_module --with-http_ssl_module --with-pcre=/opt/pcre/pcre-8.35
 ```
 
 （3）检验是否安装成功

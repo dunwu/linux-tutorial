@@ -10,11 +10,11 @@
 
 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz
 
-我个人喜欢存放在：`/opt/software/tomcat`
+我个人喜欢存放在：`/opt/tomcat`
 
 ```
-wget -O /opt/software/tomcat/apache-tomcat-8.5.28.tar.gz http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz
-cd /opt/software/tomcat
+wget -O /opt/tomcat/apache-tomcat-8.5.28.tar.gz http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz
+cd /opt/tomcat
 tar zxvf apache-tomcat-8.5.28.tar.gz
 ```
 
@@ -23,14 +23,14 @@ tar zxvf apache-tomcat-8.5.28.tar.gz
 **启动 tomcat 服务**
 
 ```
-cd /opt/software/tomcat/apache-tomcat-8.5.28/bin
+cd /opt/tomcat/apache-tomcat-8.5.28/bin
 ./catalina.sh start
 ```
 
 **停止 tomcat 服务**
 
 ```
-cd /opt/software/tomcat/apache-tomcat-8.5.28/bin
+cd /opt/tomcat/apache-tomcat-8.5.28/bin
 ./catalina.sh stop
 ```
 

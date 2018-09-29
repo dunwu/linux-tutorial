@@ -12,7 +12,7 @@
 
 （2）解压到本地
 
-我个人喜欢存放在：`/opt/software/maven`
+我个人喜欢存放在：`/opt/maven`
 
 （3）设置环境变量
 
@@ -20,7 +20,7 @@
 
 ```
 # MAVEN 的根路径
-export MAVEN_HOME=/opt/software/maven/apache-maven-3.5.2
+export MAVEN_HOME=/opt/maven/apache-maven-3.5.2
 export PATH=\$MAVEN_HOME/bin:\$PATH
 ```
 

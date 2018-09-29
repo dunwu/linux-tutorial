@@ -16,7 +16,7 @@
 
 （2）解压到本地
 
-我个人喜欢存放在：`/opt/software/java`
+我个人喜欢存放在：`/opt/java`
 
 （3）设置环境变量
 
@@ -24,7 +24,7 @@
 
 ```
 # JDK 的根路径
-export JAVA_HOME=/opt/software/java/jdk1.8.0_162
+export JAVA_HOME=/opt/java/jdk1.8.0_162
 export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
 ```

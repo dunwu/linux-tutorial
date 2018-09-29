@@ -10,11 +10,11 @@
 
 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz
 
-我个人喜欢存放在：`/opt/software/redis`
+我个人喜欢存放在：`/opt/redis`
 
 ```
-wget -O /opt/software/redis/redis-4.0.8.tar.gz http://download.redis.io/releases/redis-4.0.8.tar.gz
-cd /opt/software/redis
+wget -O /opt/redis/redis-4.0.8.tar.gz http://download.redis.io/releases/redis-4.0.8.tar.gz
+cd /opt/redis
 tar zxvf redis-4.0.8.tar.gz
 ```
 
@@ -23,7 +23,7 @@ tar zxvf redis-4.0.8.tar.gz
 执行以下命令：
 
 ```
-cd /opt/software/redis/redis-4.0.8
+cd /opt/redis/redis-4.0.8
 make
 ```
 
@@ -32,14 +32,14 @@ make
 **启动 redis 服务**
 
 ```
-cd /opt/software/redis/redis-4.0.8/src
+cd /opt/redis/redis-4.0.8/src
 ./redis-server
 ```
 
 **启动 redis 客户端**
 
 ```
-cd /opt/software/redis/redis-4.0.8/src
+cd /opt/redis/redis-4.0.8/src
 ./redis-cli
 ```
 

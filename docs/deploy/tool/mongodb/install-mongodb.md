@@ -10,11 +10,11 @@
 
 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz
 
-我个人喜欢存放在：`/opt/software/mongodb`
+我个人喜欢存放在：`/opt/mongodb`
 
 ```
-wget -O /opt/software/mongodb/mongodb-linux-x86_64-3.6.3.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz
-cd /opt/software/mongodb
+wget -O /opt/mongodb/mongodb-linux-x86_64-3.6.3.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz
+cd /opt/mongodb
 tar zxvf mongodb-linux-x86_64-3.6.3.tgz
 mv mongodb-linux-x86_64-3.6.3 mongodb-3.6.3
 mkdir -p /data/db
@@ -25,14 +25,14 @@ mkdir -p /data/db
 **启动 mongodb 服务**
 
 ```
-cd /opt/software/mongodb/mongodb-3.6.3/bin
+cd /opt/mongodb/mongodb-3.6.3/bin
 ./mongod --dbpath=/data/db
 ```
 
 **启动 mongodb 客户端**
 
 ```
-cd /opt/software/mongodb/mongodb-3.6.3/bin
+cd /opt/mongodb/mongodb-3.6.3/bin
 ./mongo
 ```
 
