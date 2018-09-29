@@ -9,7 +9,7 @@
 echo -e "\n>>>>>>>>> install tomcat"
 
 # 下载并解压 redis
-root=/opt/software/tomcat
+root=/opt/tomcat
 version=8.5.28
 mkdir -p ${root}
 wget -O ${root}/apache-tomcat-${version}.tar.gz http://archive.apache.org/dist/tomcat/tomcat-8/${version}/bin/apache-tomcat-${version}.tar.gz

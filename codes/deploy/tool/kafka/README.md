@@ -8,4 +8,4 @@ chmod -R 777 install-kafka.sh
 ./install-kafka.sh
 ```
 
-脚本会下载解压 kafka 到 `/opt/software/kafka` 路径下。
+脚本会下载解压 kafka 到 `/opt/kafka` 路径下。

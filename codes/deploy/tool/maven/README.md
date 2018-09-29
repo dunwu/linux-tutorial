@@ -8,4 +8,4 @@ chmod -R 777 install-maven3.sh
 ./install-maven3.sh
 ```
 
-脚本会下载解压 maven 到 `/opt/software/maven` 路径下。
+脚本会下载解压 maven 到 `/opt/maven` 路径下。

@@ -10,7 +10,7 @@ chmod -R 777 install-nginx.sh
 ./install-nginx.sh
 ```
 
-脚本会下载解压 nginx 到 `/opt/software/nginx` 路径下。
+脚本会下载解压 nginx 到 `/opt/nginx` 路径下。
 
 ## Centos 安装 nginx 脚本
 

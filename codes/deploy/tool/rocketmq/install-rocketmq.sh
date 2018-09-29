@@ -9,7 +9,7 @@
 # 下载并解压 rocketmq
 echo -e "\n>>>>>>>>> install rocketmq"
 
-root=/opt/software/rocketmq
+root=/opt/rocketmq
 version=4.2.0
 mkdir -p ${root}
 wget -O ${root}/rocketmq-all-${version}-bin-release.zip http://mirrors.hust.edu.cn/apache/rocketmq/${version}/rocketmq-all-${version}-bin-release.zip

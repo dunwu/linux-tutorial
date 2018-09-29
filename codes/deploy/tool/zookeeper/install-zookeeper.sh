@@ -8,7 +8,7 @@
 
 echo -e "\n>>>>>>>>> install zookeeper"
 
-root=/opt/software/zookeeper
+root=/opt/zookeeper
 version=3.4.12
 mkdir -p ${root}
 wget -O ${root}/zookeeper-${version}.tar.gz http://mirrors.hust.edu.cn/apache/zookeeper/zookeeper-${version}/zookeeper-${version}.tar.gz

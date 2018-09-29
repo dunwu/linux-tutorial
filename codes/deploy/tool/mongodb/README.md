@@ -8,4 +8,4 @@ chmod -R 777 install-mongodb.sh
 ./install-mongodb.sh
 ```
 
-脚本会下载解压 redis 到 `/opt/software/mongodb` 路径下。
+脚本会下载解压 redis 到 `/opt/mongodb` 路径下。

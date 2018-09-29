@@ -53,10 +53,10 @@ app=$1
 oper=$2
 
 version=6.1.1
-ELASTICSEARCH_BIN_PATH=/opt/software/elastic/elasticsearch-${version}/bin
-LOGSTASH_BIN_PATH=/opt/software/elastic/logstash-${version}/bin
-KIBANA_BIN_PATH=/opt/software/elastic/kibana-${version}-linux-x86_64/bin
-FILEBEAT_PATH=/opt/software/elastic/filebeat-${version}-linux-x86_64
+ELASTICSEARCH_BIN_PATH=/opt/elastic/elasticsearch-${version}/bin
+LOGSTASH_BIN_PATH=/opt/elastic/logstash-${version}/bin
+KIBANA_BIN_PATH=/opt/elastic/kibana-${version}-linux-x86_64/bin
+FILEBEAT_PATH=/opt/elastic/filebeat-${version}-linux-x86_64
 
 checkInput
 case ${oper} in

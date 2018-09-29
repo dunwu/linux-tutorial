@@ -10,7 +10,7 @@ chmod -R 777 install-jdk8.sh
 ./install-jdk8.sh
 ```
 
-脚本会下载解压 jdk8 到 `/opt/software/java` 路径下。
+脚本会下载解压 jdk8 到 `/opt/java` 路径下。
 
 ## Centos 安装JDK脚本
 

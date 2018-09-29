@@ -9,5 +9,5 @@
 echo -e "\n>>>>>>>>> install jenkins"
 
 # 下载并解压 jenkins
-mkdir -p /opt/software/jenkins
-wget -O /opt/software/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+mkdir -p /opt/jenkins
+wget -O /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war

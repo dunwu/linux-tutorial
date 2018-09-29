@@ -120,9 +120,9 @@ setPrivilegeForUser() {
 echo -e "\n>>>>>>>>> install elk"
 
 version=6.1.1
-RUBY_SOFTWARE_PATH=/opt/software/ruby
-ELASTIC_SOFTWARE_PATH=/opt/software/elastic
-ELASTIC_SETTINGS_PATH=/opt/software/elastic/settings
+RUBY_SOFTWARE_PATH=/opt/ruby
+ELASTIC_SOFTWARE_PATH=/opt/elastic
+ELASTIC_SETTINGS_PATH=/opt/elastic/settings
 
 init
 

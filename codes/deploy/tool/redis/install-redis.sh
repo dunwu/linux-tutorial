@@ -9,7 +9,7 @@
 echo -e "\n>>>>>>>>> install redis"
 
 # 下载并解压 redis
-root=/opt/software/redis
+root=/opt/redis
 version=4.0.8
 mkdir -p ${root}
 wget -O ${root}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz

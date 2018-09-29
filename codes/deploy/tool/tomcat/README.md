@@ -10,4 +10,4 @@ chmod -R 777 install-tomcat8.sh
 ./install-tomcat8.sh
 ```
 
-脚本会下载解压 tomcat 到 `/opt/software/tomcat` 路径下。
+脚本会下载解压 tomcat 到 `/opt/tomcat` 路径下。

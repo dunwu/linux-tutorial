@@ -8,4 +8,4 @@ chmod -R 777 install-redis.sh
 ./install-redis.sh
 ```
 
-脚本会下载解压 redis 到 `/opt/software/redis` 路径下。
+脚本会下载解压 redis 到 `/opt/redis` 路径下。

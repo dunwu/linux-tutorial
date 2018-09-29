@@ -8,4 +8,4 @@ chmod -R 777 install-zookeeper.sh
 ./install-zookeeper.sh
 ```
 
-脚本会下载解压 zookeeper 到 `/opt/software/zookeeper` 路径下。
+脚本会下载解压 zookeeper 到 `/opt/zookeeper` 路径下。

@@ -10,4 +10,4 @@ chmod -R 777 install-jenkins.sh
 ./install-jenkins.sh
 ```
 
-脚本会下载解压 Jenkins 到 `/opt/software/jenkins` 路径下。
+脚本会下载解压 Jenkins 到 `/opt/jenkins` 路径下。

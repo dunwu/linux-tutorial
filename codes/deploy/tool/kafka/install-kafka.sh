@@ -9,7 +9,7 @@
 # 下载并解压 kafka
 echo -e "\n>>>>>>>>> install kafka"
 
-root=/opt/software/kafka
+root=/opt/kafka
 version=2.11-1.1.0
 mkdir -p ${root}
 wget -O ${root}/kafka_${version}.tgz http://mirrors.shu.edu.cn/apache/kafka/1.1.0/kafka_${version}.tgz

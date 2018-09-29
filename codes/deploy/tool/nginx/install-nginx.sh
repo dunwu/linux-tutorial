@@ -3,7 +3,7 @@
 ###################################################################################
 # 安装 nginx 脚本
 # 适用于所有 linux 发行版本。
-# nginx 会被安装到 /opt/software/nginx 路径。
+# nginx 会被安装到 /opt/nginx 路径。
 # 注意：安装 nginx 需要依赖以下库，需预先安装：
 # zlib zlib-devel gcc-c++ libtool openssl openssl-devel
 # Author: Zhang Peng
@@ -12,12 +12,12 @@
 echo -e "\n>>>>>>>>> install nginx"
 
 # 首先要安装 PCRE，PCRE 作用是让 nginx 支持 Rewrite 功能
-pcreRoot=/opt/software/pcre
+pcreRoot=/opt/pcre
 pcreVersion=8.35
 ./install-pcre.sh ${pcreRoot} ${pcreVersion}
 
 # 下载并解压 nginx
-ngixnRoot=/opt/software/nginx
+ngixnRoot=/opt/nginx
 nginxVersion=1.12.2
 mkdir -p ${ngixnRoot}
 wget -O ${ngixnRoot}/nginx-${nginxVersion}.tar.gz http://nginx.org/download/nginx-${nginxVersion}.tar.gz
