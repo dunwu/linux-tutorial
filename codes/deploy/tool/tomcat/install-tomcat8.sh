@@ -12,6 +12,5 @@ echo -e "\n>>>>>>>>> install tomcat"
 root=/opt/tomcat
 version=8.5.28
 mkdir -p ${root}
-wget -O ${root}/apache-tomcat-${version}.tar.gz http://archive.apache.org/dist/tomcat/tomcat-8/${version}/bin/apache-tomcat-${version}.tar.gz
-cd ${root}
+wget -O ${root}/apache-tomcat-${version}.tar.gz https://archive.apache.org/dist/tomcat/tomcat-8/v${version}/bin/apache-tomcat-${version}.tar.gz
 tar zxvf apache-tomcat-${version}.tar.gz
