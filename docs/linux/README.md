@@ -4,8 +4,7 @@
 
 - [查看 Linux 命令帮助信息](01.查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
 - [Linux 文件目录管理](02.Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
-- [Linux 文件内容查看命令](Linux文件内容查看命令.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`
-- [Linux 文件编辑命令](Linux文件编辑命令.md) - 关键词：`sed`, `vi`
+- [Linux 文件内容查看命令](03.Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`
 - [Linux 文件压缩与解压命令](Linux文件压缩与解压命令.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
 - [Linux 用户管理命令](Linux用户管理命令.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
 - [Linux 系统管理命令](Linux系统管理命令.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`

@@ -156,6 +156,7 @@ echo $difference seconds.
 > mount 命令用于挂载文件系统到指定的挂载点。此命令的最常用于挂载 cdrom，使我们可以访问 cdrom 中的数据，因为你将光盘插入 cdrom 中，Linux 并不会自动挂载，必须使用 Linux mount 命令来手动完成挂载。
 >
 > 参考：http://man.linuxde.net/mount
+> https://blog.csdn.net/weishujie000/article/details/76531924
 
 示例：
 
