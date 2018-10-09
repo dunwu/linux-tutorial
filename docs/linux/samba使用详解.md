@@ -27,12 +27,13 @@ tags:
     - [1.6. 为 samba 添加防火墙规则](#16-为-samba-添加防火墙规则)
     - [1.7. 测试 samba 服务](#17-测试-samba-服务)
     - [1.8. 访问 samba 服务共享的目录](#18-访问-samba-服务共享的目录)
-- [2. 配置说明](#2-配置说明)
+- [2. 配置详解](#2-配置详解)
     - [2.1. samba 默认配置](#21-samba-默认配置)
     - [2.2. 全局参数 [global]](#22-全局参数-global)
     - [2.3. 共享参数 [共享名]](#23-共享参数-共享名)
 - [3. 常见问题](#3-常见问题)
     - [3.1. 你可能没有权限访问网络资源](#31-你可能没有权限访问网络资源)
+    - [3.2. window 下对 samba 的清理操作](#32-window-下对-samba-的清理操作)
 - [4. 参考资料](#4-参考资料)
 
 <!-- /TOC -->
@@ -132,6 +133,9 @@ Added user root.
 
 根据提示输入 samba 用户的密码。当 samba 服务成功安装、启动后，通过 Windows 系统访问机器共享目录时，就要输入这里配置的用户名、密码。
 
+- 查看 samba 服务器中已拥有哪些用户 - `pdbedit -L`
+- 删除 samba 服务中的某个用户 - `smbpasswd -x 用户名`
+
 ### 1.5. 启动 samba 服务
 
 CentOS 6
@@ -183,7 +187,7 @@ Mac：
 
 与 Windows 类似，直接在 Finder 中访问 `smb://<你的ip>/<你的共享路径>` 即可。
 
-## 2. 配置说明
+## 2. 配置详解
 
 ### 2.1. samba 默认配置
 
@@ -456,8 +460,18 @@ $ sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 $ reboot
 ```
 
+### 3.2. window 下对 samba 的清理操作
+
+1. windows 清除访问 samba 局域网密码缓存
+   - 在 dos 窗口中输入 `control userpasswords2` 或者 `control keymgr.dll`，然后【高级】/【密码管理】，删掉保存的该机器密码。
+2. windows 清除连接的 linux 的 samba 服务缓存
+   1. 打开 win 的命令行。
+   2. 输入 net use，就会打印出当前缓存的连接上列表。
+   3. 根据列表，一个个删除连接： net use 远程连接名称 /del；或者一次性全部删除：`net use * /del`。
+
 ## 4. 参考资料
 
 - http://blog.51cto.com/yuanbin/115761
 - https://www.jianshu.com/p/750be209a6f0
 - https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Samba.md
+- https://blog.csdn.net/lan120576664/article/details/50396511
