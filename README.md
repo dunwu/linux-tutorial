@@ -6,14 +6,12 @@
 
 - [查看 Linux 命令帮助信息](docs/linux/01.查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
 - [Linux 文件目录管理](docs/linux/02.Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
-- [Linux 文件内容查看命令](docs/linux/03.Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`
-- [Linux 文件压缩与解压命令](docs/linux/Linux文件压缩与解压命令.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
-- [Linux 用户管理命令](docs/linux/Linux用户管理命令.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
-- [Linux 系统管理命令](docs/linux/Linux系统管理命令.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`
-- [Linux 性能管理命令](docs/linux/Linux性能管理命令.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-- [Linux 进程管理命令](docs/linux/Linux进程管理命令.md) - 关键词：`ps`, `kill`, `systemctl`, `service`, `crontab`
-- [Linux 网络应用命令](docs/linux/Linux网络应用命令.md) - 关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `iptables`
-- [Linux 网络测试命令](docs/linux/Linux网络测试命令.md) - 关键词：`host`, `nslookup`, `nc`/`netcat`, `dig`, `ping`, `traceroute`, `netstat`
+- [Linux 文件内容查看命令](docs/linux/03.Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
+- [Linux 文件压缩和解压](docs/linux/04.Linux文件压缩和解压.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
+- [Linux 用户管理](docs/linux/05.Linux用户管理.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
+- [Linux 系统管理](docs/linux/06.Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
+- [Linux 性能管理](docs/linux/07.Linux性能管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
+- [Linux 网络应用](docs/linux/08.Linux网络应用.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
 - [yum 命令](docs/linux/yum.md)
 - [linux 监控](docs/linux/linux监控.md)
 - [samba 使用详解](docs/linux/samba使用详解.md)
@@ -23,7 +21,7 @@
 
 ### [Python](docs/python.md)
 
-### [Vim](docs/vim/README.md)
+### [Vim](docs/vim.md)
 
 ### [Git](docs/git/README.md)
 

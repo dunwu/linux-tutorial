@@ -7,11 +7,9 @@
 - [Linux 文件内容查看命令](03.Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
 - [Linux 文件压缩和解压](04.Linux文件压缩和解压.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
 - [Linux 用户管理](05.Linux用户管理.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
-- [Linux 系统管理](06.Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`
+- [Linux 系统管理](06.Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
 - [Linux 性能管理](07.Linux性能管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-- [Linux 进程管理命令](Linux进程管理命令.md) - 关键词：`ps`, `kill`, `systemctl`, `service`, `crontab`
-- [Linux 网络应用命令](Linux网络应用命令.md) - 关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `iptables`
-- [Linux 网络测试命令](Linux网络测试命令.md) - 关键词：`host`, `nslookup`, `nc`/`netcat`, `dig`, `ping`, `traceroute`, `netstat`
+- [Linux 网络应用](08.Linux网络应用.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
 - [yum 命令](yum.md)
 - [linux 监控](linux监控.md)
 - [samba 使用详解](samba使用详解.md)
