@@ -73,7 +73,7 @@ cd /opt/nginx/nginx-1.12.2
 
 启动后，访问站点：
 
-![nginx-install.png](nginx-install.png)
+![nginx-install.png](nginx/nginx-install.png)
 
 ## 脚本
 
