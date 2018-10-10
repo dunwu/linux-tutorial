@@ -64,10 +64,12 @@
 - Kafka 安装和配置：| [CODES](codes/deploy/tool/kafka) | [DOCS](docs/deploy/tool/install-kafka.md) |
 - Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/install-maven.md) |
 - Mongodb 安装和配置：| [CODES](codes/deploy/tool/mongodb) | [DOCS](docs/deploy/tool/install-mongodb.md) |
+- Mysql 安装和配置：| [DOCS](docs/deploy/tool/install-mysql.md) |
+- Nexus 安装和配置：| [DOCS](docs/deploy/tool/install-nexus.md) |
 - Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/install-nginx.md) |
 - Nodejs 安装和配置：| [CODES](codes/deploy/tool/nodejs) | [DOCS](docs/deploy/tool/install-nodejs.md) |
 - Redis 安装和配置：| [CODES](codes/deploy/tool/redis) | [DOCS](docs/deploy/tool/install-redis.md) |
 - RocketMQ 安装和配置：| [CODES](codes/deploy/tool/rocketmq) | [DOCS](docs/deploy/tool/install-rocketmq.md) |
+- Svn 安装和配置：| [DOCS](docs/deploy/tool/install-svn.md) |
 - Tomcat 安装和配置：| [CODES](codes/deploy/tool/tomcat) | [DOCS](docs/deploy/tool/install-tomcat.md) |
 - Zookeeper 安装和配置：| [CODES](codes/deploy/tool/zookeeper) | [DOCS](docs/deploy/tool/install-zookeeper.md) |
-- Svn 安装和配置：| [DOCS](docs/deploy/tool/install-svn.md) |

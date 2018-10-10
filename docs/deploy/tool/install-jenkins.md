@@ -1,8 +1,22 @@
 # Jenkins 安装
 
-## 环境要求
+> 环境要求
+>
+> - JDK：JDK7+，官网推荐是 JDK 8
 
-* JDK：最低要求是 JDK 7，官网推荐是 JDK 8
+<!-- TOC depthFrom:2 depthTo:3 -->
+
+- [安装](#安装)
+- [启动](#启动)
+- [脚本](#脚本)
+- [FAQ](#faq)
+    - [登录密码](#登录密码)
+    - [忘记密码](#忘记密码)
+    - [卡在 check 页面](#卡在-check-页面)
+    - [卡在 getting startted 页面](#卡在-getting-startted-页面)
+- [参考资料](#参考资料)
+
+<!-- /TOC -->
 
 ## 安装
 
@@ -12,7 +26,7 @@
 
 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。
 
-我选择的是最新稳定war版本 2.89.4：http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+我选择的是最新稳定 war 版本 2.89.4：http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 我个人喜欢存放在：`/opt/software/jenkins`
 
@@ -61,13 +75,13 @@ nohup java -jar jenkins.war --httpPort=8080 >> nohup.out 2>&1 &
 </securityRealm>
 ```
 
-2.重启Jenkins服务；
+2.重启 Jenkins 服务；
 
 3.进入首页>“系统管理”>“Configure Global Security”；
 
 4.勾选“启用安全”；
 
-5.点选“Jenkins专有用户数据库”，并点击“保存”；
+5.点选“Jenkins 专有用户数据库”，并点击“保存”；
 
 6.重新点击首页>“系统管理”,发现此时出现“管理用户”；
 
@@ -105,8 +119,8 @@ sed -i 's/www.google.com/www.baidu.com/g' /root/.jenkins/updates/default.json
 sed -i '/^<url>/s/.*/<url>http:\/\/mirror.xmission.com\/jenkins\/updates\/update-center.json<\/url>/g' /root/.jenkins/hudson.model.UpdateCenter.xml
 ```
 
-## 资料
+## 参考资料
 
-* https://jenkins.io/doc/pipeline/tour/getting-started/
-* https://www.cnblogs.com/austinspark-jessylu/p/6894944.html
-* http://blog.csdn.net/jlminghui/article/details/54952148
+- https://jenkins.io/doc/pipeline/tour/getting-started/
+- https://www.cnblogs.com/austinspark-jessylu/p/6894944.html
+- http://blog.csdn.net/jlminghui/article/details/54952148

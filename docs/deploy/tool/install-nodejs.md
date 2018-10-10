@@ -1,5 +1,14 @@
 # Nodejs 安装
 
+<!-- TOC depthFrom:2 depthTo:3 -->
+
+- [安装方法](#安装方法)
+    - [先安装 nvm](#先安装-nvm)
+    - [安装 Nodejs](#安装-nodejs)
+- [脚本](#脚本)
+
+<!-- /TOC -->
+
 ## 安装方法
 
 ### 先安装 nvm

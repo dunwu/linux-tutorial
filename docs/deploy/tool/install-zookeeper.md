@@ -1,5 +1,7 @@
 # ZooKeeper 安装部署
 
+> 环境要求：JDK6+
+
 <!-- TOC depthFrom:2 depthTo:3 -->
 
 - [下载解压 ZooKeeper](#下载解压-zookeeper)
@@ -15,8 +17,6 @@
 - **任意 Linux OS** - 支持开发和部署。适合演示应用程序。
 - **Windows OS** - 仅支持开发。
 - **Mac OS** - 仅支持开发。
-
-环境要求：JDK6+
 
 安装步骤如下：
 

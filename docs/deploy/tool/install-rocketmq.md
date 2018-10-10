@@ -10,7 +10,7 @@
 - [关闭服务器](#关闭服务器)
 - [FAQ](#faq)
     - [connect to <172.17.0.1:10909> failed](#connect-to-172170110909-failed)
-- [资料](#资料)
+- [参考资料](#参考资料)
 
 <!-- /TOC -->
 
@@ -117,7 +117,7 @@ brokerIP1 = 10.10.30.63
 nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &
 ```
 
-## 资料
+## 参考资料
 
 - [RocketMQ 官方文档](http://rocketmq.apache.org/docs/quick-start/)
 - [RocketMQ 搭建及刨坑](http://laciagin.me/2017/12/07/RocketMQ%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%88%A8%E5%9D%91/)

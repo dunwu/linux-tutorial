@@ -1,13 +1,24 @@
 # Nexus 安装
 
-> 关键词：maven, nexus
+> 关键词：maven, nexus, settings.xml, pom.xml
 >
-> 部署环境
+> 环境要求：
 >
 > - Nexus 3.13.0
 > - JDK 1.8
 > - Maven 3.5.4
->
+
+<!-- TOC depthFrom:2 depthTo:3 -->
+
+- [下载安装 Nexus](#下载安装-nexus)
+- [启动停止 Nexus](#启动停止-nexus)
+- [使用 Nexus](#使用-nexus)
+    - [配置 settings.xml](#配置-settingsxml)
+    - [配置 pom.xml](#配置-pomxml)
+    - [执行 maven 构建](#执行-maven-构建)
+- [参考资料](#参考资料)
+
+<!-- /TOC -->
 
 ## 下载安装 Nexus
 
@@ -59,7 +70,6 @@ Usage: ./nexus {start|stop|run|run-redirect|status|restart|force-reload}
 > - maven-releases - 存储私有仓库的发行版 jar 包
 > - maven-snapshots - 存储私有仓库的快照版（调试版本） jar 包
 > - maven-public - 私有仓库的公共空间，把上面三个仓库组合在一起对外提供服务，在本地 maven 基础配置 settings.xml 中使用。
->
 
 ## 使用 Nexus
 
@@ -168,7 +178,6 @@ Usage: ./nexus {start|stop|run|run-redirect|status|restart|force-reload}
 >
 > - `<repository>` 和 `<snapshotRepository>` 的 id 必须和 `settings.xml` 配置文件中的 `<server>` 标签中的 id 匹配。
 > - `<url>` 标签的地址需要和 maven 私服的地址匹配。
->
 
 ### 执行 maven 构建
 
