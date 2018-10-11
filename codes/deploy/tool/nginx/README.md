@@ -5,9 +5,7 @@
 使用方法：
 
 ```sh
-wget --no-check-certificate --no-cookies https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/nginx/install-nginx.sh
-chmod -R 777 install-nginx.sh
-./install-nginx.sh
+curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/nginx/install-nginx.sh | bash
 ```
 
 脚本会下载解压 nginx 到 `/opt/nginx` 路径下。
@@ -17,8 +15,6 @@ chmod -R 777 install-nginx.sh
 使用方法：
 
 ```sh
-wget --no-check-certificate --no-cookies https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/jdk/install-nginx-by-yum.sh
-chmod -R 777 install-nginx-by-yum.sh
-./install-nginx-by-yum.sh
+curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/nginx/install-nginx-by-yum.sh | bash
 ```
 

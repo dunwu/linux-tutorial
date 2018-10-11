@@ -3,9 +3,7 @@
 使用方法：
 
 ```sh
-wget --no-check-certificate --no-cookies https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/kafka/install-kafka.sh
-chmod -R 777 install-kafka.sh
-./install-kafka.sh
+curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/kafka/install-kafka.sh | bash
 ```
 
 脚本会下载解压 kafka 到 `/opt/kafka` 路径下。

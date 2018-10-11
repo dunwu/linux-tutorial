@@ -3,9 +3,7 @@
 使用方法：
 
 ```sh
-wget --no-check-certificate --no-cookies https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/rocketmq/install-rocketmq.sh
-chmod -R 777 install-rocketmq.sh
-./install-rocketmq.sh
+curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/rocketmq/install-rocketmq.sh | bash
 ```
 
 脚本会下载解压 RocketMQ 到 `/opt/rocketmq` 路径下。
