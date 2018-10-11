@@ -10,9 +10,9 @@
 - [Linux 文件压缩和解压](docs/linux/04.Linux文件压缩和解压.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
 - [Linux 用户管理](docs/linux/05.Linux用户管理.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
 - [Linux 系统管理](docs/linux/06.Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
-- [Linux 性能管理](docs/linux/07.Linux性能管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-- [Linux 网络管理](docs/linux/08.Linux网络管理.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
-- [yum 命令](docs/linux/yum.md)
+- [Linux 网络管理](docs/linux/07.Linux网络管理.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
+- [Linux 硬件管理](docs/linux/08.Linux硬件管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
+- [Linux 软件管理](docs/linux/09.Linux软件管理.md) - 关键词：`rpm`, `yum`, `apt-get`
 - [samba 使用详解](docs/linux/samba使用详解.md)
 - [命令行的艺术（转载）](docs/linux/命令行的艺术.md)
 
