@@ -15,7 +15,7 @@ if [ ${execode} != 0 ]; then
   echo -e "\n未找到 nvm ，开始安装"
   echo -e "\n>>>>>>>>> install nvm"
   rm -rf ~/.nvm
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   . ~/.nvm/nvm.sh
   nvm --version
 fi
