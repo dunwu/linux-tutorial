@@ -50,7 +50,7 @@ nohup java -jar jenkins.war --httpPort=8080 >> nohup.out 2>&1 &
 
 ## 脚本
 
-| [安装脚本](https://github.com/dunwu/linux/tree/master/codes/deploy/tool/jenkins) |
+| [安装脚本](https://github.com/dunwu/OS/tree/master/codes/deploy/tool/jenkins) |
 
 ## FAQ
 

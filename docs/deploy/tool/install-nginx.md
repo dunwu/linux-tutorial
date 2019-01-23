@@ -88,4 +88,4 @@ cd /opt/nginx/nginx-1.12.2
 
 ## 脚本
 
-| [安装脚本](https://github.com/dunwu/linux/tree/master/codes/deploy/tool/nginx) |
+| [安装脚本](https://github.com/dunwu/OS/tree/master/codes/deploy/tool/nginx) |

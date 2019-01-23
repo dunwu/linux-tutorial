@@ -338,33 +338,33 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 此外，[这里](http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif)还有简体中文版。
 
-![](http://dunwu.test.upcdn.net/images/linux/vim/vim-cheat-sheet.png)
+![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet.png)
 
 ### 3.2. 入门版
 
 基本操作的入门版。[原版出处](https://github.com/ahrencode/Miscellaneous)还有 keynote 版本可供 DIY 以及其他相关有用的 cheatsheet。
 
-![](http://dunwu.test.upcdn.net/images/linux/vim/basic-vim-cheat-sheet.png)
+![](http://dunwu.test.upcdn.net/images/os/vim/basic-vim-cheat-sheet.png)
 
 ### 3.3. 进阶版
 
 下图是 300DPI 的超清大图，另外[查看原文](http://michael.peopleofhonoronly.com/vim/)还有更多版本：黑白，低分辨率，色盲等
 
-![](http://dunwu.test.upcdn.net/images/linux/vim/vim-cheat-sheet-for-programmers.png)
+![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-for-programmers.png)
 
 ### 3.4. 增强版
 
 下图是一个更新时间较新的现代版，含有的信息也更丰富。[原文链接](http://vimcheatsheet.com/)
 
-![](http://dunwu.test.upcdn.net/images/linux/vim/vim-cheat-sheet-02.png)
+![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-02.png)
 
 ### 3.5. 文字版
 
 [原文链接](http://tnerual.eriogerg.free.fr/vimqrc.pdf)
 
-![](http://dunwu.test.upcdn.net/images/linux/vim/vim-cheat-sheet-text-01.png)
+![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-01.png)
 
-![](http://dunwu.test.upcdn.net/images/linux/vim/vim-cheat-sheet-text-02.png)
+![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-02.png)
 
 ## 4. 资料
 

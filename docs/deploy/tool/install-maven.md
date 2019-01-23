@@ -43,4 +43,4 @@ export PATH=\$MAVEN_HOME/bin:\$PATH
 
 以上两种安装方式，我都写了脚本去执行：
 
-| [安装脚本](https://github.com/dunwu/linux/tree/master/codes/deploy/tool/maven) |
+| [安装脚本](https://github.com/dunwu/OS/tree/master/codes/deploy/tool/maven) |

@@ -52,4 +52,4 @@ nvm use 8.9.4
 
 ## 脚本
 
-| [安装脚本](https://github.com/dunwu/linux/tree/master/codes/deploy/tool/nodejs) |
+| [安装脚本](https://github.com/dunwu/OS/tree/master/codes/deploy/tool/nodejs) |
