@@ -5,7 +5,7 @@
 使用方法：
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/jdk/install-jdk8.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/OS/master/codes/deploy/tool/jdk/install-jdk8.sh | bash
 ```
 
 脚本会下载解压 jdk8 到 `/opt/java` 路径下。
@@ -15,9 +15,9 @@ curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/
 使用方法：
 
 ```sh
-wget --no-check-certificate --no-cookies https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/jdk/install-jdk8-by-yum.sh
+wget --no-check-certificate --no-cookies https://raw.githubusercontent.com/dunwu/OS/master/codes/deploy/tool/jdk/install-jdk8-by-yum.sh
 chmod -R 777 install-jdk8-by-yum.sh
 ./install-jdk8-by-yum.sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/tool/jdk/install-jdk8-by-yum.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/OS/master/codes/deploy/tool/jdk/install-jdk8-by-yum.sh | bash
 ```
 脚本会下载解压 jdk8 到 `/usr/lib/jvm/java` 路径下。

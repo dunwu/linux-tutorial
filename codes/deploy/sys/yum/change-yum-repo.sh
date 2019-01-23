@@ -18,7 +18,7 @@ version=`cat /etc/redhat-release | awk '{print substr($4,1,1)}'`
 # 根据发型版本选择相应 yum 镜像
 if [ ${version} == 5 ]; then
   # Cento5 已废弃，只能使用 http://vault.centos.org/ 替换，但由于是国外镜像，速度较慢
-  wget --no-cookie --no-check-certificate -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/dunwu/linux/master/codes/deploy/sys/yum/CentOS-Base.repo
+  wget --no-cookie --no-check-certificate -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/dunwu/OS/master/codes/deploy/sys/yum/CentOS-Base.repo
 
   # 根据实际发型版本情况替换
   detailVersion=`lsb_release -r | awk '{print substr($2,1,3)}'`
