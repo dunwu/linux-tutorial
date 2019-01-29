@@ -1,6 +1,12 @@
 # OS
 
-## 内容
+> 作为研发工程师，谁还没干过点运维的活？:joy:
+>
+> 搞运维，怎么着也得懂点操作系统相关。
+>
+> 本项目，就是本人在日常学习工作中，对于操作系统、运维部署等相关知识的整理。
+
+## :books: 内容
 
 ### [Linux](docs/linux/README.md)
 
@@ -22,55 +28,70 @@
 
 ### [Vim](docs/vim.md)
 
-### [Git](docs/git/README.md)
-
-- [快速指南（quickstart）](docs/git/git-quickstart.md)
-
-#### git 基础篇（basics）
-
-- [安装（installation）](docs/git/basics/git-installation.md)
-- [配置（configuration）](docs/git/basics/git-configuration.md)
-
-#### git 进阶篇（advanced）
-
-- [git-flow 工作流](docs/git/advanced/git-flow.md)
-
-#### git 附录（appendix）
-
-- [常见问题（faq）](docs/git/appendix/git-faq.md)
-- [命令（command）](docs/git/appendix/git-command.md)
-- [资源（resource）](docs/git/appendix/git-resource.md)
-
 ### [Docker](docs/docker/README.md)
 
 ### Windows
 
 - [Windows 工具](docs/windows/Windows工具.md)
 
-## 部署
+## :hammer_and_pick: 常见软件安装/配置/使用指南
 
-> 这里总结了各种软件的安装、配置。并提供基本安装、运行的脚本。
+> :bulb: **说明**
+> 
+> 这里总结了多种常用研发软件的安装、配置、使用指南。并提供基本安装、运行的脚本。
 >
 > [环境部署工具](codes/deploy/README.md) ：适合开发、运维人员，在 [CentOS](https://www.centos.org/) 机器上安装常用命令工具或开发软件。
+> 
+> - *`Scripts`：安装配置脚本，按照说明安装使用即可。*
+> - *`Docs`: 安装配置文档，说明安装的方法以及一些注意事项。*
+> - *`Tutorial`: 教程文档。*
 
-### 常见软件安装配置详述
+#### 研发环境
 
-> _`CODES`：安装配置脚本，按照说明安装使用即可。_
->
-> _`DOCS`: 安装配置文档，说明安装的方法以及一些注意事项。_
+- JDK
+  - | [**`Scripts`**](codes/deploy/tool/jdk) | [**`Docs`**](docs/tool/install-jdk.md) |
+- Maven
+  - | [**`Scripts`**](codes/deploy/tool/maven) | [**`Docs`**](docs/tool/install-maven.md) |
+- Nginx
+  - | [**`Scripts`**](codes/deploy/tool/nginx) | [**`Docs`**](docs/tool/install-nginx.md) | [**`Tutorial`**](https://github.com/dunwu/nginx-tutorial) | 
+- Nodejs
+  - | [**`Scripts`**](codes/deploy/tool/nodejs) | [**`Docs`**](docs/tool/install-nodejs.md) |
+- Tomcat
+  - | [**`Scripts`**](codes/deploy/tool/tomcat) | [**`Docs`**](docs/tool/install-tomcat.md) |
+- Zookeeper
+  - | [**`Scripts`**](codes/deploy/tool/zookeeper) | [**`Docs`**](docs/tool/install-zookeeper.md) |
 
-- JDK 安装和配置：| [CODES](codes/deploy/tool/jdk) | [DOCS](docs/deploy/tool/install-jdk.md) |
-- Jenkins 安装和配置：| [CODES](codes/deploy/tool/jenkins) | [DOCS](docs/deploy/tool/install-jenkins.md) |
-- Kafka 安装和配置：| [CODES](codes/deploy/tool/kafka) | [DOCS](docs/deploy/tool/install-kafka.md) |
-- Maven 安装和配置：| [CODES](codes/deploy/tool/maven) | [DOCS](docs/deploy/tool/install-maven.md) |
-- Mongodb 安装和配置：| [CODES](codes/deploy/tool/mongodb) | [DOCS](https://github.com/dunwu/database/blob/master/docs/mongodb/install-mongodb.md) |
-- Mysql 安装和配置：| [DOCS](https://github.com/dunwu/database/blob/master/docs/mysql/install-mysql.md) |
-- Nexus 安装和配置：| [DOCS](docs/deploy/tool/install-nexus.md) |
-- Nginx 安装和配置：| [CODES](codes/deploy/tool/nginx) | [DOCS](docs/deploy/tool/install-nginx.md) |
-- Nodejs 安装和配置：| [CODES](codes/deploy/tool/nodejs) | [DOCS](docs/deploy/tool/install-nodejs.md) |
-- PostgreSQL 安装和配置：| [DOCS](https://github.com/dunwu/database/blob/master/docs/postgresql.md#安装) |
-- Redis 安装和配置：| [CODES](codes/deploy/tool/redis) | [DOCS](https://github.com/dunwu/database/blob/master/docs/redis/install-redis.md) |
-- RocketMQ 安装和配置：| [CODES](codes/deploy/tool/rocketmq) | [DOCS](docs/deploy/tool/install-rocketmq.md) |
-- Svn 安装和配置：| [DOCS](docs/deploy/tool/install-svn.md) |
-- Tomcat 安装和配置：| [CODES](codes/deploy/tool/tomcat) | [DOCS](docs/deploy/tool/install-tomcat.md) |
-- Zookeeper 安装和配置：| [CODES](codes/deploy/tool/zookeeper) | [DOCS](docs/deploy/tool/install-zookeeper.md) |
+#### 研发工具
+
+- Nexus - Maven 私服。
+  - | [**`Docs`**](docs/tool/install-nexus.md) |
+- Gitlab - Git 代码管理平台。
+- Jenkins - 持续集成和持续交付平台。
+  - | [**`Scripts`**](codes/deploy/tool/jenkins) | [**`Docs`**](docs/tool/install-jenkins.md) |
+- Elastic  -  常被称为 `ELK` ，是 Java 世界最流行的分布式日志解决方案 。 `ELK`  是 Elastic 公司旗下三款产品 [ElasticSearch](https://www.elastic.co/products/elasticsearch) 、[Logstash](https://www.elastic.co/products/logstash) 、[Kibana](https://www.elastic.co/products/kibana) 的首字母组合。
+  - | [**`Tutorial`**](docs/tool/elastic/README.md) |
+
+#### 版本控制
+
+- Git
+  - | [**`Tutorial`**](docs/git/README.md) |
+- Svn
+  - | [**`Docs`**](docs/tool/install-svn.md) |
+
+#### 消息中间件
+
+- Kafka - 应该是 Java 世界最流行的消息中间件了吧。
+  - | [**`Scripts`**](codes/deploy/tool/kafka) | [**`Docs`**](docs/tool/install-kafka.md) |
+- RocketMQ - 阿里巴巴开源的消息中间件。
+  - | [**`Scripts`**](codes/deploy/tool/rocketmq) | [**`Docs`**](docs/tool/install-rocketmq.md) |
+
+#### 数据库
+
+- Mysql - 关系型数据库
+  - | [**`Docs`**](https://github.com/dunwu/database/blob/master/docs/mysql/install-mysql.md) |
+- PostgreSQL - 关系型数据库
+  - | [**`Docs`**](https://github.com/dunwu/database/blob/master/docs/postgresql.md#安装) |
+- Mongodb - Nosql
+  - | [**`Scripts`**](codes/deploy/tool/mongodb) | [**`Docs`**](https://github.com/dunwu/database/blob/master/docs/mongodb/install-mongodb.md) |
+- Redis - Nosql
+  - | [**`Scripts`**](codes/deploy/tool/redis) | [**`Docs`**](https://github.com/dunwu/database/blob/master/docs/redis/install-redis.md) |
