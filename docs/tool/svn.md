@@ -1,4 +1,6 @@
-# Subversion(svn) 安装
+# Svn 安装、配置、使用指南
+
+Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，它采用了分支管理系统。
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
@@ -11,7 +13,7 @@
     - [1.6. 启动关闭 svn](#16-启动关闭-svn)
     - [1.7. 开机自启动 svn 方法](#17-开机自启动-svn-方法)
     - [1.8. svn 客户端访问](#18-svn-客户端访问)
-- [2. 参考资料](#2-参考资料)
+- [2. 引申和引用](#2-引申和引用)
 
 <!-- /TOC -->
 
@@ -137,17 +139,18 @@ $ vi /etc/sysconfig/svnserve
 
 进入 [svn 官方下载地址](https://tortoisesvn.net/downloads.html)，选择合适的版本，下载并安装。
 
-新建一个目录，然后打开鼠标右键菜单，选择 **SVN Checkout**。如下图所示：
-
-![](http://oyz7npk35.bkt.clouddn.com/images/20180920180928200552.png)
+新建一个目录，然后打开鼠标右键菜单，选择 **SVN Checkout**。
 
 在新的窗口，输入地址 `svn://<你的 IP>` 即可，不出意外输入用户名和密码就能连接成功了（这里的用户、密码必须在 passwd 配置文件的清单中）。默认端口 3690，如果你修改了端口，那么要记得加上端口号。如下图所示：
 
-![](http://oyz7npk35.bkt.clouddn.com/images/20180920180928200332.png)
+![](http://dunwu.test.upcdn.net/snap/20190129175443.png)
 
-## 2. 参考资料
+## 2. 引申和引用
 
-- https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
-- https://blog.csdn.net/testcs_dn/article/details/45395645
-- https://www.cnblogs.com/moxiaoan/p/5683743.html
-- https://blog.csdn.net/realghost/article/details/52396648
+- **引申**
+  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
+- **引用**
+  - https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
+  - https://blog.csdn.net/testcs_dn/article/details/45395645
+  - https://www.cnblogs.com/moxiaoan/p/5683743.html
+  - https://blog.csdn.net/realghost/article/details/52396648

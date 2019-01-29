@@ -49,25 +49,25 @@
 #### 研发环境
 
 - JDK
-  - | [**`Scripts`**](codes/deploy/tool/jdk) | [**`Docs`**](docs/tool/install-jdk.md) |
+  - | [**`Scripts`**](codes/deploy/tool/jdk) | [**`Docs`**](docs/tool/jdk.md) |
 - Maven
-  - | [**`Scripts`**](codes/deploy/tool/maven) | [**`Docs`**](docs/tool/install-maven.md) |
+  - | [**`Scripts`**](codes/deploy/tool/maven) | [**`Tutorial`**](https://github.com/dunwu/javastack/tree/master/docs/javatool/build/maven) | 
 - Nginx
-  - | [**`Scripts`**](codes/deploy/tool/nginx) | [**`Docs`**](docs/tool/install-nginx.md) | [**`Tutorial`**](https://github.com/dunwu/nginx-tutorial) | 
+  - | [**`Scripts`**](codes/deploy/tool/nginx)  | [**`Tutorial`**](https://github.com/dunwu/nginx-tutorial) | 
 - Nodejs
-  - | [**`Scripts`**](codes/deploy/tool/nodejs) | [**`Docs`**](docs/tool/install-nodejs.md) |
+  - | [**`Scripts`**](codes/deploy/tool/nodejs) | [**`Docs`**](docs/tool/nodejs.md) |
 - Tomcat
-  - | [**`Scripts`**](codes/deploy/tool/tomcat) | [**`Docs`**](docs/tool/install-tomcat.md) |
+  - | [**`Scripts`**](codes/deploy/tool/tomcat) | [**`Docs`**](docs/tool/tomcat.md) |
 - Zookeeper
-  - | [**`Scripts`**](codes/deploy/tool/zookeeper) | [**`Docs`**](docs/tool/install-zookeeper.md) |
+  - | [**`Scripts`**](codes/deploy/tool/zookeeper) | [**`Docs`**](docs/tool/zookeeper.md) |
 
 #### 研发工具
 
 - Nexus - Maven 私服。
-  - | [**`Docs`**](docs/tool/install-nexus.md) |
+  - | [**`Docs`**](docs/tool/nexus.md) |
 - Gitlab - Git 代码管理平台。
 - Jenkins - 持续集成和持续交付平台。
-  - | [**`Scripts`**](codes/deploy/tool/jenkins) | [**`Docs`**](docs/tool/install-jenkins.md) |
+  - | [**`Scripts`**](codes/deploy/tool/jenkins) | [**`Docs`**](docs/tool/jenkins.md) |
 - Elastic  -  常被称为 `ELK` ，是 Java 世界最流行的分布式日志解决方案 。 `ELK`  是 Elastic 公司旗下三款产品 [ElasticSearch](https://www.elastic.co/products/elasticsearch) 、[Logstash](https://www.elastic.co/products/logstash) 、[Kibana](https://www.elastic.co/products/kibana) 的首字母组合。
   - | [**`Tutorial`**](docs/tool/elastic/README.md) |
 
@@ -75,15 +75,15 @@
 
 - Git
   - | [**`Tutorial`**](docs/git/README.md) |
-- Svn
-  - | [**`Docs`**](docs/tool/install-svn.md) |
+- Svn - Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，它采用了分支管理系统。
+  - | [**`Docs`**](docs/tool/svn.md) |
 
 #### 消息中间件
 
 - Kafka - 应该是 Java 世界最流行的消息中间件了吧。
-  - | [**`Scripts`**](codes/deploy/tool/kafka) | [**`Docs`**](docs/tool/install-kafka.md) |
+  - | [**`Scripts`**](codes/deploy/tool/kafka) | [**`Docs`**](docs/tool/kafka.md) |
 - RocketMQ - 阿里巴巴开源的消息中间件。
-  - | [**`Scripts`**](codes/deploy/tool/rocketmq) | [**`Docs`**](docs/tool/install-rocketmq.md) |
+  - | [**`Scripts`**](codes/deploy/tool/rocketmq) | [**`Docs`**](docs/tool/rocketmq.md) |
 
 #### 数据库
 
