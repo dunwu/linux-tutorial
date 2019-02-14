@@ -7,3 +7,5 @@ curl -o- https://raw.githubusercontent.com/dunwu/OS/master/codes/deploy/tool/mav
 ```
 
 脚本会下载解压 maven 到 `/opt/maven` 路径下。
+
+如果需要使用国内镜像（如 aliyun 镜像）加速，可以使用 settings-aliyun.xml 替换默认 settings.xml
