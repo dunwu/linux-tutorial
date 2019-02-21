@@ -1,4 +1,4 @@
-# Gitlab
+# Gitlab 安装
 
 > 环境：
 >
@@ -15,6 +15,7 @@
 - [自签名证书](#自签名证书)
     - [创建证书](#创建证书)
 - [gitlab 配置](#gitlab-配置)
+- [引申和引用](#引申和引用)
 
 <!-- /TOC -->
 
@@ -75,16 +76,18 @@ docker pull docker.io/gitlab/gitlab-ce
 启动
 
 ```
-docker run --detach \
-     --hostname 127.0.0.1 \
-     --publish 8443:443 --publish 80:80 --publish 2222:22 \
-     --name gitlab \
-     --restart always \
-     --volume /home/gitlab/config:/etc/gitlab \
-     --volume /home/gitlab/logs:/var/log/gitlab \
-     --volume /home/gitlab/data:/var/opt/gitlab \
-     docker.io/gitlab/gitlab-ce:latest
+docker run -d \
+    --hostname gitlab.zp.io \
+    --publish 8443:443 --publish 80:80 --publish 2222:22 \
+    --name gitlab \
+    --restart always \
+    --volume $GITLAB_HOME/config:/etc/gitlab \
+    --volume $GITLAB_HOME/logs:/var/log/gitlab \
+    --volume $GITLAB_HOME/data:/var/opt/gitlab \
+    gitlab/gitlab-ce
 ```
+
+![](http://dunwu.test.upcdn.net/snap/20190131150515.png)
 
 ## 安装 gitlab-ci-multi-runner
 
@@ -289,3 +292,8 @@ sudo cp /etc/gitlab/ssl/gitlab.domain.com.crt /etc/gitlab/trusted-certs/
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 ```
+
+## 引申和引用
+
+- **引申**
+  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

@@ -140,3 +140,8 @@ Topic:my-replicated-topic   PartitionCount:1    ReplicationFactor:3 Configs:
 - leader - 负责指定分区的所有读取和写入的节点。每个节点将成为随机选择的分区部分的领导者。
 - replicas - 是复制此分区日志的节点列表，无论它们是否为领导者，或者即使它们当前处于活动状态。
 - isr - 是“同步”复制品的集合。这是副本列表的子集，该列表当前处于活跃状态并且已经被领导者捕获。
+
+## 引申和引用
+
+- **引申**
+  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

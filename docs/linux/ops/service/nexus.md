@@ -193,8 +193,11 @@ $ mvn clean package -Dmaven.skip.test=true -P zp
 $ mvn clean deploy -Dmaven.skip.test=true -P zp
 ```
 
-## 参考资料
+## 引申和引用
 
-- https://www.cnblogs.com/hoobey/p/6102382.html
-- https://blog.csdn.net/wzygis/article/details/49276779
-- https://blog.csdn.net/clj198606061111/article/details/52200928
+- **引申**
+  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
+- **引用**
+  - https://www.cnblogs.com/hoobey/p/6102382.html
+  - https://blog.csdn.net/wzygis/article/details/49276779
+  - https://blog.csdn.net/clj198606061111/article/details/52200928

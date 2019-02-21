@@ -117,7 +117,10 @@ brokerIP1 = 10.10.30.63
 nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &
 ```
 
-## 参考资料
+## 引申和引用
 
-- [RocketMQ 官方文档](http://rocketmq.apache.org/docs/quick-start/)
-- [RocketMQ 搭建及刨坑](http://laciagin.me/2017/12/07/RocketMQ%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%88%A8%E5%9D%91/)
+- **引申**
+  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
+- **引用**
+  - [RocketMQ 官方文档](http://rocketmq.apache.org/docs/quick-start/)
+  - [RocketMQ 搭建及刨坑](http://laciagin.me/2017/12/07/RocketMQ%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%88%A8%E5%9D%91/)

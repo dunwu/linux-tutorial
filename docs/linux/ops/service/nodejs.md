@@ -53,3 +53,8 @@ nvm use 8.9.4
 ## 脚本
 
 | [安装脚本](https://github.com/dunwu/OS/tree/master/codes/deploy/tool/nodejs) |
+
+## 引申和引用
+
+- **引申**
+  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
