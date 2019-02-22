@@ -3,7 +3,7 @@
 使用方法：
 
 ```sh
-curl -o- https://github.com/dunwu/os-tutorial/blob/master/codes/linux/ops/service/maven/install-maven3.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/maven/install-maven3.sh | bash
 ```
 
 脚本会下载解压 maven 到 `/opt/maven` 路径下。

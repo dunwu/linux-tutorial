@@ -5,7 +5,7 @@
 使用方法：
 
 ```sh
-curl -o- https://github.com/dunwu/os-tutorial/blob/master/codes/linux/ops/service/nginx/install-nginx.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/nginx/install-nginx.sh | bash
 ```
 
 脚本会下载解压 nginx 到 `/opt/nginx` 路径下。
@@ -15,6 +15,6 @@ curl -o- https://github.com/dunwu/os-tutorial/blob/master/codes/linux/ops/servic
 使用方法：
 
 ```sh
-curl -o- https://github.com/dunwu/os-tutorial/blob/master/codes/linux/ops/service/nginx/install-nginx-by-yum.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/nginx/install-nginx-by-yum.sh | bash
 ```
 
