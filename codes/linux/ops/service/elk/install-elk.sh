@@ -7,24 +7,9 @@
 # passwd elk
 
 # 获取当前设备IP
-IP=""
-getDeviceIp() {
-  IP=`ifconfig eth0 | grep "inet" | awk '{ print $2}' | awk -F: '{print $2}'`
-  if [ "$IP" ==  "" ]; then
-      IP=`ifconfig eth0 | grep "inet" | awk '{ print $2}'`
-  fi
-  if [ "$IP" ==  "" ]; then
-      IP=`ifconfig ens32 | grep "inet"|grep "broadcast" | awk '{ print $2}' | awk -F: '{print $1}'`
-  fi
-
-  if [ "${IP}" ==  "" ]; then
-    echo "     "
-    echo " 请输入服务器IP地址................ "
-    echo "     "
-    exit 0
-  else
-    echo "当前设备IP: $IP"
-  fi
+ipaddr='127.0.0.1'
+function getDeviceIp() {
+  ipaddr=$(ip addr | awk '/^[0-9]+: / {}; /inet.*global/ {print gensub(/(.*)\/(.*)/, "\\1", "g", $2)}')
 }
 
 # 检查文件是否存在，不存在则退出脚本

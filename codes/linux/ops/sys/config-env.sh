@@ -6,49 +6,6 @@
 # Author: Zhang Peng
 ###################################################################################
 
-# 获取当前机器 IP
-ip=""
-function getDeviceIp() {
-  ip=`ifconfig eth0 | grep "inet addr" | awk '{ print $2}' | awk -F: '{print $2}'`
-  if [ "$ip" ==  "" ]
-  then
-      ip=`ifconfig ens32 | grep "inet"|grep "broadcast" | awk '{ print $2}' | awk -F: '{print $1}'`
-  fi
-
-  if [ "$ip" ==  "" ]
-  then
-      ip=`echo $1`
-  fi
-
-  if [ "${ip}" ==  "" ]
-    then
-      echo "无法获取IP地址"
-    exit 0
-  fi
-}
-
-function setDNS() {
-getDeviceIp
-host=`hostname`
-cat >> /etc/hosts << EOF
-${ip} ${host}
-EOF
-}
-
-function setNameServer() {
-  echo "添加域名服务器"
-  echo "nameserver 218.2.135.1" >> /etc/resolv.conf
-}
-
-function setNtp() {
-# 时钟同步工具
-yum -y install ntp
-# 同步上海交通大学网络中心NTP服务器
-echo "* 4 * * * /usr/sbin/ntpdate ntp.sjtu.edu.cn > /dev/null 2>&1" >> /var/spool/cron/root
-# 以一个服务器时间为标准定时更新时间（有时需要以公司中的服务器作为标准）
-#echo "*/30 * * * * /usr/local/bin/ntpdate 192.168.16.182" >> /var/spool/cron/root
-}
-
 function setLimit() {
 cat >> /etc/security/limits.conf << EOF
  *  -  nofile  65535
@@ -74,13 +31,6 @@ function closeSelinux() {
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 }
 
-function closeFirewall() {
-  echo "关闭防火墙"
-
-  # see https://www.cnblogs.com/moxiaoan/p/5683743.html
-  systemctl stop firewalld
-  systemctl disable firewalld
-}
 
 function setBootMode() {
   # 1. 停机(记得不要把 initdefault 配置为 0，因为这样会使 Linux 不能启动)
@@ -136,15 +86,13 @@ echo "NETWORKING_IPV6=off" >> /etc/sysconfig/network
 ######################################## MAIN ########################################
 echo -e "\n>>>>>>>>> 配置系统环境"
 
+filepath=$(cd "$(dirname "$0")"; pwd)
+
 # 关闭 selinux
 closeSelinux
 
-# 关闭防火墙
-closeFirewall
-
 # 设置 DNS 服务器和本机 Host
-setNameServer
-setDNS
+${filepath}/set-dns.sh
 
 # 设置时间同步
 setNtp

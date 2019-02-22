@@ -21,6 +21,7 @@
 # 流量工具：iftop、nethogs
 # 抓包工具：tcpdump
 # 压缩工具：unzip、zip
+# 版本控制工具：git
 ###################################################################################
 # 核心工具
 echo -e "\n>>>>>>>>> install coreutils(df、du)"
@@ -81,4 +82,9 @@ echo -e "\n>>>>>>>>> install tcpdump"
 yum install -y tcpdump
 
 # 压缩工具
+echo -e "\n>>>>>>>>> install unzip"
 yum install -y unzip
+
+# 版本控制工具
+echo -e "\n>>>>>>>>> install git"
+yum install -y git
