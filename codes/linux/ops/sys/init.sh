@@ -20,7 +20,7 @@ ${filepath}/yum/change-yum-repo.sh
 ${filepath}/config-env.sh
 
 # 安装命令行工具
-${filepath}/install-cmd-tool.sh
+${filepath}/install-tools.sh
 
 cat << EOF
 ***********************************************************************************

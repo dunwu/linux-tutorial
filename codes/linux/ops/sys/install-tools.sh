@@ -9,19 +9,18 @@
 ###################################################################################
 
 ###################################################################################
-# 执行本脚本后支持的命令工具
+# 执行本脚本后支持的命令工具清单：
 # 核心工具：df、du、chkconfig
-# 网络工具：ifconfig、netstat、route
+# 网络工具：ifconfig、netstat、route、iptables
 # IP工具：ip、ss、ping、tracepath、traceroute
 # DNS工具：dig、host、nslookup、whois
 # 端口工具：lsof、nc、telnet
 # 下载工具：curl、wget
-# 防火墙工具：iptables
 # 编辑工具：emacs、vim
 # 流量工具：iftop、nethogs
 # 抓包工具：tcpdump
 # 压缩工具：unzip、zip
-# 版本控制工具：git
+# 版本控制工具：git、subversion
 ###################################################################################
 # 核心工具
 echo -e "\n>>>>>>>>> install coreutils(df、du)"
@@ -32,6 +31,8 @@ yum install -y chkconfig
 # 网络工具
 echo -e "\n>>>>>>>>> install net-tools(ifconfig、netstat、route)"
 yum install -y net-tools
+echo -e "\n>>>>>>>>> install iptables"
+yum install -y iptables
 
 # IP工具
 echo -e "\n>>>>>>>>> install iputils(ping、tracepath)"
@@ -61,10 +62,6 @@ yum install -y curl
 echo -e "\n>>>>>>>>> install wget"
 yum install -y wget
 
-# 防火墙工具
-echo -e "\n>>>>>>>>> install iptables"
-yum install -y iptables
-
 # 编辑工具
 echo -e "\n>>>>>>>>> install emacs"
 yum install -y emacs
@@ -88,3 +85,5 @@ yum install -y unzip
 # 版本控制工具
 echo -e "\n>>>>>>>>> install git"
 yum install -y git
+echo -e "\n>>>>>>>>> install subversion"
+yum install -y subversion
