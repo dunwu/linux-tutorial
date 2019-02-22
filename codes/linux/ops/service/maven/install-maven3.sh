@@ -28,6 +28,3 @@ source /etc/profile
 echo -e "\n>>>>>>>>> replace /opt/maven/apache-maven-${version}/conf/settings.xml"
 cp /opt/maven/apache-maven-${version}/conf/settings.xml /opt/maven/apache-maven-${version}/conf/settings.xml.bak
 wget -N https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/maven/settings-aliyun.xml -O /opt/maven/apache-maven-${version}/conf/settings.xml
-
-# 回到初始目录
-cd -

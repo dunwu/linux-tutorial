@@ -11,7 +11,7 @@ echo -e "\n>>>>>>>>> install node.js"
 . ~/.nvm/nvm.sh
 nvm --version
 execode=$?
-if [ ${execode} != 0 ]; then
+if [[ ${execode} != 0 ]]; then
   echo -e "\n未找到 nvm ，开始安装"
   echo -e "\n>>>>>>>>> install nvm"
   rm -rf ~/.nvm
