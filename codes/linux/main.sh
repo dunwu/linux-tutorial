@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 ###################################################################################
-# Linux Centos 环境部署脚本
+# Linux CentOS 环境部署脚本
 # Author: Zhang Peng
 ###################################################################################
 
 function printHeadInfo() {
 cat << EOF
 ***********************************************************************************
-* Welcome to using the deployment script for Centos.
+* Welcome to using the deployment script for CentOS.
 * Author: Zhang Peng
 ***********************************************************************************
 EOF
