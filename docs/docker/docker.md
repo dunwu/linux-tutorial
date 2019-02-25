@@ -6,7 +6,7 @@
 >
 > Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/docker/containers-and-vm.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/docker/containers-and-vm.png"/></div><br>
 
 ## [入门篇](docker-quickstart.md)
 

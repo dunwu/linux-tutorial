@@ -40,7 +40,7 @@ CLI 使用 Docker REST API 通过脚本或直接 CLI 命令来控制 Docker 守�
 
 ### 传统虚拟机和 Docker
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/docker/containers-and-vm.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/docker/containers-and-vm.png"/></div><br>
 
 ## 概念
 

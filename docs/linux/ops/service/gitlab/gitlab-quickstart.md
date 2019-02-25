@@ -32,11 +32,11 @@
 
 ## 创建项目
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150658.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150658.png"/></div><br>
 
 输入项目信息，点击 Create project 按钮，在 Gitlab 创建项目。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150759.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150759.png"/></div><br>
 
 ## 克隆项目到本地
 

@@ -25,7 +25,7 @@
 
 进入官方下载地址：https://about.gitlab.com/install/ ，如下图，选择合适的版本。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190129155838.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png"/></div><br>
 
 以 CentOS7 为例：
 
@@ -87,7 +87,7 @@ docker run -d \
     gitlab/gitlab-ce
 ```
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150515.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150515.png"/></div><br>
 
 ## 安装 gitlab-ci-multi-runner
 
@@ -138,7 +138,7 @@ sudo gitlab-runner register
 
 URL 和令牌信息在 Gitlab 的 Runner 管理页面获取：
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190129163100.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129163100.png"/></div><br>
 
 ```
 Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
