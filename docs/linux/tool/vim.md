@@ -177,7 +177,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
    >
    > \> 如果你认为单词是由 blank 字符分隔符，那么你需要使用大写的 E 和 W。（注：程序语句）
    >
-   > ![Word moves example](http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
 
 下面，让我来说说最强的光标移动：
 
@@ -226,7 +226,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `t,` → 到逗号前的第一个字符。逗号可以变成其它字符。
 > - `3fa` → 在当前行查找第三个出现的 a。
 > - `F` 和 `T` → 和 `f` 和 `t` 一样，只不过是相反方向。
->   ![Line moves](http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
 
 还有一个很有用的命令是 `dt"` → 删除所有的内容，直到遇到双引号—— `"。`
 
@@ -248,7 +248,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `v2i)` → 会选择 `map (+) ("foo")`
 > - `v2a)` → 会选择 `(map (+) ("foo"))`
 
-![Text objects selection](http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
 
 #### 块操作: `<C-v>`
 
@@ -259,7 +259,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 - `<C-d>` → 向下移动 (你也可以使用 hjkl 来移动光标，或是使用%，或是别的)
 - `I-- [ESC]` → I 是插入，插入“`--`”，按 ESC 键来为每一行生效。
 
-![Rectangular blocks](http://upload-images.jianshu.io/upload_images/3101171-8b093a0f65707949.gif?imageMogr2/auto-orient/strip)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-8b093a0f65707949.gif?imageMogr2/auto-orient/strip"/></div><br>
 
 在 Windows 下的 vim，你需要使用 `<C-q>` 而不是 `<C-v>` ，`<C-v>` 是拷贝剪贴板。
 
@@ -267,7 +267,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 在 Insert 模式下，你可以输入一个词的开头，然后按 `<C-p>或是<C-n>，自动补齐功能就出现了……`
 
-``![Completion](http://upload-images.jianshu.io/upload_images/3101171-e2ae877e67880ff7.gif?imageMogr2/auto-orient/strip)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e2ae877e67880ff7.gif?imageMogr2/auto-orient/strip"/></div><br>
 
 #### 宏录制： `qa` 操作序列 `q`, `@a`, `@@`
 
@@ -296,7 +296,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 >
 > - 现在做 `100@@` 会创建新的 100 行，并把数据增加到 103.
 
-![Macros](http://upload-images.jianshu.io/upload_images/3101171-f1889f8bca723964.gif?imageMogr2/auto-orient/strip)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f1889f8bca723964.gif?imageMogr2/auto-orient/strip"/></div><br>
 
 #### 可视化选择： `v`,`V`,`<C-v>`
 
@@ -306,7 +306,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 - `<` 或 `>` → 左右缩进
 - `=` → 自动给缩进 （注：这个功能相当强大，我太喜欢了）
 
-![Autoindent](http://upload-images.jianshu.io/upload_images/3101171-fe1e19983fca213f.gif?imageMogr2/auto-orient/strip)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-fe1e19983fca213f.gif?imageMogr2/auto-orient/strip"/></div><br>
 
 在所有被选择的行后加上点东西：
 
@@ -315,7 +315,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 - `$` 到行最后
 - `A`, 输入字符串，按 `ESC。`
 
-![Append to many lines](http://upload-images.jianshu.io/upload_images/3101171-b192601247334c4e.gif?imageMogr2/auto-orient/strip)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b192601247334c4e.gif?imageMogr2/auto-orient/strip"/></div><br>
 
 #### 分屏: `:split` 和 `vsplit`.
 
@@ -326,7 +326,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `<C-w>_` (或 `<C-w>|`) : 最大化尺寸 (<C-w>| 垂直分屏)
 > - `<C-w>+` (或 `<C-w>-`) : 增加尺寸
 
-![Split](http://upload-images.jianshu.io/upload_images/3101171-f329d01e299cb366.gif?imageMogr2/auto-orient/strip)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f329d01e299cb366.gif?imageMogr2/auto-orient/strip"/></div><br>
 
 ## 3. Vim Cheat Sheet
 
@@ -338,33 +338,33 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 此外，[这里](http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif)还有简体中文版。
 
-![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet.png"/></div><br>
 
 ### 3.2. 入门版
 
 基本操作的入门版。[原版出处](https://github.com/ahrencode/Miscellaneous)还有 keynote 版本可供 DIY 以及其他相关有用的 cheatsheet。
 
-![](http://dunwu.test.upcdn.net/images/os/vim/basic-vim-cheat-sheet.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/basic-vim-cheat-sheet.png"/></div><br>
 
 ### 3.3. 进阶版
 
 下图是 300DPI 的超清大图，另外[查看原文](http://michael.peopleofhonoronly.com/vim/)还有更多版本：黑白，低分辨率，色盲等
 
-![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-for-programmers.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-for-programmers.png"/></div><br>
 
 ### 3.4. 增强版
 
 下图是一个更新时间较新的现代版，含有的信息也更丰富。[原文链接](http://vimcheatsheet.com/)
 
-![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-02.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-02.png"/></div><br>
 
 ### 3.5. 文字版
 
 [原文链接](http://tnerual.eriogerg.free.fr/vimqrc.pdf)
 
-![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-01.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-01.png"/></div><br>
 
-![](http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-02.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-02.png"/></div><br>
 
 ## 4. 资料
 

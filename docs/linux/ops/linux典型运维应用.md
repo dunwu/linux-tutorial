@@ -35,12 +35,12 @@ nameserver 8.8.8.8
 
 ```bash
 # 开启防火墙 22 端口
-iptables -I INPUT -p tcp --dport 22 -j accept
+iptables -I INPUT -p tcp --dport 22 -j accept
 
 # 彻底关闭防火墙
-sudo systemctl status firewalld.service
-sudo systemctl stop firewalld.service
-sudo systemctl disable firewalld.service
+sudo systemctl status firewalld.service
+sudo systemctl stop firewalld.service
+sudo systemctl disable firewalld.service
 ```
 
 ## 系统维护

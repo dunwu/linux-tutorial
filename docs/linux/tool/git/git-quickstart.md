@@ -27,11 +27,11 @@ Git 是一个开源的分布式版本控制系统。
 
 这么做最显而易见的缺点是中央服务器的单点故障。如果宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。要是中央服务器的磁盘发生故障，碰巧没做备份，或者备份不够及时，就会有丢失数据的风险。最坏的情况是彻底丢失整个项目的所有历史更改记录。
 
-![img](https://git-scm.com/figures/18333fig0102-tn.png)
+<br><div align="center"><img src="https://git-scm.com/figures/18333fig0102-tn.png"/></div><br>
 
 **分布式版本控制系统**的客户端并不只提取最新版本的文件快照，而是把代码仓库完整地镜像下来。这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。因为每一次的提取操作，实际上都是一次对代码仓库的完整备份。
 
-![img](https://git-scm.com/figures/18333fig0103-tn.png)
+<br><div align="center"><img src="https://git-scm.com/figures/18333fig0103-tn.png"/></div><br>
 
 ### 为什么使用 Git？
 
@@ -79,7 +79,7 @@ Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值�
 
 - **已提交（committed）**
 
-  已提交表示数据已经安全的保存在本地数据库中。 
+  已提交表示数据已经安全的保存在本地数据库中。 
 
 ### 工作区域
 
@@ -107,7 +107,7 @@ Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值�
 
   同理，如果你想同步别人的修改，你需要从远程仓库拉取更新。
 
-![git-theory.png](http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-theory.png)
+<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-theory.png"/></div><br>
 
 ## 安装
 
@@ -149,15 +149,15 @@ git version 1.7.1
 
 ## 配置
 
-Git 自带一个 `git config` 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
+Git 自带一个 `git config` 的工具来帮助设置控制 Git 外观和行为的配置变量。 这些变量存储在三个不同的位置：
 
-1. `/etc/gitconfig` 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果使用带有 `--system` 选项的 `git config` 时，它会从此文件读写配置变量。
-2. `~/.gitconfig` 或 `~/.config/git/config` 文件：只针对当前用户。 可以传递 `--global` 选项让 Git 读写此文件。
-3. 当前使用仓库的 Git 目录中的 `config` 文件（就是 `.git/config`）：针对该仓库。
+1. `/etc/gitconfig` 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果使用带有 `--system` 选项的 `git config` 时，它会从此文件读写配置变量。
+2. `\~/.gitconfig` 或 `\~/.config/git/config` 文件：只针对当前用户。 可以传递 `--global` 选项让 Git 读写此文件。
+3. 当前使用仓库的 Git 目录中的 `config` 文件（就是 `.git/config`）：针对该仓库。
 
-每一个级别覆盖上一级别的配置，所以 `.git/config` 的配置变量会覆盖 `/etc/gitconfig` 中的配置变量。
+每一个级别覆盖上一级别的配置，所以 `.git/config` 的配置变量会覆盖 `/etc/gitconfig` 中的配置变量。
 
-在 Windows 系统中，Git 会查找 `$HOME` 目录下（一般情况下是 `C:\Users\$USER`）的 `.gitconfig` 文件。 Git 同样也会寻找 `/etc/gitconfig` 文件，但只限于 MSys 的根目录下，即安装 Git 时所选的目标位置。
+在 Windows 系统中，Git 会查找 `$HOME` 目录下（一般情况下是 `C:\Users\$USER`）的 `.gitconfig` 文件。 Git 同样也会寻找 `/etc/gitconfig` 文件，但只限于 MSys 的根目录下，即安装 Git 时所选的目标位置。
 
 ### 用户信息
 
@@ -168,7 +168,7 @@ $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 ```
 
-再次强调，如果使用了 `--global` 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 `--global` 选项的命令来配置。
+再次强调，如果使用了 `--global` 选项，那么该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。 当你想针对特定项目使用不同的用户名称与邮件地址时，可以在那个项目目录下运行没有 `--global` 选项的命令来配置。
 
 很多 GUI 工具都会在第一次运行时帮助你配置这些信息。
 
@@ -190,7 +190,7 @@ $ git config --global user.email johndoe@example.com
 
 本节选择性介绍 git 中比较常用的命令行场景。
 
-![git-cheat-sheet.png](http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-cheat-sheet.png)
+<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-cheat-sheet.png"/></div><br>
 
 ### 创建
 
@@ -458,13 +458,13 @@ HTTPS 这种方式要求你每次 push 时都要输入用户名、密码，有�
 
 而 SSH 要求你本地生成证书，然后在你的 Github 账户中注册。第一次配置麻烦是麻烦了点，但是以后就免去了每次 push 需要输入用户名、密码的繁琐。
 
-![image.png](http://upload-images.jianshu.io/upload_images/3101171-66f60822aeb2c21c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-66f60822aeb2c21c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
 
 以下介绍以下，如何生成证书，以及在 Github 中注册。
 
 #### 生成 SSH 公钥
 
-如前所述，许多 Git 服务器都使用 SSH 公钥进行认证。 为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥，必须事先为其生成一份。 这个过程在所有操作系统上都是相似的。 首先，你需要确认自己是否已经拥有密钥。 默认情况下，用户的 SSH 密钥存储在其 `~/.ssh` 目录下。 进入该目录并列出其中内容，你便可以快速确认自己是否已拥有密钥：
+如前所述，许多 Git 服务器都使用 SSH 公钥进行认证。 为了向 Git 服务器提供 SSH 公钥，如果某系统用户尚未拥有密钥，必须事先为其生成一份。 这个过程在所有操作系统上都是相似的。 首先，你需要确认自己是否已经拥有密钥。 默认情况下，用户的 SSH 密钥存储在其 `\~/.ssh` 目录下。 进入该目录并列出其中内容，你便可以快速确认自己是否已拥有密钥：
 
 ```
 $ cd ~/.ssh
@@ -473,7 +473,7 @@ authorized_keys2  id_dsa       known_hosts
 config            id_dsa.pub
 ```
 
-我们需要寻找一对以 `id_dsa` 或 `id_rsa` 命名的文件，其中一个带有 `.pub` 扩展名。 `.pub` 文件是你的公钥，另一个则是私钥。 如果找不到这样的文件（或者根本没有 `.ssh` 目录），你可以通过运行 `ssh-keygen` 程序来创建它们。在 Linux/Mac 系统中，`ssh-keygen` 随 SSH 软件包提供；在 Windows 上，该程序包含于 MSysGit 软件包中。
+我们需要寻找一对以 `id_dsa` 或 `id_rsa` 命名的文件，其中一个带有 `.pub` 扩展名。 `.pub` 文件是你的公钥，另一个则是私钥。 如果找不到这样的文件（或者根本没有 `.ssh` 目录），你可以通过运行 `ssh-keygen` 程序来创建它们。在 Linux/Mac 系统中，`ssh-keygen` 随 SSH 软件包提供；在 Windows 上，该程序包含于 MSysGit 软件包中。
 
 ```
 $ ssh-keygen
@@ -488,9 +488,9 @@ The key fingerprint is:
 d0:82:24:8e:d7:f1:bb:9b:33:53:96:93:49:da:9b:e3 schacon@mylaptop.local
 ```
 
-首先 `ssh-keygen` 会确认密钥的存储位置（默认是 `.ssh/id_rsa`），然后它会要求你输入两次密钥口令。如果你不想在使用密钥时输入口令，将其留空即可。
+首先 `ssh-keygen` 会确认密钥的存储位置（默认是 `.ssh/id_rsa`），然后它会要求你输入两次密钥口令。如果你不想在使用密钥时输入口令，将其留空即可。
 
-现在，进行了上述操作的用户需要将各自的公钥发送给任意一个 Git 服务器管理员（假设服务器正在使用基于公钥的 SSH 验证设置）。 他们所要做的就是复制各自的 `.pub` 文件内容，并将其通过邮件发送。 公钥看起来是这样的：
+现在，进行了上述操作的用户需要将各自的公钥发送给任意一个 Git 服务器管理员（假设服务器正在使用基于公钥的 SSH 验证设置）。 他们所要做的就是复制各自的 `.pub` 文件内容，并将其通过邮件发送。 公钥看起来是这样的：
 
 ```
 $ cat ~/.ssh/id_rsa.pub
@@ -508,7 +508,7 @@ NrRFi9wrf+M7Q== schacon@mylaptop.local
 
 后面，你在克隆你的 Github 项目时使用 SSH 方式即可。
 
-![The key field](https://help.github.chttps://raw.githubusercontent.com/dunwu/design/master/images/refactor/help/settings/ssh-key-paste.png)
+<br><div align="center"><img src="https://help.github.chttps://raw.githubusercontent.com/dunwu/design/master/images/refactor/help/settings/ssh-key-paste.png"/></div><br>
 
 如果觉得我的讲解还不够细致，可以参考：https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
@@ -516,7 +516,7 @@ NrRFi9wrf+M7Q== schacon@mylaptop.local
 
 最后，放一张我总结的脑图总结一下以上的知识点。
 
-![Git.png](http://upload-images.jianshu.io/upload_images/3101171-2044cc669d78eef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2044cc669d78eef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
 
 ## 资料
 

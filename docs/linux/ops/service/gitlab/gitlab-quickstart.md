@@ -12,31 +12,31 @@
 
 3. 打开 **Profile settings**.
 
-   ![Profile settings dropdown](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings.png"/></div><br>
 
 4. 跳转到 **SSH keys** tab 页
 
-   ![SSH Keys](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys.png"/></div><br>
 
 5. 黏贴你的 SSH 公钥内容到 Key 文本框
 
-   ![Paste SSH public key](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_paste_pub.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_paste_pub.png"/></div><br>
 
 6. 为了便于识别，你可以为其命名
 
-   ![SSH key title](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_title.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_title.png"/></div><br>
 
 7. 点击 **Add key** 将 SSH 公钥添加到 GitLab
 
-   ![SSH key single page](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_single_key.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_single_key.png"/></div><br>
 
 ## 创建项目
 
-![](http://dunwu.test.upcdn.net/snap/20190131150658.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150658.png"/></div><br>
 
 输入项目信息，点击 Create project 按钮，在 Gitlab 创建项目。
 
-![](http://dunwu.test.upcdn.net/snap/20190131150759.png)
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150759.png"/></div><br>
 
 ## 克隆项目到本地
 
@@ -44,29 +44,29 @@
 
 拷贝项目地址，然后在本地执行 `git clone <url>`
 
-![1548919326929](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1548919326929.png)
+<br><div align="center"><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1548919326929.png"/></div><br>
 
 ## 创建 Issue
 
 依次点击 **Project’s Dashboard** > **Issues** > **New Issue** 可以新建 Issue
 
-![New issue from the issue list view](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_tracker_list.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_tracker_list.png"/></div><br>
 
 在项目中直接添加 issue
 
-![New issue from the issues list](https://docs.gitlab.com/ce/user/project/issues/img/new_issue.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue.png"/></div><br>
 
 在未关闭 issue 中，点击 **New Issue** 添加 issue
 
-![New issue from an open issue](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_open_issue.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_open_issue.png"/></div><br>
 
 通过项目面板添加 issue
 
-![New issue from a project's dashboard](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_projects_dashboard.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_projects_dashboard.png"/></div><br>
 
 通过 issue 面板添加 issue
 
-![From the issue board](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png)
+<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png"/></div><br>
 
 ## 引申和引用
 

@@ -24,7 +24,7 @@
 
 Docker 使用 C/S 体系结构。Docker 守护进程，负责构建、运行和分发 Docker 容器；Docker 客户端与 Docker 守护进程通信。Docker 客户端和守护进程可以在同一个系统上运行，也可以将 Docker 客户端连接到远程 Docker 守护进程。Docker 客户端和守护进程使用 REST API，并通过 UNIX 套接字或网络接口进行通信。
 
-![https://docs.docker.com/engine/images/architecture.svg](https://docs.docker.com/engine/images/architecture.svg)
+<br><div align="center"><img src="https://docs.docker.com/engine/images/architecture.svg"/></div><br>
 
 ### Docker 守护进程（docker daemon）
 

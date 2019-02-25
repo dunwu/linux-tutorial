@@ -61,7 +61,7 @@ Git 是一个非常优秀的版本控制工具，但是在实际版本管理中�
 
 下面，来介绍一下 git-flow 模型。
 
-![git-flow.png](http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-flow.png)
+<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-flow.png"/></div><br>
 
 `Gitflow`工作流仍然用中央仓库作为所有开发者的交互中心。和其它的工作流一样，开发者在本地工作并`push`分支到要中央仓库中。
 
@@ -73,19 +73,19 @@ Git 是一个非常优秀的版本控制工具，但是在实际版本管理中�
 
 `develop` 分支作为功能的集成分支。
 
-![img](https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-1historical.png)
+<br><div align="center"><img src="https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-1historical.png"/></div><br>
 
 ### 功能分支
 
 每个新功能位于一个自己的分支，这样可以[`push`到中央仓库以备份和协作](https://www.atlassian.com/git/tutorial/remote-repositories#!push)。但功能分支不是从`master`分支上拉出新分支，而是使用`develop`分支作为父分支。当新功能完成时，[合并回`develop`分支](https://www.atlassian.com/git/tutorial/git-branches#!merge)。新功能提交应该从不直接与`master`分支交互。
 
-![img](https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-2feature.png)
+<br><div align="center"><img src="https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-2feature.png"/></div><br>
 
 注意，从各种含义和目的上来看，功能分支加上`develop`分支就是功能分支工作流的用法。但`Gitflow`工作流没有在这里止步。
 
 ### 发布分支
 
-![img](https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-3release.png)
+<br><div align="center"><img src="https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-3release.png"/></div><br>
 
 一旦`develop`分支上有了做一次发布（或者说快到了既定的发布日）的足够功能，就从`develop`分支上`fork`一个发布分支。新建的分支用于开始发布循环，所以从这个时间点开始之后新的功能不能再加到这个分支上 —— 这个分支只应该做`Bug`修复、文档生成和其它面向发布任务。一旦对外发布的工作都完成了，发布分支合并到`master`分支并分配一个版本号打好`Tag`。另外，这些从新建发布分支以来的做的修改要合并回`develop`分支。
 
@@ -98,7 +98,7 @@ Git 是一个非常优秀的版本控制工具，但是在实际版本管理中�
 
 ### 维护分支
 
-![img](https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-4maintenance.png)
+<br><div align="center"><img src="https://raw.githubusercontent.com/quickhack/translations/master/git-workflows-and-tutorials/images/git-workflow-release-cycle-4maintenance.png"/></div><br>
 
 维护分支或说是热修复（`hotfix`）分支用于生成快速给产品发布版本（`production releases`）打补丁，这是唯一可以直接从`master`分支`fork`出来的分支。修复完成，修改应该马上合并回`master`分支和`develop`分支（当前的发布分支），`master`分支应该用新的版本号打好`Tag`。
 
@@ -236,19 +236,19 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 
 #### 使用
 
-- **初始化:** git flow init
-- **开始新Feature:** git flow feature start MYFEATURE
-- **Publish一个Feature(也就是push到远程):** git flow feature publish MYFEATURE
-- **获取Publish的Feature:** git flow feature pull origin MYFEATURE
-- **完成一个Feature:** git flow feature finish MYFEATURE
-- **开始一个Release:** git flow release start RELEASE [BASE]
-- **Publish一个Release:** git flow release publish RELEASE
-- **发布Release:** git flow release finish RELEASE
+- **初始化:** git flow init
+- **开始新Feature:** git flow feature start MYFEATURE
+- **Publish一个Feature(也就是push到远程):** git flow feature publish MYFEATURE
+- **获取Publish的Feature:** git flow feature pull origin MYFEATURE
+- **完成一个Feature:** git flow feature finish MYFEATURE
+- **开始一个Release:** git flow release start RELEASE [BASE]
+- **Publish一个Release:** git flow release publish RELEASE
+- **发布Release:** git flow release finish RELEASE
   别忘了git push --tags
-- **开始一个Hotfix:** git flow hotfix start VERSION [BASENAME]
-- **发布一个Hotfix:** git flow hotfix finish VERSION
+- **开始一个Hotfix:** git flow hotfix start VERSION [BASENAME]
+- **发布一个Hotfix:** git flow hotfix finish VERSION
 
-![git-flow-commands.png](http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-flow-commands.png)
+<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-flow-commands.png"/></div><br>
 
 ### Source Tree
 

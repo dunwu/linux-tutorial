@@ -93,7 +93,7 @@ nohup java -jar jenkins.war --httpPort=8080 >> nohup.out 2>&1 &
 
 **现象**：输入密码后，卡在 check 页面
 
-![jenkins-checking.png](images/jenkins-checking.png)
+<br><div align="center"><img src="images/jenkins-checking.png"/></div><br>
 
 **原因**：jenkins 在安装插件前总是尝试连接 www.google.com，来判断网络是否连通。谷歌的网站在大陆是连不上的，所以会出现这个问题。
 

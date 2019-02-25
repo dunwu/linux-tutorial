@@ -388,7 +388,7 @@ HEAD is now at a13b85e
 
 然后, 正常提交。
 
-Note: Spike solutions are made to analyze or solve the problem. These solutions are used for estimation and discarded once everyone gets clear visualization of the problem. ~ [Wikipedia](https://en.wikipedia.org/wiki/Extreme_programming_practices).
+Note: Spike solutions are made to analyze or solve the problem. These solutions are used for estimation and discarded once everyone gets clear visualization of the problem. \~ [Wikipedia](https://en.wikipedia.org/wiki/Extreme_programming_practices).
 
 ### 我把几个提交(commit)提交到了同一个分支，而这些提交应该分布在不同的分支里
 
@@ -608,7 +608,7 @@ Switched to a new branch 'daves'
 (my-branch)$ git rebase -i master
 ```
 
-如果没有相对的其它分支， 你将不得不相对自己的`HEAD` 进行 rebase。 例如：你想组合最近的两次提交(commit), 你将相对于`HEAD~2` 进行rebase， 组合最近3次提交(commit), 相对于`HEAD~3`, 等等。
+如果没有相对的其它分支， 你将不得不相对自己的`HEAD` 进行 rebase。 例如：你想组合最近的两次提交(commit), 你将相对于`HEAD\~2` 进行rebase， 组合最近3次提交(commit), 相对于`HEAD\~3`, 等等。
 
 ```sh
 (master)$ git rebase -i HEAD~2
@@ -734,7 +734,7 @@ noop
 这意味着你rebase的分支和当前分支在同一个提交(commit)上, 或者 *领先(ahead)* 当前分支。 你可以尝试:
 
 * 检查确保主(master)分支没有问题
-* rebase  `HEAD~2` 或者更早
+* rebase  `HEAD\~2` 或者更早
 
 #### 有冲突的情况
 
@@ -846,7 +846,7 @@ $ git update-ref refs/tags/<tag_name> <hash>
 
 ### 我想给一些Git命令添加别名(alias)
 
-在 OS X 和 Linux 下, 你的 Git的配置文件储存在 ```~/.gitconfig```。我在```[alias]``` 部分添加了一些快捷别名(和一些我容易拼写错误的)，如下:
+在 OS X 和 Linux 下, 你的 Git的配置文件储存在 ```\~/.gitconfig```。我在```[alias]``` 部分添加了一些快捷别名(和一些我容易拼写错误的)，如下:
 
 ```vim
 [alias]
@@ -893,7 +893,7 @@ $ git config --global credential.helper 'cache --timeout=3600'
 
 ```sh
 (master)$ git reflog
-0a2e358 HEAD@{0}: reset: moving to HEAD~2
+0a2e358 HEAD@{0}: reset: moving to HEAD\~2
 0254ea7 HEAD@{1}: checkout: moving from 2.2 to master
 c10f740 HEAD@{2}: checkout: moving from master to 2.2
 ```
