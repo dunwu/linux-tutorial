@@ -119,7 +119,7 @@ sed -i 's/www.google.com/www.baidu.com/g' /root/.jenkins/updates/default.json
 sed -i '/^<url>/s/.*/<url>http:\/\/mirror.xmission.com\/jenkins\/updates\/update-center.json<\/url>/g' /root/.jenkins/hudson.model.UpdateCenter.xml
 ```
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

@@ -141,7 +141,7 @@ Topic:my-replicated-topic   PartitionCount:1    ReplicationFactor:3 Configs:
 - replicas - 是复制此分区日志的节点列表，无论它们是否为领导者，或者即使它们当前处于活动状态。
 - isr - 是“同步”复制品的集合。这是副本列表的子集，该列表当前处于活跃状态并且已经被领导者捕获。
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

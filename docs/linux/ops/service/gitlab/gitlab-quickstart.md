@@ -68,7 +68,7 @@
 
 <br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png"/></div><br>
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

@@ -130,7 +130,7 @@ $ rpm -ivh jdk-8u181-linux-x64.rpm
 
 （4）检验是否安装成功，执行 `java -version` 命令
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

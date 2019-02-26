@@ -15,7 +15,7 @@
 - [自签名证书](#自签名证书)
     - [创建证书](#创建证书)
 - [gitlab 配置](#gitlab-配置)
-- [引申和引用](#引申和引用)
+- [更多内容](#更多内容)
 
 <!-- /TOC -->
 
@@ -293,7 +293,7 @@ sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 ```
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

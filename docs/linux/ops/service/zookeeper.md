@@ -90,7 +90,7 @@ $ bin/zkServer.sh stop
 
 > 本节安装内容参考：[Zookeeper 安装](https://www.w3cschool.cn/zookeeper/zookeeper_installation.html)
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

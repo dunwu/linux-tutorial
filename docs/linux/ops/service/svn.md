@@ -13,7 +13,7 @@ Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，�
     - [1.6. 启动关闭 svn](#16-启动关闭-svn)
     - [1.7. 开机自启动 svn 方法](#17-开机自启动-svn-方法)
     - [1.8. svn 客户端访问](#18-svn-客户端访问)
-- [2. 引申和引用](#2-引申和引用)
+- [2. 更多内容](#2-更多内容)
 
 <!-- /TOC -->
 
@@ -145,7 +145,7 @@ $ vi /etc/sysconfig/svnserve
 
 <br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129175443.png"/></div><br>
 
-## 2. 引申和引用
+## 2. 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

@@ -117,7 +117,7 @@ brokerIP1 = 10.10.30.63
 nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &
 ```
 
-## 引申和引用
+## 更多内容
 
 - **引申**
   - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
