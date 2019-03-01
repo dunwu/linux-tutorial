@@ -1392,7 +1392,6 @@ $ ./function-demo2.sh 10 20
 
 执行 `./variable-demo4.sh hello world` ，然后在脚本中通过 `$1`、`$2` ... 读取第 1 个参数、第 2 个参数。。。
 
-
 ### 8.2. 函数处理参数
 
 另外，还有几个特殊字符用来处理参数：
@@ -1645,7 +1644,7 @@ $ ./my_script
 
 有时我们值需要 debug 脚本的一部分。这种情况下，使用`set`命令会很方便。这个命令可以启用或禁用选项。使用`-`启用选项，`+`禁用选项：
 
-**:keyboard: 『示例源码』** [debug-demo.sh](https://github.com/dunwu/os-tutorial/blob/master/codes/shell/demos/statement/debug-demo.sh)
+**:keyboard: 『示例源码』** [debug-demo.sh](https://github.com/dunwu/os-tutorial/blob/master/codes/shell/demos/debug-demo.sh)
 
 ```bash
 # 开启 debug
