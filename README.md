@@ -33,7 +33,7 @@
 
 #### [Linux 脚本编程](docs/linux/scripts)
 
-- [Shell](docs/linux/scripts/shell.md)
+- [一篇文章让你彻底掌握 shell 语言](docs/linux/scripts/shell.md)
 - [Python](docs/linux/scripts/python.md)
 
 #### [Linux 运维](docs/linux/ops)
