@@ -10,5 +10,5 @@ case ${ITEM} in
   gem) gem install ${PACKAGE} ;;
   pip) pip install ${PACKAGE} ;;
 esac
-break ### 避免无限循环
+break # 避免无限循环
 done

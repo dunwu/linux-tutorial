@@ -12,7 +12,7 @@ fi
 
 echo "x=${x}, y=${y}"
 
-if [[ ${x} -eq ${y} ]];then
+if [[ ${x} -eq ${y} ]]; then
    echo "${x} -eq ${y} : x 等于 y"
 else
    echo "${x} -eq ${y}: x 不等于 y"

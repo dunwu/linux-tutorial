@@ -26,13 +26,13 @@ function checkOsVersion(){
   if(($1 == 1))
   then
     platform=`uname -i`
-    if [[ ${platform} != "x86_64" ]];then
+    if [[ ${platform} != "x86_64" ]]; then
     echo "this script is only for 64bit Operating System !"
     exit 1
     fi
     echo "the platform is ok"
     version=`lsb_release -r |awk '{print substr($2,1,1)}'`
-    if [[ ${version} != 6 ]];then
+    if [[ ${version} != 6 ]]; then
     echo "this script is only for CentOS 6 !"
     exit 1
     fi
