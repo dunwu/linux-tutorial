@@ -1,38 +1,41 @@
 #!/usr/bin/env bash
 
+printHeadInfo() {
+cat << EOF
 ###################################################################################
-# Linux Centos7 设置环境配置脚本（根据需要选择）
-# 注：不了解脚本中配置意图的情况下，不要贸然执行此脚本
+# Linux Centos7 系统配置脚本（根据需要选择）
 # Author: Zhang Peng
 ###################################################################################
 
-function setLimit() {
+EOF
+}
+
+setLimit() {
 cat >> /etc/security/limits.conf << EOF
  *  -  nofile  65535
  *  -  nproc   65535
 EOF
 }
 
-function setLang() {
+setLang() {
 cat > /etc/sysconfig/i18n << EOF
 LANG="zh_CN.UTF-8"
 EOF
 }
 
-function closeShutdownShortkey() {
+closeShutdownShortkey() {
   echo "关闭 Ctrl+Alt+Del 快捷键防止重新启动"
   sed -i 's#exec /sbin/shutdown -r now#\#exec /sbin/shutdown -r now#' /etc/init/control-alt-delete.conf
 }
 
-function closeSelinux() {
+closeSelinux() {
   echo "关闭 selinux"
 
   # see http://blog.51cto.com/13570193/2093299
   sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 }
 
-
-function setBootMode() {
+setBootMode() {
   # 1. 停机(记得不要把 initdefault 配置为 0，因为这样会使 Linux 不能启动)
   # 2. 单用户模式，就像 Win9X 下的安全模式
   # 3. 多用户，但是没有 NFS
@@ -44,7 +47,8 @@ function setBootMode() {
   sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
 }
 
-function configIpv4(){
+# 配置 IPv4
+configIpv4(){
 echo "配置 ipv4"
 
 cat >> /etc/sysctl.conf << EOF
@@ -72,7 +76,8 @@ vm.swappiness=10
 EOF
 }
 
-function closeIpv6() {
+# 关闭 IPv6
+closeIpv6() {
 echo "关闭 ipv6"
 
 cat > /etc/modprobe.d/ipv6.conf << EOF
@@ -83,18 +88,46 @@ EOF
 echo "NETWORKING_IPV6=off" >> /etc/sysconfig/network
 }
 
-######################################## MAIN ########################################
-echo -e "\n>>>>>>>>> 配置系统环境"
+# 入口函数
+main() {
+PS3="请选择要执行的操作："
+select ITEM in "设置 DNS" "设置 NTP" "关闭防火墙" "配置 IPv4" "关闭 IPv6" "全部执行"
+do
 
+case ${ITEM} in
+  "设置 DNS")
+    ${filepath}/set-dns.sh
+  ;;
+  "设置 NTP")
+    ${filepath}/set-ntp.sh
+  ;;
+  "关闭防火墙")
+    ${filepath}/stop-firewall.sh
+  ;;
+  "配置 IPv4")
+    configIpv4
+  ;;
+  "关闭 IPv6")
+    closeIpv6
+  ;;
+  "全部执行")
+    ${filepath}/set-dns.sh
+    ${filepath}/set-ntp.sh
+    ${filepath}/stop-firewall.sh
+    configIpv4
+    closeIpv6
+  ;;
+  *)
+    echo -e "输入项不支持！"
+    main
+  ;;
+esac
+break
+done
+}
+
+######################################## MAIN ########################################
 filepath=$(cd "$(dirname "$0")"; pwd)
 
-# 关闭 selinux
-closeSelinux
-
-# 设置 DNS 服务器和本机 Host
-${filepath}/set-dns.sh
-
-# 设置时间同步
-setNtp
-
-echo -e "\n>>>>>>>>> 配置系统环境结束"
+printHeadInfo
+main
