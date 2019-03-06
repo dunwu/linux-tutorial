@@ -45,6 +45,32 @@ sudo systemctl disable firewalld.service
 
 ## 系统维护
 
+### 查看操作系统版本和位数
+
+查看系统版本
+
+```bash
+# 方法一
+cat /etc/redhat-release
+# 方法二
+cat /proc/version
+# 方法三
+uname -a
+# 方法四
+lsb_release -r
+```
+
+查看系统位数：
+
+```bash
+# 方法一
+getconf LONG_BIT
+# 方法二
+file /bin/ls
+# 方法三
+uname -i
+```
+
 ### 使用 NTP 进行时间同步
 
 （1）先安装时钟同步工具 ntp
