@@ -35,3 +35,20 @@ text="hello"
 echo `expr index "${text}" ll`
 # Output:
 # 3
+
+################### 截取关键字左边内容 ###################
+str="feature/1.0.0"
+branch=`echo ${str#feature/}`
+echo "branch is ${branch}"
+
+################### 截取关键字右边内容 ###################
+key=`echo ${str%/1.0.0}`
+echo "key is ${key}"
+
+################### 判断字符串中是否包含子字符串 ###################
+result=$(echo "${str}" | grep "feature/")
+if [[ "$result" != "" ]] ; then
+  echo "feature/ 是 ${str} 的子字符串"
+else
+  echo "feature/ 不是 ${str} 的子字符串"
+fi
