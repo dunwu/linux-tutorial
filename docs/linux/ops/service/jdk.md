@@ -22,13 +22,13 @@ a. 进入 [Java 官网下载页面](https://www.oracle.com/technetwork/java/java
 
 b. 选择需要的版本：
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/images/20180920181010164121.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20180920181010164121.png"/></div><br>
 
 c. 选择对应操作系统的安装包：
 
 Windows 系统选择 exe 安装包；Mac 系统选择 dmp 安装包；Linux 系统选择 tar.gz 压缩包（RedHat 发行版可以安装 rpm 包）。
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/images/20180920181010164308.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20180920181010164308.png"/></div><br>
 
 （2）运行安装包，按提示逐步安装
 

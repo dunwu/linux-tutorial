@@ -181,7 +181,7 @@ Windows：
 
 访问：`\\<你的ip>\<你的共享路径>` ：
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/images/20180920180928161334.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20180920180928161334.png"/></div><br>
 
 Mac：
 

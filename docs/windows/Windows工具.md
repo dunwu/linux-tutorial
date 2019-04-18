@@ -29,7 +29,7 @@
 
 > [Everything](http://www.voidtools.com/) 可以立即在 windows 系统中找到制定名称的文件和文件夹。
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/images/20180920180930174548.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20180920180930174548.png"/></div><br>
 
 ### 1.3. Wox
 
@@ -41,7 +41,7 @@
 
 > [Q-dir](http://www.softpedia.com/get/File-managers/Q-Dir.shtml) 是轻量的文件管理器,特点鲜明,各种布局视图切换灵活,默认四个小窗口组成一个大窗口,操作快捷。
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/images/20180920180930174437.png"/></div><br>
+<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20180920180930174437.png"/></div><br>
 
 ### 1.5. Fences
 
