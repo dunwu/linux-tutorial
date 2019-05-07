@@ -11,15 +11,17 @@ EOF
 
 path=$(cd "$(dirname "$0")"; pwd)
 PS3="Please select script type: "
-select item in "git" "jdk" "maven" "nodejs" "redis"
+select item in "git" "zsh" "jdk" "maven" "nodejs" "redis" "tomcat"
 do
 path=$(cd "$(dirname "$0")"; pwd)
 case ${item} in
   "git") yum install -y git ;;
+  "zsh") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash ;;
   "jdk") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash ;;
-  "maven") wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash ;;
+  "maven") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash ;;
   "nodejs") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash ;;
   "redis") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash ;;
+  "tomcat") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash ;;
   *)
     echo -e "输入项不支持！"
     main

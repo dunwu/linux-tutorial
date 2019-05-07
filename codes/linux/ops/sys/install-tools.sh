@@ -3,7 +3,7 @@
 cat << EOF
 ###################################################################################
 # 安装基本的命令工具
-# Author: Zhang Peng
+# @author: Zhang Peng
 #
 # 如果不知道某个命令工具是由哪个包提供的，使用 yum provides xxx
 # 或 yum whatprovides xxx 来查找

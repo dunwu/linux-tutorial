@@ -6,7 +6,7 @@
 # nginx 会被安装到 /opt/nginx 路径。
 # 注意：安装 nginx 需要依赖以下库，需预先安装：
 # zlib zlib-devel gcc-c++ libtool openssl openssl-devel
-# Author: Zhang Peng
+# @author: Zhang Peng
 ###################################################################################
 
 echo -e "\n>>>>>>>>> install nginx"

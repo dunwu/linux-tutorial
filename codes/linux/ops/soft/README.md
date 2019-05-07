@@ -1,5 +1,20 @@
 # 服务安装配置
 
+## oh-my-zsh 安装
+
+说明：
+
+安装 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+使用方法：
+
+执行以下任意命令即可执行安装脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash
+```
+
 ## JDK8 安装
 
 说明：
