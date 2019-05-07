@@ -27,4 +27,4 @@ source /etc/profile
 # 备份并替换 settings.xml，使用 aliyun 镜像加速 maven
 echo -e "\n>>>>>>>>> replace /opt/maven/apache-maven-${version}/conf/settings.xml"
 cp /opt/maven/apache-maven-${version}/conf/settings.xml /opt/maven/apache-maven-${version}/conf/settings.xml.bak
-wget -N https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/maven/settings-aliyun.xml -O /opt/maven/apache-maven-${version}/conf/settings.xml
+wget -N https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven/settings-aliyun.xml -O /opt/maven/apache-maven-${version}/conf/settings.xml

@@ -5,7 +5,7 @@
 使用方法：
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jenkins/install-jenkins.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jenkins/install-jenkins.sh | bash
 ```
 
 脚本会下载解压 Jenkins 到 `/opt/jenkins` 路径下。
