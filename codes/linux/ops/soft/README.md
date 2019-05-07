@@ -11,9 +11,26 @@ JDK8 会被安装到 `/usr/lib/jvm/java` 路径。
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jdk8-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jdk8-install.sh | bash
 ```
+
+## Maven 安装
+
+说明：
+
+- 脚本会下载解压 maven3 到 `/opt/maven` 路径下。
+- 备份并替换 `settings.xml`，使用 aliyun 镜像加速 maven。
+
+使用方法：
+
+执行以下任意命令即可执行安装脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash
+```
+
 
 ## Redis 安装
 
@@ -26,8 +43,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/redis-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/redis-install.sh | bash
 ```
 
 

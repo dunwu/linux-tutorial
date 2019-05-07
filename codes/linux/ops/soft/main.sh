@@ -1,26 +1,24 @@
 #!/usr/bin/env bash
 
-# 打印头部信息
-printHeadInfo() {
 cat << EOF
 
 ***********************************************************************************
-* 欢迎使用 Linux CentOS 服务安装配置脚本
+* 欢迎使用 Linux CentOS 软件安装配置脚本
 * Author: Zhang Peng
 ***********************************************************************************
 
 EOF
-}
 
-main() {
+path=$(cd "$(dirname "$0")"; pwd)
 PS3="Please select script type: "
 select item in "git" "jdk" "maven"
 do
 path=$(cd "$(dirname "$0")"; pwd)
 case ${item} in
   "git") yum install -y git ;;
-  "jdk") ${path}/jdk/install-jdk8.sh ;;
-  "maven") ${path}/maven/install-maven3.sh ;;
+  "jdk") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jdk8-install.sh | bash ;;
+  "maven") wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash ;;
+  "redis") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/redis-install.sh | bash ;;
   *)
     echo -e "输入项不支持！"
     main
@@ -28,12 +26,4 @@ case ${item} in
 esac
 break
 done
-}
 
-filepath=$(cd "$(dirname "$0")"; pwd)
-
-######################################## MAIN ########################################
-path=$(cd "$(dirname "$0")"; pwd)
-
-printHeadInfo
-main
