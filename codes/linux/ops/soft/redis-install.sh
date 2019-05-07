@@ -28,7 +28,7 @@ mkdir -p ${root}
 wget -O ${root}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz
 
 echo -e "\n>>>>>>>>> install redis"
-tar zxvf ${root}/redis-${version}.tar.gz -C ${root}
+tar zxf ${root}/redis-${version}.tar.gz -C ${root}
 cd ${root}/redis-${version}
 make & make install
 cd -

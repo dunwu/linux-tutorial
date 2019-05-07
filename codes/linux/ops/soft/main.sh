@@ -11,7 +11,7 @@ EOF
 
 path=$(cd "$(dirname "$0")"; pwd)
 PS3="Please select script type: "
-select item in "git" "zsh" "jdk" "maven" "nodejs" "redis" "tomcat"
+select item in "git" "zsh" "jdk" "maven" "nodejs" "redis" "tomcat" "kafka" "rocketmq"
 do
 path=$(cd "$(dirname "$0")"; pwd)
 case ${item} in
@@ -22,6 +22,8 @@ case ${item} in
   "nodejs") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash ;;
   "redis") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash ;;
   "tomcat") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash ;;
+  "kafka") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash ;;
+  "rocketmq") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash ;;
   *)
     echo -e "输入项不支持！"
     main

@@ -22,7 +22,7 @@ nginxVersion=1.12.2
 mkdir -p ${ngixnRoot}
 wget -O ${ngixnRoot}/nginx-${nginxVersion}.tar.gz http://nginx.org/download/nginx-${nginxVersion}.tar.gz
 cd ${ngixnRoot}
-tar zxvf nginx-${nginxVersion}.tar.gz
+tar zxf nginx-${nginxVersion}.tar.gz
 
 # 编译
 cd nginx-${nginxVersion}

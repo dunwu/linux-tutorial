@@ -14,7 +14,7 @@ version=3.6.3
 mkdir -p ${root}
 wget -O ${root}/mongodb-linux-x86_64-${version}.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${version}.tgz
 cd ${root}
-tar zxvf mongodb-linux-x86_64-${version}.tgz
+tar zxf mongodb-linux-x86_64-${version}.tgz
 mv mongodb-linux-x86_64-${version} mongodb-${version}
 
 mkdir -p /data/db

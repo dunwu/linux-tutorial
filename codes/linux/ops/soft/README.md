@@ -6,7 +6,7 @@
 
 安装 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-使用方法：
+使用方法
 
 执行以下任意命令即可执行安装脚本。
 
@@ -89,3 +89,30 @@ curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/
 wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
 ```
 
+## Kafka 安装
+
+说明：
+
+下载 kafka `2.2.0` 并解压安装到 `/opt/kafka` 路径下。
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash
+```
+
+## RocketMQ 安装
+
+说明：
+
+下载 rocketmq `4.5.0` 并解压安装到 `/opt/rocketmq` 路径下。
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
+```
+
+脚本会下载解压 kafka 到 `/opt/kafka` 路径下。

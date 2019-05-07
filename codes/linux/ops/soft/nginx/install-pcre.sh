@@ -16,7 +16,7 @@ version=$2
 mkdir -p ${root}
 wget -O ${root}/pcre-${version}.tar.gz http://downloads.sourceforge.net/project/pcre/pcre/${version}/pcre-${version}.tar.gz
 cd ${root}
-tar zxvf pcre-${version}.tar.gz
+tar zxf pcre-${version}.tar.gz
 cd pcre-${version}
 
 # 编译
