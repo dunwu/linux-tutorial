@@ -11,7 +11,7 @@ EOF
 
 path=$(cd "$(dirname "$0")"; pwd)
 PS3="Please select script type: "
-select item in "git" "jdk" "maven"
+select item in "git" "jdk" "maven" "nodejs" "redis"
 do
 path=$(cd "$(dirname "$0")"; pwd)
 case ${item} in
