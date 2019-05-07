@@ -61,6 +61,21 @@ curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/
 wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash
 ```
 
+## MongoDB 安装
+
+说明：
+
+下载 mongodb `4.0.9` 并解压安装到 `/opt/mongodb` 路径下。
+
+使用方法：
+
+执行以下任意命令即可执行安装脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
+```
+
 ## Redis 安装
 
 说明：
@@ -115,4 +130,16 @@ curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/
 wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
 ```
 
-脚本会下载解压 kafka 到 `/opt/kafka` 路径下。
+## ZooKeeper 安装
+
+说明：
+
+下载 zookeeper `3.4.12` 并解压安装到 `/opt/zookeeper` 路径下。
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash
+```
+

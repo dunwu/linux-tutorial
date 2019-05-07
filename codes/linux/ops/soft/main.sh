@@ -11,7 +11,7 @@ EOF
 
 path=$(cd "$(dirname "$0")"; pwd)
 PS3="Please select script type: "
-select item in "git" "zsh" "jdk" "maven" "nodejs" "redis" "tomcat" "kafka" "rocketmq"
+select item in "git" "zsh" "jdk" "maven" "nodejs" "mongodb" "redis" "tomcat" "kafka" "rocketmq" "zookeeper"
 do
 path=$(cd "$(dirname "$0")"; pwd)
 case ${item} in
@@ -20,10 +20,12 @@ case ${item} in
   "jdk") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash ;;
   "maven") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash ;;
   "nodejs") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash ;;
+  "mongodb") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash ;;
   "redis") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash ;;
   "tomcat") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash ;;
   "kafka") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash ;;
   "rocketmq") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash ;;
+  "zookeeper") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash ;;
   *)
     echo -e "输入项不支持！"
     main
