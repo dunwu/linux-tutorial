@@ -10,6 +10,7 @@ cat << EOF
 EOF
 
 path=$(cd "$(dirname "$0")"; pwd)
+main() {
 PS3="Please select script type: "
 select item in "git" "zsh" "jdk" "maven" "nodejs" "mongodb" "redis" "tomcat" "kafka" "rocketmq" "zookeeper"
 do
@@ -33,4 +34,7 @@ case ${item} in
 esac
 break
 done
+}
 
+######################################## MAIN ########################################
+main
