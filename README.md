@@ -21,10 +21,10 @@
 - [Git](docs/linux/tool/git)
 - [Vim](docs/linux/tool/vim.md)
 
-## [Linux 脚本](docs/linux/scripts)
+## [Linux 脚本](docs/lang)
 
-- [一篇文章让你彻底掌握 shell 语言](docs/linux/scripts/shell.md)
-- [一篇文章让你彻底掌握 python 语言](docs/linux/scripts/python.md)
+- [一篇文章让你彻底掌握 shell 语言](docs/lang/shell.md)
+- [一篇文章让你彻底掌握 python 语言](docs/lang/python.md)
 
 ## [Linux 运维](docs/linux/ops)
 

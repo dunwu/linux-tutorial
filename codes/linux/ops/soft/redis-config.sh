@@ -18,3 +18,7 @@ fi
 echo -e "\n>>>>>>>>> config redis"
 cp ${path}/redis.conf ${path}/redis.conf.default
 wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/config/redis-remote-access.conf -O ${path}/redis.conf
+
+echo -e "\n>>>>>>>>> add firewall port"
+firewall-cmd --zone=public --add-port=6379/tcp --permanent
+firewall-cmd --reload
