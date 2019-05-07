@@ -39,3 +39,5 @@ source /etc/profile
 echo -e "\n>>>>>>>>> replace ${path}/conf/settings.xml"
 cp ${path}/conf/settings.xml ${path}/conf/settings.xml.bak
 wget -N https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/config/settings-aliyun.xml -O ${path}/conf/settings.xml
+
+mvn -v

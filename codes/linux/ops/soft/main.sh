@@ -18,6 +18,7 @@ case ${item} in
   "git") yum install -y git ;;
   "jdk") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jdk8-install.sh | bash ;;
   "maven") wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash ;;
+  "nodejs") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash ;;
   "redis") curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/redis-install.sh | bash ;;
   *)
     echo -e "输入项不支持！"
