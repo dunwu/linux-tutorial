@@ -38,6 +38,6 @@ source /etc/profile
 # 备份并替换 settings.xml，使用 aliyun 镜像加速 maven
 echo -e "\n>>>>>>>>> replace ${path}/conf/settings.xml"
 cp ${path}/conf/settings.xml ${path}/conf/settings.xml.bak
-wget -N https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/config/settings-aliyun.xml -O ${path}/conf/settings.xml
+wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/config/settings-aliyun.xml -O ${path}/conf/settings.xml
 
 mvn -v

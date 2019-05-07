@@ -17,4 +17,4 @@ fi
 
 echo -e "\n>>>>>>>>> config redis"
 cp ${path}/redis.conf ${path}/redis.conf.default
-wget -N https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/config/redis-remote-access.conf -O ${path}/redis.conf
+wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/config/redis-remote-access.conf -O ${path}/redis.conf

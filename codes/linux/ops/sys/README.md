@@ -20,8 +20,8 @@
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
 ```
 
 ## 安装基本工具（可选）
@@ -45,8 +45,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/install-tools.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/install-tools.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/install-tools.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/install-tools.sh | bash
 ```
 
 ## 安装常见 lib
@@ -63,8 +63,8 @@ lib 清单（可以根据需要，在 install-libs.sh 中把不需要的工具�
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/install-libs.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/install-libs.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/install-libs.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/install-libs.sh | bash
 ```
 
 ## 关闭防火墙
@@ -72,8 +72,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/stop-firewall.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/stop-firewall.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/stop-firewall.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/stop-firewall.sh | bash
 ```
 
 ## 设置 DNS
@@ -81,8 +81,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/set-dns.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/set-dns.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-dns.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-dns.sh | bash
 ```
 
 ## 设置 ntp
@@ -90,6 +90,6 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/set-ntp.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/set-ntp.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-ntp.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-ntp.sh | bash
 ```

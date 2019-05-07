@@ -90,4 +90,4 @@
 
 ## :door: 传送门
 
-| [回首頁](https://github.com/dunwu/os-tutorial) |
+| [回首頁](https://github.com/dunwu/linux-tutorial) |

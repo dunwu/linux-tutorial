@@ -11,8 +11,8 @@
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/zsh-install.sh | bash
 ```
 
 ## JDK8 安装
@@ -26,8 +26,8 @@ JDK8 会被安装到 `/usr/lib/jvm/java` 路径。
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
 ```
 
 ## Maven 安装配置
@@ -42,8 +42,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/maven-install.sh | bash
 ```
 
 ## Node.js 安装
@@ -57,8 +57,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/nodejs-install.sh | bash
 ```
 
 ## MongoDB 安装
@@ -72,8 +72,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
 ```
 
 ## Redis 安装
@@ -87,8 +87,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
 ```
 
 ## Tomcat8 安装
@@ -100,8 +100,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
 ```
 
 ## Kafka 安装
@@ -113,8 +113,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/kafka-install.sh | bash
 ```
 
 ## RocketMQ 安装
@@ -126,8 +126,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
 ```
 
 ## ZooKeeper 安装
@@ -139,7 +139,7 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/zookeeper-install.sh | bash
 ```
 

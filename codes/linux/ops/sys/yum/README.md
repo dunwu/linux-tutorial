@@ -7,6 +7,6 @@
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/yum/change-yum-repo.sh | bash
 ```
