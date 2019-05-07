@@ -1,6 +1,6 @@
 # 服务安装配置
 
-## JDK 安装
+## JDK8 安装
 
 说明：
 
@@ -11,11 +11,11 @@ JDK8 会被安装到 `/usr/lib/jvm/java` 路径。
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jdk8-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/jdk8-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/jdk8-install.sh | bash
 ```
 
-## Maven 安装
+## Maven 安装配置
 
 说明：
 
@@ -50,15 +50,27 @@ wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux
 
 说明：
 
-下载 redis  `5.0.4` 并解压安装到 `/opt/redis` 路径下。
+下载 redis `5.0.4` 并解压安装到 `/opt/redis` 路径下。
 
 使用方法：
 
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/redis-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/service/redis-install.sh | bash
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
 ```
 
+## Tomcat8 安装
+
+说明：
+
+下载 tomcat `8.5.28` 并解压安装到 `/opt/tomcat` 路径下。
+
+使用方法：
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/os-tutorial/master/codes/linux/ops/soft/tomcat8-install.sh | bash
+```
 
