@@ -91,7 +91,7 @@ b. 键入命令: **java -version**、**java**、**javac** 几个命令，出现�
 
 （2）解压压缩包到本地
 
-```sh
+```bash
 $ tar -zxf jdk-8u162-linux-x64.tar.gz
 ```
 
@@ -99,7 +99,7 @@ $ tar -zxf jdk-8u162-linux-x64.tar.gz
 
 执行 `/etc/profile` 命令，添加以下内容：
 
-```sh
+```bash
 # JDK 的根路径
 export JAVA_HOME=/opt/java/jdk1.8.0_162
 export CLASSPATH=$CLASSPATH:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
@@ -120,7 +120,7 @@ export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
 
 （2）选择一个合适的版本安装
 
-```sh
+```bash
 $ rpm -ivh jdk-8u181-linux-x64.rpm
 ```
 

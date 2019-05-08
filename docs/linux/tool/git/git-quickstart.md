@@ -117,7 +117,7 @@ Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值�
 
 如果你使用的系统是 Debian/Ubuntu ， 安装命令为：
 
-```sh
+```bash
 $ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
 > libz-dev libssl-dev
 $ apt-get install git-core
@@ -129,7 +129,7 @@ git version 1.8.1.2
 
 如果你使用的系统是 Centos/RedHat ，安装命令为：
 
-```sh
+```bash
 $ yum install curl-devel expat-devel gettext-devel \
 > openssl-devel zlib-devel
 $ yum -y install git-core
@@ -196,7 +196,7 @@ $ git config --global user.email johndoe@example.com
 
 #### 克隆一个已创建的仓库
 
-```sh
+```bash
 # 通过 SSH
 $ git clone ssh://user@domain.com/repo.git
 
@@ -206,7 +206,7 @@ $ git clone http://domain.com/user/repo.git
 
 #### 创建一个新的本地仓库
 
-```sh
+```bash
 $ git init
 ```
 
@@ -214,7 +214,7 @@ $ git init
 
 #### 添加修改到暂存区
 
-```sh
+```bash
 # 把指定文件添加到暂存区
 $ git add xxx
 
@@ -227,7 +227,7 @@ $ git add -A
 
 #### 提交修改到本地仓库
 
-```sh
+```bash
 # 提交本地的所有修改
 $ git commit -a
 
@@ -244,7 +244,7 @@ $ git commit -m 'commit message'
 
 官方称之为储藏，但我个人更喜欢称之为存草稿。
 
-```sh
+```bash
 # 1. 将修改作为当前分支的草稿保存
 $ git stash
 
@@ -263,7 +263,7 @@ $ git stash apply stash@{0}
 
 #### 撤销本地修改
 
-```sh
+```bash
 # 移除缓存区的所有文件（i.e. 撤销上次git add）
 $ git reset HEAD
 
@@ -288,7 +288,7 @@ $ git checkout HEAD <file>
 
 ##### 删除添加`.gitignore`文件前错误提交的文件
 
-```sh
+```bash
 $ git rm -r --cached .
 $ git add .
 $ git commit -m "remove xyz file"
@@ -298,13 +298,13 @@ $ git commit -m "remove xyz file"
 
 #### 创建一个新的提交，并回滚到指定版本
 
-```sh
+```bash
 $ git revert <commit-hash>
 ```
 
 #### 彻底删除指定版本
 
-```sh
+```bash
 # 执行下面命令后，commit-hash 提交后的记录都会被彻底删除，使用需谨慎
 $ git reset --hard <commit-hash>
 $ git push -f
@@ -314,7 +314,7 @@ $ git push -f
 
 #### 更新
 
-```sh
+```bash
 # 下载远程端版本，但不合并到HEAD中
 $ git fetch <remote>
 
@@ -327,7 +327,7 @@ $ git pull --rebase <remote> <branch>
 
 #### 推送
 
-```sh
+```bash
 # 将本地版本推送到远程端
 $ git push remote <remote> <branch>
 
@@ -343,19 +343,19 @@ $ git push --tags
 
 #### 显示工作路径下已修改的文件
 
-```sh
+```bash
 $ git status
 ```
 
 #### 显示与上次提交版本文件的不同
 
-```sh
+```bash
 $ git diff
 ```
 
 #### 显示提交历史
 
-```sh
+```bash
 # 从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）
 $ git log
 
@@ -368,7 +368,7 @@ $ git log -p <file>
 
 #### 显示搜索内容
 
-```sh
+```bash
 # 从当前目录的所有文件中查找文本内容
 $ git grep "Hello"
 
@@ -380,7 +380,7 @@ $ git grep "Hello" v2.5
 
 #### 增删查分支
 
-```sh
+```bash
 # 列出所有的分支
 $ git branch
 
@@ -402,7 +402,7 @@ $ git branch -D <branch>
 
 #### 切换分支
 
-```sh
+```bash
 # 切换分支
 $ git checkout <branch>
 
@@ -412,7 +412,7 @@ $ git checkout -b <branch>
 
 #### 标签
 
-```sh
+```bash
 # 给当前版本打标签
 $ git tag <tag-name>
 
@@ -430,14 +430,14 @@ $ git tag -a <tag-name>
 
 #### 合并
 
-```sh
+```bash
 # 将分支合并到当前HEAD中
 $ git merge <branch>
 ```
 
 #### 重置
 
-```sh
+```bash
 # 将当前HEAD版本重置到分支中，请勿重置已发布的提交
 $ git rebase <branch>
 ```

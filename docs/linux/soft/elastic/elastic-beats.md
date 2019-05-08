@@ -208,7 +208,7 @@ filebeat 提供了一系列命令来完成各种功能。
 
 执行命令方式：
 
-```sh
+```bash
 ./filebeat COMMAND
 ```
 
@@ -224,7 +224,7 @@ filebeat 提供了一系列命令来完成各种功能。
 >
 > **示例** 指定配置文件启动
 >
-> ```sh
+> ```bash
 > ./filebeat run -e -c filebeat.yml -d "publish"
 > ./filebeat -e -c filebeat.yml -d "publish" # run 可以省略
 > ```

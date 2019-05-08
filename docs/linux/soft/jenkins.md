@@ -101,7 +101,7 @@ nohup java -jar jenkins.war --httpPort=8080 >> nohup.out 2>&1 &
 
 或者直接执行命令：
 
-```sh
+```bash
 sed -i 's/www.google.com/www.baidu.com/g' /root/.jenkins/updates/default.json
 ```
 
@@ -115,7 +115,7 @@ sed -i 's/www.google.com/www.baidu.com/g' /root/.jenkins/updates/default.json
 
 或者直接执行命令：
 
-```sh
+```bash
 sed -i '/^<url>/s/.*/<url>http:\/\/mirror.xmission.com\/jenkins\/updates\/update-center.json<\/url>/g' /root/.jenkins/hudson.model.UpdateCenter.xml
 ```
 

@@ -60,7 +60,7 @@ samba 服务的配置文件是 `/etc/samba/smb.conf`，如果没有则 samba 无
 
 执行以下命令，编辑配置文件：
 
-```sh
+```bash
 vim /etc/samba/smb.conf
 ```
 
@@ -124,7 +124,7 @@ vim /etc/samba/smb.conf
 
 创建的 samba 用户必须是 Linux 机器上实际存在的用户。
 
-```sh
+```bash
 $ sudo smbpasswd -a root
 New SMB password:
 Retype new SMB password:
@@ -140,14 +140,14 @@ Added user root.
 
 CentOS 6
 
-```sh
+```bash
 $ sudo service samba restart  # 重启 samba
 $ sudo service smb restart    # 重启 samba
 ```
 
 CentOS 7
 
-```sh
+```bash
 $ sudo systemctl start smb.service     # 启动 samba
 $ sudo systemctl restart smb.service   # 重启 samba
 $ sudo systemctl enable smb.service    # 设置开机自动启动
@@ -441,7 +441,7 @@ guest ok = yes
 
 1. 检查是否配置了防火墙规则
 
-```sh
+```bash
 # 一种方法是强行关闭防火墙
 $ sudo service iptables stop
 
@@ -452,7 +452,7 @@ $ sudo firewall-cmd --reload
 
 2. 关闭 selinux
 
-```sh
+```bash
 # 将 /etc/selinux/config 文件中的 SELINUX 设为 disabled
 $ sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 

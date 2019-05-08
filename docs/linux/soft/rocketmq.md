@@ -29,14 +29,14 @@
 
 解压到本地：
 
-```sh
+```bash
 > unzip rocketmq-all-4.2.0-source-release.zip
 > cd rocketmq-all-4.2.0/
 ```
 
 ## 启动 Name Server
 
-```sh
+```bash
 > nohup sh bin/mqnamesrv &
 > tail -f ~/logs/rocketmqlogs/namesrv.log
 The Name Server boot success...
@@ -44,7 +44,7 @@ The Name Server boot success...
 
 ## 启动 Broker
 
-```sh
+```bash
 > nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &
 > tail -f ~/logs/rocketmqlogs/broker.log
 The broker[%s, 172.30.30.233:10911] boot success...
@@ -54,7 +54,7 @@ The broker[%s, 172.30.30.233:10911] boot success...
 
 执行收发消息操作之前，不许告诉客户端命名服务器的位置。在 RocketMQ 中有多种方法来实现这个目的。这里，我们使用最简单的方法——设置环境变量 `NAMESRV_ADDR` ：
 
-```sh
+```bash
 > export NAMESRV_ADDR=localhost:9876
 > sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
 SendResult [sendStatus=SEND_OK, msgId= ...
@@ -65,7 +65,7 @@ ConsumeMessageThread_%d Receive New Messages: [MessageExt...
 
 ## 关闭服务器
 
-```sh
+```bash
 > sh bin/mqshutdown broker
 The mqbroker(36695) is running...
 Send shutdown request to mqbroker(36695) OK
@@ -113,7 +113,7 @@ brokerIP1 = 10.10.30.63
 
 启动时需要指定配置文件
 
-```sh
+```bash
 nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &
 ```
 

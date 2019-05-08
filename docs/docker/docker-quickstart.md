@@ -24,7 +24,7 @@ docker image pull hello-world
 
 （2）查看镜像
 
-```sh
+```bash
 ~ docker image ls
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 hello-world         latest              4ab4c602aa5e        3 months ago        1.84kB

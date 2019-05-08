@@ -108,14 +108,14 @@ Git 是一个非常优秀的版本控制工具，但是在实际版本管理中�
 
 a. 创建develop分支
 
-```sh
+```bash
 git branch develop
 git push -u origin develop    
 ```
 
 b. 开始新Feature开发
 
-```sh
+```bash
 git checkout -b some-feature develop
 # Optionally, push branch to origin:
 git push -u origin some-feature    
@@ -128,7 +128,7 @@ git commit
 
 c. 完成Feature
 
-```sh
+```bash
 git pull origin develop
 git checkout develop
 git merge --no-ff some-feature
@@ -142,7 +142,7 @@ git push origin --delete some-feature
 
 d. 开始Relase
 
-```sh
+```bash
 git checkout -b release-0.1.0 develop
 
 # Optional: Bump version number, commit
@@ -151,7 +151,7 @@ git checkout -b release-0.1.0 develop
 
 e. 完成Release
 
-```sh
+```bash
 git checkout master
 git merge --no-ff release-0.1.0
 git push
@@ -172,13 +172,13 @@ git push --tags
 
 f. 开始Hotfix
 
-```sh
+```bash
 git checkout -b hotfix-0.1.1 master    
 ```
 
 g. 完成Hotfix
 
-```sh
+```bash
 git checkout master
 git merge --no-ff hotfix-0.1.1
 git push

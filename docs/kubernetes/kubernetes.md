@@ -62,7 +62,7 @@ Kubernetes 包含若干抽象用来表示系统状态，包括：已部署的容
 
 ### 客户端配置
 
-```sh
+```bash
 # Setup autocomplete in bash; bash-completion package should be installed first
 source <(kubectl completion bash)
 
@@ -78,7 +78,7 @@ kubectl config set-credentials kubeuser/foo.kubernetes.com --username=kubeuser -
 
 ### 查找资源
 
-```sh
+```bash
 # List all services in the namespace
 kubectl get services
 
@@ -112,7 +112,7 @@ for i in 0 1; do kubectl exec foo-$i -- sh -c 'echo $(hostname) > /usr/share/ngi
 
 ### 资源管理
 
-```sh
+```bash
 # Get documentation for pod or service
 kubectl explain pods,svc
 
@@ -143,7 +143,7 @@ kubectl delete -f ./my-manifest.yaml
 
 ### 监控和日志
 
-```sh
+```bash
 # Deploy Heapster from Github repository
 kubectl create -f deploy/kube-config/standalone/
 

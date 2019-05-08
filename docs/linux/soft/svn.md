@@ -21,13 +21,13 @@ Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，�
 
 ### 1.1. 安装 svn
 
-```sh
+```bash
 $ yum install -y subversion
 ```
 
 ### 1.2. 创建 svn 仓库
 
-```sh
+```bash
 $ mkdir -p /share/svn
 $ svnadmin create /share/svn
 $ ls /share/svn
@@ -42,7 +42,7 @@ conf  db  format  hooks  locks  README.txt
 
 ### 1.3. 配置 svnserve.conf
 
-```sh
+```bash
 $ vim /share/svn/conf/svnserve.conf
 ```
 
@@ -58,7 +58,7 @@ realm = /share/svn      # 认证空间名，版本库所在目录
 
 ### 1.4. 配置 passwd
 
-```sh
+```bash
 $ vim /share/svn/conf/passwd
 ```
 
@@ -73,7 +73,7 @@ user3 = 123456
 
 ### 1.5. 配置 authz
 
-```sh
+```bash
 $ vim /share/svn/conf/authz
 ```
 
@@ -89,7 +89,7 @@ user3 = rw
 
 ### 1.6. 启动关闭 svn
 
-```sh
+```bash
 $ svnserve -d -r /share/svn # 启动 svn
 $ killall svnserve # 关闭 svn
 ```
@@ -102,13 +102,13 @@ $ killall svnserve # 关闭 svn
 
 编辑 `/etc/rc.d/rc.local` 文件：
 
-```sh
+```bash
 $ vi /etc/rc.d/rc.local
 ```
 
 输入以下内容：
 
-```sh
+```bash
 # 开机自动启动 svn，默认端口是 3690
 $ /usr/bin/svnserve -d -r /share/svn --listen-port 3690
 ```
@@ -125,7 +125,7 @@ CentOS 7 中的 `/etc/rc.d/rc.local` 是没有执行权限的，系统建议创�
 
 找到 svn 的 service 配置文件 `/etc/sysconfig/svnserve` 编辑配置文件
 
-```sh
+```bash
 $ vi /etc/sysconfig/svnserve
 ```
 

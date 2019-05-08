@@ -52,7 +52,7 @@ ELK 是 elastic 公司旗下三款产品 [ElasticSearch](https://www.elastic.co/
 
 ELK 要求本地环境中安装了 JDK 。如果不确定是否已安装，可使用下面的命令检查：
 
-```sh
+```bash
 java -version
 ```
 
@@ -127,7 +127,7 @@ can not run elasticsearch as root
 
 **解决方法：**使用非 root 权限账号运行 elasticsearch
 
-```sh
+```bash
 # 创建用户组
 groupadd elk
 # 创建新用户，-g elk 设置其用户组为 elk，-p elk 设置其密码为 elk

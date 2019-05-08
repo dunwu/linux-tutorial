@@ -40,7 +40,7 @@ nameserver 8.8.8.8
 
 firewalld 的基本使用
 
-```sh
+```bash
 启动：systemctl start firewalld
 关闭：systemctl stop firewalld
 查看状态：systemctl status firewalld
@@ -148,7 +148,7 @@ systemctl restart crond.service
 
 执行 `vim /etc/rc.local` 命令，输入以下内容：
 
-```sh
+```bash
 #!/bin/sh
 #
 # This script will be executed *after* all the other init scripts.
@@ -190,7 +190,7 @@ Linux 开机的时候，会加载运行 `/etc/rc.d/init.d` 目录下的程序，
 
 （2）查看当前系统的启动级别
 
-```sh
+```bash
 $ runlevel
 N 3
 ```
@@ -292,7 +292,7 @@ MAILTO=root
 
 设置方法：
 
-```sh
+```bash
 $ sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
 ```
 
