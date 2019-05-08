@@ -20,6 +20,16 @@ if [[ -n $2 ]]; then
   root=$2
 fi
 
+port=6379
+if [[ -n $3 ]]; then
+  port=$3
+fi
+
+password=123456
+if [[ -n $4 ]]; then
+  path=$4
+fi
+
 echo -e "\n>>>>>>>>> install libs"
 yum install -y zlib zlib-devel gcc-c++ libtool openssl openssl-devel tcl
 
@@ -28,7 +38,28 @@ mkdir -p ${root}
 wget -O ${root}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz
 
 echo -e "\n>>>>>>>>> install redis"
+path=${root}/redis-${version}
 tar zxf ${root}/redis-${version}.tar.gz -C ${root}
-cd ${root}/redis-${version}
+cd ${path}
 make && make install
 cd -
+
+echo -e "\n>>>>>>>>> config redis"
+cp ${path}/redis.conf ${path}/redis.conf.default
+wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/config/redis-remote-access.conf -O ${path}/redis.conf
+cp ${path}/redis.conf /etc/redis/${port}.conf
+sed -i "s/^port 6379/port ${port}/g" /etc/redis/${port}.conf
+sed -i "s/^requirepass 123456/requirepass ${password}/g" /etc/redis/${port}.conf
+
+echo -e "\n>>>>>>>>> add firewall port"
+firewall-cmd --zone=public --add-port=${port}/tcp --permanent
+firewall-cmd --reload
+
+echo -e "\n>>>>>>>>> add redis service"
+# 注册 redis 服务，并设置开机自启动
+cp ${path}/utils/redis_init_script /etc/init.d/redis_${port}
+sed -i "s/^REDISPORT=.*/REDISPORT=${port}/g" /etc/init.d/redis_${port}
+chmod +x /etc/init.d/redis_${port}
+chkconfig --add redis_${port}
+service redis_${port} start
+

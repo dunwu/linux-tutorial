@@ -96,13 +96,13 @@ do
 
 case ${ITEM} in
   "设置 DNS")
-    ${filepath}/set-dns.sh
+    curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-dns.sh | bash
   ;;
   "设置 NTP")
-    ${filepath}/set-ntp.sh
+    curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-ntp.sh | bash
   ;;
   "关闭防火墙")
-    ${filepath}/stop-firewall.sh
+    curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/stop-firewall.sh | bash
   ;;
   "配置 IPv4")
     configIpv4
@@ -111,9 +111,9 @@ case ${ITEM} in
     closeIpv6
   ;;
   "全部执行")
-    ${filepath}/set-dns.sh
-    ${filepath}/set-ntp.sh
-    ${filepath}/stop-firewall.sh
+    curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-dns.sh | bash
+    curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/set-ntp.sh | bash
+    curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/sys/stop-firewall.sh | bash
     configIpv4
     closeIpv6
   ;;

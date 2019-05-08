@@ -76,20 +76,38 @@ curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/lin
 wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/mongodb-install.sh | bash
 ```
 
-## Redis 安装
+## Redis 安装配置
 
 说明：
 
-下载 redis `5.0.4` 并解压安装到 `/opt/redis` 路径下。
+- 下载 redis `5.0.4` 并解压安装到 `/opt/redis` 路径下。
+- 替换配置，使得 Redis 可以远程访问，并设置默认密码为 123456。
+- 注册 redis 服务，并设置为开机自启动
 
 使用方法：
 
-执行以下任意命令即可执行安装脚本。
+执行以下任意命令即可按照默认配置安装脚本。
 
 ```sh
 curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
 wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/redis-install.sh | bash
 ```
+
+定制化配置
+
+```sh
+# 下载脚本到本地
+wget https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/redis-install.sh
+chmod +x redis-install.sh
+./redis-install.sh 5.0.4 /opt/redis 6379 123456
+```
+
+说明：
+
+- 第一个参数是 redis 版本号；
+- 第二个参数是 redis 安装路径；
+- 第三个参数是 redis 服务端口号；
+- 第四个参数是访问密码
 
 ## Tomcat8 安装
 

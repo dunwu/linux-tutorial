@@ -6,7 +6,7 @@ cat << EOF
 
 ***********************************************************************************
 * 欢迎使用 Linux CentOS 环境运维脚本
-* Author: Zhang Peng
+* @author: Zhang Peng
 ***********************************************************************************
 
 EOF
@@ -44,22 +44,23 @@ checkOsVersion(){
   fi
 }
 
-# 入口函数
+menus=("配置系统" "安装软件" "退出")
 main() {
-PS3="请选择要执行的脚本分类："
-select item in "配置系统" "安装服务"
+PS3="请输入命令编号："
+select item in ${menus[@]}
 do
 case ${item} in
   "配置系统")
-    ${path}/sys/main.sh
-  ;;
-  "安装服务")
-    ${path}/service/main.sh
-  ;;
+    ./dunwu-sys.sh
+    main ;;
+  "安装软件")
+    ./dunwu-soft.sh
+    main ;;
+  "退出")
+    exit 0 ;;
   *)
-    echo -e "输入项不支持！"
-    main
-  ;;
+    printf "输入项不支持！\n"
+    main ;;
 esac
 break
 done
@@ -67,7 +68,6 @@ done
 
 ######################################## MAIN ########################################
 path=$(cd "$(dirname "$0")"; pwd)
-
 printHeadInfo
 checkOsVersion 0
 main
