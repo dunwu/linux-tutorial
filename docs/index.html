@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>linux-tutorial</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue" />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css" title="buble" disabled />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css" title="pure" disabled />
+    <style>
+      nav.app-nav li ul {
+        min-width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">正在加载...</div>
+    <script>
+      window.$docsify = {
+        auto2top: true,
+        loadNavbar: "navbar.md",
+        name: "linux-tutorial",
+        repo: "https://github.com/dunwu/linux-tutorial",
+        maxLevel: 4,
+        subMaxLevel: 4,
+        formatUpdated: "{MM}/{DD} {HH}:{mm}",
+        pagination: {
+          previousText: "上一章节",
+          nextText: "下一章节",
+          crossChapter: true
+        }
+        // coverpage: true,
+        // 完整配置参数
+      };
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+    <!--代码高亮-->
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
+  </body>
+</html>
