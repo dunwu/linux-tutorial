@@ -10,6 +10,13 @@ cat << EOF
 ###################################################################################
 EOF
 
+command -v java >/dev/null 2>&1 || { echo >&2 "Require java but it's not installed.  Aborting."; exit 1; }
+
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh maven-install.sh [version] [path]"
+    echo -e "Example: sh maven-install.sh 3.6.0 /opt/maven\n"
+fi
+
 version=3.6.0
 if [[ -n $1 ]]; then
   version=$1
@@ -19,6 +26,8 @@ root=/opt/maven
 if [[ -n $2 ]]; then
   root=$2
 fi
+
+echo "Current execution: install maven ${version} to ${root}"
 
 echo -e "\n>>>>>>>>> download maven"
 mkdir -p ${root}

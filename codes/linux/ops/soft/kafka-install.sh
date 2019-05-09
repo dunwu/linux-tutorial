@@ -10,6 +10,11 @@ cat << EOF
 
 EOF
 
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh kafka-install.sh [version] [path]"
+    echo -e "Example: sh kafka-install.sh 2.2.0 /opt/kafka\n"
+fi
+
 version=2.2.0
 if [[ -n $1 ]]; then
   version=$1
@@ -20,6 +25,7 @@ if [[ -n $2 ]]; then
   root=$2
 fi
 
+echo "Current execution: install kafka ${version} to ${root}"
 echo -e "\n>>>>>>>>> download kafka"
 mkdir -p ${root}
 wget -O ${root}/kafka_2.12-${version}.tgz http://mirrors.tuna.tsinghua.edu.cn/apache/kafka/${version}/kafka_2.12-${version}.tgz

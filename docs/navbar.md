@@ -22,3 +22,4 @@
   - [Svn 安装](linux/soft/svn.md)
   - [Tomcat 安装](linux/soft/tomcat.md)
   - [Zookeeper 安装](linux/soft/zookeeper.md)
+  - [Nacos 安装](linux/soft/nacos.md)

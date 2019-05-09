@@ -11,6 +11,8 @@ cat << EOF
 
 EOF
 
+command -v yum >/dev/null 2>&1 || { echo >&2 "Require yum but it's not installed.  Aborting."; exit 1; }
+
 echo -e "\n>>>>>>>>> install jdk8"
 
 yum -y install java-1.8.0-openjdk.x86_64

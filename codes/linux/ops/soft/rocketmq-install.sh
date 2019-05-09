@@ -10,6 +10,11 @@ cat << EOF
 
 EOF
 
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh rocketmq-install.sh [version] [path]"
+    echo -e "Example: sh rocketmq-install.sh 4.5.0 /opt/rocketmq\n"
+fi
+
 version=4.5.0
 if [[ -n $1 ]]; then
   version=$1
@@ -20,9 +25,12 @@ if [[ -n $2 ]]; then
   root=$2
 fi
 
+echo "Current execution: install rocketmq ${version} to ${root}"
 echo -e "\n>>>>>>>>> download rocketmq"
 mkdir -p ${root}
 wget -O ${root}/rocketmq-all-${version}-bin-release.zip http://mirrors.tuna.tsinghua.edu.cn/apache/rocketmq/${version}/rocketmq-all-${version}-bin-release.zip
 
 echo -e "\n>>>>>>>>> install rocketmq"
 unzip -o ${root}/rocketmq-all-${version}-bin-release.zip -d ${root}/rocketmq-all-${version}/
+mv ${root}/rocketmq-all-${version}/rocketmq-all-${version}-bin-release/* ${root}/rocketmq-all-${version}
+rm -rf ${root}/rocketmq-all-${version}/rocketmq-all-${version}-bin-release

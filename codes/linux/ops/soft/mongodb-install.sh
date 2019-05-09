@@ -10,6 +10,11 @@ cat << EOF
 
 EOF
 
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh mongodb-install.sh [version] [path]"
+    echo -e "Example: sh mongodb-install.sh 4.0.9 /opt/mongodb\n"
+fi
+
 version=4.0.9
 if [[ -n $1 ]]; then
   version=$1
@@ -19,6 +24,8 @@ root=/opt/mongodb
 if [[ -n $2 ]]; then
   root=$2
 fi
+
+echo "Current execution: install mongodb ${version} to ${root}"
 
 echo -e "\n>>>>>>>>> download mongodb"
 mkdir -p ${root}

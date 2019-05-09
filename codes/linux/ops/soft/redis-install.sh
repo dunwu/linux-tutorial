@@ -10,6 +10,13 @@ cat << EOF
 
 EOF
 
+command -v yum >/dev/null 2>&1 || { echo >&2 "Require yum but it's not installed.  Aborting."; exit 1; }
+
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]] || [[ $# -lt 3 ]] || [[ $# -lt 4 ]];then
+    echo "Usage: sh redis-install.sh [version] [path] [port] [password]"
+    echo -e "Example: sh redis-install.sh 5.0.4 /opt/redis 6379 123456\n"
+fi
+
 version=5.0.4
 if [[ -n $1 ]]; then
   version=$1
@@ -30,6 +37,7 @@ if [[ -n $4 ]]; then
   path=$4
 fi
 
+echo "Current execution: install redis ${version} to ${root}, service port = ${port}, password = ${password}"
 echo -e "\n>>>>>>>>> install libs"
 yum install -y zlib zlib-devel gcc-c++ libtool openssl openssl-devel tcl
 

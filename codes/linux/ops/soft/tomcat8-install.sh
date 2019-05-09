@@ -10,6 +10,11 @@ cat << EOF
 
 EOF
 
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh tomcat8-install.sh [version] [path]"
+    echo -e "Example: sh tomcat8-install.sh 8.5.28 /opt/tomcat8\n"
+fi
+
 version=8.5.28
 if [[ -n $1 ]]; then
   version=$1
@@ -20,6 +25,7 @@ if [[ -n $2 ]]; then
   root=$2
 fi
 
+echo "Current execution: install tomcat8 ${version} to ${root}"
 echo -e "\n>>>>>>>>> download tomcat"
 mkdir -p ${root}
 wget -O ${root}/apache-tomcat-${version}.tar.gz https://archive.apache.org/dist/tomcat/tomcat-8/v${version}/bin/apache-tomcat-${version}.tar.gz

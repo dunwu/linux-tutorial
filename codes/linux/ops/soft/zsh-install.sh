@@ -11,6 +11,8 @@ cat << EOF
 
 EOF
 
+command -v yum >/dev/null 2>&1 || { echo >&2 "Require yum but it's not installed.  Aborting."; exit 1; }
+
 echo -e "\n>>>>>>>>> install zsh"
 yum install -y zsh
 
@@ -20,7 +22,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 sed -i "s#^ZSH_THEME=.*#ZSH_THEME=\"ys\"#g" ~/.zshrc
 # 下载 incr.zsh 补全插件
 wget http://mimosa-pudica.net/src/incr-0.2.zsh
-cp incr-0.2.zsh ~/.oh-my-zsh/plugins/incr/
+mv incr-0.2.zsh ~/.oh-my-zsh/plugins/incr/
 echo "source ~/.oh-my-zsh/plugins/incr/incr*.zsh" >> ~/.zshrc
 
 # 更新配置

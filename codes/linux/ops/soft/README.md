@@ -148,6 +148,19 @@ curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/lin
 wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/rocketmq-install.sh | bash
 ```
 
+## Nacos 安装
+
+说明：
+
+下载 Nacos `1.0.0` 并解压安装到 `/opt/nacos` 路径下。
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/nacos-install.sh | bash
+wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/ops/soft/nacos-install.sh | bash
+```
+
 ## ZooKeeper 安装
 
 说明：

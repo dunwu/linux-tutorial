@@ -11,6 +11,13 @@ cat << EOF
 
 EOF
 
+command -v yum >/dev/null 2>&1 || { echo >&2 "Require yum but it's not installed.  Aborting."; exit 1; }
+
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh nginx-install.sh [version] [path]"
+    echo -e "Example: sh nginx-install.sh 1.16.0 /opt/nginx\n"
+fi
+
 version=1.16.0
 if [[ -n $1 ]]; then
   version=$1
@@ -21,6 +28,7 @@ if [[ -n $2 ]]; then
   root=$2
 fi
 
+echo "Current execution: install nginx ${version} to ${root}"
 echo -e "\n>>>>>>>>> install libs"
 yum install -y zlib zlib-devel gcc-c++ libtool openssl openssl-devel pcre
 

@@ -10,6 +10,11 @@ cat << EOF
 
 EOF
 
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+    echo "Usage: sh nodejs-install.sh [version] [path]"
+    echo -e "Example: sh nodejs-install.sh 10.15.2 /opt/nodejs\n"
+fi
+
 version=10.15.2
 if [[ -n $1 ]]; then
   version=$1
@@ -26,6 +31,7 @@ if [[ ${execode} != 0 ]]; then
   nvm --version
 fi
 
+echo "Current execution: install nodejs ${version} to ${root}"
 echo -e "\n>>>>>>>>> install nodejs by nvm"
 nvm install ${version}
 nvm use ${version}
