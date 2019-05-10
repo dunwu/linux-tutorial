@@ -1,0 +1,6 @@
+#!/bin/bash
+
+BEGIN{FS="\n"; RS=""}
+{
+	myprint()
+}

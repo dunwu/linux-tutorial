@@ -1,0 +1,2 @@
+ls: cannot access badtest: No such file or directory
+but this should go to the testerror file

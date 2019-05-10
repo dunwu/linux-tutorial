@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function myprint()
+{
+	printf "%-16s - %s", $1, $4
+}
+
+function myrand(limit)
+{
+	return int(limit * rand())
+}
+
