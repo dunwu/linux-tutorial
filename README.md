@@ -19,7 +19,7 @@
 | [Svn 安装](docs/linux/soft/svn.md)                                                                          | Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，它采用了分支管理系统。                                                          |
 | [Tomcat 安装](docs/linux/soft/tomcat.md)                                                                    | Java 应用服务器                                                                                                                           |
 | [Zookeeper 安装](docs/linux/soft/zookeeper.md)                                                              | 分布式系统协调软件                                                                                                                        |
-| [Nacos 安装](linux/soft/nacos.md)                                                                           | 微服务发现、管理                                                                                                                          |
+| [Nacos 安装](docs/linux/soft/nacos.md)                                                                           | 微服务发现、管理                                                                                                                          |
 
 ## :memo: 知识点
 
