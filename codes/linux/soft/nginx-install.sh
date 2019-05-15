@@ -41,5 +41,15 @@ tar zxf ${root}/nginx-${version}.tar.gz -C ${root}
 cd ${root}/nginx-${version}
 ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre
 make && make install
-/usr/local/nginx/sbin/nginx -v
+
+# 设置 service
+wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/config/nginx/nginx.service -O /usr/lib/systemd/system/nginx.service
+chmod +x /usr/lib/systemd/system/nginx.service
+#设置nginx.service为系统服务
+systemctl enable nginx.service
+##通过系统服务操作nginx
+systemctl start nginx.service
+#systemctl reload nginx.service
+#systemctl restart nginx.service
+#systemctl stop nginx.service
 cd -
