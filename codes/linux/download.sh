@@ -1,13 +1,27 @@
 #!/usr/bin/env bash
 
-path=/tmp/dunwu-ops
-mkdir -p ${path}
+##############################################################################
+# console color
+C_BLACK="\033[1;30m"
+C_RED="\033[1;31m"
+C_GREEN="\033[1;32m"
+C_YELLOW="\033[1;33m"
+C_BLUE="\033[1;34m"
+C_PURPLE="\033[1;35m"
+C_CYAN="\033[1;36m"
+C_RESET="$(tput sgr0)"
+##############################################################################
 
-printf "\n>>>>>>>>> download scripts to ${path}"
-wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/dunwu-ops.sh -O ${path}/dunwu-ops.sh
-wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/dunwu-soft.sh -O ${path}/dunwu-soft.sh
-wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/dunwu-sys.sh -O ${path}/dunwu-sys.sh
+path=/home/scripts/linux-tutorial
+printf "\n${C_BLUE}>>>>>>>> Downloading linux-tutorial to ${path}.${C_RESET}\n"
+command -v yum >/dev/null 2>&1 || { echo >&2 -e "${C_RED}Require yum but it's not installed. Aborting.${C_RESET}"; exit 1; }
+command -v git >/dev/null 2>&1 || { echo >&2 -e "${C_YELLOW}Not detected git. Install git.${C_RESET}"; yum -y install git; }
 
-chmod +x ${path}/dunwu-ops.sh
-chmod +x ${path}/dunwu-soft.sh
-chmod +x ${path}/dunwu-sys.sh
+if [[ -d ${path} ]]; then
+  cd ${path}
+  git pull
+else
+  mkdir -p ${path}
+  git clone --no-checkout https://gitee.com/turnon/linux-tutorial.git ${path}
+fi
+printf "\n${C_GREEN}<<<<<<<< Download linux-tutorial to ${path} ok.${C_RESET}\n"

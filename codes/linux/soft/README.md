@@ -11,8 +11,8 @@
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/zsh-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/zsh-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zsh-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zsh-install.sh | bash
 ```
 
 ## JDK8 安装
@@ -26,8 +26,8 @@ JDK8 会被安装到 `/usr/lib/jvm/java` 路径。
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/jdk8-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/jdk8-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/jdk8-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/jdk8-install.sh | bash
 ```
 
 ## Maven 安装配置
@@ -42,8 +42,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/maven-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/maven-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/maven-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/maven-install.sh | bash
 ```
 
 ## Node.js 安装
@@ -57,8 +57,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/nodejs-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/nodejs-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nodejs-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nodejs-install.sh | bash
 ```
 
 ## MongoDB 安装
@@ -72,8 +72,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 执行以下任意命令即可执行安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/mongodb-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/mongodb-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/mongodb-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/mongodb-install.sh | bash
 ```
 
 ## Redis 安装配置
@@ -89,15 +89,15 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 执行以下任意命令即可按照默认配置安装脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/redis-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/redis-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
 ```
 
 定制化配置
 
 ```sh
 # 下载脚本到本地
-wget https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/redis-install.sh
+wget https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh
 chmod +x redis-install.sh
 ./redis-install.sh 5.0.4 /opt/redis 6379 123456
 ```
@@ -118,8 +118,8 @@ chmod +x redis-install.sh
 使用方法：
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/tomcat8-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/tomcat8-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/tomcat8-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/tomcat8-install.sh | bash
 ```
 
 ## Kafka 安装
@@ -131,8 +131,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/kafka-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/kafka-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/kafka-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/kafka-install.sh | bash
 ```
 
 ## RocketMQ 安装
@@ -144,8 +144,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/rocketmq-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/rocketmq-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/rocketmq-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/rocketmq-install.sh | bash
 ```
 
 ## Nacos 安装
@@ -157,8 +157,8 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/nacos-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/nacos-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nacos-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nacos-install.sh | bash
 ```
 
 ## ZooKeeper 安装
@@ -170,7 +170,7 @@ wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/li
 使用方法：执行以下任意命令即可执行脚本。
 
 ```sh
-curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/zookeeper-install.sh | bash
-wget -qO- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/zookeeper-install.sh | bash
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zookeeper-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zookeeper-install.sh | bash
 ```
 

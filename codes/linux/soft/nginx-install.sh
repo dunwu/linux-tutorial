@@ -43,7 +43,7 @@ cd ${root}/nginx-${version}
 make && make install
 
 # 设置 service
-wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/config/nginx/nginx.service -O /usr/lib/systemd/system/nginx.service
+wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/nginx/nginx.service -O /usr/lib/systemd/system/nginx.service
 chmod +x /usr/lib/systemd/system/nginx.service
 #设置nginx.service为系统服务
 systemctl enable nginx.service

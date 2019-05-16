@@ -54,7 +54,7 @@ cd -
 
 echo -e "\n>>>>>>>>> config redis"
 cp ${path}/redis.conf ${path}/redis.conf.default
-wget -N https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/config/redis-remote-access.conf -O ${path}/redis.conf
+wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/redis-remote-access.conf -O ${path}/redis.conf
 cp ${path}/redis.conf /etc/redis/${port}.conf
 sed -i "s/^port 6379/port ${port}/g" /etc/redis/${port}.conf
 sed -i "s/^requirepass 123456/requirepass ${password}/g" /etc/redis/${port}.conf

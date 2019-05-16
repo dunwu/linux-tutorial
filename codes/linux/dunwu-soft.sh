@@ -33,7 +33,7 @@ if [[ -n $index ]]; then
      exit -1
   fi
   key=${menus[$no]}
-  curl -o- https://raw.githubusercontent.com/dunwu/linux-tutorial/master/codes/linux/soft/${key}-install.sh | bash
+  curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/${key}-install.sh | bash
 else
   echo "输入项不支持！"
   exit -1
