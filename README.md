@@ -1,12 +1,14 @@
 # Linux 教程
 
-> 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) 和 [gitee](https://gitee.com/turnon/linux-tutorial)
+> :keyboard: 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
+>
+> :book: [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
-|               :wrench:               |         :shell:         |         :memo:         |           :books:           |
-| :----------------------------------: | :---------------------: | :--------------------: | :-------------------------: |
-| [软件安装配置](#wrench-软件安装配置) | [运维脚本](#shell-运维脚本) | [知识点](#memo-知识点) | [学习资源](#books-学习资源) |
+|           :wrench:            |        :shell:        |      :memo:       |        :books:        |
+| :---------------------------: | :-------------------: | :---------------: | :-------------------: |
+| [软件安装配置](#软件安装配置) | [运维脚本](#运维脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
 
-## :wrench: 软件安装配置
+## 软件安装配置
 
 - [JDK 安装](docs/linux/soft/jdk-install.md)
 - [Elastic 安装](docs/linux/soft/elastic)
@@ -23,13 +25,15 @@
 - [Zookeeper 安装](docs/linux/soft/zookeeper-install.md)
 - [Nacos 安装](docs/linux/soft/nacos-install.md)
 
-## :shell: 运维脚本
+## 运维脚本
 
-- [软件安装配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+- [系统运维脚本集合](codes/linux/sys)
+- [软件安装配置脚本集合](codes/linux/soft)
+- [工具脚本集合](codes/linux/soft)
 
 > 提供一键式安装、配置软件脚本
 
-## :memo: 知识点
+## 知识点
 
 - [Linux 命令教程](docs/linux/cli/README.md)
   - [查看 Linux 命令帮助信息](docs/linux/cli/查看Linux命令帮助信息.md)
@@ -58,7 +62,7 @@
   - [Linux 典型运维应用](docs/linux/ops/linux典型运维应用.md)
   - [samba 使用详解](docs/linux/ops/samba使用详解.md)
 
-## :books: 学习资源
+## 学习资源
 
 - 命令行检索
   - [Linux 命令大全](http://man.linuxde.net/)

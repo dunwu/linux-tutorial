@@ -34,15 +34,25 @@
           previousText: "上一章节",
           nextText: "下一章节",
           crossChapter: true
-        }
+        },
         // coverpage: true,
         // 完整配置参数
+        // 完整配置参数
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          paths: ["/", "linux/cli/", "linux/ops/", "linux/soft/", "git/"], // or 'auto'
+          placeholder: "搜索",
+          noData: "没有结果！",
+          // 搜索标题的最大程级, 1 - 6
+          depth: 4
+        }
       };
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 
     <!--代码高亮-->
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
