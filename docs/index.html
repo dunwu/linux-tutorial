@@ -2,20 +2,211 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>linux-tutorial</title>
+    <title>Linux Tutorial</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="Linux 教程" />
     <meta
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
+    <link rel="icon" href="http://dunwu.test.upcdn.net/images/others/zp_50_50.png" type="image/x-icon" />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue" />
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled />
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css" title="buble" disabled />
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/pure.css" title="pure" disabled />
     <style>
-      nav.app-nav li ul {
-        min-width: 100px;
+      h1 + ul {
+        display: block !important;
+      }
+
+      .content img,
+      .sidebar img {
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 0 8px grey;
+      }
+
+      .content,
+      .sidebar,
+      .sidebar-toggle,
+      body,
+      .search input {
+        color: #6b615f !important;
+        background-color: #fff4e6 !important;
+      }
+
+      .content strong,
+      .sidebar strong,
+      body strong {
+        color: #5c5869 !important;
+      }
+    </style>
+    <style>
+      .cover-main .anchor span {
+        text-align: center;
+        background-image: -webkit-linear-gradient(left, #ffdcb4, #b96972 25%, #e88a57 50%, #804170 75%, #a596cd);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 1.5s infinite linear;
+        font-family: "Brush Script MT", 隶书, serif;
+        font-weight: 600;
+      }
+
+      .cover-main blockquote p {
+        color: #5c5869;
+        font-family: "Arial", 隶书, serif;
+      }
+
+      .cover-main ul a:hover {
+        color: #fe4165 !important;
+      }
+
+      .cover-main p a:hover {
+        text-align: center;
+        background-image: -webkit-linear-gradient(left, #ffdcb4, #b96972 25%, #e88a57 50%, #804170 75%, #a596cd);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 1.5s infinite linear;
+      }
+
+      /* content 样式内容 */
+      .sidebar a,
+      .content a {
+        color: #399ab2 !important;
+        text-decoration: none !important;
+      }
+
+      .sidebar a:hover,
+      .content a:hover {
+        color: #fe4165 !important;
+        text-decoration: underline !important;
+      }
+
+      .content h1 :hover,
+      .content h2 :hover,
+      .content h3 :hover,
+      .content h4 :hover {
+        text-align: center;
+        background-image: -webkit-linear-gradient(left, #ffdcb4, #b96972 25%, #e88a57 50%, #804170 75%, #a596cd);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 1.5s infinite linear;
+        font-family: "微软雅黑", serif;
+        font-weight: bold;
+      }
+
+      @-webkit-keyframes masked-animation {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: -100% 0;
+        }
+      }
+
+      .content h1 a,
+      .content h1 span {
+        color: #399ab2 !important;
+        font-size: 30px;
+        text-shadow: 2px 2px 5px grey;
+      }
+
+      .content h2 a,
+      .content h2 span {
+        color: #60497c !important;
+        font-size: 26px;
+        text-shadow: 2px 2px 5px grey;
+      }
+
+      .content h3 a,
+      .content h3 span {
+        color: #346093 !important;
+        font-size: 22px;
+        text-shadow: 2px 2px 5px grey;
+      }
+
+      .content h4 a,
+      .content h4 span {
+        font-size: 18px;
+        color: #78943a;
+        text-shadow: 2px 2px 5px grey;
+      }
+
+      img.emoji {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    </style>
+    <style>
+      .content > p {
+        font-size: 16px !important;
+        line-height: 24px;
+      }
+
+      .content blockquote {
+        display: block;
+        padding: 0 16px;
+        border-left: 8px solid #dddfe4;
+        background: #fff2c9;
+        overflow: auto;
+      }
+
+      .content pre {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border-radius: 8px;
+        box-shadow: 1px 1px 20px 3px #dddddd !important;
+      }
+
+      .content code {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 1px 1px 1px whitesmoke;
+      }
+
+      .content table {
+        display: table;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-shadow: 2px 2px 20px 6px #dddddd !important;
+      }
+
+      .content th {
+        font-weight: bold;
+        font-size: 16px;
+        background-color: #cce6b6;
+      }
+    </style>
+    <style>
+      @media (min-width: 600px) {
+        .markdown-section pre > code {
+          font-size: 0.9rem !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .markdown-section pre > code {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+
+        pre:after {
+          content: "" !important;
+        }
+      }
+
+      @media (min-width: 600px) {
+        pre code {
+          padding-left: 20px !important;
+        }
+      }
+
+      @media (max-width: 600px) {
+        pre {
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+        }
       }
     </style>
   </head>
@@ -23,27 +214,19 @@
     <div id="app">正在加载...</div>
     <script>
       window.$docsify = {
-        auto2top: true,
-        loadNavbar: "navbar.md",
-        name: "linux-tutorial",
+        name: "Linux Tutorial",
         repo: "https://github.com/dunwu/linux-tutorial",
+        logo: "http://dunwu.test.upcdn.net/images/others/zp_100_100.png",
+        auto2top: true,
+        coverpage: "coverpage.md",
         maxLevel: 4,
         subMaxLevel: 4,
         formatUpdated: "{MM}/{DD} {HH}:{mm}",
-        pagination: {
-          previousText: "上一章节",
-          nextText: "下一章节",
-          crossChapter: true
-        },
-        // coverpage: true,
-        // 完整配置参数
-        // 完整配置参数
         search: {
-          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-          paths: ["/", "linux/cli/", "linux/ops/", "linux/soft/", "git/"], // or 'auto'
-          placeholder: "搜索",
+          maxAge: 86400000,
+          paths: ["/"],
+          placeholder: "🔍 搜索",
           noData: "没有结果！",
-          // 搜索标题的最大程级, 1 - 6
           depth: 4
         }
       };
@@ -51,12 +234,12 @@
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
-    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
 
     <!--代码高亮-->
+    <script src="//unpkg.com/prismjs/components/prism-basic.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
-    <script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
   </body>
 </html>
