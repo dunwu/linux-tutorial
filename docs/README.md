@@ -1,58 +1,68 @@
 # Linux 教程
 
-## 软件应用指南
+> :keyboard: 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
+>
+> :book: [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
-- [JDK 应用指南](linux/soft/jdk-install.md)
-- [Elastic 应用指南](linux/soft/elastic)
-- [Gitlab 应用指南](linux/soft/kafka-install.md)
-- [Jenkins 应用指南](linux/soft/jenkins.md)
-- [Kafka 应用指南](linux/soft/kafka-install.md)
-- [Maven 应用指南](linux/soft/maven-install.md)
-- [Nexus 应用指南](linux/soft/nexus-install.md)
-- [Nodejs 应用指南](linux/soft/nodejs-install.md)
-- [RocketMQ 应用指南](linux/soft/rocketmq-install.md)
-- [Svn 应用指南](linux/soft/svn-install.md)
-- [Tomcat 应用指南](linux/soft/tomcat-install.md)
-- [Zookeeper 应用指南](linux/soft/zookeeper-install.md)
-- [Nacos 应用指南](linux/soft/nacos-install.md)
+|           :wrench:            |        :shell:        |      :memo:       |        :books:        |
+| :---------------------------: | :-------------------: | :---------------: | :-------------------: |
+| [软件安装配置](#软件安装配置) | [运维脚本](#运维脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
 
-## Linux 命令
+## 软件安装配置
 
-- [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md)
-- [Linux 文件目录管理](linux/cli/Linux文件目录管理.md)
-- [Linux 文件内容查看命令](linux/cli/Linux文件内容查看编辑.md)
-- [Linux 文件压缩和解压](linux/cli/Linux文件压缩和解压.md)
-- [Linux 用户管理](linux/cli/Linux用户管理.md)
-- [Linux 系统管理](linux/cli/Linux系统管理.md)
-- [Linux 网络管理](linux/cli/Linux网络管理.md)
-- [Linux 硬件管理](linux/cli/Linux硬件管理.md)
-- [Linux 软件管理](linux/cli/Linux硬件管理.md)
-
-## Linux 运维
-
-- [linux 典型运维应用](linux/ops/linux典型运维应用.md)
-- [samba 使用详解](linux/ops/samba使用详解.md)
-
-## Docker 教程
-
-## Git 教程
-
-- [Git 快速指南](git/git-quickstart.md)
-- [Git 配置](git/git-configuration.md)
-- [git-flow 工作流](git/git-flow.md)
-- [Git 常见问题](git/git-faq.md)
-
-## 工具和脚本
-
-
-- [软件应用指南配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
-
-> 提供一键式应用指南、配置软件脚本
-
+- [JDK 安装](linux/soft/jdk-install.md)
+- [Elastic 安装](linux/soft/elastic)
+- [Gitlab 安装](linux/soft/kafka-install.md)
+- [Jenkins 安装](linux/soft/jenkins.md)
+- [Kafka 安装](linux/soft/kafka-install.md)
+- [Maven 安装](linux/soft/maven-install.md)
+- [Nexus 安装](linux/soft/nexus-install.md)
 - [Nginx 教程](https://github.com/dunwu/nginx-tutorial)
+- [Nodejs 安装](linux/soft/nodejs-install.md)
+- [RocketMQ 安装](linux/soft/rocketmq-install.md)
+- [Svn 安装](linux/soft/svn-install.md)
+- [Tomcat 安装](linux/soft/tomcat-install.md)
+- [Zookeeper 安装](linux/soft/zookeeper-install.md)
+- [Nacos 安装](linux/soft/nacos-install.md)
+
+## 运维脚本
+
+- [系统运维脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
+- [软件安装配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+- [工具脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+
+> 提供一键式安装、配置软件脚本
+
+## 知识点
+
+- [Linux 命令教程](linux/cli/README.md)
+  - [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md)
+  - [Linux 文件目录管理](linux/cli/Linux文件目录管理.md)
+  - [Linux 文件内容查看命令](linux/cli/Linux文件内容查看编辑.md)
+  - [Linux 文件压缩和解压](linux/cli/Linux文件压缩和解压.md)
+  - [Linux 用户管理](linux/cli/Linux用户管理.md)
+  - [Linux 系统管理](linux/cli/Linux系统管理.md)
+  - [Linux 网络管理](linux/cli/Linux网络管理.md)
+  - [Linux 硬件管理](linux/cli/Linux硬件管理.md)
+  - [Linux 软件管理](linux/cli/Linux硬件管理.md)
+- [Linux 运维](linux/ops/README.md)
+  - [linux 典型运维应用](linux/ops/linux典型运维应用.md)
+  - [samba 使用详解](linux/ops/samba使用详解.md)
+- [Docker 教程](docker)
+  - [Docker 应用指南](docker/docker.md)
+  - [Docker Cheat Sheet](docker/docker-cheat-sheet.md)
+- [Git 教程](git/README.md)
+  - [Git 快速指南](git/git-quickstart.md)
+  - [Git 配置](git/git-configuration.md)
+  - [git-flow 工作流](git/git-flow.md)
+  - [Git 常见问题](git/git-faq.md)
 - [Vim](linux/tool/vim.md)
-- [一篇文章让你彻底掌握 shell 语言](lang/shell.md)
-- [一篇文章让你彻底掌握 python 语言](lang/python.md)
+- 脚本语言
+  - [一篇文章让你彻底掌握 shell 语言](lang/shell.md)
+  - [一篇文章让你彻底掌握 python 语言](lang/python.md)
+- 运维
+  - [Linux 典型运维应用](linux/ops/linux典型运维应用.md)
+  - [samba 使用详解](linux/ops/samba使用详解.md)
 
 ## 学习资源
 

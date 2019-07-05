@@ -13,7 +13,7 @@
 - [JDK 安装](docs/linux/soft/jdk-install.md)
 - [Elastic 安装](docs/linux/soft/elastic)
 - [Gitlab 安装](docs/linux/soft/kafka-install.md)
-- [Jenkins 安装](docs/linux/soft/jenkins-install.md)
+- [Jenkins 安装](docs/linux/soft/jenkins.md)
 - [Kafka 安装](docs/linux/soft/kafka-install.md)
 - [Maven 安装](docs/linux/soft/maven-install.md)
 - [Nexus 安装](docs/linux/soft/nexus-install.md)
@@ -27,9 +27,9 @@
 
 ## 运维脚本
 
-- [系统运维脚本集合](codes/linux/sys)
-- [软件安装配置脚本集合](codes/linux/soft)
-- [工具脚本集合](codes/linux/soft)
+- [系统运维脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
+- [软件安装配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+- [工具脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 
 > 提供一键式安装、配置软件脚本
 
@@ -49,6 +49,8 @@
   - [linux 典型运维应用](docs/linux/ops/linux典型运维应用.md)
   - [samba 使用详解](docs/linux/ops/samba使用详解.md)
 - [Docker 教程](docs/docker)
+  - [Docker 应用指南](docs/docker/docker.md)
+  - [Docker Cheat Sheet](docs/docker/docker-cheat-sheet.md)
 - [Git 教程](docs/git/README.md)
   - [Git 快速指南](docs/git/git-quickstart.md)
   - [Git 配置](docs/git/git-configuration.md)

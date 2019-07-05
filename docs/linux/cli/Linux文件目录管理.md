@@ -50,7 +50,7 @@ tags:
 
 linux 目录结构是树形结构，其根目录是 `/` 。一张思维导图说明各个目录的作用：
 
-<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/linux/linux-folders.png"/></div><br>
+<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/linux/linux-folders.png"/></div><br>
 
 ### Linux 文件属性
 
