@@ -1,13 +1,4 @@
----
-title: git 快速指南
-date: 2017-12-06
-categories:
-  - linux
-tags:
-  - linux
-  - vcs
-  - git
----
+# Git 快速指南
 
 ## 简介
 
@@ -105,7 +96,7 @@ Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值�
 
   同理，如果你想同步别人的修改，你需要从远程仓库拉取更新。
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-theory.png"/></div><br>
+<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/web/git/git-theory.png"/></div><br>
 
 ## 安装
 
@@ -188,7 +179,7 @@ $ git config --global user.email johndoe@example.com
 
 本节选择性介绍 git 中比较常用的命令行场景。
 
-<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/linux/git/git-cheat-sheet.png"/></div><br>
+<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/web/git/git-cheat-sheet.png"/></div><br>
 
 ### 创建
 
