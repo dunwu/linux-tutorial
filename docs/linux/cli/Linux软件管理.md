@@ -1,6 +1,6 @@
 ---
 title: Linux 软件管理
-date: 2018/02/26
+date: 2018-02-26
 categories:
   - linux
 tags:

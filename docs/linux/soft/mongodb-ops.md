@@ -46,4 +46,4 @@ cd /opt/mongodb/mongodb-3.6.3/bin
 
 ## 脚本
 
-| [安装脚本](https://github.com/dunwu/linux/tree/master/codes/deploy/tool/mongodb) |
+| [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft) |

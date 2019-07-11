@@ -9,7 +9,7 @@
 - [Nexus 安装](nexus-install.md)
 - [Nodejs 安装](nodejs-install.md)
 - [RocketMQ 安装](rocketmq-install.md)
-- [Svn 安装](svn-install.md)
+- [Svn 安装](svn-ops.md)
 - [Tomcat 安装](tomcat-install.md)
 - [Zookeeper 安装](zookeeper-install.md)
 - [Nacos 安装](nacos-install.md)

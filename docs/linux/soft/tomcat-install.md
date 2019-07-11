@@ -44,7 +44,7 @@ cd /opt/tomcat/apache-tomcat-8.5.28/bin
 
 ## 脚本
 
-| [安装脚本](https://github.com/dunwu/OS/tree/master/codes/deploy/tool/tomcat) |
+| [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft) |
 
 ## 更多内容
 

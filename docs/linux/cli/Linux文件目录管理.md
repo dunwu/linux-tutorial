@@ -1,6 +1,6 @@
 ---
 title: Linux 文件目录管理命令
-date: 2018/02/27
+date: 2018-02-27
 categories:
   - linux
 tags:

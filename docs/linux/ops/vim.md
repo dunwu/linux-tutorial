@@ -1,14 +1,4 @@
----
-title: Vim 快速指南
-date: 2017/11/17
-categories:
-  - linux
-tags:
-  - linux
-  - vim
----
-
-# Vim 快速指南
+# Vim 应用指南
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 

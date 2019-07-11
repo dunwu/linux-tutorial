@@ -4,36 +4,52 @@
 >
 > :book: [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
-|           :wrench:            |        :shell:        |      :memo:       |        :books:        |
-| :---------------------------: | :-------------------: | :---------------: | :-------------------: |
-| [软件安装配置](#软件安装配置) | [运维脚本](#运维脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
+|       :wrench:        |        :shell:        |      :memo:       |        :books:        |
+| :-------------------: | :-------------------: | :---------------: | :-------------------: |
+| [软件运维](#软件运维) | [运维脚本](#运维脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
 
-## 软件安装配置
+## 软件运维
 
-- [JDK 安装](linux/soft/jdk-install.md)
-- [Elastic 安装](linux/soft/elastic)
-- [Gitlab 安装](linux/soft/kafka-install.md)
-- [Jenkins 安装](linux/soft/jenkins.md)
-- [Kafka 安装](linux/soft/kafka-install.md)
-- [Maven 安装](linux/soft/maven-install.md)
-- [Nexus 安装](linux/soft/nexus-install.md)
-- [Nginx 教程](https://github.com/dunwu/nginx-tutorial)
-- [Nodejs 安装](linux/soft/nodejs-install.md)
-- [RocketMQ 安装](linux/soft/rocketmq-install.md)
-- [Svn 安装](linux/soft/svn-install.md)
-- [Tomcat 安装](linux/soft/tomcat-install.md)
-- [Zookeeper 安装](linux/soft/zookeeper-install.md)
-- [Nacos 安装](linux/soft/nacos-install.md)
+> 本章节内容介绍日常开发中常见的一些软件、工具的安装、配置。
+
+- 开发环境
+  - [JDK 安装](linux/soft/jdk-install.md)
+  - [Maven 安装](linux/soft/maven-install.md)
+  - [Nodejs 安装](linux/soft/nodejs-install.md)
+- 开发工具
+  - [Nexus 运维](linux/soft/nexus-install.md)
+  - [Gitlab 运维](linux/soft/kafka-install.md)
+  - [Jenkins 运维](linux/soft/jenkins.md)
+  - [Svn 运维](linux/soft/svn-ops.md)
+  - [YApi 运维](linux/soft/yapi-ops.md)
+- 中间件服务
+  - [Elastic 运维](linux/soft/elastic)
+  - [Kafka 运维](linux/soft/kafka-install.md)
+  - [RocketMQ 运维](linux/soft/rocketmq-install.md)
+  - [Zookeeper 运维](linux/soft/zookeeper-install.md)
+  - [Nacos 运维](linux/soft/nacos-install.md)
+- 服务器
+  - [Nginx 教程](https://github.com/dunwu/nginx-tutorial)
+  - [Tomcat 运维](linux/soft/tomcat-install.md)
+- 数据库
+  - [Mongodb 运维](linux/soft/mongodb-ops.md)
+  - [Redis 运维](linux/soft/redis-ops.md)
 
 ## 运维脚本
 
 - [系统运维脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
-- [软件安装配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+- [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 - [工具脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+- [Vim 应用指南](linux/ops/vim.md)
+- [Zsh 应用指南](linux/ops/zsh.md)
+- [Shell 教程](linux/ops/shell.md)
+- [Python 教程](linux/ops/python.md)
 
-> 提供一键式安装、配置软件脚本
+> 提供一键式运维、配置软件脚本
 
 ## 知识点
+
+### Linux
 
 - [Linux 命令教程](linux/cli/README.md)
   - [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md)
@@ -48,21 +64,20 @@
 - [Linux 运维](linux/ops/README.md)
   - [linux 典型运维应用](linux/ops/linux典型运维应用.md)
   - [samba 使用详解](linux/ops/samba使用详解.md)
+
+### Docker
+
 - [Docker 教程](docker)
   - [Docker 应用指南](docker/docker.md)
   - [Docker Cheat Sheet](docker/docker-cheat-sheet.md)
+
+### Git
+
 - [Git 教程](git/README.md)
   - [Git 快速指南](git/git-quickstart.md)
   - [Git 配置](git/git-configuration.md)
   - [git-flow 工作流](git/git-flow.md)
   - [Git 常见问题](git/git-faq.md)
-- [Vim](linux/tool/vim.md)
-- 脚本语言
-  - [一篇文章让你彻底掌握 shell 语言](lang/shell.md)
-  - [一篇文章让你彻底掌握 python 语言](lang/python.md)
-- 运维
-  - [Linux 典型运维应用](linux/ops/linux典型运维应用.md)
-  - [samba 使用详解](linux/ops/samba使用详解.md)
 
 ## 学习资源
 

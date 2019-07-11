@@ -1,6 +1,6 @@
 ---
 title: samba 使用详解
-date: 2018/09/28
+date: 2018-09-28
 categories:
   - linux
 tags:

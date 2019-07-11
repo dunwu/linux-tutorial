@@ -1,6 +1,8 @@
-# Svn 安装、配置、使用指南
+# Svn 运维
 
-Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，它采用了分支管理系统。
+> Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，它采用了分支管理系统。
+>
+> 本文目的在于记录 svn 的安装、配置、使用。
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
@@ -13,7 +15,7 @@ Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，�
     - [1.6. 启动关闭 svn](#16-启动关闭-svn)
     - [1.7. 开机自启动 svn 方法](#17-开机自启动-svn-方法)
     - [1.8. svn 客户端访问](#18-svn-客户端访问)
-- [2. 更多内容](#2-更多内容)
+- [2. 参考资料](#2-参考资料)
 
 <!-- /TOC -->
 
@@ -145,12 +147,9 @@ $ vi /etc/sysconfig/svnserve
 
 <br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129175443.png"/></div><br>
 
-## 2. 更多内容
+## 2. 参考资料
 
-- **引申**
-  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
-- **引用**
-  - https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
-  - https://blog.csdn.net/testcs_dn/article/details/45395645
-  - https://www.cnblogs.com/moxiaoan/p/5683743.html
-  - https://blog.csdn.net/realghost/article/details/52396648
+- https://www.cnblogs.com/liuxianan/p/linux_install_svn_server.html
+- https://blog.csdn.net/testcs_dn/article/details/45395645
+- https://www.cnblogs.com/moxiaoan/p/5683743.html
+- https://blog.csdn.net/realghost/article/details/52396648

@@ -1,6 +1,6 @@
 ---
 title: Linux 网络管理
-date: 2018/02/27
+date: 2018-02-27
 categories:
   - linux
 tags:

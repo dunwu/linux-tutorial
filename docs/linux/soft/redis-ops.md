@@ -55,4 +55,4 @@ cd /opt/redis/redis-4.0.8/src
 
 以上两种安装方式，我都写了脚本去执行：
 
-| [安装脚本](https://github.com/dunwu/linux/tree/master/codes/deploy/tool/redis) |
+| [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft) |

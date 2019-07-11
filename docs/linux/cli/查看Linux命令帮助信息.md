@@ -1,6 +1,6 @@
 ---
 title: 查看 Linux 命令帮助信息
-date: 2018/09/26
+date: 2018-09-26
 categories:
   - linux
 tags:

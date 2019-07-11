@@ -1,6 +1,6 @@
 ---
 title: Linux 用户管理
-date: 2018/02/27
+date: 2018-02-27
 categories:
   - linux
 tags:

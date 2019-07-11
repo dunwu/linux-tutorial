@@ -1,6 +1,6 @@
 ---
 title: Python
-date: 2018/06/28
+date: 2018-06-28
 categories:
 - linux
 tags:
