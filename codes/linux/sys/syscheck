@@ -242,15 +242,14 @@ EOF
 # 获取CPU/内存占用TOP10
 get_process_top_info() {
 
-    top_title=$(top -b n1|head -7|tail -1)
-    cpu_top10=$(top b -n1 | head -17 | tail -11)
-    mem_top10=$(top -b n1|head -17|tail -10|sort -k10 -r)
+    top_title=$(top -b n1 | head -7 | tail -1)
+    cpu_top10=$(top -b n1 | head -17 | tail -11)
+    mem_top10=$(top -b n1 | head -17 | tail -10 | sort -k10 -r)
 
 cat << EOF
 【TOP10】
 CPU占用TOP10:
 
-${top_title}
 ${cpu_top10}
 
 内存占用TOP10:

@@ -32,9 +32,9 @@ if [[ -n $3 ]]; then
   port=$3
 fi
 
-password=123456
+password=
 if [[ -n $4 ]]; then
-  path=$4
+  password=$4
 fi
 
 echo "Current execution: install redis ${version} to ${root}, service port = ${port}, password = ${password}"

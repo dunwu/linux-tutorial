@@ -16,24 +16,18 @@ printf "${BLUE}"
 cat << EOF
 
 ###################################################################################
-# 安装 JDK8 脚本
-# JDK 会被安装到 /usr/lib/jvm/java 路径。
-# @system: 适用于 CentOS
+# 安装 Jenkins 脚本
+# 适用于所有 linux 发行版本。
 # @author: Zhang Peng
 ###################################################################################
 
 EOF
 printf "${RESET}"
 
-printf "${BLUE}>>>>>>>> install jdk8\n${RESET}"
+printf "${BLUE}>>>>>>>> install jenkins\n${RESET}"
 
-command -v yum >/dev/null 2>&1 || {
-printf "${RED}Require yum but it's not installed.  Aborting.\n${RESET}"
-echo >&2 "Require yum but it's not installed.  Aborting.";
-exit 1;
-}
+# 下载并解压 jenkins
+mkdir -p /opt/jenkins
+wget -O /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
-yum -y install java-1.8.0-openjdk-devel.x86_64
-java -version
-
-printf "${GREEN}<<<<<<<< install jdk8 finished\n${RESET}"
+printf "${GREEN}<<<<<<<< install jenkins\n${RESET}"
