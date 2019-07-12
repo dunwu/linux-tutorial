@@ -10,7 +10,7 @@ cat << EOF
 
 EOF
 
-command -v yum >/dev/null 2>&1 || { echo >&2 "Require yum but it's not installed.  Aborting."; exit 1; }
+command -v yum >/dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n"; exit 1; }
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]] || [[ $# -lt 3 ]] || [[ $# -lt 4 ]];then
     echo "Usage: sh redis-install.sh [version] [path] [port] [password]"

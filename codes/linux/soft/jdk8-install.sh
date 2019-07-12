@@ -28,8 +28,8 @@ printf "${RESET}"
 printf "${BLUE}>>>>>>>> install jdk8\n${RESET}"
 
 command -v yum >/dev/null 2>&1 || {
-printf "${RED}Require yum but it's not installed.  Aborting.\n${RESET}"
-echo >&2 "Require yum but it's not installed.  Aborting.";
+printf "${RED}Require yum but it's not installed.\n${RESET}"
+printf "${RED}Require yum but it's not installed.${RESET}\n";
 exit 1;
 }
 

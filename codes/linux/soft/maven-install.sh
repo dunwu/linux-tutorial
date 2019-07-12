@@ -10,7 +10,7 @@ cat << EOF
 ###################################################################################
 EOF
 
-command -v java >/dev/null 2>&1 || { echo >&2 "Require java but it's not installed.  Aborting."; exit 1; }
+command -v java >/dev/null 2>&1 || { echo >&2 "Require java but it's not installed."; exit 1; }
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
     echo "Usage: sh maven-install.sh [version] [path]"
