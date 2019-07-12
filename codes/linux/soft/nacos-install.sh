@@ -33,7 +33,7 @@ echo "Current execution: install nacos ${version} to ${root}"
 
 echo -e "\n>>>>>>>>> download nacos"
 mkdir -p ${root}
-wget -O ${root}/nacos-server-${version}.zip https://github.com/alibaba/nacos/releases/download/${version}/nacos-server-${version}.zip
+curl -o ${root}/nacos-server-${version}.zip https://github.com/alibaba/nacos/releases/download/${version}/nacos-server-${version}.zip
 
 echo -e "\n>>>>>>>>> install nacos"
 unzip ${root}/nacos-server-${version}.zip -d ${root}/nacos-server-${version}

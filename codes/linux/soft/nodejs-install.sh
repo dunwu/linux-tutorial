@@ -16,19 +16,22 @@ printf "${BLUE}"
 cat << EOF
 
 ###################################################################################
-# 安装 Nodejs 脚本
+# 通过 nvm 安装 Nodejs 脚本
 # @system: 适用于所有 linux 发行版本。
 # @author: Zhang Peng
+# @see: https://github.com/nvm-sh/nvm
 ###################################################################################
 
 EOF
 printf "${RESET}"
 
-printf "${BLUE}>>>>>>>> install nodejs\n${RESET}"
+printf "${GREEN}>>>>>>>> install nodejs begin.${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-    echo "Usage: sh nodejs-install.sh [version] [path]"
-    echo -e "Example: sh nodejs-install.sh 10.15.2 /opt/nodejs\n"
+  printf "${PURPLE}[Hint]\n"
+  printf "\t sh nodejs-install.sh [version]\n"
+  printf "\t Example: sh nodejs-install.sh 10.15.2\n"
+  printf "${RESET}\n"
 fi
 
 version=10.15.2
@@ -36,21 +39,22 @@ if [[ -n $1 ]]; then
   version=$1
 fi
 
+# install info
+printf "${PURPLE}[Info]\n"
+printf "\t version = ${version}\n"
+printf "${RESET}\n"
+
+# install nvm
+printf "${GREEN}>>>>>>>> install nvm.${RESET}\n"
+rm -rf ~/.nvm
+mkdir -p ~/.nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
 nvm --version
-execode=$?
-if [[ ${execode} != 0 ]]; then
-  echo -e "\n>>>>>>>>> install nvm"
-  rm -rf ~/.nvm
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-  . ~/.nvm/nvm.sh
-  nvm --version
-fi
 
-echo "Current execution: install nodejs ${version} to ${root}"
-echo -e "\n>>>>>>>>> install nodejs by nvm"
+printf "${GREEN}>>>>>>>> install nodejs by nvm.${RESET}\n"
 nvm install ${version}
 nvm use ${version}
 node --version
 
-printf "${GREEN}<<<<<<<< install zsh nodejs\n${RESET}"
+printf "${GREEN}<<<<<<<< install nodejs end.${RESET}\n"

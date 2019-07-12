@@ -12,6 +12,6 @@ echo -e "\n>>>>>>>>> install nginx"
 # CentOS6 rpm 地址：http://nginx.org/packages/rhel/6/x86_64/RPMS/
 
 mkdir -p /opt/nginx
-wget -O /opt/nginx/nginx.rpm http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.14.0-1.el7_4.ngx.x86_64.rpm
+curl -o /opt/nginx/nginx.rpm http://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-1.14.0-1.el7_4.ngx.x86_64.rpm
 rpm -ivh /opt/nginx/nginx.rpm
 nginx -v

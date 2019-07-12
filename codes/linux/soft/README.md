@@ -1,5 +1,21 @@
 # 服务安装配置
 
+<!-- TOC depthFrom:2 depthTo:3 -->
+
+- [oh-my-zsh 安装](#oh-my-zsh-安装)
+- [JDK8 安装](#jdk8-安装)
+- [Maven 安装配置](#maven-安装配置)
+- [Node.js 安装](#nodejs-安装)
+- [MongoDB 安装](#mongodb-安装)
+- [Redis 安装配置](#redis-安装配置)
+- [Tomcat8 安装](#tomcat8-安装)
+- [Kafka 安装](#kafka-安装)
+- [RocketMQ 安装](#rocketmq-安装)
+- [Nacos 安装](#nacos-安装)
+- [ZooKeeper 安装](#zookeeper-安装)
+
+<!-- /TOC -->
+
 ## oh-my-zsh 安装
 
 说明：
@@ -174,3 +190,31 @@ curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zoo
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zookeeper-install.sh | bash
 ```
 
+## Nginx 安装
+
+说明：
+
+采用编译方式安装 Nginx
+
+下载 nginx `1.16.0` 并解压安装到 `/opt/nginx` 路径下。
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nginx-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nginx-install.sh | bash
+```
+
+## Fastdfs 安装
+
+说明：
+
+采用编译方式安装 Fastdfs
+
+下载 Fastdfs 并解压安装到 `/opt/fdfs` 路径下。
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash

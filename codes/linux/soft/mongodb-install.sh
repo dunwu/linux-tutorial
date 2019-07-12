@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+###################################################################################
+# 控制台颜色
+BLACK="\033[1;30m"
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+BLUE="\033[1;34m"
+PURPLE="\033[1;35m"
+CYAN="\033[1;36m"
+RESET="$(tput sgr0)"
+###################################################################################
+
+printf "${BLUE}"
 cat << EOF
 
 ###################################################################################
@@ -9,10 +22,15 @@ cat << EOF
 ###################################################################################
 
 EOF
+printf "${RESET}"
+
+printf "${GREEN}>>>>>>>> install mongodb begin.${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-    echo "Usage: sh mongodb-install.sh [version] [path]"
-    echo -e "Example: sh mongodb-install.sh 4.0.9 /opt/mongodb\n"
+  printf "${PURPLE}[Hint]\n"
+  printf "\t sh mongodb-install.sh [version] [path]\n"
+  printf "\t Example: sh mongodb-install.sh 4.0.9 /opt/mongodb\n"
+  printf "${RESET}\n"
 fi
 
 version=4.0.9
@@ -20,17 +38,21 @@ if [[ -n $1 ]]; then
   version=$1
 fi
 
-root=/opt/mongodb
+path=/opt/mongodb
 if [[ -n $2 ]]; then
-  root=$2
+  path=$2
 fi
 
-echo "Current execution: install mongodb ${version} to ${root}"
+# install info
+printf "${PURPLE}[Info]\n"
+printf "\t version = ${version}\n"
+printf "\t path = ${path}\n"
+printf "${RESET}\n"
 
-echo -e "\n>>>>>>>>> download mongodb"
-mkdir -p ${root}
-wget -O ${root}/mongodb-linux-x86_64-${version}.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${version}.tgz
-
-echo -e "\n>>>>>>>>> install mongodb"
-tar zxf ${root}/mongodb-linux-x86_64-${version}.tgz -C ${root}
+# download and decompression
+mkdir -p ${path}
+curl -o ${path}/mongodb-linux-x86_64-${version}.tgz https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${version}.tgz
+tar zxf ${path}/mongodb-linux-x86_64-${version}.tgz -C ${path}
 mkdir -p /data/db
+
+printf "${GREEN}<<<<<<<< install mongodb end.${RESET}\n"

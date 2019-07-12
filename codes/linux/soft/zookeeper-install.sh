@@ -16,7 +16,7 @@ printf "${BLUE}"
 cat << EOF
 
 ###################################################################################
-# 安装 zookeeper 脚本
+# 安装 ZooKeeper 脚本
 # @system: 适用于所有 linux 发行版本。
 # @author: Zhang Peng
 ###################################################################################
@@ -24,9 +24,13 @@ cat << EOF
 EOF
 printf "${RESET}"
 
+printf "${GREEN}>>>>>>>> install zookeeper begin.${RESET}\n"
+
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-    echo "Usage: sh zookeeper-install.sh [version] [path]"
-    echo -e "Example: sh zookeeper-install.sh 3.4.12 /opt/zookeeper\n"
+  printf "${PURPLE}[Hint]\n"
+  printf "\t sh zookeeper-install.sh [version] [path]\n"
+  printf "\t Example: sh zookeeper-install.sh 3.4.12 /opt/zookeeper\n"
+  printf "${RESET}\n"
 fi
 
 version=3.4.12
@@ -34,15 +38,20 @@ if [[ -n $1 ]]; then
   version=$1
 fi
 
-root=/opt/zookeeper
+path=/opt/zookeeper
 if [[ -n $2 ]]; then
-  root=$2
+  path=$2
 fi
 
-echo "Current execution: install zookeeper ${version} to ${root}"
-echo -e "\n>>>>>>>>> download zookeeper"
-mkdir -p ${root}
-wget -O ${root}/zookeeper-${version}.tar.gz http://mirrors.hust.edu.cn/apache/zookeeper/zookeeper-${version}/zookeeper-${version}.tar.gz
+# install info
+printf "${PURPLE}[Info]\n"
+printf "\t version = ${version}\n"
+printf "\t path = ${path}\n"
+printf "${RESET}\n"
 
-echo -e "\n>>>>>>>>> install zookeeper"
-tar zxf ${root}/zookeeper-${version}.tar.gz -C ${root}
+# download and decompression
+mkdir -p ${path}
+curl -o ${path}/zookeeper-${version}.tar.gz http://mirrors.hust.edu.cn/apache/zookeeper/zookeeper-${version}/zookeeper-${version}.tar.gz
+tar zxf ${path}/zookeeper-${version}.tar.gz -C ${path}
+
+printf "${GREEN}<<<<<<<< install zookeeper end.${RESET}\n"

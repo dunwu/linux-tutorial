@@ -14,5 +14,5 @@ mkdir -p /opt/maven
 cd /opt/maven
 
 version=3.13.0-01
-wget -O /opt/maven/nexus-unix.tar.gz http://download.sonatype.com/nexus/3/nexus-${version}-unix.tar.gz
+curl -o /opt/maven/nexus-unix.tar.gz http://download.sonatype.com/nexus/3/nexus-${version}-unix.tar.gz
 tar -zxf nexus-unix.tar.gz

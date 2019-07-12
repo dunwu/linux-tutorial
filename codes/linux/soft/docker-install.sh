@@ -24,10 +24,10 @@ cat << EOF
 EOF
 printf "${RESET}"
 
-printf "${BLUE}>>>>>>>> install jenkins\n${RESET}"
+printf "${BLUE}>>>>>>>> install jenkins${RESET}\n"
 
 # 下载并解压 jenkins
 mkdir -p /opt/jenkins
-wget -O /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+curl -o /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 
-printf "${GREEN}<<<<<<<< install jenkins\n${RESET}"
+printf "${GREEN}<<<<<<<< install jenkins${RESET}\n"

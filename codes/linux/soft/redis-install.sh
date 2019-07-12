@@ -43,7 +43,7 @@ yum install -y zlib zlib-devel gcc-c++ libtool openssl openssl-devel tcl
 
 echo -e "\n>>>>>>>>> download redis"
 mkdir -p ${root}
-wget -O ${root}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz
+curl -o ${root}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz
 
 echo -e "\n>>>>>>>>> install redis"
 path=${root}/redis-${version}

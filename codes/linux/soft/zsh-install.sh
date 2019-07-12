@@ -25,14 +25,16 @@ cat << EOF
 EOF
 printf "${RESET}"
 
-printf "${BLUE}>>>>>>>> install zsh\n${RESET}"
+printf "${GREEN}>>>>>>>> install zsh begin.${RESET}\n"
 
 command -v yum >/dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n"; exit 1; }
+command -v git >/dev/null 2>&1 || { printf "${RED}Require git but it's not installed.${RESET}\n"; exit 1; }
 
 # install zsh
 yum install -y zsh
+chsh -s /bin/zsh
 # install oh-my-zsh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+curl -o- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
 # choose oh-my-zsh theme
 sed -i "s/^ZSH_THEME=.*/ZSH_THEME=\"ys\"/g" ~/.zshrc
 # install oh-my-zsh plugins
@@ -40,6 +42,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plug
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 sed -i "s/^plugins=.*/plugins=(git z wd extract zsh-autosuggestions zsh-syntax-highlighting)/g" ~/.zshrc
 # reload zsh
-source ~/.zshrc
 
-printf "${GREEN}<<<<<<<< install zsh finished\n${RESET}"
+printf "${GREEN}<<<<<<<< install zsh finished${RESET}\n"
+printf "${GREEN}Please reboot to take effect.${RESET}\n"

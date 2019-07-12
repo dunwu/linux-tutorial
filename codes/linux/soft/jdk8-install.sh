@@ -25,15 +25,11 @@ cat << EOF
 EOF
 printf "${RESET}"
 
-printf "${BLUE}>>>>>>>> install jdk8\n${RESET}"
+printf "${GREEN}>>>>>>>> install jdk8 begin.${RESET}\n"
 
-command -v yum >/dev/null 2>&1 || {
-printf "${RED}Require yum but it's not installed.\n${RESET}"
-printf "${RED}Require yum but it's not installed.${RESET}\n";
-exit 1;
-}
+command -v yum >/dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n"; exit 1; }
 
 yum -y install java-1.8.0-openjdk-devel.x86_64
 java -version
 
-printf "${GREEN}<<<<<<<< install jdk8 finished\n${RESET}"
+printf "${GREEN}<<<<<<<< install jdk8 end.${RESET}\n"
