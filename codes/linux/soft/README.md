@@ -13,6 +13,9 @@
 - [RocketMQ 安装](#rocketmq-安装)
 - [Nacos 安装](#nacos-安装)
 - [ZooKeeper 安装](#zookeeper-安装)
+- [Nginx 安装](#nginx-安装)
+- [Fastdfs 安装](#fastdfs-安装)
+- [Docker 安装](#docker-安装)
 
 <!-- /TOC -->
 
@@ -218,3 +221,15 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/ng
 ```sh
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
+```
+
+## Docker 安装
+
+说明：
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/docker-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/docker-install.sh | bash
+```

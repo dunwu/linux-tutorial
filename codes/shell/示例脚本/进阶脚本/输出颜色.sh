@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #输出特效格式控制
-#${C_RESET}  关闭所有属性
+#${RESET}  关闭所有属性
 #\033[1m   设置高亮度
 #\03[4m   下划线
 #\033[5m   闪烁
@@ -54,60 +54,61 @@
 #　　46 设置青色背景
 #　　47 设置白色背景
 #　　49 设置缺省黑色背景
-#特效可以叠加，需要使用“;”隔开，例如：闪烁+下划线+白底色+黑字为   \033[5;4;47;30m闪烁+下划线+白底色+黑字为${C_RESET}
+#特效可以叠加，需要使用“;”隔开，例如：闪烁+下划线+白底色+黑字为   \033[5;4;47;30m闪烁+下划线+白底色+黑字为${RESET}
 
-C_RESET="$(tput sgr0)"
-C_BLACK="\033[1;30m"
-C_RED="\033[1;31m"
-C_GREEN="\033[1;32m"
-C_YELLOW="\033[1;33m"
-C_BLUE="\033[1;34m"
-C_PURPLE="\033[1;35m"
-C_CYAN="\033[1;36m"
-C_WHITE="\033[1;37m"
+RESET="$(tput sgr0)"
+BLACK="\033[1;30m"
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+BLUE="\033[1;34m"
+PURPLE="\033[1;35m"
+CYAN="\033[1;36m"
+WHITE="\033[1;37m"
+
 # 示例：
-echo -e "${C_BLACK} 黑色字 ${C_RESET}"
-echo -e "${C_RED} 红色字 ${C_RESET}"
-echo -e "${C_GREEN} 绿色字 ${C_RESET}"
-echo -e "${C_YELLOW} 黄色字 ${C_RESET}"
-echo -e "${C_BLUE} 蓝色字 ${C_RESET}"
-echo -e "${C_PURPLE} 紫色字 ${C_RESET}"
-echo -e "${C_CYAN} 天蓝字 ${C_RESET}"
-echo -e "${C_WHITE} 白色字 ${C_RESET}"
+echo -e "${BLACK} 黑色字 ${RESET}"
+echo -e "${RED} 红色字 ${RESET}"
+echo -e "${GREEN} 绿色字 ${RESET}"
+echo -e "${YELLOW} 黄色字 ${RESET}"
+echo -e "${BLUE} 蓝色字 ${RESET}"
+echo -e "${PURPLE} 紫色字 ${RESET}"
+echo -e "${CYAN} 天蓝字 ${RESET}"
+echo -e "${WHITE} 白色字 ${RESET}"
 # 字背景颜色范围：40-47
-echo -e "\033[40;37m 黑底白字 ${C_RESET}"
-echo -e "\033[41;30m 红底黑字 ${C_RESET}"
-echo -e "\033[42;34m 绿底蓝字 ${C_RESET}"
-echo -e "\033[43;34m 黄底蓝字 ${C_RESET}"
-echo -e "\033[44;30m 蓝底黑字 ${C_RESET}"
-echo -e "\033[45;30m 紫底黑字 ${C_RESET}"
-echo -e "\033[46;30m 天蓝底黑字 ${C_RESET}"
-echo -e "\033[47;34m 白底蓝字 ${C_RESET}"
+echo -e "\033[40;37m 黑底白字 ${RESET}"
+echo -e "\033[41;30m 红底黑字 ${RESET}"
+echo -e "\033[42;34m 绿底蓝字 ${RESET}"
+echo -e "\033[43;34m 黄底蓝字 ${RESET}"
+echo -e "\033[44;30m 蓝底黑字 ${RESET}"
+echo -e "\033[45;30m 紫底黑字 ${RESET}"
+echo -e "\033[46;30m 天蓝底黑字 ${RESET}"
+echo -e "\033[47;34m 白底蓝字 ${RESET}"
 
 #控制选项说明
-#${C_RESET} 关闭所有属性
+#${RESET} 关闭所有属性
 #\033[1m 设置高亮度
 #\033[4m 下划线
-echo -e "\033[4;31m 下划线红字 ${C_RESET}"
+echo -e "\033[4;31m 下划线红字 ${RESET}"
 #闪烁
-echo -e "\033[5;34m 红字在闪烁 ${C_RESET}"
+echo -e "\033[5;34m 红字在闪烁 ${RESET}"
 #反影
-echo -e "\033[8m 消隐 ${C_RESET} "
+echo -e "\033[8m 消隐 ${RESET} "
 
 #\033[30m-\033[37m 设置前景色
 #\033[40m-\033[47m 设置背景色
 #\033[nA光标上移n行
 #\033[nB光标下移n行
-echo -e "\033[4A 光标上移4行 ${C_RESET}"
+echo -e "\033[4A 光标上移4行 ${RESET}"
 #\033[nC光标右移n行
 #\033[nD光标左移n行
 #\033[y;xH设置光标位置
 #\033[2J清屏
 #\033[K清除从光标到行尾的内容
-echo -e "\033[K 清除光标到行尾的内容 ${C_RESET}"
+echo -e "\033[K 清除光标到行尾的内容 ${RESET}"
 #\033[s 保存光标位置
 #\033[u 恢复光标位置
 #\033[?25| 隐藏光标
 #\033[?25h 显示光标
-echo -e "\033[?25l 隐藏光标 ${C_RESET}"
-echo -e "\033[?25h 显示光标 ${C_RESET}"
+echo -e "\033[?25l 隐藏光标 ${RESET}"
+echo -e "\033[?25h 显示光标 ${RESET}"

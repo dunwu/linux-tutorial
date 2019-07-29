@@ -16,7 +16,7 @@ printf "${BLUE}"
 cat << EOF
 
 ###################################################################################
-# 安装 Jenkins 脚本
+# 安装 Docker 脚本
 # 适用于所有 linux 发行版本。
 # @author: Zhang Peng
 ###################################################################################
@@ -24,10 +24,25 @@ cat << EOF
 EOF
 printf "${RESET}"
 
-printf "${BLUE}>>>>>>>> install jenkins${RESET}\n"
-
-# 下载并解压 jenkins
-mkdir -p /opt/jenkins
-curl -o /opt/jenkins/jenkins.war http://mirrors.jenkins.io/war-stable/latest/jenkins.war
-
-printf "${GREEN}<<<<<<<< install jenkins${RESET}\n"
+printf "${GREEN}>>>>>>>> install docker begin.${RESET}\n"
+# uninstall old version docker
+sudo yum remove docker \
+                docker-client \
+                docker-client-latest \
+                docker-common \
+                docker-latest \
+                docker-latest-logrotate \
+                docker-logrotate \
+                docker-selinux \
+                docker-engine-selinux \
+                docker-engine
+# install required libs
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# add docker yum repo
+sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+sudo yum makecache fast
+# install docker
+sudo yum -y install docker-ce
+sudo systemctl start docker
+docker version
+printf "${GREEN}<<<<<<<< install docker end.${RESET}\n"
