@@ -1,5 +1,4 @@
-#!/bin/bash
-#testing variables
+#!/usr/bin/env bash
 
 days=10
 guest="Katie"

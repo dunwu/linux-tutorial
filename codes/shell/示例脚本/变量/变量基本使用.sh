@@ -3,13 +3,13 @@
 ################### 声明变量 ###################
 name="world"
 echo "hello ${name}"
-# Output: hello
+# Output: hello world
 
 ################### 只读变量 ###################
-rword="hello"
-echo ${rword}
+readonly_var="hello"
+echo ${readonly_var}
 # Output: hello
-readonly rword
+readonly readonly_var
 # rword="bye"  # 如果放开注释，执行时会报错
 
 ################### 删除变量 ###################

@@ -47,7 +47,7 @@ nginx_version=1.16.0
 nginx_path=/opt/nginx
 
 printf "${GREEN}>>>>>>>> install required libs.${RESET}\n\n"
-yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim -y
+yum install -y git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim unzip
 
 # download and decompression
 mkdir -p ${path}
@@ -95,6 +95,7 @@ make && make install
 printf "${GREEN}>>>>>>>>> fastdfs 配置文件准备${RESET}\n"
 # 配置修改参考：https://github.com/happyfish100/fastdfs/wiki
 
+mkdir -p /etc/fdfs
 cp ${path}/fastdfs/conf/http.conf /etc/fdfs/ #供nginx访问使用
 cp ${path}/fastdfs/conf/mime.types /etc/fdfs/ #供nginx访问使用
 cp ${path}/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs

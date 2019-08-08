@@ -233,3 +233,14 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fa
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/docker-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/docker-install.sh | bash
 ```
+
+## FastDFS 安装
+
+说明：
+
+使用方法：执行以下任意命令即可执行脚本。
+
+```sh
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
+```
