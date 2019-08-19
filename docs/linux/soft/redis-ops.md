@@ -1,14 +1,18 @@
 # Redis 安装
 
+> **Redis** 是一个高性能的 key-value 数据库。
+>
+> SET 操作每秒钟 110000 次；GET 操作每秒钟 81000 次。
+
 <!-- TOC depthFrom:2 depthTo:3 -->
 
-- [安装](#安装)
+- [安装 Redis](#安装-redis)
 - [启动](#启动)
 - [脚本](#脚本)
 
 <!-- /TOC -->
 
-## 安装
+## 安装 Redis
 
 安装步骤如下：
 
@@ -56,3 +60,6 @@ cd /opt/redis/redis-4.0.8/src
 以上两种安装方式，我都写了脚本去执行：
 
 | [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft) |
+
+## 参考资料
+

@@ -17,7 +17,7 @@
   - [Maven 安装](linux/soft/maven-install.md)
   - [Nodejs 安装](linux/soft/nodejs-install.md)
 - 开发工具
-  - [Nexus 运维](linux/soft/nexus-install.md)
+  - [Nexus 运维](linux/soft/nexus-ops.md)
   - [Gitlab 运维](linux/soft/kafka-install.md)
   - [Jenkins 运维](linux/soft/jenkins.md)
   - [Svn 运维](linux/soft/svn-ops.md)

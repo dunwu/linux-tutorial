@@ -6,7 +6,7 @@
 - [Jenkins 安装](jenkins-install.md)
 - [Kafka 安装](kafka-install.md)
 - [Maven 安装](maven-install.md)
-- [Nexus 安装](nexus-install.md)
+- [Nexus 安装](nexus-ops.md)
 - [Nodejs 安装](nodejs-install.md)
 - [RocketMQ 安装](rocketmq-install.md)
 - [Svn 安装](svn-ops.md)
