@@ -30,7 +30,7 @@ Docker 的主要用途，目前有三大类。
 
 **启动慢** - 启动操作系统需要多久，启动虚拟机就需要多久。可能要等几分钟，应用程序才能真正运行。
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/docker/containers-and-vm.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/docker/containers-and-vm.png!zp"/></div><br>
 
 ### Docker 平台
 

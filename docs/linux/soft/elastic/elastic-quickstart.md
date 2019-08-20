@@ -274,7 +274,7 @@ output {
 
 大功告成，此后，`io.github.dunwu.spring` 包中的 TRACE 及以上级别的日志信息都会被定向输出到 logstash 服务。
 
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-cd876d79a14955b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-cd876d79a14955b0.png"/></div><br>
 
 ## 资料
 

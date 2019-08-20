@@ -96,7 +96,7 @@ Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值�
 
   同理，如果你想同步别人的修改，你需要从远程仓库拉取更新。
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/web/git/git-theory.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/web/git/git-theory.png!zp"/></div><br>
 
 ## 安装
 
@@ -179,7 +179,7 @@ $ git config --global user.email johndoe@example.com
 
 本节选择性介绍 git 中比较常用的命令行场景。
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/web/git/git-cheat-sheet.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/web/git/git-cheat-sheet.png!zp"/></div><br>
 
 ### 创建
 
@@ -447,7 +447,7 @@ HTTPS 这种方式要求你每次 push 时都要输入用户名、密码，有�
 
 而 SSH 要求你本地生成证书，然后在你的 Github 账户中注册。第一次配置麻烦是麻烦了点，但是以后就免去了每次 push 需要输入用户名、密码的繁琐。
 
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-66f60822aeb2c21c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-66f60822aeb2c21c.png"/></div><br>
 
 以下介绍以下，如何生成证书，以及在 Github 中注册。
 
@@ -505,7 +505,7 @@ NrRFi9wrf+M7Q== schacon@mylaptop.local
 
 最后，放一张我总结的脑图总结一下以上的知识点。
 
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2044cc669d78eef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2044cc669d78eef9.png"/></div><br>
 
 ## 资料
 

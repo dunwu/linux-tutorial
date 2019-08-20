@@ -50,7 +50,7 @@ tags:
 
 linux 目录结构是树形结构，其根目录是 `/` 。一张思维导图说明各个目录的作用：
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/linux/linux-folders.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/linux/linux-folders.png!zp"/></div><br>
 
 ### Linux 文件属性
 
@@ -77,7 +77,7 @@ dr-xr-xr-x 4 root root 4096 Apr 19 2012 boot
 
 每个文件的属性由左边第一部分的 10 个字符来确定（如下图）。
 
-<br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20180920180927171909.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20180920180927171909.png!zp"/></div><br>
 
 从左至右用 0-9 这些数字来表示。
 

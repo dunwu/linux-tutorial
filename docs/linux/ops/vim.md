@@ -167,7 +167,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
    >
    > \> 如果你认为单词是由 blank 字符分隔符，那么你需要使用大写的 E 和 W。（注：程序语句）
    >
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg"/></div><br>
 
 下面，让我来说说最强的光标移动：
 
@@ -216,7 +216,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `t,` → 到逗号前的第一个字符。逗号可以变成其它字符。
 > - `3fa` → 在当前行查找第三个出现的 a。
 > - `F` 和 `T` → 和 `f` 和 `t` 一样，只不过是相反方向。
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg"/></div><br>
 
 还有一个很有用的命令是 `dt"` → 删除所有的内容，直到遇到双引号—— `"。`
 
@@ -238,7 +238,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `v2i)` → 会选择 `map (+) ("foo")`
 > - `v2a)` → 会选择 `(map (+) ("foo"))`
 
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png"/></div><br>
 
 #### 块操作: `<C-v>`
 
@@ -328,33 +328,33 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 此外，[这里](http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif)还有简体中文版。
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/vim/vim-cheat-sheet.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet.png!zp"/></div><br>
 
 ### 3.2. 入门版
 
 基本操作的入门版。[原版出处](https://github.com/ahrencode/Miscellaneous)还有 keynote 版本可供 DIY 以及其他相关有用的 cheatsheet。
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/vim/basic-vim-cheat-sheet.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/basic-vim-cheat-sheet.png!zp"/></div><br>
 
 ### 3.3. 进阶版
 
 下图是 300DPI 的超清大图，另外[查看原文](http://michael.peopleofhonoronly.com/vim/)还有更多版本：黑白，低分辨率，色盲等
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/vim/vim-cheat-sheet-for-programmers.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-for-programmers.png!zp"/></div><br>
 
 ### 3.4. 增强版
 
 下图是一个更新时间较新的现代版，含有的信息也更丰富。[原文链接](http://vimcheatsheet.com/)
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/vim/vim-cheat-sheet-02.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-02.png!zp"/></div><br>
 
 ### 3.5. 文字版
 
 [原文链接](http://tnerual.eriogerg.free.fr/vimqrc.pdf)
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/vim/vim-cheat-sheet-text-01.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-01.png!zp"/></div><br>
 
-<br><div align="center"><img src="https://gitee.com/turnon/images/raw/master/images/os/vim/vim-cheat-sheet-text-02.png"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/os/vim/vim-cheat-sheet-text-02.png!zp"/></div><br>
 
 ## 4. 资料
 

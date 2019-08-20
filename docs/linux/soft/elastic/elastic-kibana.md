@@ -279,7 +279,7 @@ Visualize工具使您能够以多种方式（如饼图、柱状图、曲线图�
 3. 在 `Field` 列表中选择 `level.keyword`。
 4. 点击 ![images/apply-changes-button.png](https://www.elastic.co/guide/en/kibana/6.1/images/apply-changes-button.png) 按钮来更新图表。
 
-![image.png](https://upload-images.jianshu.io/upload_images/3101171-7fb2042dc6d59520.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://upload-images.jianshu.io/upload_images/3101171-7fb2042dc6d59520.png)
 
 完成后，如果想要保存这个图表，可以点击页面最上方一栏中的 `Save` 按钮。
 
@@ -293,7 +293,7 @@ Visualize工具使您能够以多种方式（如饼图、柱状图、曲线图�
 4. 指定 X 轴所代表的字段
 5. 点击 ![images/apply-changes-button.png](https://www.elastic.co/guide/en/kibana/6.1/images/apply-changes-button.png) 按钮来更新图表。
 
-![image.png](https://upload-images.jianshu.io/upload_images/3101171-5aa7627284c19a56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://upload-images.jianshu.io/upload_images/3101171-5aa7627284c19a56.png)
 
 完成后，如果想要保存这个图表，可以点击页面最上方一栏中的 `Save` 按钮。
 

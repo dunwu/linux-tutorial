@@ -4,7 +4,7 @@
 >
 > 本文目的在于记录 svn 的安装、配置、使用。
 
-<div align="center"><img src="https://gitee.com/turnon/images/raw/master/snap/1562814562978.png"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/snap/1562814562978.png!zp"/></div>
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
