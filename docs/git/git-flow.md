@@ -50,7 +50,7 @@ Git 是一个非常优秀的版本控制工具，但是在实际版本管理中�
 
 下面，来介绍一下 git-flow 模型。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/web/git/git-flow.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/web/git/git-flow.png!zp"/></div><br>
 
 `Gitflow`工作流仍然用中央仓库作为所有开发者的交互中心。和其它的工作流一样，开发者在本地工作并`push`分支到要中央仓库中。
 
@@ -237,7 +237,7 @@ $ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develo
 - **开始一个Hotfix:** git flow hotfix start VERSION [BASENAME]
 - **发布一个Hotfix:** git flow hotfix finish VERSION
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/images/web/git/git-flow-commands.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/web/git/git-flow-commands.png!zp"/></div><br>
 
 ### Source Tree
 

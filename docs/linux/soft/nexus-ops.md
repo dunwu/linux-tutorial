@@ -79,7 +79,7 @@ Nexus 中的仓库有以下类型：
 - `virtual` - 虚拟仓库。用于适配 Maven 1；
 - `group` - 仓库组。Nexus 通过仓库组的概念统一管理多个仓库，这样我们在项目中直接请求仓库组即可请求到仓库组管理的多个仓库。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/images/java/javalib/maven/nexus.png!zp"/></div>
+<div align="center"><img src="http://dunwu.test.upcdn.net/cs/java/javalib/maven/nexus.png!zp"/></div>
 
 > **最佳实践**
 >
