@@ -2,11 +2,11 @@
 
 > :keyboard: 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
 >
-> :book: [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
+> 📖 [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
 |       :wrench:        |        :shell:        |      :memo:       |        :books:        |
 | :-------------------: | :-------------------: | :---------------: | :-------------------: |
-| [软件运维](#软件运维) | [运维脚本](#运维脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
+| [软件运维](#软件运维) | [运维和脚本](#运维和脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
 
 ## 软件运维
 
@@ -35,7 +35,7 @@
   - [Mongodb 运维](linux/soft/mongodb-ops.md)
   - [Redis 运维](linux/soft/redis-ops.md)
 
-## 运维脚本
+## 运维和脚本
 
 - [系统运维脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
 - [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
@@ -44,6 +44,7 @@
 - [Zsh 应用指南](linux/ops/zsh.md)
 - [Shell 教程](linux/ops/shell.md)
 - [Python 教程](linux/ops/python.md)
+- [Systemd 入门教程](linux/ops/systemd.md)
 
 > 提供一键式运维、配置软件脚本
 

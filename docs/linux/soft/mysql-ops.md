@@ -490,4 +490,4 @@ Query OK, 0 rows affected (0.00 sec)
 
 ## :door: 传送门
 
-| [技术文档归档](https://github.com/dunwu/blog) | [数据库教程系列](https://github.com/dunwu/db-tutorial/codes) |
+| [我的 Github 博客](https://github.com/dunwu/blog) | [db-tutorial 首页](https://github.com/dunwu/db-tutorial) |
