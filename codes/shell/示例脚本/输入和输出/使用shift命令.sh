@@ -1,12 +1,13 @@
 #!/bin/bash
+
 # shift n 移动变量
 
 count=1
 while [ -n "$1" ]
 do
-	echo "Parameter #$count = $1"
-	count=$[ $count+1 ]
-	shift
+    echo "Parameter #$count = $1"
+    count=$[ $count + 1 ]
+    shift
 done
 
 echo -e "\n"

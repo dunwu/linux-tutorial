@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # testing inpiut/output file descriptor
 
 exec 3<> test

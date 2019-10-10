@@ -11,22 +11,24 @@ cat << EOF
 
 EOF
 
-command -v java >/dev/null 2>&1 || { echo >&2 "Require java but it's not installed."; exit 1; }
-command -v mvn >/dev/null 2>&1 || { echo >&2 "Require mvn but it's not installed."; exit 1; }
+command -v java > /dev/null 2>&1 || { echo >&2 "Require java but it's not installed.";
+    exit 1; }
+command -v mvn > /dev/null 2>&1 || { echo >&2 "Require mvn but it's not installed.";
+    exit 1; }
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
     echo "Usage: sh nacos-install.sh [version] [path]"
     printf "Example: sh nacos-install.sh 1.0.0 /opt/nacos\n"
 fi
 
 version=1.0.0
 if [[ -n $1 ]]; then
-  version=$1
+    version=$1
 fi
 
 root=/opt/nacos
 if [[ -n $2 ]]; then
-  root=$2
+    root=$2
 fi
 
 echo "Current execution: install nacos ${version} to ${root}"

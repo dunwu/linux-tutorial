@@ -7,22 +7,22 @@
 ###################################################################################
 ip='127.0.0.1'
 function getDeviceIp() {
-  ip=$(ip addr | awk '/^[0-9]+: / {}; /inet.*global/ {print gensub(/(.*)\/(.*)/, "\\1", "g", $2)}')
+    ip=$(ip addr | awk '/^[0-9]+: / {}; /inet.*global/ {print gensub(/(.*)\/(.*)/, "\\1", "g", $2)}')
 }
 
 function setDNSServer() {
-echo -e "设置DNS服务器"
-cat >> /etc/resolv.conf << EOF
+    echo -e "设置DNS服务器"
+    cat >> /etc/resolv.conf << EOF
 nameserver 114.114.114.114
 nameserver 8.8.8.8
 EOF
 }
 
 function setHosts() {
-getDeviceIp
-host=`hostname`
-cat >> /etc/hosts << EOF
-${ip} ${host}
+    getDeviceIp
+    host=`hostname`
+    cat >> /etc/hosts << EOF
+    ${ip} ${host}
 EOF
 }
 

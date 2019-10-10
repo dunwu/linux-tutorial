@@ -4,7 +4,7 @@
 
 tempfile=`mktemp test.XXXXXX`
 
-exec 3>$tempfile
+exec 3> $tempfile
 
 echo "This script writes to temp file $tempfile"
 
@@ -18,5 +18,5 @@ echo "Done creating temp file. The contents are:"
 
 cat $tempfile
 
-rm -f $tempfile 2>/dev/null
+rm -f $tempfile 2> /dev/null
 

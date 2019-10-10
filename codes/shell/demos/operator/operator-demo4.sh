@@ -2,28 +2,28 @@
 
 x=10
 if [[ -n $1 ]]; then
-  x=$1
+    x=$1
 fi
 
 y=20
 if [[ -n $2 ]]; then
-  y=$2
+    y=$2
 fi
 
 echo "x=${x}, y=${y}"
 
 if [[ ${x} -lt 100 && ${y} -gt 100 ]]
 then
-   echo "${x} -lt 100 && ${y} -gt 100 返回 true"
+    echo "${x} -lt 100 && ${y} -gt 100 返回 true"
 else
-   echo "${x} -lt 100 && ${y} -gt 100 返回 false"
+    echo "${x} -lt 100 && ${y} -gt 100 返回 false"
 fi
 
 if [[ ${x} -lt 100 || ${y} -gt 100 ]]
 then
-   echo "${x} -lt 100 || ${y} -gt 100 返回 true"
+    echo "${x} -lt 100 || ${y} -gt 100 返回 true"
 else
-   echo "${x} -lt 100 || ${y} -gt 100 返回 false"
+    echo "${x} -lt 100 || ${y} -gt 100 返回 false"
 fi
 
 #  Execute: ./operator-demo4.sh

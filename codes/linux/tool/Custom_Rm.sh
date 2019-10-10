@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # function:自定义rm命令，每天晚上定时清理
 
 CMD_SCRIPTS=$HOME/.rm_scripts.sh
@@ -7,7 +8,7 @@ CRON_FILE=/var/spool/cron/root
 BASHRC=$HOME/.bashrc
 
 [ ! -d ${TRASH_DIR} ] && mkdir -p ${TRASH_DIR}
-cat > $CMD_SCRIPTS <<EOF
+cat > $CMD_SCRIPTS << EOF
 PARA_CNT=\$#
 TRASH_DIR=$TRASH_DIR
 for i in \$*; do

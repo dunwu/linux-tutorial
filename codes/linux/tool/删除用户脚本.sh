@@ -1,85 +1,92 @@
 #!/bin/bash
+
 #
 # Delete_User - Automates the 4 steps to remove an account
 #
 #################################################################
-# 
+#
 # Define Functions
 #
 #################################################################
 function get_answer {
-#
-	unset ANSWER
-	ASK_COUNT=0
-#
-	while [ -z "$ANSWER" ] # while no answer is given, keep asking
-	do
-		ASK_COUNT=$[ $ASK_COUNT + 1 ]
-#
-		case $ASK_COUNT in			# If user gives no answer in time allowed
-		2)
-			echo 
-			echo "Please answer the question."
-			echo
-		;;
-		3)
-			echo 
-			echo "One last try... please answer the question."
-			echo
-		;;
-		4)
-			echo 
-			echo "Since you refuse to answer the question..."
-			echo "exiting program."
-			echo
-			#
-			exit
-		;;
-		esac
-#
-		echo
-#	
-		if [ -n "$LINE2" ]
-		then
-			echo $LINE1			# Print 2 lines
-			echo -e $LINE2" \c"
-		else					# Print 1 line
-			echo -e $LINE1" \c"
-		fi
-#
-# Allow 60 seconds to answer before time-out
-		read -t 60 ANSWER
-	done
-#
-# Do a little variable clean-up
-#
-	unset LINE1
-	unset LINE2
-#
-}    #end of get_answer function
+    #
+    unset ANSWER
+    ASK_COUNT=0
+    #
+    while [ -z "$ANSWER" ] # while no answer is given, keep asking
+    do
+        ASK_COUNT=$[ $ASK_COUNT + 1 ]
+        #
+        case $ASK_COUNT in
+        # If user gives no answer in time allowed
+            2)
+                echo
+                echo "Please answer the question."
+                echo
+            ;;
+            3)
+                echo
+                echo "One last try... please answer the question."
+                echo
+            ;;
+            4)
+                echo
+                echo "Since you refuse to answer the question..."
+                echo "exiting program."
+                echo
+                #
+                exit
+            ;;
+        esac
+        #
+        echo
+        #
+        if [ -n "$LINE2" ]
+        then
+            echo $LINE1 # Print 2 lines
+            echo -e $LINE2" \c"
+        else
+        # Print 1 line
+            echo -e $LINE1" \c"
+        fi
+        #
+        # Allow 60 seconds to answer before time-out
+        read -t 60 ANSWER
+    done
+    #
+    # Do a little variable clean-up
+    #
+    unset LINE1
+    unset LINE2
+    #
+}
+
+#end of get_answer function
 #
 #################################################################
 function process_answer {
-#
-	case $ANSWER in
-	y|Y|YES|yes|yEs|yeS|YEs|yES)
-	# If user answers "yes".do nothing.
-	;;
-	*)
-	# If user answers anything but "yes", exit script
-		echo
-		echo $EXIT_LINE1
-		echo $EXIT_LINE2
-		echo
-		exit
-	;;
-	esac
-	#
-	# Do a little variable clean-up
-	unset EXIT_LINE1
-	unset EXIT_LINE2
-#
-} #End of process_answer function
+    #
+    case $ANSWER in
+        y | Y | YES | yes | yEs | yeS | YEs | yES)
+        # If user answers "yes".do nothing.
+        ;;
+        *)
+        # If user answers anything but "yes", exit script
+            echo
+            echo $EXIT_LINE1
+            echo $EXIT_LINE2
+            echo
+            exit
+        ;;
+    esac
+    #
+    # Do a little variable clean-up
+    unset EXIT_LINE1
+    unset EXIT_LINE2
+    #
+}
+
+#End of process_answer function
 #
 ################################################################
 #
@@ -108,13 +115,13 @@ get_answer
 #
 USER_ACCOUNT_RECORD=$(cat /etc/passwd | grep -w $USER_ACCOUNT)
 #
-if [ $? -eq 1 ]			# If the account is not found, exit script
+if [ $? -eq 1 ] # If the account is not found, exit script
 then
-	echo 
-	echo "Account, $USER_ACCOUNT, not found."
-	echo "Leaving the script..."
-	echo
-	exit
+    echo
+    echo "Account, $USER_ACCOUNT, not found."
+    echo "Leaving the script..."
+    echo
+    exit
 fi
 #
 echo
@@ -143,59 +150,59 @@ echo
 echo "$USER_ACCOUNT has the following processes running: "
 echo
 #
-ps -u $USER_ACCOUNT      #List the processes running
+ps -u $USER_ACCOUNT #List the processes running
 #
 case $? in
-1)			# No processes running for this User Account
-	#
-	echo "There are no processes for this account currently running."
-	echo
-;;
-0)	# Processes running for this User Account.
-	# Ask Script User if wants us to kill the processes.
-	#
-	unset ANSWER			# I think this line is not needed
-	LINE1="Would you like me to kill the process(es)? [y/n]:"
-	get_answer
-	#
-	case $ANSWER in
-	y|Y|YES|yes|Yes|yEs|yeS|YEs|yES)    # if user answer "yes",
-		#kill User Account processes
-		#
-		echo 
-		#
-		# Clean-up temp file upon signals
-		#
-		trap "rm $USER_ACCOUNT_Running_Process.rpt" SIGTERM SIGINT SIGQUIT
-		#
-		# List user processes running
-		ps -u $USER_ACCOUNT > $USER_ACCOUNT_Running_Process.rpt
-		#
-		exec < $USER_ACCOUNT_Running_Process.rpt		# Make report Std Input
-		#
-		read USER_PROCESS_REC				# First record will be blank
-		read USER_PROCESS_REC
-		#
-		while [ $? -eq 0 ]
-		do
-			# obtain PID
-			USER_PID=$(echo $USER_PROCESS_REC | cut -d " " -f1 )
-			kill -9 $USER_PID
-			echo "Killed process $USER_PID"
-			read USER_PROCESS_REC
-		done
-		#
-		echo
-		#
-		rm $USER_ACCOUNT_Running_Process.rpt			# Remove temp report
-	;;
-	*) # If user answers anything but "yes", do not kill.
-		echo
-		echo "Will not kill the process(es)."
-		echo
-	;;
-	esac
-;;
+    1) # No processes running for this User Account
+    #
+        echo "There are no processes for this account currently running."
+        echo
+    ;;
+    0) # Processes running for this User Account.
+    # Ask Script User if wants us to kill the processes.
+    #
+        unset ANSWER # I think this line is not needed
+        LINE1="Would you like me to kill the process(es)? [y/n]:"
+        get_answer
+        #
+        case $ANSWER in
+            y | Y | YES | yes | Yes | yEs | yeS | YEs | yES) # if user answer "yes",
+            #kill User Account processes
+            #
+                echo
+                #
+                # Clean-up temp file upon signals
+                #
+                trap "rm$USER_ACCOUNT_Running_Process.rpt" SIGTERM SIGINT SIGQUIT
+                #
+                # List user processes running
+                ps -u $USER_ACCOUNT > $USER_ACCOUNT_Running_Process.rpt
+                #
+                exec < $USER_ACCOUNT_Running_Process.rpt # Make report Std Input
+                #
+                read USER_PROCESS_REC # First record will be blank
+                read USER_PROCESS_REC
+                #
+                while [ $? -eq 0 ]
+                do
+                    # obtain PID
+                    USER_PID=$(echo $USER_PROCESS_REC | cut -d " " -f1)
+                    kill -9 $USER_PID
+                    echo "Killed process $USER_PID"
+                    read USER_PROCESS_REC
+                done
+                #
+                echo
+                #
+                rm $USER_ACCOUNT_Running_Process.rpt # Remove temp report
+            ;;
+            *) # If user answers anything but "yes", do not kill.
+                echo
+                echo "Will not kill the process(es)."
+                echo
+            ;;
+        esac
+    ;;
 esac
 ###################################################################################
 #
@@ -216,7 +223,7 @@ echo "Please wait. This may take a while..."
 REPORT_DATE=`date +%y%m%d`
 REPORT_FILE=$USER_ACCOUNT"_Files_"$REPORT_DATE".rpt"
 #
-find / -user $USER_ACCOUNT > $REPORT_FILE 2>/dev/null
+find / -user $USER_ACCOUNT > $REPORT_FILE 2> /dev/null
 #
 echo
 echo "Report is complete."
@@ -240,7 +247,7 @@ EXIT_LINE1="Since you do not wish to remove the user account."
 EXIT_LINE2="$USER_ACCOUNT at this time, exiting the script..."
 process_answer
 #
-userdel $USER_ACCOUNT			# delete user account
+userdel $USER_ACCOUNT # delete user account
 echo
 echo "User account, $USER_ACCOUNT, has been removed"
 echo

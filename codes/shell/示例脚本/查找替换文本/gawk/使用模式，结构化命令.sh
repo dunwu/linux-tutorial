@@ -1,7 +1,8 @@
 #!/bin/bash
+
 #正则表达式
 
-gawk 'BEGIN{FS=","} 
+gawk 'BEGIN{FS=","}
 /11/{print $1}
 ' test
 

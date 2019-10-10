@@ -2,8 +2,8 @@
 
 # 开启 debug
 set -x
-for (( i = 0; i < 3; i++ )); do
-  printf ${i}
+for (( i = 0; i < 3; i ++ )); do
+    printf ${i}
 done
 # 关闭 debug
 set +x
@@ -21,6 +21,8 @@ set +x
 #  + (( i < 3 ))
 #  + set +x
 
-for i in {1..5}; do printf ${i}; done
+for i in {1..5}; do
+    printf ${i};
+done
 printf "\n"
 #  Output: 12345

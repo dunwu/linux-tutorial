@@ -28,23 +28,24 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install maven begin.${RESET}\n"
 
-command -v java >/dev/null 2>&1 || { printf "${RED}Require java but it's not installed.${RESET}\n"; exit 1; }
+command -v java > /dev/null 2>&1 || { printf "${RED}Require java but it's not installed.${RESET}\n";
+    exit 1; }
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-  printf "${PURPLE}[Hint]\n"
-  printf "\t sh maven-install.sh [version] [path]\n"
-  printf "\t Example: sh maven-install.sh 3.6.0 /opt/maven\n"
-  printf "${RESET}\n"
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
+    printf "${PURPLE}[Hint]\n"
+    printf "\t sh maven-install.sh [version] [path]\n"
+    printf "\t Example: sh maven-install.sh 3.6.0 /opt/maven\n"
+    printf "${RESET}\n"
 fi
 
 version=3.6.0
 if [[ -n $1 ]]; then
-  version=$1
+    version=$1
 fi
 
 path=/opt/maven
 if [[ -n $2 ]]; then
-  path=$2
+    path=$2
 fi
 
 # install info

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #
 # Capture_Stats - Gather System Performance Statistics
 #

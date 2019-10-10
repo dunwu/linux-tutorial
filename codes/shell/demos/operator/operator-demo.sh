@@ -2,12 +2,12 @@
 
 x=10
 if [[ -n $1 ]]; then
-  x=$1
+    x=$1
 fi
 
 y=20
 if [[ -n $2 ]]; then
-  y=$2
+    y=$2
 fi
 
 echo "x=${x}, y=${y}"
@@ -28,10 +28,10 @@ val=`expr ${y} % ${x}`
 echo "${y} % ${x} = $val"
 
 if [[ ${x} == ${y} ]]; then
-  echo "${x} = ${y}"
+    echo "${x} = ${y}"
 fi
 if [[ ${x} != ${y} ]]; then
-  echo "${x} != ${y}"
+    echo "${x} != ${y}"
 fi
 
 #  Execute: ./operator-demo.sh

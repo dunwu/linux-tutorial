@@ -27,23 +27,24 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install maven begin.${RESET}\n"
 
-command -v yum >/dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n"; exit 1; }
+command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
+    exit 1; }
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-  printf "${PURPLE}[Hint]\n"
-  printf "\t sh nginx-install.sh [version] [path]\n"
-  printf "\t Example: sh nginx-install.sh 1.16.0 /opt/nginx\n"
-  printf "${RESET}\n"
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
+    printf "${PURPLE}[Hint]\n"
+    printf "\t sh nginx-install.sh [version] [path]\n"
+    printf "\t Example: sh nginx-install.sh 1.16.0 /opt/nginx\n"
+    printf "${RESET}\n"
 fi
 
 version=1.16.0
 if [[ -n $1 ]]; then
-  version=$1
+    version=$1
 fi
 
 path=/opt/nginx
 if [[ -n $2 ]]; then
-  path=$2
+    path=$2
 fi
 
 # install info

@@ -26,21 +26,21 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install mongodb begin.${RESET}\n"
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-  printf "${PURPLE}[Hint]\n"
-  printf "\t sh mongodb-install.sh [version] [path]\n"
-  printf "\t Example: sh mongodb-install.sh 4.0.9 /opt/mongodb\n"
-  printf "${RESET}\n"
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
+    printf "${PURPLE}[Hint]\n"
+    printf "\t sh mongodb-install.sh [version] [path]\n"
+    printf "\t Example: sh mongodb-install.sh 4.0.9 /opt/mongodb\n"
+    printf "${RESET}\n"
 fi
 
 version=4.0.9
 if [[ -n $1 ]]; then
-  version=$1
+    version=$1
 fi
 
 path=/opt/mongodb
 if [[ -n $2 ]]; then
-  path=$2
+    path=$2
 fi
 
 # install info

@@ -29,15 +29,17 @@ printf "${RESET}"
 
 path=/home/scripts/linux-tutorial
 printf "\n${GREEN}>>>>>>>> Download linux-tutorial to ${path} begin.${RESET}\n"
-command -v yum >/dev/null 2>&1 || { printf "${RED}Not detected yum.${RESET}"; exit 1; }
-command -v git >/dev/null 2>&1 || { printf "${YELLOW}Not detected git. Install git.${RESET}\n"; yum -y install git; }
+command -v yum > /dev/null 2>&1 || { printf "${RED}Not detected yum.${RESET}";
+    exit 1; }
+command -v git > /dev/null 2>&1 || { printf "${YELLOW}Not detected git. Install git.${RESET}\n";
+    yum -y install git; }
 
 if [[ -d ${path} ]]; then
-  cd ${path}
-  git pull
+    cd ${path}
+    git pull
 else
-  mkdir -p ${path}
-  git clone https://gitee.com/turnon/linux-tutorial.git ${path}
+    mkdir -p ${path}
+    git clone https://gitee.com/turnon/linux-tutorial.git ${path}
 fi
 chmod +x -R ${path}
 printf "\n${GREEN}<<<<<<<< Download linux-tutorial to ${path} end.${RESET}\n"

@@ -17,9 +17,9 @@ echo "Checking data for $last. $first..."
 #如果不指定变量，read命令就会把它收到的任何数据都放到特殊环境变量REPLY中
 read -p "Enter a number:"
 factorial=1
-for (( count=1; count<=$REPLY; count++))
+for (( count = 1; count <= $REPLY; count ++ ))
 do
-	factorial=$[ $factorial * $count ]
+    factorial=$[ $factorial * $count ]
 done
 echo "The factorial of $REPLY is $factorial"
 

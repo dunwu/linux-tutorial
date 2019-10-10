@@ -3,7 +3,7 @@
 ################### for 语句 ###################
 echo "print 0 to 9"
 for (( j = 0; j < 10; j ++ )); do
-  echo ${j}
+    echo ${j}
 done
 #  Output:
 #  print 0 to 9
@@ -20,7 +20,9 @@ done
 
 ################### for in 语句 ###################
 echo "print 1 to 5"
-for i in {1..5}; do echo ${i}; done
+for i in {1..5}; do
+    echo ${i};
+done
 #  Output:
 #  print 1 to 5
 #  1
@@ -32,6 +34,6 @@ for i in {1..5}; do echo ${i}; done
 ################### for in 语句遍历文件 ###################
 DIR=/home/zp
 for FILE in ${DIR}/*.sh; do
-  mv "$FILE" "${DIR}/scripts"
+    mv "$FILE" "${DIR}/scripts"
 done
 # 将 /home/zp 目录下所有 sh 文件拷贝到 /home/zp/scripts

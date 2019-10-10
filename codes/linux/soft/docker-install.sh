@@ -26,16 +26,16 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install docker begin.${RESET}\n"
 # uninstall old version docker
-sudo yum remove docker \
-                docker-client \
-                docker-client-latest \
-                docker-common \
-                docker-latest \
-                docker-latest-logrotate \
-                docker-logrotate \
-                docker-selinux \
-                docker-engine-selinux \
-                docker-engine
+sudo yum remove docker  \
+ docker-client  \
+ docker-client-latest  \
+ docker-common  \
+ docker-latest  \
+ docker-latest-logrotate  \
+ docker-logrotate  \
+ docker-selinux  \
+ docker-engine-selinux  \
+ docker-engine
 # install required libs
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 # add docker yum repo

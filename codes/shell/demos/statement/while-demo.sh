@@ -4,8 +4,8 @@
 x=0
 ### x小于10
 while [[ ${x} -lt 10 ]]; do
-  echo $((x * x))
-  x=$((x + 1))
+    echo $((x * x))
+    x=$((x + 1))
 done
 #  Output:
 #  0

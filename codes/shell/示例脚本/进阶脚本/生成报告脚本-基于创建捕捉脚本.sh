@@ -1,9 +1,10 @@
 #!/bin/bash
+
 #
 # Report_Stats - Generates Rpt from Captured Perf Stats
 #
 ############################################################
-# 
+#
 # Set Script Variables
 #
 REPORT_FILE=/home/tiandi/Documents/capstats.csv

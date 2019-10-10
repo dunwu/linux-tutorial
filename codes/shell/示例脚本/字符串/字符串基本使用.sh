@@ -48,8 +48,8 @@ echo "version is ${version}"
 
 ################### 判断字符串中是否包含子字符串 ###################
 result=$(echo "${str}" | grep "feature/")
-if [[ "$result" != "" ]] ; then
-  echo "feature/ 是 ${str} 的子字符串"
+if [[ "$result" != "" ]]; then
+    echo "feature/ 是 ${str} 的子字符串"
 else
-  echo "feature/ 不是 ${str} 的子字符串"
+    echo "feature/ 不是 ${str} 的子字符串"
 fi

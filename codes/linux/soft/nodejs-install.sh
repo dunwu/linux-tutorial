@@ -27,16 +27,16 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install nodejs begin.${RESET}\n"
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-  printf "${PURPLE}[Hint]\n"
-  printf "\t sh nodejs-install.sh [version]\n"
-  printf "\t Example: sh nodejs-install.sh 10.15.2\n"
-  printf "${RESET}\n"
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
+    printf "${PURPLE}[Hint]\n"
+    printf "\t sh nodejs-install.sh [version]\n"
+    printf "\t Example: sh nodejs-install.sh 10.15.2\n"
+    printf "${RESET}\n"
 fi
 
 version=10.15.2
 if [[ -n $1 ]]; then
-  version=$1
+    version=$1
 fi
 
 # install info

@@ -62,5 +62,5 @@ END{ for(c in pop) printf("%15-s%6d\n", c, pop[c]) | "sort -nk 2"; close("sort -
 #在同一个程序中，如果你写了一个文件，而待会儿想要读取它，那么就需要调用close。
 #某一时刻，同时处于打开状态的文件或管道数量最大值由实现定义。
 
-close("sort -nk 2")
+close ( " sort -nk 2 " )
 

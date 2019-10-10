@@ -7,7 +7,7 @@
 str="0.0.0.1"
 OLD_IFS="$IFS"
 IFS="."
-array=(${str})
+array=( ${str} )
 IFS="$OLD_IFS"
 size=${#array[*]}
 lastIndex=`expr ${size} - 1`
@@ -15,5 +15,5 @@ echo "数组长度：${size}"
 echo "最后一个数组元素：${array[${lastIndex}]}"
 for item in ${array[@]}
 do
-  echo "$item"
+    echo "$item"
 done

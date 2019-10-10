@@ -3,7 +3,7 @@
 #storing STDOUT, then coming back to it
 
 exec 3>&1
-exec 1>test
+exec 1> test
 
 echo "This should store in output file"
 echo "along with this line"

@@ -6,7 +6,7 @@ MYSQL=`which mysql`
 dbs=`$MYSQL emwjs -u test -Bse 'show tables;'`
 for db in $dbs
 do
-	echo $db
+    echo $db
 done
 
 

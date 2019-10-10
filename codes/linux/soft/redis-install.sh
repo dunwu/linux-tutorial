@@ -24,31 +24,32 @@ cat << EOF
 EOF
 printf "${RESET}"
 
-command -v yum >/dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n"; exit 1; }
+command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
+    exit 1; }
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]] || [[ $# -lt 3 ]] || [[ $# -lt 4 ]];then
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]] || [[ $# -lt 3 ]] || [[ $# -lt 4 ]]; then
     echo "Usage: sh redis-install.sh [version] [path] [port] [password]"
     echo -e "Example: sh redis-install.sh 5.0.4 /opt/redis 6379 123456\n"
 fi
 
 version=5.0.4
 if [[ -n $1 ]]; then
-  version=$1
+    version=$1
 fi
 
 root=/opt/redis
 if [[ -n $2 ]]; then
-  root=$2
+    root=$2
 fi
 
 port=6379
 if [[ -n $3 ]]; then
-  port=$3
+    port=$3
 fi
 
 password=
 if [[ -n $4 ]]; then
-  password=$4
+    password=$4
 fi
 
 printf "${GREEN}>>>>>>>> install redis begin.${RESET}\n"
@@ -72,7 +73,7 @@ mkdir -p /etc/redis
 cp ${path}/redis.conf /etc/redis/${port}.conf
 sed -i "s/^port 6379/port ${port}/g" /etc/redis/${port}.conf
 if [[ -n ${password} ]]; then
-  sed -i "s/^# requirepass/requirepass ${password}/g" /etc/redis/${port}.conf
+    sed -i "s/^# requirepass/requirepass ${password}/g" /etc/redis/${port}.conf
 fi
 
 printf "\n${CYAN}>>>>>>>>> add firewall port${RESET}\n"

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #
 # Snapshot_Stats - produces a report for system stats
 #
@@ -16,9 +17,9 @@ REPORT=/home/tiandi/Documents/Snapshot_Stats_$DATE.rpt
 #
 # Create Report File
 #
-exec 3>&1             # Save file descriptor
+exec 3>&1 # Save file descriptor
 #
-exec 1> $REPORT       # direct output to rpt file
+exec 1> $REPORT # direct output to rpt file
 #
 ###################################################
 #
@@ -44,10 +45,10 @@ uptime | sed -n '/,/s/,/ /gp' | gawk '{if($4 == "days" || $4 == "day") {print $2
 #2) Gather Disk Usage Statistics
 #
 echo
-for DISK in $DISK_TO_MONITOR                 # loop to check disk space
+for DISK in $DISK_TO_MONITOR # loop to check disk space
 do
-	echo -e "$DISK usage: \c"
-	df -h $DISK | sed -n '/% \//p' | gawk '{ print $5 }'
+    echo -e "$DISK usage: \c"
+    df -h $DISK | sed -n '/% \//p' | gawk '{ print $5 }'
 done
 #
 ##################################################################
@@ -68,10 +69,10 @@ ZOMBIE_CHECK=`ps -al | gawk '{print $2,$4}' | grep Z`
 #
 if [ "$ZOMBIE_CHECK" = "" ]
 then
-	echo "No Zombie Process on System at this Time"
+    echo "No Zombie Process on System at this Time"
 else
-	echo "Current System Zombie Processes"
-	ps -al | gawk '{print $2,$4}' | grep Z
+    echo "Current System Zombie Processes"
+    ps -al | gawk '{print $2,$4}' | grep Z
 fi
 echo
 #
@@ -79,7 +80,7 @@ echo
 #
 # Restore File Descriptor & Mail Report
 #
-exec 1>&3				# Restore output to STDOUT
+exec 1>&3 # Restore output to STDOUT
 #
 #$MAIL -a $REPORT -s "System Sstatistics Report for $DATE"
 #-- $MAIL_TO < /dev/null

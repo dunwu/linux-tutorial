@@ -8,8 +8,8 @@ number=$1
 
 while [ $counter -le $number ]
 do
-	factorial=$[ $factorial * $counter ]
-	counter=$[ $counter + 1 ]
+    factorial=$[ $factorial * $counter ]
+    counter=$[ $counter + 1 ]
 done
 
 result=`echo $factorial | sed '{

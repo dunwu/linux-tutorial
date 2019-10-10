@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #reading values from a file
 
 file="state"
@@ -14,5 +15,5 @@ IFS=$'\n'
 
 for state in `cat $file`
 do
-	echo "Visit beautiful $state"
+    echo "Visit beautiful $state"
 done

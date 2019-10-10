@@ -28,19 +28,21 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install fastdfs begin.${RESET}\n"
 
-command -v yum >/dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n"; exit 1; }
-command -v git >/dev/null 2>&1 || { printf "${RED}Require git but it's not installed.${RESET}\n"; exit 1; }
+command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
+    exit 1; }
+command -v git > /dev/null 2>&1 || { printf "${RED}Require git but it's not installed.${RESET}\n";
+    exit 1; }
 
-if [[ $# -lt 1 ]] || [[ $# -lt 2 ]];then
-  printf "${PURPLE}[Hint]\n"
-  printf "\t sh fastdfs-install.sh [path]\n"
-  printf "\t Example: sh fastdfs-install.sh /opt/fastdfs\n"
-  printf "${RESET}\n"
+if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
+    printf "${PURPLE}[Hint]\n"
+    printf "\t sh fastdfs-install.sh [path]\n"
+    printf "\t Example: sh fastdfs-install.sh /opt/fastdfs\n"
+    printf "${RESET}\n"
 fi
 
 path=/opt/fdfs
 if [[ -n $1 ]]; then
-  path=$1
+    path=$1
 fi
 
 nginx_version=1.16.0
@@ -55,8 +57,8 @@ path=/opt/fdfs
 mkdir -p ${path}/libfastcommon
 curl -o ${path}/libfastcommon.zip http://dunwu.test.upcdn.net/soft/fdfs/libfastcommon.zip
 if [[ ! -f ${path}/libfastcommon.zip ]]; then
-  printf "${RED}[Error]install libfastcommon failed，exit. ${RESET}\n"
-  exit 1
+    printf "${RED}[Error]install libfastcommon failed，exit. ${RESET}\n"
+    exit 1
 fi
 unzip -o ${path}/libfastcommon.zip -d ${path}
 
@@ -69,7 +71,7 @@ printf "${GREEN}>>>>>>>>> install fastdfs${RESET}"
 mkdir -p ${path}/fastdfs
 curl -o ${path}/fastdfs.zip http://dunwu.test.upcdn.net/soft/fdfs/fastdfs.zip
 if [[ ! -f ${path}/fastdfs.zip ]]; then
-  printf "${RED}>>>>>>>>> install fastdfs failed，exit. ${RESET}\n"
+    printf "${RED}>>>>>>>>> install fastdfs failed，exit. ${RESET}\n"
 fi
 unzip -o ${path}/fastdfs.zip -d ${path}
 cd ${path}/fastdfs
@@ -80,7 +82,7 @@ printf "${GREEN}>>>>>>>>> install fastdfs-nginx-module${RESET}\n"
 mkdir -p ${path}/fastdfs-nginx-module
 curl -o ${path}/fastdfs-nginx-module.zip http://dunwu.test.upcdn.net/soft/fdfs/fastdfs-nginx-module.zip
 if [[ ! -f ${path}/fastdfs-nginx-module.zip ]]; then
-  printf "${RED}>>>>>>>>> install fastdfs-nginx-module failed，exit. ${RESET}\n"
+    printf "${RED}>>>>>>>>> install fastdfs-nginx-module failed，exit. ${RESET}\n"
 fi
 unzip -o ${path}/fastdfs-nginx-module.zip -d ${path}
 

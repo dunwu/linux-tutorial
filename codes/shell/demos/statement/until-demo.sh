@@ -2,8 +2,8 @@
 
 x=0
 until [[ ${x} -ge 5 ]]; do
-  echo ${x}
-  x=`expr ${x} + 1`
+    echo ${x}
+    x=`expr ${x} + 1`
 done
 #  Output:
 #  0
