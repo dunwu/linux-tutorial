@@ -209,16 +209,9 @@ Redis 3.0 后支持集群模式。
 
 `Redis` 集群一般由 **多个节点** 组成，节点数量至少为 `6` 个，才能保证组成 **完整高可用** 的集群。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/database/redis/redis-cluster-architecture.png!zp"/></div>
+<div align="center"><img src="https://user-gold-cdn.xitu.io/2019/10/10/16db5250b0d1c392?w=1467&h=803&f=png&s=43428"/></div>
 
-理想情况当然是所有节点各自在不同的机器上，首先于资源，本人在部署 Redis 集群时，只得到 3 台服务器。所以，我的基本规划是满足两个条件：
-
-- 每台服务器上部署一个主节点、一个从节点。
-- 每个主节点所对应的从节点，必须在另外一台服务器上。
-
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/database/redis/redis-cluster-example.png!zp"/></div>
-
-> 为集群内 **所有节点** 统一目录，一般划分三个目录：`conf`、`data`、`log`，分别存放 **配置**、**数据** 和 **日志** 相关文件。把 `6` 个节点配置统一放在 `conf` 目录下。
+理想情况当然是所有节点各自在不同的机器上，首先于资源，本人在部署 Redis 集群时，只得到 3 台服务器。所以，我计划每台服务器部署 2 个 Redis 节点。
 
 ### 部署
 
@@ -232,10 +225,175 @@ Redis 集群节点的安装与单节点服务相同，差异仅在于部署方�
 
 分配如下：
 
-| 服务器 | 127.0.0.1      | 127.0.0.2      | 127.0.0.3      |
-| ------ | -------------- | -------------- | -------------- |
-| 主节点 | 127.0.0.1:6380 | 127.0.0.2:6381 | 127.0.0.3:6382 |
-| 从节点 | 127.0.0.1:6382 | 127.0.0.2:6380 | 127.0.0.3:6381 |
+| 127.0.0.1      | 127.0.0.2      | 127.0.0.3      |
+| -------------- | -------------- | -------------- |
+| 127.0.0.1:6381 | 127.0.0.2:6383 | 127.0.0.3:6385 |
+| 127.0.0.1:6382 | 127.0.0.2:6384 | 127.0.0.3:6386 |
+
+#### （1）创建节点目录
+
+我个人偏好将软件放在 `/opt` 目录下，在我的机器中，Redis 都安装在 `/opt/redis/redis-5.0.4` 目录下。所以，下面的命令和配置都假设 Redis 安装目录为 `/opt/redis/redis-5.0.4` 。
+
+确保机器上已经安装了 Redis 后，执行以下命令，创建 Redis 集群节点实例目录：
+
+- 127.0.0.1
+
+```bash
+sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6381
+sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6382
+```
+
+- 127.0.0.2
+
+```bash
+sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6383
+sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6384
+```
+
+- 127.0.0.3
+
+```bash
+sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6385
+sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6386
+```
+
+
+#### （2）集群节点实例配置
+
+每个实例目录下，新建 `redis.conf` 配置文件。
+
+实例配置模板以 6381 节点为例（其他节点，完全替换配置中的端口号 6381 即可），如下：
+
+```
+# 端口号
+port 6381
+# 绑定的主机端口（0.0.0.0 表示允许远程访问）
+bind 0.0.0.0
+# 以守护进程方式启动
+daemonize yes
+
+# 开启集群模式
+cluster-enabled yes
+# 集群的配置，配置文件首次启动自动生成
+cluster-config-file /opt/redis/redis-5.0.4/cluster/6381/6381.conf
+# 请求超时时间，设置 10 秒
+cluster-node-timeout 10000
+
+# 开启 AOF 持久化
+appendonly yes
+# 数据存放目录
+dir /opt/redis/redis-5.0.4/cluster/6381
+# 进程文件
+pidfile /var/run/redis-cluster/redis-6381.pid
+# 日志文件
+logfile /opt/redis/redis-5.0.4/cluster/6381/6381.log
+```
+
+#### （3）启动 Redis 节点
+
+Redis 的 utils/create-cluster 目录下自带了一个名为 create-cluster 的脚本工具，可以利用它来新建、启动、停止、重启 Redis 节点。
+
+脚本中有几个关键参数：
+
+- `PORT`=30000 - 初始端口号
+- `TIMEOUT`=2000 - 超时时间
+- `NODES`=6 - 节点数
+- `REPLICAS`=1 - 备份数
+
+脚本中的每个命令项会根据初始端口号，以及设置的节点数，遍历的去执行操作。
+
+由于前面的规划中，节点端口是从 6381 ~ 6386，所以需要将 PORT 变量设为 6380。
+
+脚本中启动每个 Redis 节点是通过指定命令行参数来配置属性。所以，我们需要改一下：
+
+```bash
+if [ "$1" == "start" ]
+then
+    while [ $((PORT < ENDPORT)) != "0" ]; do
+        PORT=$((PORT+1))
+        echo "Starting $PORT"
+        /opt/redis/redis-5.0.4/src/redis-server /opt/redis/redis-5.0.4/cluster/${PORT}/redis.conf
+    done
+    exit 0
+fi
+```
+
+好了，在每台服务器上，都执行  `./create-cluster start` 来启动节点。
+
+然后，通过 ps 命令来确认 Redis 进程是否已经工作：
+
+```
+$ ps -ef | grep redis
+root     12036     1 12 16:26 ?        00:08:28 /opt/redis/redis-5.0.4/src/redis-server 0.0.0.0:6381 [cluster]
+root     12038     1  0 16:26 ?        00:00:03 /opt/redis/redis-5.0.4/src/redis-server 0.0.0.0:6382 [cluster]
+```
+
+#### （4）启动集群
+
+通过 `redis-cli --cluster create` 命令可以自动配置集群，如下：
+
+```bash
+$ /opt/redis/redis-5.0.4/src/redis-cli --cluster create 127.0.0.1:6381 127.0.0.1:6382 127.0.0.2:6383 127.0.0.2:6384 127.0.0.3:6385 127.0.0.3:6386 --cluster-replicas 1
+```
+
+如果启动成功，可以看到如下信息：
+
+```
+>>> Performing hash slots allocation on 6 nodes...
+Master[0] -> Slots 0 - 5460
+Master[1] -> Slots 5461 - 10922
+Master[2] -> Slots 10923 - 16383
+Adding replica 127.0.0.2:6384 to 127.0.0.1:6381
+Adding replica 127.0.0.3:6386 to 127.0.0.2:6383
+Adding replica 127.0.0.1:6382 to 127.0.0.3:6385
+M: 75527b790e46530ea271a5b78f9e0fd9030f68e0 127.0.0.1:6381
+   slots:[0-5460] (5461 slots) master
+S: 031dd0fd5ad90fa26fcf45d49ad906d063611a6d 127.0.0.1:6382
+   replicates 53012ebdd25005840da9ecbe07d937296a264206
+M: 0cfbceec272b6ff70e1dfb5c5346a5cb2c20c884 127.0.0.2:6383
+   slots:[5461-10922] (5462 slots) master
+S: 016ae9624202891cc6f2b480ff0634de478197fb 127.0.0.2:6384
+   replicates 75527b790e46530ea271a5b78f9e0fd9030f68e0
+M: 53012ebdd25005840da9ecbe07d937296a264206 127.0.0.3:6385
+   slots:[10923-16383] (5461 slots) master
+S: b6d70f2ed78922b1dcb7967ebe1d05ad9157fca8 127.0.0.3:6386
+   replicates 0cfbceec272b6ff70e1dfb5c5346a5cb2c20c884
+Can I set the above configuration? (type 'yes' to accept): yes
+>>> Nodes configuration updated
+>>> Assign a different config epoch to each node
+>>> Sending CLUSTER MEET messages to join the cluster
+Waiting for the cluster to join
+....
+>>> Performing Cluster Check (using node 127.0.0.1:6381)
+M: 75527b790e46530ea271a5b78f9e0fd9030f68e0 127.0.0.1:6381
+   slots:[0-5460] (5461 slots) master
+   1 additional replica(s)
+M: 0cfbceec272b6ff70e1dfb5c5346a5cb2c20c884 127.0.0.2:6383
+   slots:[5461-10922] (5462 slots) master
+   1 additional replica(s)
+S: 016ae9624202891cc6f2b480ff0634de478197fb 127.0.0.2:6384
+   slots: (0 slots) slave
+   replicates 75527b790e46530ea271a5b78f9e0fd9030f68e0
+M: 53012ebdd25005840da9ecbe07d937296a264206 127.0.0.3:6385
+   slots:[10923-16383] (5461 slots) master
+   1 additional replica(s)
+S: 031dd0fd5ad90fa26fcf45d49ad906d063611a6d 127.0.0.1:6382
+   slots: (0 slots) slave
+   replicates 53012ebdd25005840da9ecbe07d937296a264206
+S: b6d70f2ed78922b1dcb7967ebe1d05ad9157fca8 127.0.0.3:6386
+   slots: (0 slots) slave
+   replicates 0cfbceec272b6ff70e1dfb5c5346a5cb2c20c884
+[OK] All nodes agree about slots configuration.
+>>> Check for open slots...
+>>> Check slots coverage...
+[OK] All 16384 slots covered.
+```
+
+#### （5）日常维护操作
+
+- 关闭集群 - `./create-cluster stop`
+- 检查集群是否健康（指定任意节点即可）：`./redis-cli --cluster check <ip:port>`
+- 尝试修复集群节点：`./redis-cli --cluster fix <ip:port>`
 
 ## Redis 命令
 
@@ -243,9 +401,9 @@ Redis 集群节点的安装与单节点服务相同，差异仅在于部署方�
 >
 > 搬迁两张 cheat sheet 图，原址：https://www.cheatography.com/tasjaevan/cheat-sheets/redis/
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/database/redis/redis-cheat-sheets-01.png!zp"/></div>
+<div align="center"><img src="https://user-gold-cdn.xitu.io/2019/10/10/16db5250b0b8ea57?w=2230&h=2914&f=png&s=246433"/></div>
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/database/redis/redis-cheat-sheets-02.png!zp"/></div>
+<div align="center"><img src="https://user-gold-cdn.xitu.io/2019/10/10/16db5250b0e9ba3c?w=2229&h=2890&f=png&s=192997"/></div>
 
 ## 压力测试
 
@@ -284,9 +442,7 @@ GET: 508388.41 requests per second
 
 ## 脚本
 
-以上两种安装方式，我都写了脚本去执行：
-
-| [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft) |
+如果想傻瓜式安装一个 Redis 单节点服务，可以使用我的 [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft#redis-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE)
 
 ## 参考资料
 
