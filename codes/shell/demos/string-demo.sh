@@ -20,9 +20,9 @@ echo ${str3}_${str4}
 
 ################### 获取字符串长度 ###################
 text="12345"
-echo ${#text}
+echo "${text} length is: ${#text}"
 # Output:
-# 5
+# 12345 length is: 5
 
 ################### 获取字符串长度 ###################
 text="12345"
@@ -37,13 +37,14 @@ echo `expr index "${text}" ll`
 # 3
 
 ################### 截取关键字左边内容 ###################
-str="feature/1.0.0"
-branch=`echo ${str#feature/}`
+full_branch="feature/1.0.0"
+branch=`echo ${full_branch#feature/}`
 echo "branch is ${branch}"
 
 ################### 截取关键字右边内容 ###################
-key=`echo ${str%/1.0.0}`
-echo "key is ${key}"
+full_version="0.0.1-SNAPSHOT"
+version=`echo ${full_version%-SNAPSHOT}`
+echo "version is ${version}"
 
 ################### 判断字符串中是否包含子字符串 ###################
 result=$(echo "${str}" | grep "feature/")

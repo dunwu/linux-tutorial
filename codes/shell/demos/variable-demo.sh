@@ -3,7 +3,7 @@
 ################### 声明变量 ###################
 name="world"
 echo "hello ${name}"
-# Output: hello
+# Output: hello world
 
 ################### 只读变量 ###################
 rword="hello"
