@@ -314,7 +314,7 @@ Cmd+C、Cmd+V、Cmd+X、Cmd+A、Cmd+Z。
 
 打开 CheatSheet 后，长按 command 键，会弹出当前应用程序的所有快捷键。我们还可以对这些快捷键进行保存。
 
-## :books: 学习资源
+## 📚 学习资源
 
 - [Awesome Mac](https://github.com/jaywcjlove/awesome-mac)
 - [awesome-macos-command-line](https://github.com/herrbischoff/awesome-macos-command-line)

@@ -1,30 +1,27 @@
-# EditorConfig helps developers define and maintain consistent
-# coding styles between different editors and IDEs
-# http://editorconfig.org
-# 所有文件换行以 Unix like 风格（LF），win 格式特定的除外（bat）
-# 缩进 java 4 个空格，其他所有文件 2 个空格
+# EditorConfig 用于在 IDE 中检查代码的基本 Code Style
+# @see: https://editorconfig.org/
+
+# 配置说明：
+# 所有文件换行使用 Unix 风格（LF），*.bat 文件使用 Windows 风格（CRLF）
+# java / sh 文件缩进 4 个空格，其他所有文件缩进 2 个空格
 
 root = true
 
 [*]
-# Unix-style newlines with a newline ending every file
 end_of_line = lf
-
-# Change these settings to your own preference
-indent_style = space
 indent_size = 2
-
-# We recommend you to keep these unchanged
+indent_style = tab
+max_line_length = 120
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.bat]
+[*.{bat, cmd}]
 end_of_line = crlf
 
-[*.{java, sh}]
-indent_style = tab
+[*.{java, groovy, kt, sh}]
 indent_size = 4
 
 [*.md]
+max_line_length = 0
 trim_trailing_whitespace = false

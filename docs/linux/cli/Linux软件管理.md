@@ -150,7 +150,7 @@ yum 的默认源是国外的，下载速度比较慢，所以最好替换为一�
 | <http://mirrors.163.com/>    | Centos6：http://mirrors.aliyun.com/repo/Centos-6.repo<br>Centos7：http://mirrors.aliyun.com/repo/Centos-7.repo             |
 | <http://mirrors.aliyun.com/> | Centos6：http://mirrors.163.com/.help/CentOS6-Base-163.repo<br>Centos7：http://mirrors.163.com/.help/CentOS7-Base-163.repo |
 
-> 注意：Cento5 已废弃，只能使用 http://vault.centos.org/ 替换，但由于是国外镜像，速度较慢。
+> 🔔 注意：Cento5 已废弃，只能使用 http://vault.centos.org/ 替换，但由于是国外镜像，速度较慢。
 
 替换方法，以 aliyun CentOS7 为例：
 

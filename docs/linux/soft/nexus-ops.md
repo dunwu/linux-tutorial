@@ -190,7 +190,7 @@ Nexus 中的仓库有以下类型：
   </distributionManagement>
 ```
 
-> 注意：
+> 🔔 注意：
 >
 > - `<repository>` 和 `<snapshotRepository>` 的 id 必须和 `settings.xml` 配置文件中的 `<server>` 标签中的 id 匹配。
 > - `<url>` 标签的地址需要和 maven 私服的地址匹配。

@@ -1,10 +1,10 @@
 # Linux 教程
 
-> :keyboard: 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
+> 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
 >
 > 📖 [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
-|       :wrench:        |        :shell:        |      :memo:       |        :books:        |
+|       :wrench:        |        :shell:        |      :memo:       |        📚        |
 | :-------------------: | :-------------------: | :---------------: | :-------------------: |
 | [软件运维](#软件运维) | [运维和脚本](#运维和脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
 

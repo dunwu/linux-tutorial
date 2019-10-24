@@ -1,6 +1,6 @@
 <div align="center"><img width="100px" src="http://dunwu.test.upcdn.net/common/logo/zp.png"/></div>
 
-# Linux Tutorial
+# linux-tutorial
 
 > Linux 教程
 

@@ -7,7 +7,7 @@
 - [git-flow 工作流](git-flow.md)
 - [Git 常见问题](git-faq.md)
 
-## :books: 学习资源
+## 📚 学习资源
 
 ### 官方资源
 
