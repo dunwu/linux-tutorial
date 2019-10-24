@@ -1,37 +1,49 @@
 #!/usr/bin/env bash
 
+# ---------------------------------------------------------------------------------
+# 控制台颜色
+BLACK="\033[1;30m"
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+BLUE="\033[1;34m"
+PURPLE="\033[1;35m"
+CYAN="\033[1;36m"
+RESET="$(tput sgr0)"
+# ---------------------------------------------------------------------------------
+
 printHeadInfo() {
-    cat << EOF
+printf "${BLUE}\n"
+cat << EOF
 ###################################################################################
 # Linux Centos7 系统配置脚本（根据需要选择）
 # @author: Zhang Peng
 ###################################################################################
-
 EOF
+printf "${RESET}\n"
 }
 
 setLimit() {
-    cat >> /etc/security/limits.conf << EOF
+cat >> /etc/security/limits.conf << EOF
  *  -  nofile  65535
  *  -  nproc   65535
 EOF
 }
 
 setLang() {
-    cat > /etc/sysconfig/i18n << EOF
+cat > /etc/sysconfig/i18n << EOF
 LANG="zh_CN.UTF-8"
 EOF
 }
 
 closeShutdownShortkey() {
-    echo "关闭 Ctrl+Alt+Del 快捷键防止重新启动"
+    printf "\n${CYAN}>>>> 关闭 Ctrl+Alt+Del 快捷键防止重新启动${RESET}\n"
     sed -i 's#exec /sbin/shutdown -r now#\#exec /sbin/shutdown -r now#' /etc/init/control-alt-delete.conf
 }
 
 closeSelinux() {
-    echo "关闭 selinux"
-
     # see http://blog.51cto.com/13570193/2093299
+    printf "\n${CYAN}>>>> 关闭 selinux${RESET}\n"
     sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 }
 
@@ -43,15 +55,15 @@ setBootMode() {
     # 5. 通常不用，在一些特殊情况下可以用它来做一些事情
     # 6. X11，即进到 X-Window 系统
     # 7. 重新启动 (记得不要把 initdefault 配置为 6，因为这样会使 Linux 不断地重新启动)
-    echo "设置 Linux 启动模式"
+    printf "\n${CYAN}>>>> 配置 Linux 启动模式${RESET}\n"
     sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
 }
 
 # 配置 IPv4
 configIpv4() {
-    echo "配置 ipv4"
+    printf "\n${CYAN}>>>> 配置 IPv4${RESET}\n"
 
-    cat >> /etc/sysctl.conf << EOF
+cat >> /etc/sysctl.conf << EOF
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_fin_timeout = 2
@@ -78,9 +90,9 @@ EOF
 
 # 关闭 IPv6
 closeIpv6() {
-    echo "关闭 ipv6"
+    printf "\n${CYAN}>>>> 关闭 IPv6${RESET}\n"
 
-    cat > /etc/modprobe.d/ipv6.conf << EOF
+cat > /etc/modprobe.d/ipv6.conf << EOF
 alias net-pf-10 off
 options ipv6 disable=1
 EOF
@@ -90,45 +102,42 @@ EOF
 
 # 入口函数
 main() {
-    PS3="请选择要执行的操作："
-    select ITEM in "设置 DNS" "设置 NTP" "关闭防火墙" "配置 IPv4" "关闭 IPv6" "全部执行"
-    do
+	PS3="请选择要执行的操作："
+	select ITEM in "配置 DNS" "配置 NTP" "关闭防火墙" "配置 IPv4" "关闭 IPv6" "全部执行"
+	do
 
-    case ${ITEM} in
-        "设置 DNS")
-            curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-dns.sh | bash
-        ;;
-        "设置 NTP")
-            curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-ntp.sh | bash
-        ;;
-        "关闭防火墙")
-            curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/stop-firewall.sh | bash
-        ;;
-        "配置 IPv4")
-            configIpv4
-        ;;
-        "关闭 IPv6")
-            closeIpv6
-        ;;
-        "全部执行")
-            curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-dns.sh | bash
-            curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-ntp.sh | bash
-            curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/stop-firewall.sh | bash
-            configIpv4
-            closeIpv6
-        ;;
-        *)
-            echo -e "输入项不支持！"
-            main
-        ;;
-    esac
-    break
-    done
+	case ${ITEM} in
+	"配置 DNS")
+		sh ${root}/set-dns.sh ;;
+	"配置 NTP")
+		sh ${root}/set-ntp.sh ;;
+	"关闭防火墙")
+		sh ${root}/stop-firewall.sh ;;
+	"配置 IPv4")
+		configIpv4 ;;
+	"关闭 IPv6")
+		closeIpv6 ;;
+	"全部执行")
+		sh ${root}/set-dns.sh
+		sh ${root}/set-ntp.sh
+		sh ${root}/stop-firewall.sh
+		configIpv4
+		closeIpv6
+		;;
+	*)
+		printf "\n${RED}输入项不支持${RESET}\n"
+		main
+		;;
+	esac
+	break
+	done
 }
 
 ######################################## MAIN ########################################
-filepath=$(cd "$(dirname "$0")";
-pwd)
+root=$(pwd)
+if [[ -n $1 ]]; then
+    root=$1
+fi
 
 printHeadInfo
 main

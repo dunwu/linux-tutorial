@@ -1,4 +1,4 @@
-# Linux 傻瓜式运维脚本
+# Dunwu Shell 运维脚本
 
 > **本项目脚本代码用于在 [CentOS](https://www.centos.org/) 机器上安装常用命令工具或开发软件。**
 

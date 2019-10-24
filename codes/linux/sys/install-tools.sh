@@ -1,19 +1,22 @@
 #!/usr/bin/env bash
 
+# ---------------------------------------------------------------------------------
+# 控制台颜色
+BLACK="\033[1;30m"
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+YELLOW="\033[1;33m"
+BLUE="\033[1;34m"
+PURPLE="\033[1;35m"
+CYAN="\033[1;36m"
+RESET="$(tput sgr0)"
+# ---------------------------------------------------------------------------------
+
+printf "${BLUE}\n"
 cat << EOF
 ###################################################################################
-# 安装基本的命令工具
-# @author: Zhang Peng
-#
-# 如果不知道某个命令工具是由哪个包提供的，使用 yum provides xxx
-# 或 yum whatprovides xxx 来查找
-###################################################################################
-
-EOF
-
-cat << EOF
-###################################################################################
-# 执行本脚本后支持的命令工具清单：
+# 安装常用命令工具
+# 命令工具清单如下：
 # 核心工具：df、du、chkconfig
 # 网络工具：ifconfig、netstat、route、iptables
 # IP工具：ip、ss、ping、tracepath、traceroute
@@ -25,72 +28,78 @@ cat << EOF
 # 抓包工具：tcpdump
 # 压缩工具：unzip、zip
 # 版本控制工具：git、subversion
+#
+# @author: Zhang Peng
 ###################################################################################
-
 EOF
+printf "${RESET}\n"
+
+printf "\n${GREEN}>>>>>>>>> 安装常用命令工具开始${RESET}\n"
 
 # 核心工具
-echo -e "\n>>>>>>>>> install coreutils(df、du)"
+printf "\n${CYAN}>>>> install coreutils(df、du)${RESET}\n"
 yum install -y coreutils
-echo -e "\n>>>>>>>>> install chkconfig"
+printf "\n${CYAN}>>>> install chkconfig${RESET}\n"
 yum install -y chkconfig
 
 # 网络工具
-echo -e "\n>>>>>>>>> install net-tools(ifconfig、netstat、route)"
+printf "\n${CYAN}>>>> install net-tools(ifconfig、netstat、route)${RESET}\n"
 yum install -y net-tools
-echo -e "\n>>>>>>>>> install iptables"
+printf "\n${CYAN}>>>> install iptables${RESET}\n"
 yum install -y iptables
 
 # IP工具
-echo -e "\n>>>>>>>>> install iputils(ping、tracepath)"
+printf "\n${CYAN}>>>> install iputils(ping、tracepath)${RESET}\n"
 yum install -y iputils
-echo -e "\n>>>>>>>>> install traceroute"
+printf "\n${CYAN}>>>> install traceroute${RESET}\n"
 yum install -y traceroute
-echo -e "\n>>>>>>>>> install iproute(ip、ss)"
+printf "\n${CYAN}>>>> install iproute(ip、ss)${RESET}\n"
 yum install -y iproute
 
 # 端口工具
-echo -e "\n>>>>>>>>> install lsof"
+printf "\n${CYAN}>>>> install lsof${RESET}\n"
 yum install -y lsof
-echo -e "\n>>>>>>>>> install nc"
+printf "\n${CYAN}>>>> install nc${RESET}\n"
 yum install -y nc
-echo -e "\n>>>>>>>>> install netstat"
+printf "\n${CYAN}>>>> install netstat${RESET}\n"
 yum install -y netstat
 
 # DNS工具
-echo -e "\n>>>>>>>>> install bind-utils(dig、host、nslookup)"
+printf "\n${CYAN}>>>> install bind-utils(dig、host、nslookup)${RESET}\n"
 yum install -y bind-utils
-echo -e "\n>>>>>>>>> install whois"
+printf "\n${CYAN}>>>> install whois${RESET}\n"
 yum install -y whois
 
 # 下载工具
-echo -e "\n>>>>>>>>> install curl"
+printf "\n${CYAN}>>>> install curl${RESET}\n"
 yum install -y curl
-echo -e "\n>>>>>>>>> install wget"
+printf "\n${CYAN}>>>> install wget${RESET}\n"
 yum install -y wget
 
 # 编辑工具
-echo -e "\n>>>>>>>>> install emacs"
+printf "\n${CYAN}>>>> install emacs${RESET}\n"
 yum install -y emacs
-echo -e "\n>>>>>>>>> install vim"
+printf "\n${CYAN}>>>> install vim${RESET}\n"
 yum install -y vim
 
 # 流量工具
-echo -e "\n>>>>>>>>> install iftop"
+printf "\n${CYAN}>>>> install iftop${RESET}\n"
 yum install -y iftop
-echo -e "\n>>>>>>>>> install nethogs"
+printf "\n${CYAN}>>>> install nethogs${RESET}\n"
 yum install -y nethogs
 
 # 抓包工具
-echo -e "\n>>>>>>>>> install tcpdump"
+printf "\n${CYAN}>>>> install tcpdump${RESET}\n"
 yum install -y tcpdump
 
 # 压缩工具
-echo -e "\n>>>>>>>>> install unzip"
+printf "\n${CYAN}>>>> install unzip${RESET}\n"
 yum install -y unzip
 
 # 版本控制工具
-echo -e "\n>>>>>>>>> install git"
+printf "\n${CYAN}>>>> install git${RESET}\n"
 yum install -y git
-echo -e "\n>>>>>>>>> install subversion"
+printf "\n${CYAN}>>>> install subversion${RESET}\n"
 yum install -y subversion
+
+printf "\n${GREEN}<<<<<<<< 安装常用命令工具结束${RESET}\n"

@@ -14,74 +14,74 @@
 
 filebeat.prospectors:
 
-  # Each - is a prospector. Most options can be set at the prospector level, so
-  # you can use different prospectors for various configurations.
-  # Below are the prospector specific configurations.
+	# Each - is a prospector. Most options can be set at the prospector level, so
+	# you can use different prospectors for various configurations.
+	# Below are the prospector specific configurations.
 
-  - type: log
+	- type: log
 
-    # Change to true to enable this prospector configuration.
-    enabled: true
+		# Change to true to enable this prospector configuration.
+		enabled: true
 
-    # Paths that should be crawled and fetched. Glob based paths.
-    paths:
-      #- /var/log/*.log
-      #- c:\programdata\elasticsearch\logs\*
-      - /home/zp/log/*.log
+		# Paths that should be crawled and fetched. Glob based paths.
+		paths:
+			#- /var/log/*.log
+			#- c:\programdata\elasticsearch\logs\*
+			- /home/zp/log/*.log
 
-    # Exclude lines. A list of regular expressions to match. It drops the lines that are
-    # matching any regular expression from the list.
-    #exclude_lines: ['^DBG']
+		# Exclude lines. A list of regular expressions to match. It drops the lines that are
+		# matching any regular expression from the list.
+		#exclude_lines: ['^DBG']
 
-    # Include lines. A list of regular expressions to match. It exports the lines that are
-    # matching any regular expression from the list.
-    #include_lines: ['^ERR', '^WARN']
+		# Include lines. A list of regular expressions to match. It exports the lines that are
+		# matching any regular expression from the list.
+		#include_lines: ['^ERR', '^WARN']
 
-    # Exclude files. A list of regular expressions to match. Filebeat drops the files that
-    # are matching any regular expression from the list. By default, no files are dropped.
-    #exclude_files: ['.gz$']
+		# Exclude files. A list of regular expressions to match. Filebeat drops the files that
+		# are matching any regular expression from the list. By default, no files are dropped.
+		#exclude_files: ['.gz$']
 
-    # Optional additional fields. These fields can be freely picked
-    # to add additional information to the crawled log files for filtering
-    #fields:
-    #  level: debug
-    #  review: 1
+		# Optional additional fields. These fields can be freely picked
+		# to add additional information to the crawled log files for filtering
+		#fields:
+		#  level: debug
+		#  review: 1
 
-    ### Multiline options
+		### Multiline options
 
-    # Mutiline can be used for log messages spanning multiple lines. This is common
-    # for Java Stack Traces or C-Line Continuation
+		# Mutiline can be used for log messages spanning multiple lines. This is common
+		# for Java Stack Traces or C-Line Continuation
 
-    # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
-    #multiline.pattern: ^\[
+		# The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
+		#multiline.pattern: ^\[
 
-    # Defines if the pattern set under pattern should be negated or not. Default is false.
-    #multiline.negate: false
+		# Defines if the pattern set under pattern should be negated or not. Default is false.
+		#multiline.negate: false
 
-    # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
-    # that was (not) matched before or after or as long as a pattern is not matched based on negate.
-    # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
-    #multiline.match: after
+		# Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
+		# that was (not) matched before or after or as long as a pattern is not matched based on negate.
+		# Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
+		#multiline.match: after
 
 
 #============================= Filebeat modules ===============================
 
 filebeat.config.modules:
-  # Glob pattern for configuration loading
-  path: ${path.config}/modules.d/*.yml
+	# Glob pattern for configuration loading
+	path: ${path.config}/modules.d/*.yml
 
-  # Set to true to enable config reloading
-  reload.enabled: true
+	# Set to true to enable config reloading
+	reload.enabled: true
 
-  # Period on which files under path should be checked for changes
-  #reload.period: 10s
+	# Period on which files under path should be checked for changes
+	#reload.period: 10s
 
 #==================== Elasticsearch template setting ==========================
 
 setup.template.settings:
-  index.number_of_shards: 3
-  #index.codec: best_compression
-  #_source.enabled: false
+	index.number_of_shards: 3
+	#index.codec: best_compression
+	#_source.enabled: false
 
 #================================ General =====================================
 
@@ -96,7 +96,7 @@ name: 127.0.0.1
 # Optional fields that you can specify to add additional information to the
 # output.
 fields:
-  profile: development
+	profile: development
 
 
 #============================== Dashboards =====================================
@@ -117,53 +117,53 @@ setup.dashboards.enabled: true
 # This requires a Kibana endpoint configuration.
 setup.kibana:
 
-  # Kibana Host
-  # Scheme and port can be left out and will be set to the default (http and 5601)
-  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-  host: "192.168.28.11:5601"
+	# Kibana Host
+	# Scheme and port can be left out and will be set to the default (http and 5601)
+	# In case you specify and additional path, the scheme is required: http://localhost:5601/path
+	# IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
+	host: "192.168.28.11:5601"
 
-  #============================= Elastic Cloud ==================================
+	#============================= Elastic Cloud ==================================
 
-  # These settings simplify using filebeat with the Elastic Cloud (https://cloud.elastic.co/).
+	# These settings simplify using filebeat with the Elastic Cloud (https://cloud.elastic.co/).
 
-  # The cloud.id setting overwrites the `output.elasticsearch.hosts` and
-  # `setup.kibana.host` options.
-  # You can find the `cloud.id` in the Elastic Cloud web UI.
-  #cloud.id:
+	# The cloud.id setting overwrites the `output.elasticsearch.hosts` and
+	# `setup.kibana.host` options.
+	# You can find the `cloud.id` in the Elastic Cloud web UI.
+	#cloud.id:
 
-  # The cloud.auth setting overwrites the `output.elasticsearch.username` and
-  # `output.elasticsearch.password` settings. The format is `<user>:<pass>`.
-  #cloud.auth:
+	# The cloud.auth setting overwrites the `output.elasticsearch.username` and
+	# `output.elasticsearch.password` settings. The format is `<user>:<pass>`.
+	#cloud.auth:
 
-  #================================ Outputs =====================================
+	#================================ Outputs =====================================
 
-  # Configure what output to use when sending the data collected by the beat.
+	# Configure what output to use when sending the data collected by the beat.
 
-  #-------------------------- Elasticsearch output ------------------------------
-  #output.elasticsearch:
-  # Array of hosts to connect to.
-  #hosts: ["192.168.28.11:9200"]
+	#-------------------------- Elasticsearch output ------------------------------
+	#output.elasticsearch:
+	# Array of hosts to connect to.
+	#hosts: ["192.168.28.11:9200"]
 
-  # Optional protocol and basic auth credentials.
-  protocol: "http"
-  #username: "elastic"
-  #password: "changeme"
+	# Optional protocol and basic auth credentials.
+	protocol: "http"
+	#username: "elastic"
+	#password: "changeme"
 
 #----------------------------- Logstash output --------------------------------
 output.logstash:
-  # The Logstash hosts
-  hosts: ["192.168.28.32:5044"]
+	# The Logstash hosts
+	hosts: ["192.168.28.32:5044"]
 
-  # Optional SSL. By default is off.
-  # List of root certificates for HTTPS server verifications
-  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+	# Optional SSL. By default is off.
+	# List of root certificates for HTTPS server verifications
+	#ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
 
-  # Certificate for SSL client authentication
-  #ssl.certificate: "/etc/pki/client/cert.pem"
+	# Certificate for SSL client authentication
+	#ssl.certificate: "/etc/pki/client/cert.pem"
 
-  # Client Certificate Key
-  #ssl.key: "/etc/pki/client/cert.key"
+	# Client Certificate Key
+	#ssl.key: "/etc/pki/client/cert.key"
 
 #================================ Logging =====================================
 

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-  <!-- 使用 aliyun maven 仓库加速下载 -->
-  <mirrors>
-    <mirror>
-      <id>aliyun</id>
-      <name>Aliyun</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-    <mirror>
-      <id>repo2</id>
-      <name>Mirror from Maven Repo2</name>
-      <url>http://repo2.maven.org/maven2/</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-  </mirrors>
+	<!-- 使用 aliyun maven 仓库加速下载 -->
+	<mirrors>
+		<mirror>
+			<id>aliyun</id>
+			<name>Aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<mirrorOf>central</mirrorOf>
+		</mirror>
+		<mirror>
+			<id>repo2</id>
+			<name>Mirror from Maven Repo2</name>
+			<url>http://repo2.maven.org/maven2/</url>
+			<mirrorOf>central</mirrorOf>
+		</mirror>
+	</mirrors>
 </settings>
