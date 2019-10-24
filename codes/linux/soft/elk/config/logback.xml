@@ -3,7 +3,7 @@
 <!-- logback中一共有5种有效级别，分别是TRACE、DEBUG、INFO、WARN、ERROR，优先级依次从低到高 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
 
-  <property name="FILE_NAME" value="javatool"/>
+  <property name="FILE_NAME" value="javatool" />
 
   <!-- 将记录日志打印到控制台 -->
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -45,12 +45,12 @@
   <!-- logger begin -->
   <!-- 本项目的日志记录，分级打印 -->
   <logger name="io.github.zp" level="TRACE">
-    <appender-ref ref="ELK-TCP"/>
-    <appender-ref ref="ALL"/>
+    <appender-ref ref="ELK-TCP" />
+    <appender-ref ref="ALL" />
   </logger>
 
   <root level="TRACE">
-    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="STDOUT" />
   </root>
   <!-- logger end -->
 

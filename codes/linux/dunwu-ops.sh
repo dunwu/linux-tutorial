@@ -63,7 +63,7 @@ checkOsVersion() {
 menus=( "配置系统" "安装软件" "退出" )
 main() {
     PS3="请输入命令编号："
-    select item in ${menus[@]}
+    select item in "${menus[@]}"
     do
     case ${item} in
         "配置系统")
