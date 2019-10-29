@@ -442,7 +442,35 @@ GET: 508388.41 requests per second
 
 ## 脚本
 
-如果想傻瓜式安装一个 Redis 单节点服务，可以使用我的 [安装脚本](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft#redis-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE)
+> CentOS7 环境安装脚本：[软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+
+**安装说明**
+
+- 采用编译方式安装 Redis, 并将其注册为 systemd 服务
+- 安装路径为：`/usr/local/redis`
+- 默认下载安装 `5.0.4` 版本，端口号为：`6379`，密码为空
+
+**使用方法**
+
+- 默认安装 - 执行以下任意命令即可：
+
+```sh
+curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
+wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
+```
+
+- 自定义安装 - 下载脚本到本地，并按照以下格式执行：
+
+
+```sh
+sh redis-install.sh [version] [port] [password]
+```
+
+参数说明：
+
+- `version` - redis 版本号
+- `port` - redis 服务端口号
+- `password` - 访问密码
 
 ## 参考资料
 

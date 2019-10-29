@@ -12,68 +12,70 @@ CYAN="\033[1;36m"
 RESET="$(tput sgr0)"
 ###################################################################################
 
-printf "${BLUE}"
+printf "${BLUE}\n"
 cat << EOF
-
 ###################################################################################
-# 采用编译方式安装 nginx 脚本
-# nginx 会被安装到 /usr/local/nginx 路径。
-# @system: 适用于所有 linux 发行版本。
+# 采用编译方式安装 Nginx, 并将其注册为 systemd 服务
+# 默认下载安装 1.16.0 版本，安装路径为：/usr/local/nginx
+# @system: 适用于 CentOS7+
 # @author: Zhang Peng
 ###################################################################################
-
 EOF
-printf "${RESET}"
+printf "${RESET}\n"
 
-printf "${GREEN}>>>>>>>> install maven begin.${RESET}\n"
+command -v yum > /dev/null 2>&1 || {
+	printf "${RED}Require yum but it's not installed.${RESET}\n";
+	exit 1;
+}
 
-command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
-    exit 1; }
+printf "\n${GREEN}>>>>>>>> install nginx begin${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
     printf "${PURPLE}[Hint]\n"
-    printf "\t sh nginx-install.sh [version] [path]\n"
-    printf "\t Example: sh nginx-install.sh 1.16.0 /opt/nginx\n"
+    printf "\t Usage: sh nginx-install.sh [version] \n"
+    printf "\t Default: sh nginx-install.sh 1.16.0 \n"
+    printf "\t Example: sh nginx-install.sh 1.16.0 \n"
     printf "${RESET}\n"
 fi
 
+temp=/opt/nginx
 version=1.16.0
 if [[ -n $1 ]]; then
     version=$1
 fi
 
-path=/opt/nginx
-if [[ -n $2 ]]; then
-    path=$2
-fi
-
 # install info
-printf "${PURPLE}[Info]\n"
+printf "${PURPLE}[Install Info]\n"
 printf "\t version = ${version}\n"
-printf "\t path = ${path}\n"
 printf "${RESET}\n"
 
-printf "${GREEN}>>>>>>>> install required libs.${RESET}\n"
+printf "${CYAN}>>>> install required libs${RESET}\n"
 yum install -y zlib zlib-devel gcc-c++ libtool openssl openssl-devel pcre
 
 # download and decompression
-mkdir -p ${path}
-curl -o ${path}/nginx-${version}.tar.gz http://nginx.org/download/nginx-${version}.tar.gz
-tar zxf ${path}/nginx-${version}.tar.gz -C ${path}
+printf "${CYAN}>>>> download nginx${RESET}\n"
+mkdir -p ${temp}
+curl -o ${temp}/nginx-${version}.tar.gz http://nginx.org/download/nginx-${version}.tar.gz
+tar zxf ${temp}/nginx-${version}.tar.gz -C ${temp}
 
 # configure and makefile
-cd ${path}/nginx-${version}
+printf "${CYAN}>>>> compile nginx${RESET}\n"
+cd ${temp}/nginx-${version}
 ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre
 make && make install
+rm -rf ${temp}
+cd -
 
-# setting service
+# setting systemd service
+printf "${CYAN}>>>> set nginx as a systemd service${RESET}\n"
 wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/nginx/nginx.service -O /usr/lib/systemd/system/nginx.service
 chmod +x /usr/lib/systemd/system/nginx.service
-#设置nginx.service为系统服务
+
+# boot nginx
+printf "${CYAN}>>>> start nginx${RESET}\n"
 systemctl enable nginx.service
-##通过系统服务操作nginx
 systemctl start nginx.service
-#systemctl reload nginx.service
-#systemctl restart nginx.service
-#systemctl stop nginx.service
-printf "${GREEN}<<<<<<<< install nginx end.${RESET}\n"
+
+printf "\n${GREEN}<<<<<<<< install nginx end${RESET}\n"
+printf "\n${PURPLE}nginx service status: ${RESET}\n"
+systemctl status nginx

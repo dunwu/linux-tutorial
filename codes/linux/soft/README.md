@@ -97,36 +97,33 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/mo
 
 ## Redis 安装配置
 
-说明：
+**安装说明**
 
-- 下载 redis `5.0.4` 并解压安装到 `/opt/redis` 路径下。
-- 替换配置，使得 Redis 可以远程访问，并设置默认密码为 123456。
-- 注册 redis 服务，并设置为开机自启动
+- 采用编译方式安装 Redis, 并将其注册为 systemd 服务
+- 安装路径为：`/usr/local/redis`
+- 默认下载安装 `5.0.4` 版本，端口号为：`6379`，密码为空
 
-使用方法：
+**使用方法**
 
-执行以下任意命令即可按照默认配置安装脚本。
+- 默认安装 - 执行以下任意命令即可：
 
 ```sh
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
 ```
 
-定制化配置
+- 自定义安装 - 下载脚本到本地，并按照以下格式执行：
+
 
 ```sh
-# 下载脚本到本地
-wget https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh
-chmod +x redis-install.sh
-./redis-install.sh 5.0.4 /opt/redis 6379 123456
+sh redis-install.sh [version] [port] [password]
 ```
 
-说明：
+参数说明：
 
-- 第一个参数是 redis 版本号；
-- 第二个参数是 redis 安装路径；
-- 第三个参数是 redis 服务端口号；
-- 第四个参数是访问密码
+- `version` - redis 版本号
+- `port` - redis 服务端口号
+- `password` - 访问密码
 
 ## Tomcat8 安装
 
@@ -195,17 +192,26 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zo
 
 ## Nginx 安装
 
-说明：
+**安装说明**
 
-采用编译方式安装 Nginx
+- 采用编译方式安装 Nginx, 并将其注册为 systemd 服务
+- 安装路径为：`/usr/local/nginx`
+- 默认下载安装 `1.16.0` 版本
 
-下载 nginx `1.16.0` 并解压安装到 `/opt/nginx` 路径下。
+**使用方法**
 
-使用方法：执行以下任意命令即可执行脚本。
+- 默认安装 - 执行以下任意命令即可：
+
 
 ```sh
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nginx-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nginx-install.sh | bash
+```
+
+- 自定义安装 - 下载脚本到本地，并按照以下格式执行：
+
+```bash
+sh nginx-install.sh [version]
 ```
 
 ## Fastdfs 安装

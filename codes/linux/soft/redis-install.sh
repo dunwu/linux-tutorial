@@ -10,26 +10,31 @@ BLUE="\033[1;34m"
 PURPLE="\033[1;35m"
 CYAN="\033[1;36m"
 RESET="$(tput sgr0)"
-###################################################################################
+##########################################################################cd#########
 
-printf "${BLUE}"
+printf "${BLUE}\n"
 cat << EOF
-
 ###################################################################################
-# 安装 Redis 脚本
-# @system: 适用于 CentOS
+# 采用编译方式安装 Redis
+# @system: 适用于 CentOS7+
 # @author: Zhang Peng
 ###################################################################################
-
 EOF
-printf "${RESET}"
+printf "${RESET}\n"
 
-command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
-    exit 1; }
+command -v yum > /dev/null 2>&1 || {
+	printf "${RED}Require yum but it's not installed.${RESET}\n";
+	exit 1;
+}
+
+printf "\n${GREEN}>>>>>>>> install redis begin${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]] || [[ $# -lt 3 ]] || [[ $# -lt 4 ]]; then
-    echo "Usage: sh redis-install.sh [version] [path] [port] [password]"
-    echo -e "Example: sh redis-install.sh 5.0.4 /opt/redis 6379 123456\n"
+	printf "${PURPLE}[Hint]\n"
+    printf "\t Usage: sh redis-install.sh [version] [port] [password] \n"
+    printf "\t Default: sh redis-install.sh 5.0.4 6379 <null> \n"
+    printf "\t Example: sh redis-install.sh 5.0.4 6379 123456 \n"
+    printf "${RESET}\n"
 fi
 
 version=5.0.4
@@ -37,56 +42,65 @@ if [[ -n $1 ]]; then
     version=$1
 fi
 
-root=/opt/redis
-if [[ -n $2 ]]; then
-    root=$2
-fi
-
 port=6379
-if [[ -n $3 ]]; then
-    port=$3
+if [[ -n $2 ]]; then
+    port=$2
 fi
 
 password=
-if [[ -n $4 ]]; then
-    password=$4
+if [[ -n $3 ]]; then
+    password=$3
 fi
 
-printf "${GREEN}>>>>>>>> install redis begin.${RESET}\n"
+# install info
+printf "${PURPLE}[Install Info]\n"
+printf "\t version = ${version}\n"
+printf "\t port = ${port}\n"
+printf "\t password = ${password}\n"
+printf "${RESET}\n"
 
-printf "\t${GREEN}Current execution: install redis ${version} to ${root}, service port = ${port}, password = ${password}${RESET}\n"
+printf "${CYAN}>>>> install required libs${RESET}\n"
 yum install -y zlib zlib-devel gcc-c++ libtool openssl openssl-devel tcl
 
-mkdir -p ${root}
-curl -o ${root}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz
+# download and decompression
+printf "${CYAN}>>>> download redis${RESET}\n"
+temp="/tmp/redis"
+path="/usr/local/redis"
+mkdir -p ${temp}
+curl -o ${temp}/redis-${version}.tar.gz http://download.redis.io/releases/redis-${version}.tar.gz
+tar zxf ${temp}/redis-${version}.tar.gz -C ${temp}
+mv ${temp}/redis-${version} ${path}
 
-path=${root}/redis-${version}
-tar zxf ${root}/redis-${version}.tar.gz -C ${root}
+# configure and makefile
+printf "${CYAN}>>>> compile redis${RESET}\n"
 cd ${path}
 make && make install
+rm -rf ${temp}
 cd -
 
-printf "\n${CYAN}>>>>>>>>> config redis${RESET}\n"
+printf "${CYAN}>>>> modify redis config${RESET}\n"
 cp ${path}/redis.conf ${path}/redis.conf.default
-wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/redis-remote-access.conf -O ${path}/redis.conf
-mkdir -p /etc/redis
-cp ${path}/redis.conf /etc/redis/${port}.conf
-sed -i "s/^port 6379/port ${port}/g" /etc/redis/${port}.conf
+wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/redis/redis.conf -O ${path}/redis.conf
+sed -i "s/^port 6379/port ${port}/g" ${path}/redis.conf
 if [[ -n ${password} ]]; then
-    sed -i "s/^# requirepass/requirepass ${password}/g" /etc/redis/${port}.conf
+    sed -i "s/^protected-mode no/protected-mode yes/g" ${path}/redis.conf
+    sed -i "s/^# requirepass/requirepass ${password}/g" ${path}/redis.conf
 fi
 
-printf "\n${CYAN}>>>>>>>>> add firewall port${RESET}\n"
+printf "\n${CYAN}>>>> open redis port in firewall${RESET}\n"
 firewall-cmd --zone=public --add-port=${port}/tcp --permanent
 firewall-cmd --reload
 
-printf "\n${CYAN}>>>>>>>>> add redis service${RESET}\n"
-# 注册 redis 服务，并设置开机自启动
-cp ${path}/utils/redis_init_script /etc/init.d/
-mv /etc/init.d/redis_init_script /etc/init.d/redis_${port}
-sed -i "s/^REDISPORT=.*/REDISPORT=${port}/g" /etc/init.d/redis_${port}
-chmod +x /etc/init.d/redis_${port}
-chkconfig --add redis_${port}
-service redis_${port} start
+# setting systemd service
+printf "${CYAN}>>>> set redis as a systemd service${RESET}\n"
+wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/redis/redis.service -O /usr/lib/systemd/system/redis.service
+chmod +x /usr/lib/systemd/system/redis.service
 
-printf "\n${GREEN}<<<<<<<< install redis end.${RESET}\n"
+# boot redis
+printf "${CYAN}>>>> start redis${RESET}\n"
+systemctl enable redis.service
+systemctl start redis.service
+
+printf "\n${GREEN}<<<<<<<< install redis end${RESET}\n"
+printf "\n${PURPLE}redis service status: ${RESET}\n"
+systemctl status redis

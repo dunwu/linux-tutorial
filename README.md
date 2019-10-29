@@ -11,6 +11,8 @@
 ## 软件运维
 
 > 本章节内容介绍日常开发中常见的一些软件、工具的安装、配置。
+>
+> 配套安装脚本：🐚 [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 
 - 开发环境
   - [JDK 安装](docs/linux/soft/jdk-install.md)
@@ -38,7 +40,6 @@
 ## 运维和脚本
 
 - [系统运维脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
-- [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 - [工具脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 - [Vim 应用指南](docs/linux/ops/vim.md)
 - [Zsh 应用指南](docs/linux/ops/zsh.md)
