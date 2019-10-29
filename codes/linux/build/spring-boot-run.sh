@@ -38,7 +38,7 @@ packageJavaOpts() {
 		JAVA_OPTS="${JAVA_OPTS} -XX:HeapDumpPath=${LOG_PATH}/${APP_NAME}.heapdump.hprof"
 
 		# JMX OPTS
-		IP=`ip addr|grep "inet "|grep -v 127.0.0.1|awk '{print $2}'|cut -d/ -f1`
+		IP=`ip addr | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1`
 		JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote=true"
 		JAVA_OPTS="${JAVA_OPTS} -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false"
 		JAVA_OPTS="${JAVA_OPTS} -Djava.rmi.server.hostname=${IP} -Dcom.sun.management.jmxremote.port=18889"
@@ -55,30 +55,30 @@ packageJavaOpts() {
 # 检查服务是否已经启动
 pid=""
 checkStarted() {
-    pid=`ps -ef | grep java | grep ${APP_NAME} | awk '{print $2}'`
-    if [[ -n "${pid}" ]]; then
-        return 0
-    else
-        return 1
-    fi
+	pid=`ps -ef | grep java | grep ${APP_NAME} | awk '{print $2}'`
+	if [[ -n "${pid}" ]]; then
+		return 0
+	else
+		return 1
+	fi
 }
 
 main() {
 	case "${oper}" in
-	start )
-		startServer
+		start)
+			startServer
 		;;
-	stop )
-		stopServer
+		stop)
+			stopServer
 		;;
-	restart )
-		stopServer
-		sleep 5
-		startServer
+		restart)
+			stopServer
+			sleep 5
+			startServer
 		;;
-	* )
-		echo "Invalid oper: ${oper}."
-		exit 1
+		*)
+			echo "Invalid oper: ${oper}."
+			exit 1
 	esac
 
 	exit 0
@@ -86,7 +86,7 @@ main() {
 
 stopServer() {
 	echo -n "stopping server: "
-	if checkStarted ;then
+	if checkStarted; then
 		kill -9 ${pid}
 		printf "${GREEN}\n${APP_NAME} is stopped.${RESET}\n"
 	else
@@ -96,7 +96,7 @@ stopServer() {
 
 startServer() {
 	printf "${BLUE}starting ${APP_NAME}...${RESET}\n"
-	if checkStarted ;then
+	if checkStarted; then
 		printf "${YELLOW}[WARN] ${APP_NAME} already started!${RESET}\n"
 		printf "PID: ${pid}\n"
 		exit 1
@@ -121,7 +121,7 @@ LOG_PATH=${ROOT_DIR}/../logs
 mkdir -p ${LOG_PATH}
 
 declare -a serial
-serial=(start stop restart)
+serial=( start stop restart )
 echo -n "请选择操作（可选值：start|stop|restart）："
 read oper
 if ! echo "${serial[@]}" | grep -q ${oper}; then
@@ -131,7 +131,7 @@ fi
 
 if [[ ${oper} == "start" ]] || [[ "${oper}" == "restart" ]]; then
 	declare -a serial2
-	serial2=(prod dev test)
+	serial2=( prod dev test )
 	echo -n "选择 profile（可选值：prod|dev|test）："
 	read profile
 	if ! echo "${serial2[@]}" | grep -q ${profile}; then
@@ -140,7 +140,7 @@ if [[ ${oper} == "start" ]] || [[ "${oper}" == "restart" ]]; then
 	fi
 
 	declare -a serial3
-	serial3=(on off)
+	serial3=( on off )
 	echo -n "是否启动 debug 模式（可选值：on|off）："
 	read debug
 	if ! echo "${serial3[@]}" | grep -q ${debug}; then

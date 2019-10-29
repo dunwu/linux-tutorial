@@ -13,57 +13,57 @@ RESET="$(tput sgr0)"
 # ---------------------------------------------------------------------------------
 
 printHeadInfo() {
-printf "${BLUE}\n"
-cat << EOF
+	printf "${BLUE}\n"
+	cat << EOF
 ###################################################################################
 # Linux Centos7 系统配置脚本（根据需要选择）
 # @author: Zhang Peng
 ###################################################################################
 EOF
-printf "${RESET}\n"
+	printf "${RESET}\n"
 }
 
 setLimit() {
-cat >> /etc/security/limits.conf << EOF
+	cat >> /etc/security/limits.conf << EOF
  *  -  nofile  65535
  *  -  nproc   65535
 EOF
 }
 
 setLang() {
-cat > /etc/sysconfig/i18n << EOF
+	cat > /etc/sysconfig/i18n << EOF
 LANG="zh_CN.UTF-8"
 EOF
 }
 
 closeShutdownShortkey() {
-    printf "\n${CYAN}>>>> 关闭 Ctrl+Alt+Del 快捷键防止重新启动${RESET}\n"
-    sed -i 's#exec /sbin/shutdown -r now#\#exec /sbin/shutdown -r now#' /etc/init/control-alt-delete.conf
+	printf "\n${CYAN}>>>> 关闭 Ctrl+Alt+Del 快捷键防止重新启动${RESET}\n"
+	sed -i 's#exec /sbin/shutdown -r now#\#exec /sbin/shutdown -r now#' /etc/init/control-alt-delete.conf
 }
 
 closeSelinux() {
-    # see http://blog.51cto.com/13570193/2093299
-    printf "\n${CYAN}>>>> 关闭 selinux${RESET}\n"
-    sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
+	# see http://blog.51cto.com/13570193/2093299
+	printf "\n${CYAN}>>>> 关闭 selinux${RESET}\n"
+	sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 }
 
 setBootMode() {
-    # 1. 停机(记得不要把 initdefault 配置为 0，因为这样会使 Linux 不能启动)
-    # 2. 单用户模式，就像 Win9X 下的安全模式
-    # 3. 多用户，但是没有 NFS
-    # 4. 完全多用户模式，准则的运行级
-    # 5. 通常不用，在一些特殊情况下可以用它来做一些事情
-    # 6. X11，即进到 X-Window 系统
-    # 7. 重新启动 (记得不要把 initdefault 配置为 6，因为这样会使 Linux 不断地重新启动)
-    printf "\n${CYAN}>>>> 配置 Linux 启动模式${RESET}\n"
-    sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
+	# 1. 停机(记得不要把 initdefault 配置为 0，因为这样会使 Linux 不能启动)
+	# 2. 单用户模式，就像 Win9X 下的安全模式
+	# 3. 多用户，但是没有 NFS
+	# 4. 完全多用户模式，准则的运行级
+	# 5. 通常不用，在一些特殊情况下可以用它来做一些事情
+	# 6. X11，即进到 X-Window 系统
+	# 7. 重新启动 (记得不要把 initdefault 配置为 6，因为这样会使 Linux 不断地重新启动)
+	printf "\n${CYAN}>>>> 配置 Linux 启动模式${RESET}\n"
+	sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
 }
 
 # 配置 IPv4
 configIpv4() {
-    printf "\n${CYAN}>>>> 配置 IPv4${RESET}\n"
+	printf "\n${CYAN}>>>> 配置 IPv4${RESET}\n"
 
-cat >> /etc/sysctl.conf << EOF
+	cat >> /etc/sysctl.conf << EOF
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_fin_timeout = 2
@@ -90,14 +90,14 @@ EOF
 
 # 关闭 IPv6
 closeIpv6() {
-    printf "\n${CYAN}>>>> 关闭 IPv6${RESET}\n"
+	printf "\n${CYAN}>>>> 关闭 IPv6${RESET}\n"
 
-cat > /etc/modprobe.d/ipv6.conf << EOF
+	cat > /etc/modprobe.d/ipv6.conf << EOF
 alias net-pf-10 off
 options ipv6 disable=1
 EOF
 
-    echo "NETWORKING_IPV6=off" >> /etc/sysconfig/network
+	echo "NETWORKING_IPV6=off" >> /etc/sysconfig/network
 }
 
 # 入口函数
@@ -107,26 +107,26 @@ main() {
 	do
 
 	case ${ITEM} in
-	"配置 DNS")
-		sh ${root}/set-dns.sh ;;
-	"配置 NTP")
-		sh ${root}/set-ntp.sh ;;
-	"关闭防火墙")
-		sh ${root}/stop-firewall.sh ;;
-	"配置 IPv4")
-		configIpv4 ;;
-	"关闭 IPv6")
-		closeIpv6 ;;
-	"全部执行")
-		sh ${root}/set-dns.sh
-		sh ${root}/set-ntp.sh
-		sh ${root}/stop-firewall.sh
-		configIpv4
-		closeIpv6
+		"配置 DNS")
+			sh ${root}/set-dns.sh ;;
+		"配置 NTP")
+			sh ${root}/set-ntp.sh ;;
+		"关闭防火墙")
+			sh ${root}/stop-firewall.sh ;;
+		"配置 IPv4")
+			configIpv4 ;;
+		"关闭 IPv6")
+			closeIpv6 ;;
+		"全部执行")
+			sh ${root}/set-dns.sh
+			sh ${root}/set-ntp.sh
+			sh ${root}/stop-firewall.sh
+			configIpv4
+			closeIpv6
 		;;
-	*)
-		printf "\n${RED}输入项不支持${RESET}\n"
-		main
+		*)
+			printf "\n${RED}输入项不支持${RESET}\n"
+			main
 		;;
 	esac
 	break
@@ -136,7 +136,7 @@ main() {
 ######################################## MAIN ########################################
 root=$(pwd)
 if [[ -n $1 ]]; then
-    root=$1
+	root=$1
 fi
 
 printHeadInfo

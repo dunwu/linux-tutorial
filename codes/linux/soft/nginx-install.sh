@@ -31,17 +31,17 @@ command -v yum > /dev/null 2>&1 || {
 printf "\n${GREEN}>>>>>>>> install nginx begin${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
-    printf "${PURPLE}[Hint]\n"
-    printf "\t Usage: sh nginx-install.sh [version] \n"
-    printf "\t Default: sh nginx-install.sh 1.16.0 \n"
-    printf "\t Example: sh nginx-install.sh 1.16.0 \n"
-    printf "${RESET}\n"
+	printf "${PURPLE}[Hint]\n"
+	printf "\t Usage: sh nginx-install.sh [version] \n"
+	printf "\t Default: sh nginx-install.sh 1.16.0 \n"
+	printf "\t Example: sh nginx-install.sh 1.16.0 \n"
+	printf "${RESET}\n"
 fi
 
 temp=/opt/nginx
 version=1.16.0
 if [[ -n $1 ]]; then
-    version=$1
+	version=$1
 fi
 
 # install info

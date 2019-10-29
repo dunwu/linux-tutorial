@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
 # Daily_Archive - Archive designated files & directories
@@ -23,13 +23,13 @@ DESTINATION=/home/tiandi/archive/$FILE
 #
 if [ -f $CONFIG_FILE ] #Make sure the config file still exists
 then
-    echo
+	echo
 else
-    echo
-    echo "$CONFIG_FILE does not exist."
-    echo "Backup not completed due to missing Configuration file"
-    echo
-    exit
+	echo
+	echo "$CONFIG_FILE does not exist."
+	echo "Backup not completed due to missing Configuration file"
+	echo
+	exit
 fi
 #
 # Build the names of all the files to backup
@@ -41,23 +41,23 @@ read FILE_NAME # Read 1st record
 #
 while [ $? -eq 0 ]
 do
-    # Make sure the file or directory exists.
-    if [ -f $FILE_NAME -o -d $FILE_NAME ]
-    then
-        # If file exists, add its name to the lists
-        FILE_LIST="$FILE_LIST $FILE_NAME"
-    else
-        # If file doesn't exist, issue warning
-        echo
-        echo "$FILE_NAME, does not exist."
-        echo "Obviously, I will not include it in this archive."
-        echo "It is listed on line $FILE_NO of the config file."
-        echo "Continuing to build archive file."
-        echo
-    fi
-    #
-    FILE_NO=$[ $FILE_NO + 1 ] # Increase Line/File number by one
-    read FILE_NAME # Read next record.
+	# Make sure the file or directory exists.
+	if [ -f $FILE_NAME -o -d $FILE_NAME ]
+	then
+		# If file exists, add its name to the lists
+		FILE_LIST="$FILE_LIST $FILE_NAME"
+	else
+		# If file doesn't exist, issue warning
+		echo
+		echo "$FILE_NAME, does not exist."
+		echo "Obviously, I will not include it in this archive."
+		echo "It is listed on line $FILE_NO of the config file."
+		echo "Continuing to build archive file."
+		echo
+	fi
+	#
+	FILE_NO=$[ $FILE_NO + 1 ] # Increase Line/File number by one
+	read FILE_NAME # Read next record.
 done
 ###########################################################
 #

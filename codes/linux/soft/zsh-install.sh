@@ -27,10 +27,14 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install zsh begin.${RESET}\n"
 
-command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
-    exit 1; }
-command -v git > /dev/null 2>&1 || { printf "${RED}Require git but it's not installed.${RESET}\n";
-    exit 1; }
+command -v yum > /dev/null 2>&1 || {
+	printf "${RED}Require yum but it's not installed.${RESET}\n";
+	exit 1;
+}
+command -v git > /dev/null 2>&1 || {
+	printf "${RED}Require git but it's not installed.${RESET}\n";
+	exit 1;
+}
 
 # install zsh
 yum install -y zsh

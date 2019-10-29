@@ -29,7 +29,7 @@ root=/home/scripts/linux-tutorial
 printf "\n${GREEN}>>>>>>>> Download linux-tutorial to ${root} begin.${RESET}\n"
 command -v yum > /dev/null 2>&1 || {
 	printf "\n${RED}Not detected yum.${RESET}";
-    exit 1;
+	exit 1;
 }
 
 command -v git > /dev/null 2>&1 || {
@@ -38,11 +38,11 @@ command -v git > /dev/null 2>&1 || {
 }
 
 if [[ -d ${root} ]]; then
-    cd ${root}
-    git pull
+	cd ${root}
+	git pull
 else
-    mkdir -p ${root}
-    git clone https://gitee.com/turnon/linux-tutorial.git ${root}
+	mkdir -p ${root}
+	git clone https://gitee.com/turnon/linux-tutorial.git ${root}
 fi
 chmod +x -R ${root}
 printf "\n${GREEN}<<<<<<<< Download linux-tutorial to ${root} end.${RESET}\n"

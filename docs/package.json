@@ -1,9 +1,7 @@
 {
-  "name": "linux-tutorial",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "docsify serve ./  --port 4000"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+	"name": "linux-tutorial",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "docsify serve ./ --port 4000"
+	}
 }

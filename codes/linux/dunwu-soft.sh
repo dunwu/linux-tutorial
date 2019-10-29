@@ -41,26 +41,27 @@ printMenu() {
 # exec shell to install soft
 main() {
 	printMenu
-    read -t 30 index
-    if [[ -n ${index} ]]; then
-        no=`expr ${index} - 1`
-        len=${#menus[*]}
-        if [[ ${index} -gt ${len} ]]; then
-            printf "${RED}输入项不支持！\n${RESET}"
-            exit -1
-        fi
-        key=${menus[$no]}
-        if [[ ${key} == 'exit' ]]; then
-        	printf "${GREEN}退出 Dunwu 软件安装脚本。\n${RESET}"
-            exit 0
-        fi
-        sh soft/${key}-install.sh
-        printf "\n"
-        main
-    else
-        printf "${RED}输入项不支持！\n${RESET}"
-        exit -1
-    fi
+	read -t 30 index
+	if [[ -n ${index} ]]; then
+		no=`expr ${index} - 1`
+		len=${#menus[*]}
+		if [[ ${index} -gt ${len} ]]; then
+			printf "${RED}输入项不支持！\n${RESET}"
+			exit -1
+		fi
+		key=${menus[$no]}
+		if [[ ${key} == 'exit' ]]; then
+			printf "${GREEN}退出 Dunwu 软件安装脚本。\n${RESET}"
+			exit 0
+		fi
+		sh soft/${key}-install.sh
+		printf "\n"
+		main
+	else
+		printf "${RED}输入项不支持！\n${RESET}"
+		exit -1
+	fi
 }
 
+######################################## MAIN ########################################
 main

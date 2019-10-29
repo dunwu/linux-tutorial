@@ -26,12 +26,18 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install mysql begin.${RESET}\n"
 
-command -v wget > /dev/null 2>&1 || { printf "${RED}Require wget but it's not installed.${RESET}\n";
-    exit 1; }
-command -v rpm > /dev/null 2>&1 || { printf "${RED}Require rpm but it's not installed.${RESET}\n";
-    exit 1; }
-command -v yum > /dev/null 2>&1 || { printf "${RED}Require yum but it's not installed.${RESET}\n";
-    exit 1; }
+command -v wget > /dev/null 2>&1 || {
+	printf "${RED}Require wget but it's not installed.${RESET}\n";
+	exit 1;
+}
+command -v rpm > /dev/null 2>&1 || {
+	printf "${RED}Require rpm but it's not installed.${RESET}\n";
+	exit 1;
+}
+command -v yum > /dev/null 2>&1 || {
+	printf "${RED}Require yum but it's not installed.${RESET}\n";
+	exit 1;
+}
 
 # 使用 rpm 安装 mysql
 wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm

@@ -1,4 +1,4 @@
-# Dunwu Shell 运维脚本
+# CentOS 常规操作运维脚本集合
 
 > **本项目脚本代码用于在 [CentOS](https://www.centos.org/) 机器上安装常用命令工具或开发软件。**
 

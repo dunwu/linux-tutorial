@@ -103,14 +103,14 @@ $sudo apt-get install redis-server
 **启动 redis 服务**
 
 ```
-cd /opt/redis/redis-5.0.4/src
+cd /usr/local/redis/src
 ./redis-server
 ```
 
 **启动 redis 客户端**
 
 ```
-cd /opt/redis/redis-5.0.4/src
+cd /usr/local/redis/src
 ./redis-cli
 ```
 
@@ -210,7 +210,6 @@ Redis 3.0 后支持集群模式。
 `Redis` 集群一般由 **多个节点** 组成，节点数量至少为 `6` 个，才能保证组成 **完整高可用** 的集群。
 
 <div align="center"><img src="https://user-gold-cdn.xitu.io/2019/10/10/16db5250b0d1c392?w=1467&h=803&f=png&s=43428"/></div>
-
 理想情况当然是所有节点各自在不同的机器上，首先于资源，本人在部署 Redis 集群时，只得到 3 台服务器。所以，我计划每台服务器部署 2 个 Redis 节点。
 
 ### 部署
@@ -232,29 +231,29 @@ Redis 集群节点的安装与单节点服务相同，差异仅在于部署方�
 
 #### （1）创建节点目录
 
-我个人偏好将软件放在 `/opt` 目录下，在我的机器中，Redis 都安装在 `/opt/redis/redis-5.0.4` 目录下。所以，下面的命令和配置都假设 Redis 安装目录为 `/opt/redis/redis-5.0.4` 。
+我个人偏好将软件放在 `/opt` 目录下，在我的机器中，Redis 都安装在 `/usr/local/redis` 目录下。所以，下面的命令和配置都假设 Redis 安装目录为 `/usr/local/redis` 。
 
 确保机器上已经安装了 Redis 后，执行以下命令，创建 Redis 集群节点实例目录：
 
 - 127.0.0.1
 
 ```bash
-sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6381
-sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6382
+sudo mkdir -p /usr/local/redis/cluster/6381
+sudo mkdir -p /usr/local/redis/cluster/6382
 ```
 
 - 127.0.0.2
 
 ```bash
-sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6383
-sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6384
+sudo mkdir -p /usr/local/redis/cluster/6383
+sudo mkdir -p /usr/local/redis/cluster/6384
 ```
 
 - 127.0.0.3
 
 ```bash
-sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6385
-sudo mkdir -p /opt/redis/redis-5.0.4/cluster/6386
+sudo mkdir -p /usr/local/redis/cluster/6385
+sudo mkdir -p /usr/local/redis/cluster/6386
 ```
 
 
@@ -275,18 +274,18 @@ daemonize yes
 # 开启集群模式
 cluster-enabled yes
 # 集群的配置，配置文件首次启动自动生成
-cluster-config-file /opt/redis/redis-5.0.4/cluster/6381/6381.conf
+cluster-config-file /usr/local/redis/cluster/6381/6381.conf
 # 请求超时时间，设置 10 秒
 cluster-node-timeout 10000
 
 # 开启 AOF 持久化
 appendonly yes
 # 数据存放目录
-dir /opt/redis/redis-5.0.4/cluster/6381
+dir /usr/local/redis/cluster/6381
 # 进程文件
-pidfile /var/run/redis-cluster/redis-6381.pid
+pidfile /var/run/redis/redis-6381.pid
 # 日志文件
-logfile /opt/redis/redis-5.0.4/cluster/6381/6381.log
+logfile /usr/local/redis/cluster/6381/6381.log
 ```
 
 #### （3）启动 Redis 节点
@@ -312,7 +311,7 @@ then
     while [ $((PORT < ENDPORT)) != "0" ]; do
         PORT=$((PORT+1))
         echo "Starting $PORT"
-        /opt/redis/redis-5.0.4/src/redis-server /opt/redis/redis-5.0.4/cluster/${PORT}/redis.conf
+        /usr/local/redis/src/redis-server /usr/local/redis/cluster/${PORT}/redis.conf
     done
     exit 0
 fi
@@ -324,8 +323,8 @@ fi
 
 ```
 $ ps -ef | grep redis
-root     12036     1 12 16:26 ?        00:08:28 /opt/redis/redis-5.0.4/src/redis-server 0.0.0.0:6381 [cluster]
-root     12038     1  0 16:26 ?        00:00:03 /opt/redis/redis-5.0.4/src/redis-server 0.0.0.0:6382 [cluster]
+root     12036     1 12 16:26 ?        00:08:28 /usr/local/redis/src/redis-server 0.0.0.0:6381 [cluster]
+root     12038     1  0 16:26 ?        00:00:03 /usr/local/redis/src/redis-server 0.0.0.0:6382 [cluster]
 ```
 
 #### （4）启动集群
@@ -333,7 +332,7 @@ root     12038     1  0 16:26 ?        00:00:03 /opt/redis/redis-5.0.4/src/redis
 通过 `redis-cli --cluster create` 命令可以自动配置集群，如下：
 
 ```bash
-$ /opt/redis/redis-5.0.4/src/redis-cli --cluster create 127.0.0.1:6381 127.0.0.1:6382 127.0.0.2:6383 127.0.0.2:6384 127.0.0.3:6385 127.0.0.3:6386 --cluster-replicas 1
+$ /usr/local/redis/src/redis-cli --cluster create 127.0.0.1:6381 127.0.0.1:6382 127.0.0.2:6383 127.0.0.2:6384 127.0.0.3:6385 127.0.0.3:6386 --cluster-replicas 1
 ```
 
 如果启动成功，可以看到如下信息：
@@ -402,9 +401,7 @@ S: b6d70f2ed78922b1dcb7967ebe1d05ad9157fca8 127.0.0.3:6386
 > 搬迁两张 cheat sheet 图，原址：https://www.cheatography.com/tasjaevan/cheat-sheets/redis/
 
 <div align="center"><img src="https://user-gold-cdn.xitu.io/2019/10/10/16db5250b0b8ea57?w=2230&h=2914&f=png&s=246433"/></div>
-
 <div align="center"><img src="https://user-gold-cdn.xitu.io/2019/10/10/16db5250b0e9ba3c?w=2229&h=2890&f=png&s=192997"/></div>
-
 ## 压力测试
 
 > 参考官方文档：[How fast is Redis?](https://redis.io/topics/benchmarks)

@@ -173,7 +173,7 @@ chmod +x /path/to/script.sh #使脚本具有执行权限
 
 这种方式要求脚本文件的第一行必须指明运行该脚本的程序，比如：
 
-**🔁 『示例源码』** [helloworld.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/helloworld.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 #!/usr/bin/env bash
@@ -207,7 +207,7 @@ shell 语法中，注释是特殊的语句，会被 shell 解释器忽略。
 - 单行注释 - 以 `#` 开头，到行尾结束。
 - 多行注释 - 以 `:<<EOF` 开头，到 `EOF` 结束。
 
-**🔁 『示例源码』** [comment-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/comment-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 #--------------------------------------------
@@ -293,7 +293,52 @@ echo `pwd`
 #  Output:(当前目录路径)
 ```
 
-**🔁 『示例源码』** [echo-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/echo-demo.sh)
+**⌨️ 『示例源码』**
+
+```bash
+#!/usr/bin/env bash
+
+# 输出普通字符串
+echo "hello, world"
+#  Output: hello, world
+
+# 输出含变量的字符串
+echo "hello, \"zp\""
+#  Output: hello, "zp"
+
+# 输出含变量的字符串
+name=zp
+echo "hello, \"${name}\""
+#  Output: hello, "zp"
+
+# 输出含换行符的字符串
+echo "YES\nNO"
+#  Output: YES\nNO
+echo -e "YES\nNO" # -e 开启转义
+#  Output:
+#  YES
+#  NO
+
+# 输出含不换行符的字符串
+echo "YES"
+echo "NO"
+#  Output:
+#  YES
+#  NO
+
+echo -e "YES\c" # -e 开启转义 \c 不换行
+echo "NO"
+#  Output:
+#  YESNO
+
+# 输出内容定向至文件
+echo "test" > test.txt
+
+# 输出执行结果
+echo `pwd`
+#  Output:(当前目录路径)
+
+```
 
 ### 2.4. printf
 
@@ -301,7 +346,7 @@ printf 用于格式化输出字符串。
 
 默认，printf 不会像 echo 一样自动添加换行符，如果需要换行可以手动添加 `\n`。
 
-**🔁 『示例源码』** [printf-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/printf-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 # 单引号
@@ -431,9 +476,66 @@ echo ${dword}
 
 [这里](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html###sect_03_02_04) 有一张更全面的 Bash 环境变量列表。
 
-### 3.6. 变量示例源码
+**⌨️ 『示例源码』**
 
-**⌨️ 『示例源码』** [variable-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/variable-demo.sh)
+```bash
+#!/usr/bin/env bash
+
+################### 声明变量 ###################
+name="world"
+echo "hello ${name}"
+# Output: hello world
+
+################### 输出变量 ###################
+folder=$(pwd)
+echo "current path: ${folder}"
+
+################### 只读变量 ###################
+rword="hello"
+echo ${rword}
+# Output: hello
+readonly rword
+# rword="bye"  # 如果放开注释，执行时会报错
+
+################### 删除变量 ###################
+dword="hello" # 声明变量
+echo ${dword} # 输出变量值
+# Output: hello
+
+unset dword # 删除变量
+echo ${dword}
+# Output: （空）
+
+################### 系统变量 ###################
+echo "UID:$UID"
+echo LOGNAME:$LOGNAME
+echo User:$USER
+echo HOME:$HOME
+echo PATH:$PATH
+echo HOSTNAME:$HOSTNAME
+echo SHELL:$SHELL
+echo LANG:$LANG
+
+################### 自定义变量 ###################
+days=10
+user="admin"
+echo "$user logged in $days days age"
+days=5
+user="root"
+echo "$user logged in $days days age"
+# Output:
+# admin logged in 10 days age
+# root logged in 5 days age
+
+################### 从变量读取列表 ###################
+colors="Red Yellow Blue"
+colors=$colors" White Black"
+
+for color in $colors
+do
+	echo " $color"
+done
+```
 
 ## 4. 字符串
 
@@ -505,9 +607,117 @@ echo `expr index "${text}" ll`
 
 查找 `ll` 子字符在 `hello` 字符串中的起始位置。
 
-### 4.6. 字符串示例源码
+**⌨️ 『示例源码』**
 
-**⌨️ 『示例源码』** [string-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/string-demo.sh)
+```bash
+#!/usr/bin/env bash
+
+################### 使用单引号拼接字符串 ###################
+name1='white'
+str1='hello, '${name1}''
+str2='hello, ${name1}'
+echo ${str1}_${str2}
+# Output:
+# hello, white_hello, ${name1}
+
+################### 使用双引号拼接字符串 ###################
+name2="black"
+str3="hello, "${name2}""
+str4="hello, ${name2}"
+echo ${str3}_${str4}
+# Output:
+# hello, black_hello, black
+
+################### 获取字符串长度 ###################
+text="12345"
+echo "${text} length is: ${#text}"
+# Output:
+# 12345 length is: 5
+
+# 获取子字符串
+text="12345"
+echo ${text:2:2}
+# Output:
+# 34
+
+################### 查找子字符串 ###################
+text="hello"
+echo `expr index "${text}" ll`
+# Output:
+# 3
+
+################### 判断字符串中是否包含子字符串 ###################
+result=$(echo "${str}" | grep "feature/")
+if [[ "$result" != "" ]]; then
+	echo "feature/ 是 ${str} 的子字符串"
+else
+	echo "feature/ 不是 ${str} 的子字符串"
+fi
+
+################### 截取关键字左边内容 ###################
+full_branch="feature/1.0.0"
+branch=`echo ${full_branch#feature/}`
+echo "branch is ${branch}"
+
+################### 截取关键字右边内容 ###################
+full_version="0.0.1-SNAPSHOT"
+version=`echo ${full_version%-SNAPSHOT}`
+echo "version is ${version}"
+
+################### 字符串分割成数组 ###################
+str="0.0.0.1"
+OLD_IFS="$IFS"
+IFS="."
+array=( ${str} )
+IFS="$OLD_IFS"
+size=${#array[*]}
+lastIndex=`expr ${size} - 1`
+echo "数组长度：${size}"
+echo "最后一个数组元素：${array[${lastIndex}]}"
+for item in ${array[@]}
+do
+	echo "$item"
+done
+
+################### 判断字符串是否为空 ###################
+#-n 判断长度是否非零
+#-z 判断长度是否为零
+
+str=testing
+str2=''
+if [[ -n "$str" ]]
+then
+	echo "The string $str is not empty"
+else
+	echo "The string $str is empty"
+fi
+
+if [[ -n "$str2" ]]
+then
+	echo "The string $str2 is not empty"
+else
+	echo "The string $str2 is empty"
+fi
+
+#	Output:
+#	The string testing is not empty
+#	The string  is empty
+
+################### 字符串比较 ###################
+str=hello
+str2=world
+if [[ $str = "hello" ]]; then
+	echo "str equals hello"
+else
+	echo "str not equals hello"
+fi
+
+if [[ $str2 = "hello" ]]; then
+	echo "str2 equals hello"
+else
+	echo "str2 not equals hello"
+fi
+```
 
 ## 5. 数组
 
@@ -617,9 +827,65 @@ echo ${nums[@]}
 # 1 2
 ```
 
-### 5.6. 数组示例源码
+**⌨️ 『示例源码』**
 
-**🔁 『示例源码』** [array-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos/array-demo.sh)
+```bash
+#!/usr/bin/env bash
+
+################### 创建数组 ###################
+nums=( [ 2 ] = 2 [ 0 ] = 0 [ 1 ] = 1 )
+colors=( red yellow "dark blue" )
+
+################### 访问数组的单个元素 ###################
+echo ${nums[1]}
+# Output: 1
+
+################### 访问数组的所有元素 ###################
+echo ${colors[*]}
+# Output: red yellow dark blue
+
+echo ${colors[@]}
+# Output: red yellow dark blue
+
+printf "+ %s\n" ${colors[*]}
+# Output:
+# + red
+# + yellow
+# + dark
+# + blue
+
+printf "+ %s\n" "${colors[*]}"
+# Output:
+# + red yellow dark blue
+
+printf "+ %s\n" "${colors[@]}"
+# Output:
+# + red
+# + yellow
+# + dark blue
+
+################### 访问数组的部分元素 ###################
+echo ${nums[@]:0:2}
+# Output:
+# 0 1
+
+################### 获取数组长度 ###################
+echo ${#nums[*]}
+# Output:
+# 3
+
+################### 向数组中添加元素 ###################
+colors=( white "${colors[@]}" green black )
+echo ${colors[@]}
+# Output:
+# white red yellow dark blue green black
+
+################### 从数组中删除元素 ###################
+unset nums[ 0 ]
+echo ${nums[@]}
+# Output:
+# 1 2
+```
 
 ## 6. 运算符
 
@@ -640,7 +906,7 @@ echo ${nums[@]}
 
 **注意：**条件表达式要放在方括号之间，并且要有空格，例如: `[$x==$y]` 是错误的，必须写成 `[ $x == $y ]`。
 
-**🔁 『示例源码』** [operator-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/operator/operator-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 x=10
@@ -672,7 +938,6 @@ then
   echo "${x} != ${y}"
 fi
 
-#  Execute: ./operator-demo.sh
 #  Output:
 #  x=10, y=20
 #  10 + 20 = 30
@@ -698,7 +963,7 @@ fi
 | `-ge`  | 检测左边的数是否大于等于右边的，如果是，则返回 true。 | `[ $a -ge $b ]` 返回 false。 |
 | `-le`  | 检测左边的数是否小于等于右边的，如果是，则返回 true。 | `[ $a -le $b ]`返回 true。   |
 
-**🔁 『示例源码』** [operator-demo2.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/operator/operator-demo2.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 x=10
@@ -742,7 +1007,6 @@ else
    echo "${x} -le ${y}: x 大于 y"
 fi
 
-#  Execute: ./operator-demo2.sh
 #  Output:
 #  x=10, y=20
 #  10 -eq 20: x 不等于 y
@@ -763,7 +1027,7 @@ fi
 | `-o`   | 或运算，有一个表达式为 true 则返回 true。           | `[ $a -lt 20 -o $b -gt 100 ]` 返回 true。  |
 | `-a`   | 与运算，两个表达式都为 true 才返回 true。           | `[ $a -lt 20 -a $b -gt 100 ]` 返回 false。 |
 
-**🔁 『示例源码』** [operator-demo3.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/operator/operator-demo3.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 x=10
@@ -795,7 +1059,6 @@ else
    echo "${x} 小于 5 或 ${y} 大于 100 : 返回 false"
 fi
 
-#  Execute: ./operator-demo3.sh
 #  Output:
 #  x=10, y=20
 #  10 != 20 : x 不等于 y
@@ -813,7 +1076,7 @@ fi
 | `&&`   | 逻辑的 AND | `[[ ${x} -lt 100 && ${y} -gt 100 ]]` 返回 false |
 | `||`   | 逻辑的 OR  | `[[ ${x} -lt 100 || ${y} -gt 100 ]]` 返回 true  |
 
-**🔁 『示例源码』** [operator-demo4.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/operator/operator-demo4.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 x=10
@@ -835,7 +1098,6 @@ else
    echo "${x} -lt 100 || ${y} -gt 100 返回 false"
 fi
 
-#  Execute: ./operator-demo4.sh
 #  Output:
 #  x=10, y=20
 #  10 -lt 100 && 20 -gt 100 返回 false
@@ -854,7 +1116,7 @@ fi
 | `-n`   | 检测字符串长度是否为 0，不为 0 返回 true。 | `[ -n $a ]` 返回 true。    |
 | `str`  | 检测字符串是否为空，不为空返回 true。      | `[ $a ]` 返回 true。       |
 
-**🔁 『示例源码』** [operator-demo5.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/operator/operator-demo5.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 x="abc"
@@ -893,7 +1155,6 @@ else
    echo "${x} : 字符串为空"
 fi
 
-#  Execute: ./operator-demo5.sh
 #  Output:
 #  x=abc, y=xyz
 #  abc = xyz: x 不等于 y
@@ -925,7 +1186,7 @@ fi
 | -s file | 检测文件是否为空（文件大小是否大于 0），不为空返回 true。                   | `[ -s $file ]` 返回 true。  |
 | -e file | 检测文件（包括目录）是否存在，如果是，则返回 true。                         | `[ -e $file ]` 返回 true。  |
 
-**🔁 『示例源码』** [operator-demo6.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/operator/operator-demo6.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 file="/etc/hosts"
@@ -966,7 +1227,6 @@ else
    echo "${file} 文件不存在"
 fi
 
-#  Execute: ./operator-demo6.sh
 #  Output:(根据文件的实际情况，输出结果可能不同)
 #  /etc/hosts 文件可读
 #  /etc/hosts 文件可写
@@ -1023,6 +1283,8 @@ fi
 
 有些时候，`if..else`不能满足我们的要求。别忘了`if..elif..else`，使用起来也很方便。
 
+**⌨️ 『示例源码』**
+
 ```bash
 x=10
 y=20
@@ -1036,13 +1298,11 @@ fi
 # Output: 10 < 20
 ```
 
-**🔁 『示例源码』** [if-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/if-demo.sh)
-
 #### `case`
 
 如果你需要面对很多情况，分别要采取不同的措施，那么使用`case`会比嵌套的`if`更有用。使用`case`来解决复杂的条件判断，看起来像下面这样：
 
-**🔁 『示例源码』** [case-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/case-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 exec
@@ -1106,6 +1366,8 @@ done
 
 当我们想对一个目录下的所有文件做同样的操作时，`for`就很方便了。举个例子，如果我们想把所有的`.bash`文件移动到`script`文件夹中，并给它们可执行权限，我们的脚本可以这样写：
 
+**⌨️ 『示例源码』**
+
 ```bash
 DIR=/home/zp
 for FILE in ${DIR}/*.sh; do
@@ -1113,8 +1375,6 @@ for FILE in ${DIR}/*.sh; do
 done
 # 将 /home/zp 目录下所有 sh 文件拷贝到 /home/zp/scripts
 ```
-
-**🔁 『示例源码』** [for-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/for-demo.sh)
 
 #### `while`循环
 
@@ -1129,7 +1389,7 @@ done
 
 跟`for`循环一样，如果我们把`do`和被检测的条件写到一行，那么必须要在`do`之前加一个分号。
 
-比如下面这个例子：
+**⌨️ 『示例源码』**
 
 ```bash
 ### 0到9之间每个数的平方
@@ -1151,11 +1411,11 @@ done
 #  81
 ```
 
-**🔁 『示例源码』** [while-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/while-demo.sh)
-
 #### `until`循环
 
 `until`循环跟`while`循环正好相反。它跟`while`一样也需要检测一个测试条件，但不同的是，只要该条件为 _假_ 就一直执行循环：
+
+**⌨️ 『示例源码』**
 
 ```bash
 x=0
@@ -1171,8 +1431,6 @@ done
 #  4
 ```
 
-**🔁 『示例源码』** [until-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/until-demo.sh)
-
 #### `select`循环
 
 `select`循环帮助我们组织一个用户菜单。它的语法几乎跟`for`循环一致：
@@ -1186,7 +1444,7 @@ done
 
 `select`会打印`elem1..elemN`以及它们的序列号到屏幕上，之后会提示用户输入。通常看到的是`$?`（`PS3`变量）。用户的选择结果会被保存到`answer`中。如果`answer`是一个在`1..N`之间的数字，那么`语句`会被执行，紧接着会进行下一次迭代 —— 如果不想这样的话我们可以使用`break`语句。
 
-一个可能的实例可能会是这样：
+**⌨️ 『示例源码』**
 
 ```bash
 #!/usr/bin/env bash
@@ -1219,8 +1477,6 @@ Choose the package manager: 2
 Enter the package name: gitbook-cli
 ```
 
-**🔁 『示例源码』** [select-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/select-demo.sh)
-
 #### `break` 和 `continue`
 
 如果想提前结束一个循环或跳过某次循环执行，可以使用 shell 的`break`和`continue`语句来实现。它们可以在任何循环中使用。
@@ -1229,7 +1485,7 @@ Enter the package name: gitbook-cli
 >
 > `continue`语句用来跳过某次迭代。
 
-**🔁 『示例源码』** [break-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/break-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 # 查找 10 以内第一个能整除 2 和 3 的正整数
@@ -1244,7 +1500,7 @@ done
 # Output: 6
 ```
 
-**🔁 『示例源码』** [continue-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/statement/continue-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 # 打印10以内的奇数
@@ -1280,7 +1536,7 @@ bash 函数定义语法如下：
 > 3. 函数返回值在调用该函数后通过 `$?` 来获得。
 > 4. 所有函数在使用前必须定义。这意味着必须将函数放在脚本开始部分，直至 shell 解释器首次发现它时，才可以使用。调用函数仅使用其函数名即可。
 
-**🔁 『示例源码』** [function-demo.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos//function/function-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 #!/usr/bin/env bash
@@ -1346,7 +1602,7 @@ the result is: 100
 | `$#`           | 不包括`$0`在内的位置参数的个数 |
 | `$FUNCNAME`    | 函数名称（仅在函数内部有值）   |
 
-**🔁 『示例源码』** [function-demo2.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos//function/function-demo2.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 #!/usr/bin/env bash
@@ -1406,7 +1662,7 @@ $ ./function-demo2.sh 10 20
 | `$-`     | 返回 Shell 使用的当前选项，与 set 命令功能相同。 |
 | `$?`     | 函数返回值                                       |
 
-**🔁 『示例源码』** [function-demo3.sh](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell/demos//function/function-demo3.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 runner() {
@@ -1644,7 +1900,7 @@ $ ./my_script
 
 有时我们值需要 debug 脚本的一部分。这种情况下，使用`set`命令会很方便。这个命令可以启用或禁用选项。使用`-`启用选项，`+`禁用选项：
 
-**🔁 『示例源码』** [debug-demo.sh](https://github.com/dunwu/linux-tutorial/blob/master/codes/shell/demos/debug-demo.sh)
+**⌨️ 『示例源码』**
 
 ```bash
 # 开启 debug

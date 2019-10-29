@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=forking
-PIDFile=/var/run/redis_6379.pid
+PIDFile=/var/run/redis/redis-6379.pid
 ExecStart=/usr/local/bin/redis-server /usr/local/redis/redis.conf
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID

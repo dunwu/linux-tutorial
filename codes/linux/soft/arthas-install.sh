@@ -25,7 +25,7 @@ printf "${BLUE}>>>>>>>> begin.\n${RESET}"
 
 root=/opt/arthas
 if [[ -n $1 ]]; then
-    root=$1
+	root=$1
 fi
 
 mkdir -p ${root}

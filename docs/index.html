@@ -1,220 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <title>Linux Tutorial</title>
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-  <meta content="Linux 教程" name="description"/>
-  <meta
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    name="viewport"
-  />
-  <link href="http://dunwu.test.upcdn.net/common/logo/zp_50_50.png" rel="icon" type="image/x-icon"/>
-  <link href="//unpkg.com/docsify/lib/themes/vue.css" rel="stylesheet" title="vue"/>
-  <style>
-    h1 + ul {
-      display: block !important;
-    }
+	<meta charset="UTF-8" />
+	<title>linux-tutorial</title>
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+	<meta content="linux-tutorial" name="description" />
+	<meta
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		name="viewport"
+	/>
+	<link href="http://dunwu.test.upcdn.net/common/logo/zp_50_50.png" rel="icon" type="image/x-icon" />
+	<link href="//unpkg.com/docsify/lib/themes/vue.css" rel="stylesheet" title="vue" />
+	<style>
+		h1 + ul {
+			display: block !important;
+		}
 
-    .content img,
-    .sidebar img {
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 0 8px grey;
-    }
+		.content img,
+		.sidebar img {
+			border: none;
+			border-radius: 8px;
+			box-shadow: 0 0 8px grey;
+		}
 
-    .content,
-    .sidebar,
-    .sidebar-toggle,
-    body,
-    .search input {
-      color: #6B615F !important;
-      background-color: #FFF4E6 !important;
-    }
+		.content,
+		.sidebar,
+		.sidebar-toggle,
+		body,
+		.search input {
+			color: #6B615F !important;
+			background-color: #FFF4E6 !important;
+		}
 
-    .content strong,
-    .sidebar strong,
-    body strong {
-      color: #5C5869 !important;
-    }
-  </style>
-  <style>
-    .cover-main .anchor span {
-      text-align: center;
-      background-image: -webkit-linear-gradient(left, #FFDCB4, #B96972 25%, #E88A57 50%, #804170 75%, #A596CD);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-background-size: 200% 100%;
-      -webkit-animation: masked-animation 1.5s infinite linear;
-      font-family: "Brush Script MT", 隶书, serif;
-      font-weight: 600;
-    }
+		.content strong,
+		.sidebar strong,
+		body strong {
+			color: #5C5869 !important;
+		}
+	</style>
+	<style>
+		.cover-main .anchor span {
+			text-align: center;
+			background-image: -webkit-linear-gradient(left, #FFDCB4, #B96972 25%, #E88A57 50%, #804170 75%, #A596CD);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-background-size: 200% 100%;
+			-webkit-animation: masked-animation 1.5s infinite linear;
+			font-family: "Brush Script MT", 隶书, serif;
+			font-weight: 600;
+		}
 
-    .cover-main blockquote p {
-      color: #5C5869;
-      font-family: "Arial", 隶书, serif;
-    }
+		.cover-main blockquote p {
+			color: #5C5869;
+			font-family: "Arial", 隶书, serif;
+		}
 
-    .cover-main ul a:hover {
-      color: #FE4165 !important;
-    }
+		.cover-main ul a:hover {
+			color: #FE4165 !important;
+		}
 
-    .cover-main p a:hover {
-      text-align: center;
-      background-image: -webkit-linear-gradient(left, #FFDCB4, #B96972 25%, #E88A57 50%, #804170 75%, #A596CD);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-background-size: 200% 100%;
-      -webkit-animation: masked-animation 1.5s infinite linear;
-    }
+		.cover-main p a:hover {
+			text-align: center;
+			background-image: -webkit-linear-gradient(left, #FFDCB4, #B96972 25%, #E88A57 50%, #804170 75%, #A596CD);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-background-size: 200% 100%;
+			-webkit-animation: masked-animation 1.5s infinite linear;
+		}
 
-    /* content 样式内容 */
-    .sidebar a,
-    .content a {
-      color: #399AB2 !important;
-      text-decoration: none !important;
-    }
+		/* content 样式内容 */
+		.sidebar a,
+		.content a {
+			color: #399AB2 !important;
+			text-decoration: none !important;
+		}
 
-    .sidebar a:hover,
-    .content a:hover {
-      color: #FE4165 !important;
-      text-decoration: underline !important;
-    }
+		.sidebar a:hover,
+		.content a:hover {
+			color: #FE4165 !important;
+			text-decoration: underline !important;
+		}
 
-    .content h1 :hover,
-    .content h2 :hover,
-    .content h3 :hover,
-    .content h4 :hover {
-      text-align: center;
-      background-image: -webkit-linear-gradient(left, #FFDCB4, #B96972 25%, #E88A57 50%, #804170 75%, #A596CD);
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-background-size: 200% 100%;
-      -webkit-animation: masked-animation 1.5s infinite linear;
-      font-family: "微软雅黑", serif;
-      font-weight: bold;
-    }
+		.content h1 :hover,
+		.content h2 :hover,
+		.content h3 :hover,
+		.content h4 :hover {
+			text-align: center;
+			background-image: -webkit-linear-gradient(left, #FFDCB4, #B96972 25%, #E88A57 50%, #804170 75%, #A596CD);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-background-size: 200% 100%;
+			-webkit-animation: masked-animation 1.5s infinite linear;
+			font-family: "微软雅黑", serif;
+			font-weight: bold;
+		}
 
-    @-webkit-keyframes masked-animation {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: -100% 0;
-      }
-    }
+		@-webkit-keyframes masked-animation {
+			0% {
+				background-position: 0 0;
+			}
+			100% {
+				background-position: -100% 0;
+			}
+		}
 
-    .content h1 a,
-    .content h1 span {
-      color: #399AB2 !important;
-      font-size: 30px;
-      text-shadow: 2px 2px 5px grey;
-    }
+		.content h1 a,
+		.content h1 span {
+			color: #399AB2 !important;
+			font-size: 30px;
+			text-shadow: 2px 2px 5px grey;
+		}
 
-    .content h2 a,
-    .content h2 span {
-      color: #60497C !important;
-      font-size: 26px;
-      text-shadow: 2px 2px 5px grey;
-    }
+		.content h2 a,
+		.content h2 span {
+			color: #60497C !important;
+			font-size: 26px;
+			text-shadow: 2px 2px 5px grey;
+		}
 
-    .content h3 a,
-    .content h3 span {
-      color: #346093 !important;
-      font-size: 22px;
-      text-shadow: 2px 2px 5px grey;
-    }
+		.content h3 a,
+		.content h3 span {
+			color: #346093 !important;
+			font-size: 22px;
+			text-shadow: 2px 2px 5px grey;
+		}
 
-    .content h4 a,
-    .content h4 span {
-      font-size: 18px;
-      color: #78943A;
-      text-shadow: 2px 2px 5px grey;
-    }
+		.content h4 a,
+		.content h4 span {
+			font-size: 18px;
+			color: #78943A;
+			text-shadow: 2px 2px 5px grey;
+		}
+	</style>
+	<style>
+		.markdown-section h1 {
+			font-size: 1rem;
+			margin: 0;
+		}
 
-    img.emoji {
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
-    }
-  </style>
-  <style>
-    .content > p {
-      font-size: 16px !important;
-      line-height: 24px;
-    }
+		.markdown-section h2 {
+			font-size: 1rem;
+			margin: 1rem 0px;
+		}
 
-    .content blockquote {
-      display: block;
-      padding: 0 16px;
-      border-left: 8px solid #DDDFE4;
-      background: #FFF2C9;
-      overflow: auto;
-    }
+		.markdown-section h3 {
+			font-size: 1rem;
+			margin: 0;
+		}
 
-    .content pre {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      border-radius: 8px;
-      box-shadow: 1px 1px 20px 3px #DDDDDD !important;
-    }
+		.markdown-section p {
+			line-height: 1rem;
+			word-spacing: 0.05rem;
+		}
 
-    .content code {
-      background-color: white;
-      border-radius: 6px;
-      box-shadow: 1px 1px 1px whitesmoke;
-    }
+	</style>
+	<style>
+		.content > p {
+			font-size: 16px !important;
+			line-height: 24px;
+		}
 
-    .content table {
-      display: table;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      box-shadow: 2px 2px 20px 6px #DDDDDD !important;
-    }
+		.content blockquote {
+			display: block;
+			border-left: 8px solid lightgrey;
+			padding-right: 8px;
+			background: #FFF2C9;
+			overflow: auto;
+		}
 
-    .content th {
-      font-weight: bold;
-      font-size: 16px;
-      background-color: #CCE6B6;
-    }
-  </style>
-  <style>
-    @media (min-width: 600px) {
-      .markdown-section pre > code {
-        font-size: 0.9rem !important;
-      }
-    }
+		.content pre {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			border-radius: 8px;
+			box-shadow: 1px 1px 20px 3px #DDDDDD !important;
+		}
 
-    @media (max-width: 600px) {
-      .markdown-section pre > code {
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
+		.content code {
+			background-color: white;
+			box-shadow: 1px 1px 1px lightgrey;
+		}
 
-      pre:after {
-        content: "" !important;
-      }
-    }
+		.content table {
+			display: table;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			box-shadow: 2px 2px 20px 6px lightgrey !important;
+		}
 
-    @media (min-width: 600px) {
-      pre code {
-        padding-left: 20px !important;
-      }
-    }
+		.content th {
+			font-weight: bold;
+			font-size: 16px;
+			background-color: #CCE6B6;
+		}
+	</style>
+	<style>
+		@media (min-width: 600px) {
+			.markdown-section pre > code {
+				font-size: 0.9rem !important;
+			}
+		}
 
-    @media (max-width: 600px) {
-      pre {
-        padding-left: 0px !important;
-        padding-right: 0px !important;
-      }
-    }
-  </style>
+		@media (max-width: 600px) {
+			.markdown-section pre > code {
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+
+			pre:after {
+				content: "" !important;
+			}
+		}
+
+		@media (min-width: 600px) {
+			pre code {
+				padding-left: 20px !important;
+			}
+		}
+
+		@media (max-width: 600px) {
+			pre {
+				padding-left: 0px !important;
+				padding-right: 0px !important;
+			}
+		}
+	</style>
 </head>
 <body>
 <div id="app">正在加载...</div>
 <script>
   window.$docsify = {
-    name: 'Linux Tutorial',
+    name: 'linux-tutorial',
     repo: 'https://github.com/dunwu/linux-tutorial',
     logo: 'http://dunwu.test.upcdn.net/common/logo/zp_100_100.png',
     auto2top: true,

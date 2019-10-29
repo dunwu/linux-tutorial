@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # function:自定义rm命令，每天晚上定时清理
 

@@ -31,25 +31,25 @@ printf "\n${GREEN}>>>>>>>> install redis begin${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]] || [[ $# -lt 3 ]] || [[ $# -lt 4 ]]; then
 	printf "${PURPLE}[Hint]\n"
-    printf "\t Usage: sh redis-install.sh [version] [port] [password] \n"
-    printf "\t Default: sh redis-install.sh 5.0.4 6379 <null> \n"
-    printf "\t Example: sh redis-install.sh 5.0.4 6379 123456 \n"
-    printf "${RESET}\n"
+	printf "\t Usage: sh redis-install.sh [version] [port] [password] \n"
+	printf "\t Default: sh redis-install.sh 5.0.4 6379 <null> \n"
+	printf "\t Example: sh redis-install.sh 5.0.4 6379 123456 \n"
+	printf "${RESET}\n"
 fi
 
 version=5.0.4
 if [[ -n $1 ]]; then
-    version=$1
+	version=$1
 fi
 
 port=6379
 if [[ -n $2 ]]; then
-    port=$2
+	port=$2
 fi
 
 password=
 if [[ -n $3 ]]; then
-    password=$3
+	password=$3
 fi
 
 # install info
@@ -83,8 +83,8 @@ cp ${path}/redis.conf ${path}/redis.conf.default
 wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/redis/redis.conf -O ${path}/redis.conf
 sed -i "s/^port 6379/port ${port}/g" ${path}/redis.conf
 if [[ -n ${password} ]]; then
-    sed -i "s/^protected-mode no/protected-mode yes/g" ${path}/redis.conf
-    sed -i "s/^# requirepass/requirepass ${password}/g" ${path}/redis.conf
+	sed -i "s/^protected-mode no/protected-mode yes/g" ${path}/redis.conf
+	sed -i "s/^# requirepass/requirepass ${password}/g" ${path}/redis.conf
 fi
 
 printf "\n${CYAN}>>>> open redis port in firewall${RESET}\n"

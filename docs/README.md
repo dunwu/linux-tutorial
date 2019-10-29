@@ -4,13 +4,15 @@
 >
 > 📖 [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
-|       :wrench:        |        :shell:        |      :memo:       |        📚        |
-| :-------------------: | :-------------------: | :---------------: | :-------------------: |
-| [软件运维](#软件运维) | [运维和脚本](#运维和脚本) | [知识点](#知识点) | [学习资源](#学习资源) |
+|          🛠           |            🐚             |      📝       |          📚           |
+| :-------------------: | :-----------------------: | :-----------: | :-------------------: |
+| [软件运维](#软件运维) | [Shell 脚本](#Shell-脚本) | [教程](#教程) | [学习资源](#学习资源) |
 
 ## 软件运维
 
 > 本章节内容介绍日常开发中常见的一些软件、工具的安装、配置。
+>
+> 配套安装脚本：🐚 [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 
 - 开发环境
   - [JDK 安装](linux/soft/jdk-install.md)
@@ -35,22 +37,21 @@
   - [Mongodb 运维](linux/soft/mongodb-ops.md)
   - [Redis 运维](linux/soft/redis-ops.md)
 
-## 运维和脚本
+## Shell 脚本
 
-- [系统运维脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
-- [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
-- [工具脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
-- [Vim 应用指南](linux/ops/vim.md)
-- [Zsh 应用指南](linux/ops/zsh.md)
-- [Shell 教程](linux/ops/shell.md)
-- [Python 教程](linux/ops/python.md)
-- [Systemd 入门教程](linux/ops/systemd.md)
+### Shell 脚本大全
 
-> 提供一键式运维、配置软件脚本
+**Shell 脚本大全** 精心收集、整理了 Linux 环境下的常见 Shell 脚本操作片段。
 
-## 知识点
+源码：[**Shell 脚本大全**](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
 
-### Linux
+### CentOS 常规操作运维脚本集合
+
+本人作为一名 Java 后端，苦于经常在 CentOS 环境上开荒虚拟机。为提高效率，写了一套 Shell 脚本，提供如下功能：安装常用 lib 库、命令工具、设置 DNS、NTP、配置国内 yum 源、一键安装常用软件等。
+
+源码：[**CentOS 常规操作运维脚本集合**](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
+
+## 教程
 
 - [Linux 命令教程](linux/cli/README.md)
   - [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md)
@@ -62,23 +63,23 @@
   - [Linux 网络管理](linux/cli/Linux网络管理.md)
   - [Linux 硬件管理](linux/cli/Linux硬件管理.md)
   - [Linux 软件管理](linux/cli/Linux硬件管理.md)
-- [Linux 运维](linux/ops/README.md)
-  - [linux 典型运维应用](linux/ops/linux典型运维应用.md)
-  - [samba 使用详解](linux/ops/samba使用详解.md)
-
-### Docker
-
 - [Docker 教程](docker)
   - [Docker 应用指南](docker/docker.md)
   - [Docker Cheat Sheet](docker/docker-cheat-sheet.md)
-
-### Git
-
 - [Git 教程](git/README.md)
   - [Git 快速指南](git/git-quickstart.md)
   - [Git 配置](git/git-configuration.md)
   - [git-flow 工作流](git/git-flow.md)
   - [Git 常见问题](git/git-faq.md)
+- 运维
+  - [linux 典型运维应用](linux/ops/linux典型运维应用.md)
+  - [samba 使用详解](linux/ops/samba使用详解.md)
+  - [Systemd 教程](linux/ops/systemd.md)
+- 脚本
+  - [Vim 应用指南](linux/ops/vim.md)
+  - [Zsh 应用指南](linux/ops/zsh.md)
+  - [Shell 教程](linux/ops/shell.md)
+  - [Python 教程](linux/ops/python.md)
 
 ## 学习资源
 

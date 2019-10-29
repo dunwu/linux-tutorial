@@ -27,20 +27,20 @@ printf "${RESET}"
 printf "${GREEN}>>>>>>>> install tomcat begin.${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
-    printf "${PURPLE}[Hint]\n"
-    printf "\t sh rocketmq-install.sh [version] [path]\n"
-    printf "\t Example: sh rocketmq-install.sh 4.5.0 /opt/rocketmq\n"
-    printf "${RESET}\n"
+	printf "${PURPLE}[Hint]\n"
+	printf "\t sh rocketmq-install.sh [version] [path]\n"
+	printf "\t Example: sh rocketmq-install.sh 4.5.0 /opt/rocketmq\n"
+	printf "${RESET}\n"
 fi
 
 version=4.5.0
 if [[ -n $1 ]]; then
-    version=$1
+	version=$1
 fi
 
 path=/opt/rocketmq
 if [[ -n $2 ]]; then
-    path=$2
+	path=$2
 fi
 
 # install info

@@ -27,20 +27,20 @@ printf "${RESET}"
 printf "${GREEN}>>>>>>>> install tomcat begin.${RESET}\n"
 
 if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
-    printf "${PURPLE}[Hint]\n"
-    printf "\t sh tomcat8-install.sh [version] [path]\n"
-    printf "\t Example: sh tomcat8-install.sh 8.5.28 /opt/tomcat8\n"
-    printf "${RESET}\n"
+	printf "${PURPLE}[Hint]\n"
+	printf "\t sh tomcat8-install.sh [version] [path]\n"
+	printf "\t Example: sh tomcat8-install.sh 8.5.28 /opt/tomcat8\n"
+	printf "${RESET}\n"
 fi
 
 version=8.5.28
 if [[ -n $1 ]]; then
-    version=$1
+	version=$1
 fi
 
 path=/opt/tomcat
 if [[ -n $2 ]]; then
-    path=$2
+	path=$2
 fi
 
 # install info
