@@ -1,7 +1,7 @@
-<div align="center"><img width="100px" src="http://dunwu.test.upcdn.net/common/logo/zp.png"/></div>
+![logo](http://dunwu.test.upcdn.net/common/logo/zp.png)
 
 # linux-tutorial
 
-> Linux 教程
+> linux-tutorial 是一个 Linux 教程。
 
 [开始阅读](README.md)
