@@ -1,27 +1,8 @@
----
-title: Linux 软件管理
-date: 2018-02-26
-categories:
-  - linux
-tags:
-  - linux
----
-
 # Linux 软件管理
 
 > 关键词：`rpm`, `yum`, `apt-get`
 
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [rpm](#rpm)
-- [yum](#yum)
-    - [yum 源](#yum-源)
-- [apt-get](#apt-get)
-- [参考资料](#参考资料)
-
-<!-- /TOC -->
-
-## rpm
+## 1. rpm
 
 > rpm 命令是 RPM 软件包的管理工具。rpm 原本是 Red Hat Linux 发行版专门用来管理 Linux 各项套件的程序，由于它遵循 GPL 规则且功能强大方便，因而广受欢迎。逐渐受到其他发行版的采用。RPM 套件管理方式的出现，让 Linux 易于安装，升级，间接提升了 Linux 的适用度。
 >
@@ -83,7 +64,7 @@ rpm -e proftpd-1
 rpm -qa # 列出所有安装过的包
 ```
 
-## yum
+## 2. yum
 
 > yum 命令是在 Fedora 和 RedHat 以及 SUSE 中基于 rpm 的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理 RPM 软件包，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。
 >
@@ -141,7 +122,7 @@ yum clean headers        #清除缓存目录下的 headers
 yum clean oldheaders     #清除缓存目录下旧的 headers
 ```
 
-### yum 源
+### 2.1. yum 源
 
 yum 的默认源是国外的，下载速度比较慢，所以最好替换为一个国内的 yum 源。
 
@@ -161,7 +142,7 @@ yum clean all
 yum makecache
 ```
 
-## apt-get
+## 3. apt-get
 
 > apt-get 命令是 Debian Linux 发行版中的 APT 软件包管理工具。所有基于 Debian 的发行都使用这个包管理系统。deb 包可以把一个应用的文件包在一起，大体就如同 Windows 上的安装文件。
 >
@@ -202,7 +183,7 @@ apt-get upgrade
 apt-get dist-upgrade
 ```
 
-## 参考资料
+## 4. 参考资料
 
 - http://man.linuxde.net/rpm
 - http://man.linuxde.net/yum

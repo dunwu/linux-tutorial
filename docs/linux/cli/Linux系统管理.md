@@ -1,37 +1,8 @@
----
-title: Linux 系统管理
-date: 2018-02-27
-categories:
-  - linux
-tags:
-  - linux
-  - command
----
-
 # Linux 系统管理
 
 > 关键词：`lsb_release`, `reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
 
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [Linux 系统管理要点](#linux-系统管理要点)
-- [命令常见用法](#命令常见用法)
-    - [lsb_release](#lsb_release)
-    - [reboot](#reboot)
-    - [exit](#exit)
-    - [shutdown](#shutdown)
-    - [date](#date)
-    - [mount](#mount)
-    - [umount](#umount)
-    - [ps](#ps)
-    - [kill](#kill)
-    - [systemctl](#systemctl)
-    - [service](#service)
-    - [crontab](#crontab)
-
-<!-- /TOC -->
-
-## Linux 系统管理要点
+## 1. Linux 系统管理要点
 
 - 查看 Linux 系统发行版本
   - 使用 [lsb_release](#lsb_release)（此命令适用于所有的 Linux 发行版本）
@@ -49,9 +20,9 @@ tags:
 - 启动、停止、重启、关闭、显示系统服务（Centos7 以前），使用 [service](#service)
 - 管理需要周期性执行的任务，使用 [crontab](#crontab)
 
-## 命令常见用法
+## 2. 命令常见用法
 
-### lsb_release
+### 2.1. lsb_release
 
 lsb_release 不是 bash 默认命令，如果要使用，需要先安装。
 
@@ -60,7 +31,7 @@ lsb_release 不是 bash 默认命令，如果要使用，需要先安装。
 1. 执行 `yum provides lsb_release`，查看支持 lsb_release 命令的包。
 2. 选择合适版本，执行类似这样的安装命令：`yum install -y redhat-lsb-core-4.1-27.el7.centos.1.x86_64`
 
-### reboot
+### 2.2. reboot
 
 > reboot 命令用来重新启动正在运行的 Linux 操作系统。
 >
@@ -73,7 +44,7 @@ reboot        # 重开机。
 reboot -w     # 做个重开机的模拟（只有纪录并不会真的重开机）。
 ```
 
-### exit
+### 2.3. exit
 
 > exit 命令同于退出 shell，并返回给定值。在 shell 脚本中可以终止当前脚本执行。执行 exit 可使 shell 以指定的状态值退出。若不设置状态值参数，则 shell 以预设值退出。状态值 0 代表执行成功，其他值代表执行失败。
 >
@@ -106,7 +77,7 @@ if [ "$EXCODE" == "0" ]; then
 fi
 ```
 
-### shutdown
+### 2.4. shutdown
 
 > shutdown 命令用来系统关机命令。shutdown 指令可以关闭所有程序，并依用户的需要，进行重新开机或关机的动作。
 >
@@ -122,7 +93,7 @@ shutdown -h now
 shutdown +5 "System will shutdown after 5 minutes"
 ```
 
-### date
+### 2.5. date
 
 > date 命令是显示或设置系统时间与日期。
 >
@@ -188,7 +159,7 @@ difference=$(( end - start ))
 echo $difference seconds.
 ```
 
-### mount
+### 2.6. mount
 
 > mount 命令用于挂载文件系统到指定的挂载点。此命令的最常用于挂载 cdrom，使我们可以访问 cdrom 中的数据，因为你将光盘插入 cdrom 中，Linux 并不会自动挂载，必须使用 Linux mount 命令来手动完成挂载。
 >
@@ -208,7 +179,7 @@ mount -o ro /dev/hda1 /mnt
 mount -o loop /tmp/image.iso /mnt/cdrom
 ```
 
-### umount
+### 2.7. umount
 
 > umount 命令用于卸载已经挂载的文件系统。利用设备名或挂载点都能 umount 文件系统，不过最好还是通过挂载点卸载，以免使用绑定挂载（一个设备，多个挂载点）时产生混乱。
 >
@@ -226,7 +197,7 @@ umount -v /mnt/mymount/
 /tmp/diskboot.img umounted
 ```
 
-### ps
+### 2.8. ps
 
 > ps 命令用于报告当前系统的进程状态。可以搭配 kill 指令随时中断、删除不必要的程序。ps 命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。
 >
@@ -242,7 +213,7 @@ ps aux | sort -rnk 4
 ps aux | sort -nk 3
 ```
 
-### kill
+### 2.9. kill
 
 > kill 命令用来删除执行中的程序或工作。kill 可将指定的信息送至程序。预设的信息为 SIGTERM(15),可将指定程序终止。若仍无法终止该程序，可使用 SIGKILL(9) 信息尝试强制删除程序。程序或工作的编号可利用 ps 指令或 job 指令查看。
 >
@@ -280,7 +251,7 @@ kill 3268
 -bash: kill: (3268) - 没有那个进程
 ```
 
-### systemctl
+### 2.10. systemctl
 
 > systemctl 命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。
 >
@@ -316,7 +287,7 @@ sudo systemctl stop firewalld.service
 sudo systemctl disable firewalld.service
 ```
 
-### service
+### 2.11. service
 
 > service 命令是 Redhat Linux 兼容的发行版中用来控制系统服务的实用工具，它以启动、停止、重新启动和关闭系统服务，还可以显示所有系统服务的当前状态。
 >
@@ -339,7 +310,7 @@ service network restart
 弹出界面 eth0：                                            [  确定  ]
 ```
 
-### crontab
+### 2.12. crontab
 
 > crontab 命令被用来提交和管理用户的需要周期性执行的任务，与 windows 下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动 crond 进程，crond 进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。
 >

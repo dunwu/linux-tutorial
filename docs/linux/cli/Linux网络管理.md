@@ -1,42 +1,8 @@
----
-title: Linux 网络管理
-date: 2018-02-27
-categories:
-  - linux
-tags:
-  - linux
-  - command
----
-
 # Linux 网络管理
 
 > 关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
 
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [Linux 网络应用要点](#linux-网络应用要点)
-- [命令常见用法](#命令常见用法)
-    - [curl](#curl)
-    - [wget](#wget)
-    - [telnet](#telnet)
-    - [ip](#ip)
-    - [hostname](#hostname)
-    - [ifconfig](#ifconfig)
-    - [route](#route)
-    - [ssh](#ssh)
-    - [ssh-keygen](#ssh-keygen)
-    - [firewalld](#firewalld)
-    - [iptables](#iptables)
-    - [host](#host)
-    - [nslookup](#nslookup)
-    - [nc/netcat](#ncnetcat)
-    - [ping](#ping)
-    - [traceroute](#traceroute)
-    - [netstat](#netstat)
-
-<!-- /TOC -->
-
-## Linux 网络应用要点
+## 1. Linux 网络应用要点
 
 - 下载文件 - 使用 [curl](#curl)、[wget](#wget)
 - telnet 方式登录远程主机，对远程主机进行管理 - 使用 [telnet](#telnet)
@@ -54,9 +20,9 @@ tags:
 - 追踪数据在网络上的传输时的全部路径 - 使用 [traceroute](#traceroute)
 - 查看当前工作的端口信息 - 使用 [netstat](#netstat)
 
-## 命令常见用法
+## 2. 命令常见用法
 
-### curl
+### 2.1. curl
 
 > curl 命令是一个利用 URL 规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称 curl 为下载工具。作为一款强力工具，curl 支持包括 HTTP、HTTPS、ftp 等众多协议，还支持 POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl 可以祝一臂之力。
 >
@@ -73,7 +39,7 @@ $ curl http://man.linuxde.net/test.iso -o filename.iso --progress
 ########################################## 100.0%
 ```
 
-### wget
+### 2.2. wget
 
 > wget 命令用来从指定的 URL 下载文件。
 >
@@ -86,7 +52,7 @@ $ curl http://man.linuxde.net/test.iso -o filename.iso --progress
 $ wget http://www.linuxde.net/testfile.zip
 ```
 
-### telnet
+### 2.3. telnet
 
 > telnet 命令用于登录远程主机，对远程主机进行管理。
 >
@@ -107,7 +73,7 @@ Password:
 Login incorrect
 ```
 
-### ip
+### 2.4. ip
 
 > ip 命令用来查看或操纵 Linux 主机的路由、网络设备、策略路由和隧道，是 Linux 下较新的功能强大的网络配置工具。
 >
@@ -137,7 +103,7 @@ $ ip route del default          # 删除默认路由
 $ ip route delete 192.168.1.0/24 dev eth0 # 删除路由
 ```
 
-### hostname
+### 2.5. hostname
 
 > hostname 命令用于查看和设置系统的主机名称。环境变量 HOSTNAME 也保存了当前的主机名。在使用 hostname 命令设置主机名后，系统并不会永久保存新的主机名，重新启动机器之后还是原来的主机名。如果需要永久修改主机名，需要同时修改 `/etc/hosts` 和 `/etc/sysconfig/network` 的相关内容。
 >
@@ -150,7 +116,7 @@ $ hostname
 AY1307311912260196fcZ
 ```
 
-### ifconfig
+### 2.6. ifconfig
 
 > ifconfig 命令被用于查看和配置 Linux 内核中网络接口的网络参数。用 ifconfig 命令配置的网卡信息，在网卡重启后机器重启后，配置就不存在。要想将上述的配置信息永远的存的电脑里，那就要修改网卡的配置文件了。
 >
@@ -178,7 +144,7 @@ lo        Link encap:Local Loopback
           RX bytes:5079451 (4.8 MiB)  TX bytes:5079451 (4.8 MiB)
 ```
 
-### route
+### 2.7. route
 
 > route 命令用来查看和设置 Linux 内核中的网络路由表，route 命令设置的路由主要是静态路由。要实现两个不同的子网之间的通信，需要一台连接两个网络的路由器，或者同时位于两个网络的网关来实现。
 >
@@ -205,7 +171,7 @@ route add default gw 192.168.120.240                   # 添加默认网关
 route del default gw 192.168.120.240                   # 删除默认网关
 ```
 
-### ssh
+### 2.8. ssh
 
 > ssh 命令是 openssh 套件中的客户端连接工具，可以给予 ssh 加密协议实现安全的远程登录服务器。
 >
@@ -222,19 +188,19 @@ ssh -p 2211 root@140.206.185.170
 
 引申阅读：[ssh 背后的故事](https://linux.cn/article-8476-1.html)
 
-### ssh-keygen
+### 2.9. ssh-keygen
 
 > ssh-keygen 命令用于为 ssh 生成、管理和转换认证密钥，它支持 RSA 和 DSA 两种认证密钥。
 >
 > 参考：http://man.linuxde.net/ssh-keygen
 
-### firewalld
+### 2.10. firewalld
 
 > firewalld 命令是 Linux 上的防火墙软件（Centos7 默认防火墙）。
 >
 > 参考：https://www.cnblogs.com/moxiaoan/p/5683743.html
 
-#### firewalld 的基本使用
+#### 2.10.1. firewalld 的基本使用
 
 - 启动 - systemctl start firewalld
 - 关闭 - systemctl stop firewalld
@@ -242,7 +208,7 @@ ssh -p 2211 root@140.206.185.170
 - 开机禁用 - systemctl disable firewalld
 - 开机启用 - systemctl enable firewalld
 
-#### 使用 systemctl 管理 firewalld 服务
+#### 2.10.2. 使用 systemctl 管理 firewalld 服务
 
 systemctl 是 CentOS7 的服务管理工具中主要的工具，它融合之前 service 和 chkconfig 的功能于一体。
 
@@ -256,7 +222,7 @@ systemctl 是 CentOS7 的服务管理工具中主要的工具，它融合之前 
 - 查看已启动的服务列表 - systemctl list-unit-files|grep enabled
 - 查看启动失败的服务列表 - systemctl --failed
 
-#### 配置 firewalld-cmd
+#### 2.10.3. 配置 firewalld-cmd
 
 - 查看版本 - firewall-cmd --version
 - 查看帮助 - firewall-cmd --help
@@ -269,14 +235,14 @@ systemctl 是 CentOS7 的服务管理工具中主要的工具，它融合之前 
 - 取消拒绝状态 - firewall-cmd --panic-off
 - 查看是否拒绝 - firewall-cmd --query-panic
 
-#### 在防火墙中开放一个端口
+#### 2.10.4. 在防火墙中开放一个端口
 
 - 添加（--permanent 永久生效，没有此参数重启后失效） - firewall-cmd --zone=public --add-port=80/tcp --permanent
 - 重新载入 - firewall-cmd --reload
 - 查看 - firewall-cmd --zone= public --query-port=80/tcp
 - 删除 - firewall-cmd --zone= public --remove-port=80/tcp --permanent
 
-### iptables
+### 2.11. iptables
 
 > iptables 命令是 Linux 上常用的防火墙软件，是 netfilter 项目的一部分。可以直接配置，也可以通过许多前端和图形界面配置。
 >
@@ -320,7 +286,7 @@ Chain OUTPUT (policy ACCEPT 3382K packets, 1819M bytes)
  5075  589K ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0
 ```
 
-### host
+### 2.12. host
 
 > host 命令是常用的分析域名查询工具，可以用来测试域名系统工作是否正常。
 >
@@ -347,7 +313,7 @@ www.jsdig.com.        463     IN      CNAME   host.1.jsdig.com.
 Received 54 bytes from 202.96.104.15#53 in 0 ms
 ```
 
-### nslookup
+### 2.13. nslookup
 
 > nslookup 命令是常用域名查询工具，就是查 DNS 信息用的命令。
 >
@@ -366,7 +332,7 @@ Name:   host.1.jsdig.com
 Address: 100.42.212.8
 ```
 
-### nc/netcat
+### 2.14. nc/netcat
 
 > nc 命令是 netcat 命令的简称，都是用来设置路由器。
 >
@@ -386,7 +352,7 @@ Address: 100.42.212.8
 [root@localhost ~]# nc -u -z -w2 192.168.0.1 1-1000  # 扫描192.168.0.3 的端口 范围是 1-1000
 ```
 
-### ping
+### 2.15. ping
 
 > ping 命令用来测试主机之间网络的连通性。执行 ping 指令会使用 ICMP 传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。
 >
@@ -408,7 +374,7 @@ PING host.1.jsdig.com (100.42.212.8) 56(84) bytes of data.
 rtt min/avg/max/mdev = 174.068/176.916/178.182/1.683 ms
 ```
 
-### traceroute
+### 2.16. traceroute
 
 > traceroute 命令用于追踪数据包在网络上的传输时的全部路径，它默认发送的数据包大小是 40 字节。
 >
@@ -433,7 +399,7 @@ traceroute to www.58.com (211.151.111.30), 30 hops max, 40 byte packets
 12  211.151.111.30 (211.151.111.30)  35.161 ms  35.938 ms  36.005 ms
 ```
 
-### netstat
+### 2.17. netstat
 
 > netstat 命令用来打印 Linux 中网络系统的状态信息，可让你得知整个 Linux 系统的网络情况。
 >
