@@ -1,6 +1,14 @@
-<div align="center">
-    <h1>Linux 教程</h1>
-</div>
+<p align="center">
+    <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">
+        <img src="http://dunwu.test.upcdn.net/common/logo/linux.svg" alt="logo" width="100px">
+    </a>
+</p>
+
+<p align="center">
+    <img src="https://badgen.net/github/license/dunwu/linux-tutorial" alt="license">
+</p>
+
+<h1 align="center">Linux Tutorial</h1>
 
 > 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
 >
@@ -16,22 +24,22 @@
 
 > 学习 Linux 的第一步：当然是从 [Linux 命令](linux/cli/README.md) 入手了。
 
-- [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md)
-- [Linux 文件目录管理](linux/cli/Linux文件目录管理.md)
-- [Linux 文件内容查看命令](linux/cli/Linux文件内容查看编辑.md)
-- [Linux 文件压缩和解压](linux/cli/Linux文件压缩和解压.md)
-- [Linux 用户管理](linux/cli/Linux用户管理.md)
-- [Linux 系统管理](linux/cli/Linux系统管理.md)
-- [Linux 网络管理](linux/cli/Linux网络管理.md)
-- [Linux 硬件管理](linux/cli/Linux硬件管理.md)
-- [Linux 软件管理](linux/cli/Linux硬件管理.md)
+- [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
+- [Linux 文件目录管理](linux/cli/Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
+- [Linux 文件内容查看命令](linux/cli/Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
+- [Linux 文件压缩和解压](linux/cli/Linux文件压缩和解压.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
+- [Linux 用户管理](linux/cli/Linux用户管理.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
+- [Linux 系统管理](linux/cli/Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
+- [Linux 网络管理](linux/cli/Linux网络管理.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
+- [Linux 硬件管理](linux/cli/Linux硬件管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
+- [Linux 软件管理](linux/cli/Linux硬件管理.md) - 关键词：`rpm`, `yum`, `apt-get`
 
 ### Linux 系统运维
 
 > Linux 系统的常见运维工作。
 
 - [linux 典型运维应用](linux/ops/linux典型运维应用.md)
-- [samba 使用详解](linux/ops/samba使用详解.md)
+- [samba 使用详解](linux/ops/samba.md)
 - [Systemd 教程](linux/ops/systemd.md)
 - [Vim 应用指南](linux/ops/vim.md)
 - [Zsh 应用指南](linux/ops/zsh.md)
@@ -91,8 +99,9 @@
 ## 资源
 
 - **Linux 命令**
-  - [Linux 命令大全](http://man.linuxde.net/)
-  - [linux-command](https://jaywcjlove.gitee.io/linux-command/)
+  - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+  - [Linux命令大全](https://man.linuxde.net/)
+  - [linux-command](https://github.com/jaywcjlove/linux-command)
 - **社区网站**
   - [Linux 中国](https://linux.cn/) - 各种资讯、文章、技术
   - [实验楼](https://www.shiyanlou.com/) - 免费提供了 Linux 在线环境，不用在自己机子上装系统也可以学习 Linux，超方便实用。

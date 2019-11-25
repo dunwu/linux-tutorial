@@ -1,24 +1,4 @@
-# Vim 应用指南
-
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [1. 概念](#1-概念)
-    - [1.1. 什么是 vim](#11-什么是-vim)
-    - [1.2. Vim 的模式](#12-vim-的模式)
-- [2. Vim 渐进学习](#2-vim-渐进学习)
-    - [2.1. 存活](#21-存活)
-    - [2.2. 感觉良好](#22-感觉良好)
-    - [2.3. 更好，更强，更快](#23-更好更强更快)
-    - [2.4. Vim 超能力](#24-vim-超能力)
-- [3. Vim Cheat Sheet](#3-vim-cheat-sheet)
-    - [3.1. 经典版](#31-经典版)
-    - [3.2. 入门版](#32-入门版)
-    - [3.3. 进阶版](#33-进阶版)
-    - [3.4. 增强版](#34-增强版)
-    - [3.5. 文字版](#35-文字版)
-- [4. 资料](#4-资料)
-
-<!-- /TOC -->
+# Vim 应用
 
 ## 1. 概念
 
@@ -30,19 +10,19 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 基本上 vi/vim 共分为三种模式，分别是**命令模式（Command mode）**，**插入模式（Insert mode）**和**底线命令模式（Last line mode）**。
 
-#### 命令模式
+#### 1.2.1. 命令模式
 
 **用户刚刚启动 vi/vim，便进入了命令模式。**
 
 此状态下敲击键盘动作会被 Vim 识别为命令，而非输入字符。
 
-#### 插入模式
+#### 1.2.2. 插入模式
 
 **在命令模式下按下 `i` 就进入了输入模式。**
 
 在输入模式下，你可以输入文本内容。
 
-#### 底线命令模式
+#### 1.2.3. 底线命令模式
 
 **在命令模式下按下 `:`（英文冒号）就进入了底线命令模式。**
 
@@ -133,7 +113,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 先恭喜你！你干的很不错。我们可以开始一些更为有趣的事了。在第三级，我们只谈那些和 vi 可以兼容的命令。
 
-#### 更好
+#### 2.3.1. 更好
 
 下面，让我们看一下 vim 是怎么重复自己的：1515G
 
@@ -148,7 +128,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `.` → 重复上一个命令—— 100 “desu “.
 > - `3.` → 重复 3 次 “desu” (注意：不是 300，你看，VIM 多聪明啊).
 
-#### 更强
+#### 2.3.2. 更强
 
 你要让你的光标移动更有效率，你一定要了解下面的这些命令，**千万别跳过**。
 
@@ -167,7 +147,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
    >
    > \> 如果你认为单词是由 blank 字符分隔符，那么你需要使用大写的 E 和 W。（注：程序语句）
    >
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg"/></div><br>
+   > <br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg"/></div><br>
 
 下面，让我来说说最强的光标移动：
 
@@ -176,7 +156,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 相信我，上面这三个命令对程序员来说是相当强大的。
 
-#### 更快
+#### 2.3.3. 更快
 
 你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：
 
@@ -206,7 +186,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 你只需要掌握前面的命令，你就可以很舒服的使用 VIM 了。但是，现在，我们向你介绍的是 VIM 杀手级的功能。下面这些功能是我只用 vim 的原因。
 
-#### 在当前行上移动光标: `0` `^` `####`f`F`t`T`,``;`
+#### 2.4.1. 在当前行上移动光标: `0` `^` `####`f`F`t`T`,``;`
 
 > - `0` → 到行头
 > - `^` → 到本行的第一个非 blank 字符
@@ -216,11 +196,11 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 > - `t,` → 到逗号前的第一个字符。逗号可以变成其它字符。
 > - `3fa` → 在当前行查找第三个出现的 a。
 > - `F` 和 `T` → 和 `f` 和 `t` 一样，只不过是相反方向。
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg"/></div><br>
+>   <br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg"/></div><br>
 
 还有一个很有用的命令是 `dt"` → 删除所有的内容，直到遇到双引号—— `"。`
 
-#### 区域选择 `<action>a<object>` 或 `<action>i<object>`
+#### 2.4.2. 区域选择 `<action>a<object>` 或 `<action>i<object>`
 
 在 visual 模式下，这些命令很强大，其命令格式为
 
@@ -240,7 +220,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 <br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png"/></div><br>
 
-#### 块操作: `<C-v>`
+#### 2.4.3. 块操作: `<C-v>`
 
 块操作，典型的操作： `0 <C-v> <C-d> I-- [ESC]`
 
@@ -253,13 +233,13 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 在 Windows 下的 vim，你需要使用 `<C-q>` 而不是 `<C-v>` ，`<C-v>` 是拷贝剪贴板。
 
-#### 自动提示： `<C-n>` 和 `<C-p>`
+#### 2.4.4. 自动提示： `<C-n>` 和 `<C-p>`
 
 在 Insert 模式下，你可以输入一个词的开头，然后按 `<C-p>或是<C-n>，自动补齐功能就出现了……`
 
 <br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e2ae877e67880ff7.gif?imageMogr2/auto-orient/strip"/></div><br>
 
-#### 宏录制： `qa` 操作序列 `q`, `@a`, `@@`
+#### 2.4.5. 宏录制： `qa` 操作序列 `q`, `@a`, `@@`
 
 - `qa` 把你的操作记录在寄存器 `a。`
 - 于是 `@a` 会 replay 被录制的宏。
@@ -288,7 +268,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 <br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f1889f8bca723964.gif?imageMogr2/auto-orient/strip"/></div><br>
 
-#### 可视化选择： `v`,`V`,`<C-v>`
+#### 2.4.6. 可视化选择： `v`,`V`,`<C-v>`
 
 前面，我们看到了 `<C-v>`的示例 （在 Windows 下应该是<C-q>），我们可以使用 `v` 和 `V`。一但被选好了，你可以做下面的事：
 
@@ -307,7 +287,7 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 <br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b192601247334c4e.gif?imageMogr2/auto-orient/strip"/></div><br>
 
-#### 分屏: `:split` 和 `vsplit`.
+#### 2.4.7. 分屏: `:split` 和 `vsplit`.
 
 下面是主要的命令，你可以使用 VIM 的帮助 `:help split`. 你可以参考本站以前的一篇文章[VIM 分屏](https://coolshell.cn/articles/1679.html)。
 
@@ -328,33 +308,33 @@ Vim 是从 vi 发展出来的一个文本编辑器。代码补完、编译及错
 
 此外，[这里](http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif)还有简体中文版。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/vim/vim-cheat-sheet.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/linux/vim/vim-cheat-sheet.png!zp"/></div><br>
 
 ### 3.2. 入门版
 
 基本操作的入门版。[原版出处](https://github.com/ahrencode/Miscellaneous)还有 keynote 版本可供 DIY 以及其他相关有用的 cheatsheet。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/vim/basic-vim-cheat-sheet.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/linux/vim/basic-vim-cheat-sheet.png!zp"/></div><br>
 
 ### 3.3. 进阶版
 
 下图是 300DPI 的超清大图，另外[查看原文](http://michael.peopleofhonoronly.com/vim/)还有更多版本：黑白，低分辨率，色盲等
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/vim/vim-cheat-sheet-for-programmers.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/linux/vim/vim-cheat-sheet-for-programmers.png!zp"/></div><br>
 
 ### 3.4. 增强版
 
 下图是一个更新时间较新的现代版，含有的信息也更丰富。[原文链接](http://vimcheatsheet.com/)
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/vim/vim-cheat-sheet-02.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/linux/vim/vim-cheat-sheet-02.png!zp"/></div><br>
 
 ### 3.5. 文字版
 
 [原文链接](http://tnerual.eriogerg.free.fr/vimqrc.pdf)
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/vim/vim-cheat-sheet-text-01.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/linux/vim/vim-cheat-sheet-text-01.png!zp"/></div><br>
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/vim/vim-cheat-sheet-text-02.png!zp"/></div><br>
+<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/linux/vim/vim-cheat-sheet-text-02.png!zp"/></div><br>
 
 ## 4. 资料
 

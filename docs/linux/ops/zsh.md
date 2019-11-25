@@ -1,22 +1,8 @@
-# Zsh 应用指南
-
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [1. Zsh 简介](#1-zsh-简介)
-    - [1.1. Zsh 是什么？](#11-zsh-是什么)
-- [2. Zsh 安装](#2-zsh-安装)
-    - [2.1. 环境要求](#21-环境要求)
-    - [2.2. 安装 zsh](#22-安装-zsh)
-    - [2.3. 安装 oh-my-zsh](#23-安装-oh-my-zsh)
-    - [2.4. 配置 oh-my-zsh](#24-配置-oh-my-zsh)
-- [3. 快捷键](#3-快捷键)
-- [4. 参考资料](#4-参考资料)
-
-<!-- /TOC -->
+# oh-my-zsh 应用
 
 ## 1. Zsh 简介
 
-### 1.1. Zsh 是什么？
+### 1.1. Zsh 是什么
 
 使用 Linux 的人都知道：**_Shell_ 是一个用 C 语言编写的程序,它是用户使用 Linux 的桥梁。_Shell_ 既是一种命令语言,又是一种程序设计语言**。
 
@@ -61,7 +47,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 
 ### 2.4. 配置 oh-my-zsh
 
-#### 插件
+#### 2.4.1. 插件
 
 > oh-my-zsh 插件太多，不一一列举，请参考：[oh-my-zsh 插件列表](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)
 
@@ -94,7 +80,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
     - 再执行下这个：`source /etc/profile.d/autojump.sh`
     - 编辑配置文件，添加上 autojump 的名字：`vim /root/.zshrc`
 
-#### 主题
+#### 2.4.2. 主题
 
 > oh-my-zsh 主题太多，不一一列举，请参考：[oh-my-zsh 主题列表](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)
 
@@ -110,7 +96,6 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 zsh 效果如下：
 
 <div align="center"><img src="https://cloud.githubusercontent.com/assets/2618447/6316862/70f58fb6-ba03-11e4-82c9-c083bf9a6574.png"/></div>
-
 ## 3. 快捷键
 
 - 呃，这个其实可以不用讲的，你自己用的时候你自己会发现的，各种便捷，特别是用 Tab 多的人一定会有各种惊喜的。

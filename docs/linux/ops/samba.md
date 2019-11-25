@@ -1,4 +1,4 @@
-# samba 使用详解
+# Samba 应用
 
 > samba 是在 Linux 和 UNIX 系统上实现 SMB 协议的一个免费软件。
 >

@@ -83,6 +83,37 @@ systemctl 是 CentOS7 的服务管理工具中主要的工具，它融合之前 
 
 > :point_right: 参考：[CentOS7 使用 firewalld 打开关闭防火墙与端口](https://www.cnblogs.com/moxiaoan/p/5683743.html)
 
+### 1.3. 配置网卡
+
+使用 root 权限编辑 `/etc/sysconfig/network-scripts/ifcfg-eno16777736X` 文件
+
+参考以下进行配置：
+
+```properties
+TYPE=Ethernet                        # 网络类型：Ethernet以太网
+BOOTPROTO=none                       # 引导协议：自动获取、static静态、none不指定
+DEFROUTE=yes                         # 启动默认路由
+IPV4_FAILURE_FATAL=no                # 不启用IPV4错误检测功能
+IPV6INIT=yes                         # 启用IPV6协议
+IPV6_AUTOCONF=yes                    # 自动配置IPV6地址
+IPV6_DEFROUTE=yes                    # 启用IPV6默认路由
+IPV6_FAILURE_FATAL=no                # 不启用IPV6错误检测功能
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_PRIVACY="no"
+
+NAME=eno16777736                     # 网卡设备的别名（需要和文件名同名）
+UUID=90528772-9967-46da-b401-f82b64b4acbc  # 网卡设备的UUID唯一标识号
+DEVICE=eno16777736                   # 网卡的设备名称
+ONBOOT=yes                           # 开机自动激活网卡
+IPADDR=192.168.1.199                 # 网卡的固定IP地址
+PREFIX=24                            # 子网掩码
+GATEWAY=192.168.1.1                  # 默认网关IP地址
+DNS1=8.8.8.8                         # DNS域名解析服务器的IP地址
+```
+
+修改完后，执行 `systemctl restart network.service` 重启网卡服务。
+
 ## 2. 系统维护
 
 ### 2.1. 使用 NTP 进行时间同步

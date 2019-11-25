@@ -1,10 +1,6 @@
 # Linux 命令行
 
-## :memo: 知识点
-
-> 根据应用场景，将常见 Linux 命令分门别类的一一介绍。
->
-> 如果想快速学习，推荐参考这篇文章：[命令行的艺术（转载）](命令行的艺术.md)
+## 常用命令
 
 - [查看 Linux 命令帮助信息](查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
 - [Linux 文件目录管理](Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
@@ -15,3 +11,10 @@
 - [Linux 网络管理](Linux网络管理.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
 - [Linux 硬件管理](Linux硬件管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
 - [Linux 软件管理](Linux硬件管理.md) - 关键词：`rpm`, `yum`, `apt-get`
+
+## 资料
+
+- [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
+- [Linux命令大全](https://man.linuxde.net/)
+- [linux-command](https://github.com/jaywcjlove/linux-command)
+
