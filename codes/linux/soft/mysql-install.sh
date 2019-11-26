@@ -40,12 +40,22 @@ command -v yum > /dev/null 2>&1 || {
 }
 
 # 使用 rpm 安装 mysql
+printf "${CYAN}>>>> yum install mysql${RESET}\n"
 wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
 sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
 sudo yum install mysql-community-server
 
+printf "${CYAN}>>>> replace settings${RESET}\n"
+cp /etc/my.cnf /etc/my.cnf.bak
+wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/mysql/my.cnf -O /etc/my.cnf
+# 创建空的慢查询日志文件
+touch /var/log/mysqld-slow.log
+chmod 777 /var/log/mysqld-slow.log
+
 # 设置开机启动
+printf "${CYAN}>>>> start mysqld${RESET}\n"
 systemctl enable mysqld
+systemctl start mysqld
 systemctl daemon-reload
 
 password=$(grep "password" /var/log/mysqld.log | awk '{print $NF}')
