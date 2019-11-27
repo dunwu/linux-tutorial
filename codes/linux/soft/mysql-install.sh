@@ -49,14 +49,21 @@ printf "${CYAN}>>>> replace settings${RESET}\n"
 cp /etc/my.cnf /etc/my.cnf.bak
 wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/config/mysql/my.cnf -O /etc/my.cnf
 # 创建空的慢查询日志文件
-touch /var/log/mysqld-slow.log
-chmod 777 /var/log/mysqld-slow.log
+mkdir -p /var/log/mysql
+touch /var/log/mysql/mysql-slow.log
+chmod 777 /var/log/mysql/mysql-slow.log
+chown -R mysql:mysql /var/log/mysql
 
 # 设置开机启动
 printf "${CYAN}>>>> start mysqld${RESET}\n"
 systemctl enable mysqld
 systemctl start mysqld
 systemctl daemon-reload
+
+cat >> /etc/security/limits.conf << EOF
+mysql soft nofile 65536
+mysql hard nofile 65536
+EOF
 
 password=$(grep "password" /var/log/mysqld.log | awk '{print $NF}')
 printf "临时密码为：${PURPLE}${password}${RESET}，请登录 mysql 后重置新密码\n"
