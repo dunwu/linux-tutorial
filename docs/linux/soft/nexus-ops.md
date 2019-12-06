@@ -12,22 +12,24 @@
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
-- [安装 Nexus](#安装-nexus)
-- [启动/停止 Nexus](#启动停止-nexus)
-- [使用 Nexus 搭建 Maven 私服](#使用-nexus-搭建-maven-私服)
-    - [配置仓库](#配置仓库)
-    - [配置 settings.xml](#配置-settingsxml)
-    - [配置 pom.xml](#配置-pomxml)
-    - [执行 maven 构建](#执行-maven-构建)
-- [将 Nexus 设置为服务](#将-nexus-设置为服务)
-- [Nexus 备份和迁移](#nexus-备份和迁移)
-    - [备份](#备份)
-    - [迁移](#迁移)
-- [参考资料](#参考资料)
+- [1. 安装 Nexus](#1-安装-nexus)
+- [2. 启动/停止 Nexus](#2-启动停止-nexus)
+- [3. 搭建 Maven 私服](#3-搭建-maven-私服)
+  - [3.1. 配置仓库](#31-配置仓库)
+  - [3.2. 配置 settings.xml](#32-配置-settingsxml)
+  - [3.3. 配置 pom.xml](#33-配置-pomxml)
+  - [3.4. 执行 maven 构建](#34-执行-maven-构建)
+- [4. 开机自启动](#4-开机自启动)
+- [5. Nexus 备份和迁移](#5-nexus-备份和迁移)
+  - [5.1. 备份](#51-备份)
+  - [5.2. 迁移](#52-迁移)
+- [6. FAQ](#6-faq)
+  - [6.1. 配置 INSTALL4J_JAVA_HOME](#61-配置-install4j_java_home)
+- [7. 参考资料](#7-参考资料)
 
 <!-- /TOC -->
 
-## 安装 Nexus
+## 1. 安装 Nexus
 
 进入[官方下载地址](https://www.sonatype.com/download-oss-sonatype)，选择合适版本下载。
 
@@ -47,7 +49,7 @@ tar -zxf nexus-unix.tar.gz
 - nexus-3.13.0-01 - 包含了 Nexus 运行所需要的文件。是 Nexus 运行必须的。
 - sonatype-work - 包含了 Nexus 生成的配置文件、日志文件、仓库文件等。当我们需要备份 Nexus 的时候默认备份此目录即可。
 
-## 启动/停止 Nexus
+## 2. 启动/停止 Nexus
 
 进入 nexus-3.13.0-01/bin 目录，有一个可执行脚本 nexus。
 
@@ -68,9 +70,9 @@ Usage: ./nexus {start|stop|run|run-redirect|status|restart|force-reload}
 
 点击右上角 Sign in 登录，默认用户名/密码为：admin/admin123。
 
-## 使用 Nexus 搭建 Maven 私服
+## 3. 搭建 Maven 私服
 
-### 配置仓库
+### 3.1. 配置仓库
 
 Nexus 中的仓库有以下类型：
 
@@ -96,7 +98,7 @@ Nexus 中的仓库有以下类型：
 
 <div align="center"><img src="http://dunwu.test.upcdn.net/snap/20181127203156.png!zp"/></div>
 
-### 配置 settings.xml
+### 3.2. 配置 settings.xml
 
 如果要使用 Nexus，还必须在 settings.xml 和 pom.xml 中配置认证信息。
 
@@ -171,7 +173,7 @@ Nexus 中的仓库有以下类型：
 </settings>
 ```
 
-### 配置 pom.xml
+### 3.3. 配置 pom.xml
 
 在 pom.xml 中添加如下配置：
 
@@ -195,7 +197,7 @@ Nexus 中的仓库有以下类型：
 > - `<repository>` 和 `<snapshotRepository>` 的 id 必须和 `settings.xml` 配置文件中的 `<server>` 标签中的 id 匹配。
 > - `<url>` 标签的地址需要和 maven 私服的地址匹配。
 
-### 执行 maven 构建
+### 3.4. 执行 maven 构建
 
 如果要使用 settings.xml 中的私服配置，必须通过指定 `-P zp` 来激活 profile。
 
@@ -209,9 +211,9 @@ $ mvn clean package -Dmaven.skip.test=true -P zp
 $ mvn clean deploy -Dmaven.skip.test=true -P zp
 ```
 
-## 将 Nexus 设置为服务
+## 4. 开机自启动
 
-将 Nexus 添加为服务，以便开机自启动。
+将 Nexus 设置为 systemd 服务，以便开机自启动。
 
 在 `/lib/systemd/system` 目录下创建 `nexus.service` 文件，内容如下：
 
@@ -242,7 +244,7 @@ WantedBy=multi-user.target
 - `systemctl stop nexus` - 停止 nexus 服务
 - `systemctl restart nexus` - 重启 nexus 服务
 
-## Nexus 备份和迁移
+## 5. Nexus 备份和迁移
 
 Nexus 三个重要目录：
 
@@ -252,15 +254,27 @@ Nexus 三个重要目录：
 | sonatype-work 目录 | sonatype-work  | nexus/conf/nexus.xml 里面有 storage 的地址        |
 | storage 目录       | storage        | 里面主要是各种程序的 jar 包等                     |
 
-### 备份
+### 5.1. 备份
 
 Nexus 的数据都存储在 sonatype-work 目录，备份 Nexus 数据只需要将其打包即可。
 
-### 迁移
+### 5.2. 迁移
 
 将原 Nexus 服务器中的 sonatype-work 目录迁移到新 Nexus 服务器的 sonatype-work 目录下。
 
-## 参考资料
+## 6. FAQ
+
+### 6.1. 配置 INSTALL4J_JAVA_HOME
+
+我在工作中遇到 nexus systemctl 服务无法自启动的问题，通过查看状态，发现以下报错：
+
+```
+Please define INSTALL4J_JAVA_HOME to point to a suitable JVM
+```
+
+通过排查，找到原因：即使环境上已安装 JDK，且配置了 JAVA_HOME，但 nexus 仍然无法正确找到 JDK，需要在 `/bin/nexus` 中指定 `INSTALL4J_JAVA_HOME_OVERRIDE=<JDK安装路径>`
+
+## 7. 参考资料
 
 - [maven 私库 nexus3 安装及使用](https://blog.csdn.net/clj198606061111/article/details/52200928)
 - [Nexus 安装 使用说明](https://www.cnblogs.com/jtlgb/p/7473837.html)
