@@ -1,14 +1,4 @@
-<p align="center">
-    <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer">
-        <img src="http://dunwu.test.upcdn.net/common/logo/linux.svg" alt="logo" width="100px">
-    </a>
-</p>
-
-<p align="center">
-    <img src="https://badgen.net/github/license/dunwu/linux-tutorial" alt="license">
-</p>
-
-<h1 align="center">Linux Tutorial</h1>
+# linux-tutorial
 
 > 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
 >
@@ -38,11 +28,12 @@
 
 > Linux 系统的常见运维工作。
 
-- [linux 典型运维应用](linux/ops/linux典型运维应用.md)
-- [samba 使用详解](linux/ops/samba.md)
-- [Systemd 教程](linux/ops/systemd.md)
-- [Vim 应用指南](linux/ops/vim.md)
-- [Zsh 应用指南](linux/ops/zsh.md)
+- [linux 典型运维应用](linux/ops/linux典型运维应用.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
+- [Samba 应用](linux/ops/samba.md)
+- [Systemd 应用](linux/ops/systemd.md)
+- [Vim 应用](linux/ops/vim.md)
+- [Iptables 应用](linux/ops/iptables.md)
+- [oh-my-zsh 应用](linux/ops/zsh.md)
 
 ### 软件运维
 
@@ -75,8 +66,9 @@
 
 ### 扩展
 
-- [Docker 教程](docker)
-  - [Docker 应用指南](docker/docker.md)
+- [Docker 教程](docker/README.md)
+  - [Docker 快速入门](docker/docker-quickstart.md)
+  - [Dockerfile 最佳实践](docker/docker-dockerfile.md)
   - [Docker Cheat Sheet](docker/docker-cheat-sheet.md)
 - [一篇文章让你彻底掌握 Python](https://github.com/dunwu/blog/blob/master/source/_posts/coding/python.md)
 - [一篇文章让你彻底掌握 Shell](https://github.com/dunwu/blog/blob/master/source/_posts/coding/shell.md)
@@ -100,7 +92,7 @@
 
 - **Linux 命令**
   - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
-  - [Linux命令大全](https://man.linuxde.net/)
+  - [Linux 命令大全](https://man.linuxde.net/)
   - [linux-command](https://github.com/jaywcjlove/linux-command)
 - **社区网站**
   - [Linux 中国](https://linux.cn/) - 各种资讯、文章、技术

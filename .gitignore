@@ -29,6 +29,7 @@ hs_err_pid*
 
 # maven plugin temp files
 .flattened-pom.xml
+package-lock.json
 
 
 # ------------------------------- javascript -------------------------------
@@ -47,6 +48,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 bundle*.js
+book.pdf
 
 
 # ------------------------------- intellij -------------------------------

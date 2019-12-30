@@ -8,7 +8,8 @@
     <img src="https://badgen.net/github/license/dunwu/linux-tutorial" alt="license">
 </p>
 
-<h1 align="center">Linux Tutorial</h1>
+<h1 align="center">linux-tutorial</h1>
+
 > 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
 >
 > 📖 [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
@@ -68,15 +69,16 @@
   - [Nacos 运维](docs/linux/soft/nacos-install.md)
 - 服务器
   - [Nginx 教程 📚](https://github.com/dunwu/nginx-tutorial)
-  - [Tomcat 运维](linux/soft/tomcat-install.md)
+  - [Tomcat 运维](docs/linux/soft/tomcat-install.md)
 - [数据库 📚](https://github.com/dunwu/db-tutorial)
   - [Mysql 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/sql/mysql/mysql-ops.md)
   - [Redis 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/nosql/redis/redis-ops.md)
 
 ### 扩展
 
-- [Docker 教程](docs/docker)
-  - [Docker 应用指南](docs/docker/docker.md)
+- [Docker 教程](docs/docker/README.md)
+  - [Docker 快速入门](docs/docker/docker-quickstart.md)
+  - [Dockerfile 最佳实践](docs/docker/docker-dockerfile.md)
   - [Docker Cheat Sheet](docs/docker/docker-cheat-sheet.md)
 - [一篇文章让你彻底掌握 Python](https://github.com/dunwu/blog/blob/master/source/_posts/coding/python.md)
 - [一篇文章让你彻底掌握 Shell](https://github.com/dunwu/blog/blob/master/source/_posts/coding/shell.md)

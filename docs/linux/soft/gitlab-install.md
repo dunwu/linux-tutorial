@@ -25,7 +25,7 @@
 
 进入官方下载地址：https://about.gitlab.com/install/ ，如下图，选择合适的版本。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190129155838.png!zp"/></div><br>
+<br>![img](http://dunwu.test.upcdn.net/snap/20190129155838.png!zp)<br>
 
 以 CentOS7 为例：
 
@@ -87,7 +87,7 @@ docker run -d \
     gitlab/gitlab-ce
 ```
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150515.png!zp"/></div><br>
+<br>![img](http://dunwu.test.upcdn.net/snap/20190131150515.png!zp)<br>
 
 ## 安装 gitlab-ci-multi-runner
 
@@ -138,7 +138,7 @@ sudo gitlab-runner register
 
 URL 和令牌信息在 Gitlab 的 Runner 管理页面获取：
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190129163100.png!zp"/></div><br>
+<br>![img](http://dunwu.test.upcdn.net/snap/20190129163100.png!zp)<br>
 
 ```
 Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
@@ -302,31 +302,31 @@ sudo gitlab-ctl restart
 
 3. 打开 **Profile settings**.
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings.png)<br>
 
 4. 跳转到 **SSH keys** tab 页
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys.png)<br>
 
 5. 黏贴你的 SSH 公钥内容到 Key 文本框
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_paste_pub.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_paste_pub.png)<br>
 
 6. 为了便于识别，你可以为其命名
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_title.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_title.png)<br>
 
 7. 点击 **Add key** 将 SSH 公钥添加到 GitLab
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_single_key.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_single_key.png)<br>
 
 ### 创建项目
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150658.png!zp"/></div><br>
+<br>![img](http://dunwu.test.upcdn.net/snap/20190131150658.png!zp)<br>
 
 输入项目信息，点击 Create project 按钮，在 Gitlab 创建项目。
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/snap/20190131150759.png!zp"/></div><br>
+<br>![img](http://dunwu.test.upcdn.net/snap/20190131150759.png!zp)<br>
 
 ### 克隆项目到本地
 
@@ -338,23 +338,23 @@ sudo gitlab-ctl restart
 
 依次点击 **Project’s Dashboard** > **Issues** > **New Issue** 可以新建 Issue
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_tracker_list.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_tracker_list.png)<br>
 
 在项目中直接添加 issue
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue.png)<br>
 
 在未关闭 issue 中，点击 **New Issue** 添加 issue
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_open_issue.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_open_issue.png)<br>
 
 通过项目面板添加 issue
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_projects_dashboard.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_projects_dashboard.png)<br>
 
 通过 issue 面板添加 issue
 
-<br><div align="center"><img src="https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png"/></div><br>
+<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png)<br>
 
 ## 更多内容
 

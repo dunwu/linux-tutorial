@@ -1,4 +1,4 @@
-# Dockerfile
+# Dockerfile 最佳实践
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
@@ -25,9 +25,8 @@
 
 ### FROM(指定基础镜像)
 
-> 作用：
+> 作用：**`FROM` 指令用于指定基础镜像**。
 >
-> `FROM` 指令用于指定基础镜像。
 
 所谓定制镜像，那一定是以一个镜像为基础，在其上进行定制。就像我们之前运行了一个 `nginx` 镜像的容器，再进行修改一样，基础镜像是必须指定的。而 `FROM` 就是指定**基础镜像**，因此一个 `Dockerfile` 中 `FROM` 是必备的指令，并且必须是第一条指令。
 
@@ -48,15 +47,16 @@ FROM scratch
 
 ### RUN(执行命令)
 
-`RUN` 指令是用来执行命令行命令的。由于命令行的强大能力，`RUN` 指令在定制镜像时是最常用的指令之一。其格式有两种：
-
-- _shell_ 格式：`RUN <命令>`，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 `RUN` 指令就是这种格式。
-
-```dockerfile
-RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
-```
-
-- _exec_ 格式：`RUN ["可执行文件", "参数1", "参数2"]`，这更像是函数调用中的格式。
+> **`RUN` 指令是用来执行命令行命令的**。由于命令行的强大能力，`RUN` 指令在定制镜像时是最常用的指令之一。其格式有两种：
+>
+> - _shell_ 格式：`RUN <命令>`，就像直接在命令行中输入的命令一样。刚才写的 Dockerfile 中的 `RUN` 指令就是这种格式。
+>
+> ```dockerfile
+> RUN echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
+> ```
+>
+> - _exec_ 格式：`RUN ["可执行文件", "参数1", "参数2"]`，这更像是函数调用中的格式。
+>
 
 既然 `RUN` 就像 Shell 脚本一样可以执行命令，那么我们是否就可以像 Shell 脚本一样把每个命令对应一个 RUN 呢？比如这样：
 
@@ -641,7 +641,7 @@ FROM my-node
 
 是的，只有这么一行。当在各个项目目录中，用这个只有一行的 `Dockerfile` 构建镜像时，之前基础镜像的那三行 `ONBUILD` 就会开始执行，成功的将当前项目的代码复制进镜像、并且针对本项目执行 `npm install`，生成应用镜像。
 
-## 引用和引申
+## 参考资料
 
 - [Dockerfie 官方文档](https://docs.docker.com/engine/reference/builder/)
 - [Dockerfile 最佳实践文档](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)

@@ -33,7 +33,7 @@
 
 进入[官方下载地址](https://www.sonatype.com/download-oss-sonatype)，选择合适版本下载。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/snap/20181127203029.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/snap/20181127203029.png!zp)
 
 本人希望将 Nexus 部署在 Linux 机器，所以选用的是 Unix 版本。
 
@@ -66,7 +66,7 @@ Usage: ./nexus {start|stop|run|run-redirect|status|restart|force-reload}
 
 启动成功后，在浏览器中访问 `http://<ip>:8081`，欢迎页面如下图所示：
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/snap/20181127203131.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/snap/20181127203131.png!zp)
 
 点击右上角 Sign in 登录，默认用户名/密码为：admin/admin123。
 
@@ -81,7 +81,7 @@ Nexus 中的仓库有以下类型：
 - `virtual` - 虚拟仓库。用于适配 Maven 1；
 - `group` - 仓库组。Nexus 通过仓库组的概念统一管理多个仓库，这样我们在项目中直接请求仓库组即可请求到仓库组管理的多个仓库。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/cs/java/javalib/maven/nexus.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/cs/java/javalib/maven/nexus.png!zp)
 
 > **最佳实践**
 >
@@ -96,7 +96,7 @@ Nexus 中的仓库有以下类型：
 > - group 仓库
 >   - maven-public - 私有仓库的公共空间，把上面三个仓库组合在一起对外提供服务，在本地 maven 基础配置 settings.xml 中使用。
 
-<div align="center"><img src="http://dunwu.test.upcdn.net/snap/20181127203156.png!zp"/></div>
+![img](http://dunwu.test.upcdn.net/snap/20181127203156.png!zp)
 
 ### 3.2. 配置 settings.xml
 

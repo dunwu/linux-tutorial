@@ -44,7 +44,7 @@ Kubernetes 包含若干抽象用来表示系统状态，包括：已部署的容
 - Volume
 - Namespace
 
-<br><div align="center"><img src="http://dunwu.test.upcdn.net/cs/os/kubernetes/pod.svg!zp"/></div><br>
+<br>![img](http://dunwu.test.upcdn.net/cs/os/kubernetes/pod.svg!zp)<br>
 
 高级对象
 

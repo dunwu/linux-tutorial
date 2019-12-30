@@ -40,7 +40,7 @@ if [[ $# -lt 1 ]] || [[ $# -lt 2 ]]; then
 	printf "${RESET}\n"
 fi
 
-version=3.6.2
+version=3.5.4
 if [[ -n $1 ]]; then
 	version=$1
 fi
@@ -58,7 +58,7 @@ printf "${RESET}\n"
 
 # download and decompression
 mkdir -p ${path}
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O ${path}/apache-maven-${version}-bin.tar.gz http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/${version}/binaries/apache-maven-${version}-bin.tar.gz
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" -O ${path}/apache-maven-${version}-bin.tar.gz http://apache.01link.hk/maven/maven-3/${version}/binaries/apache-maven-${version}-bin.tar.gz
 tar -zxvf ${path}/apache-maven-${version}-bin.tar.gz -C ${path}
 
 # setting env

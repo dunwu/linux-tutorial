@@ -33,7 +33,7 @@ storage 接受到写文件请求时，会根据配置好的规则（后面会介
 
 **meta data** ：文件相关属性，键值对（ Key Value Pair） 方式，如：width=1024,heigth=768 。
 
-<div align="center"><img src="http://www.ityouknow.com/assets/images/2018/fastdfs/fastdfs_arch.png"/></div>
+![img](http://www.ityouknow.com/assets/images/2018/fastdfs/fastdfs_arch.png)
 
 
 

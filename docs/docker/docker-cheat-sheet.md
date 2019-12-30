@@ -4,6 +4,8 @@
 
 <!-- TOC depthFrom:2 depthTo:2 -->
 
+- [为何使用 Docker](#为何使用-docker)
+- [运维](#运维)
 - [容器(Container)](#容器container)
 - [镜像(Images)](#镜像images)
 - [网络(Networks)](#网络networks)
@@ -20,9 +22,89 @@
 
 <!-- /TOC -->
 
+## 为何使用 Docker
+
+「通过 Docker，开发者可以使用任何语言任何工具创建任何应用。“Dockerized” 的应用是完全可移植的，能在任何地方运行 - 不管是同事的 OS X 和 Windows 笔记本，或是在云端运行的 Ubuntu QA 服务，还是在虚拟机运行的 Red Hat 产品数据中心。
+
+Docker Hub 上有 13000+ 的应用，开发者可以从中选取一个进行快速扩展开发。Docker 跟踪管理变更和依赖关系，让系统管理员能更容易理解开发人员是如何让应用运转起来的。而开发者可以通过 Docker Hub 的共有/私有仓库，构建他们的自动化编译，与其他合作者共享成果。
+
+Docker 帮助开发者更快地构建和发布高质量的应用。」—— [什么是 Docker](https://www.docker.com/what-docker/#copy1)
+
+## 运维
+
+### 安装
+
+Docker 是一个开源的商业产品，有两个版本：社区版（Community Edition，缩写为 CE）和企业版（Enterprise Edition，缩写为 EE）。企业版包含了一些收费服务，个人开发者一般用不到。
+
+Docker CE 的安装请参考官方文档。
+
+- [Mac](https://docs.docker.com/docker-for-mac/install/)
+- [Windows](https://docs.docker.com/docker-for-windows/install/)
+- [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+- [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
+- [CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)
+- [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
+- [其他 Linux 发行版](https://docs.docker.com/install/linux/docker-ce/binaries/)
+
+### 检查版本
+
+[`docker version`](https://docs.docker.com/engine/reference/commandline/version/) 查看你正在运行的 Docker 版本。
+
+获取 Docker 服务版本：
+
+```
+docker version --format '{{.Server.Version}}'
+```
+
+你也可以输出原始的 JSON 数据：
+
+```
+docker version --format '{{json .}}'
+```
+
+### Docker 加速
+
+国内访问 Docker Hub 很慢，所以，推荐配置 Docker 镜像仓库来提速。
+
+镜像仓库清单：
+
+| 镜像仓库                                      | 镜像仓库地址                           | 说明                                                                                                                                                                   |
+| --------------------------------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [DaoCloud 镜像站](https://daocloud.io/mirror) | `http://f1361db2.m.daocloud.io`        | 开发者需要开通 DaoCloud 账户，然后可以得到专属加速器。                                                                                                                 |
+| [阿里云](https://cr.console.aliyun.com)       | `https://yourcode.mirror.aliyuncs.com` | 开发者需要开通阿里开发者帐户，再使用阿里的加速服务。登录后阿里开发者帐户后，`https://cr.console.aliyun.com/undefined/instances/mirrors` 中查看你的您的专属加速器地址。 |
+| [网易云](https://c.163yun.com/hub)            | `https://hub-mirror.c.163.com`         | 直接配置即可，亲测较为稳定。                                                                                                                                           |
+
+配置镜像仓库方法（以 CentOS 为例）：
+
+> 下面的示例为在 CentOS 环境中，指定镜像仓库为 `https://hub-mirror.c.163.com`
+
+（1）修改配置文件
+
+修改 `/etc/docker/daemon.json` ，如果不存在则新建。执行以下 Shell：
+
+```bash
+sudo mkdir -p /etc/docker
+cat >> /etc/docker/daemon.json << EOF
+{
+    "registry-mirrors": [
+        "https://hub-mirror.c.163.com"
+    ]
+}
+EOF
+```
+
+重启 docker 以生效：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+执行 `docker info` 命令，查看 `Registry Mirrors` 是否已被改为 `https://hub-mirror.c.163.com` ，如果是，则表示配置成功。
+
 ## 容器(Container)
 
-[关于 Docker 进程隔离的基础](http://etherealmind.com/basics-docker-containers-hypervisors-coreos/)。容器 (Container) 之于虚拟机 (Virtual Machine) 就好比线程之于进程。
+[关于 Docker 进程隔离的基础](http://etherealmind.com/basics-docker-containers-hypervisors-coreos/)。容器 (Container) 之于虚拟机 (Virtual Machine) 就好比线程之于进程。或者你可以把他们想成是「吃了类固醇的 chroots」。
 
 ### 生命周期
 
@@ -38,7 +120,7 @@
 
 如果你需要一个临时容器，可使用 `docker run --rm` 会在容器停止之后删除它。
 
-如果你需要映射宿主机 (host) 的目录到 Docker 容器内，可使用 `docker run -v $HOSTDIR:$DOCKERDIR`。详见 [卷标(Volumes)](#卷标volumes) 一节。
+如果你需要映射宿主机 (host) 的目录到 Docker 容器内，可使用 `docker run -v $HOSTDIR:$DOCKERDIR`。详见 [卷标(Volumes)](https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#卷标volumes) 一节。
 
 如果你想同时删除与容器相关联的卷标，那么在删除容器的时候必须包含 `-v` 选项，像这样 `docker rm -v`。
 
@@ -55,7 +137,7 @@
 - [`docker kill`](https://docs.docker.com/engine/reference/commandline/kill) 向运行中的容器发送 SIGKILL 指令。
 - [`docker attach`](https://docs.docker.com/engine/reference/commandline/attach) 连接到运行中的容器。
 
-如果你想将容器的端口 (ports) 暴露至宿主机，请见 [暴露端口](#暴露端口exposing-ports) 一节。
+如果你想将容器的端口 (ports) 暴露至宿主机，请见 [暴露端口](https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#暴露端口exposing-ports) 一节。
 
 关于 Docker 实例崩溃后的重启策略，详见 [本文](http://container42.com/2014/09/30/docker-restart-policies/)。
 
@@ -69,7 +151,7 @@
 docker run -ti --c 512 agileek/cpuset-test
 ```
 
-更多信息请参阅 <https://goldmann.pl/blog/2014/09/11/resource-management-in-docker/#_cpu>。
+更多信息请参阅 https://goldmann.pl/blog/2014/09/11/resource-management-in-docker/#_cpu。
 
 通过 [`cpuset-cpus`](https://docs.docker.com/engine/reference/run/#/cpuset-constraint) 可使用特定 CPU 内核。
 
@@ -77,9 +159,9 @@ docker run -ti --c 512 agileek/cpuset-test
 docker run -ti --cpuset-cpus=0,4,6 agileek/cpuset-test
 ```
 
-请参阅 <https://agileek.github.io/docker/2014/08/06/docker-cpuset/> 获取更多细节以及一些不错的视频。
+请参阅 https://agileek.github.io/docker/2014/08/06/docker-cpuset/ 获取更多细节以及一些不错的视频。
 
-注意，Docker 在容器内仍然能够 **看到** 全部 CPU -- 它仅仅是不使用全部而已。请参阅 <https://github.com/docker/docker/issues/20770> 获取更多细节。
+注意，Docker 在容器内仍然能够 **看到** 全部 CPU -- 它仅仅是不使用全部而已。请参阅 https://github.com/docker/docker/issues/20770 获取更多细节。
 
 #### 内存限制
 
@@ -91,7 +173,7 @@ docker run -it -m 300M ubuntu:14.04 /bin/bash
 
 #### 能力(Capabilities)
 
-Linux 的 Capability 可以通过使用 `cap-add` 和 `cap-drop` 设置。请参阅 <https://docs.docker.com/engine/reference/run/#/runtime-privilege-and-linux-capabilities> 获取更多细节。这有助于提高安全性。
+Linux 的 Capability 可以通过使用 `cap-add` 和 `cap-drop` 设置。请参阅 https://docs.docker.com/engine/reference/run/#/runtime-privilege-and-linux-capabilities 获取更多细节。这有助于提高安全性。
 
 如需要挂载基于 FUSE 的文件系统，你需要结合 `--cap-add` 和 `--device` 使用：
 
@@ -136,7 +218,8 @@ docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb debian bash
 ### 执行命令
 
 - [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec) 在容器内执行命令。
-  - 例如，进入正在运行的 `foo` 容器，并连接 (attach) 到一个新的 Shell 进程：`docker exec -it foo /bin/bash`。
+
+例如，进入正在运行的 `foo` 容器，并连接 (attach) 到一个新的 Shell 进程：`docker exec -it foo /bin/bash`。
 
 ## 镜像(Images)
 
@@ -159,7 +242,7 @@ docker run -it --privileged -v /dev/bus/usb:/dev/bus/usb debian bash
 
 ### 清理
 
-虽然你可以用 `docker rmi` 命令来删除指定的镜像，不过有个名为 [docker-gc](https://github.com/spotify/docker-gc) 的工具，它可以以一种安全的方式，清理掉那些不再被任何容器使用的镜像。Docker 1.13 起，使用 `docker image prune` 亦可删除未使用的镜像。参见 [清理](#清理)。
+虽然你可以用 `docker rmi` 命令来删除指定的镜像，不过有个名为 [docker-gc](https://github.com/spotify/docker-gc) 的工具，它可以以一种安全的方式，清理掉那些不再被任何容器使用的镜像。Docker 1.13 起，使用 `docker image prune` 亦可删除未使用的镜像。参见 [清理](https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#清理)。
 
 ### 加载 / 保存镜像
 
@@ -191,8 +274,7 @@ docker export my_container | gzip > my_container.tar.gz
 
 ### 加载已保存的镜像 与 导入已导出为镜像的容器 的不同
 
-通过 `load` 命令来加载镜像，会创建一个新的镜像，并继承原镜像的所有历史。
-通过 `import` 将容器作为镜像导入，也会创建一个新的镜像，但并不包含原镜像的历史，因此会比使用 `load` 方式生成的镜像更小。
+通过 `load` 命令来加载镜像，会创建一个新的镜像，并继承原镜像的所有历史。 通过 `import` 将容器作为镜像导入，也会创建一个新的镜像，但并不包含原镜像的历史，因此会比使用 `load` 方式生成的镜像更小。
 
 ## 网络(Networks)
 
@@ -252,8 +334,8 @@ Docker 官方托管着自己的 [仓管中心](https://hub.docker.com/)，包含
 
 以下是一些编写 Dockerfile 的常用编辑器，并链接到适配的语法高亮模块︰
 
-- 如果你在使用 [jEdit](http://jedit.org)，你可以使用我开发的 Dockerfile [语法高亮模块](https://github.com/wsargent/jedit-docker-mode)。
-- [Sublime Text 2](https://packagecontrol.io/packages/Dockerfile%20Syntax%20Highlighting)
+- 如果你在使用 [jEdit](http://jedit.org/)，你可以使用我开发的 Dockerfile [语法高亮模块](https://github.com/wsargent/jedit-docker-mode)。
+- [Sublime Text 2](https://packagecontrol.io/packages/Dockerfile Syntax Highlighting)
 - [Atom](https://atom.io/packages/language-docker)
 - [Vim](https://github.com/ekalinin/Dockerfile.vim)
 - [Emacs](https://github.com/spotify/dockerfile-mode)
@@ -361,7 +443,7 @@ docker run -v /Users/wsargent/myapp/src:/src
 
 还可以考虑运行一个纯数据容器，像 [这里](http://container42.com/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/) 所说的那样，提供可移植数据。
 
-记得，[文件也可以被挂载为卷标](#将文件挂载为卷标)。
+记得，[文件也可以被挂载为卷标](https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#将文件挂载为卷标)。
 
 ## 暴露端口(Exposing ports)
 
@@ -498,8 +580,7 @@ USER user
 
 ### 安全路线图
 
-Docker 的路线图提到关于 [seccomp 的支持](https://github.com/docker/docker/blob/master/ROADMAP.md#11-security)。
-一个名为 [bane](https://github.com/jfrazelle/bane) 的 AppArmor 策略生成器正在实现 [安全配置文件](https://github.com/docker/docker/issues/17142)。
+Docker 的路线图提到关于 [seccomp 的支持](https://github.com/docker/docker/blob/master/ROADMAP.md#11-security)。 一个名为 [bane](https://github.com/jfrazelle/bane) 的 AppArmor 策略生成器正在实现 [安全配置文件](https://github.com/docker/docker/issues/17142)。
 
 ## 小贴士
 
@@ -654,8 +735,7 @@ docker images -viz | dot -Tpng -o docker.png
 
 - 在某层 (RUN layer) 清理 APT
 
-这应当和其他 apt 命令在同一层中完成。
-否则，前面的层将会保持原有信息，而你的镜像则依旧臃肿。
+这应当和其他 apt 命令在同一层中完成。 否则，前面的层将会保持原有信息，而你的镜像则依旧臃肿。
 
 ```
 RUN {apt commands} \

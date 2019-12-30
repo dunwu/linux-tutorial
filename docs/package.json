@@ -1,7 +1,33 @@
 {
-	"name": "linux-tutorial",
-	"version": "1.0.0",
-	"scripts": {
-		"start": "docsify serve ./ --port 4000"
-	}
+  "name": "linux-tutorial",
+  "author": "Zhang Peng",
+  "homepage": "http://dunwu.github.io/linux-tutorial",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dunwu/linux-tutorial.git"
+  },
+  "scripts": {
+    "start": "docsify serve ./ --port 4000",
+    "clean": "rimraf _book",
+    "install": "gitbook install",
+    "serve": "gitbook serve",
+    "build": "npm run clean & gitbook build",
+    "pdf": "gitbook pdf ."
+  },
+  "dependencies": {
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.10",
+    "gitbook-plugin-anchors": "^0.7.1",
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-search-plus": "0.0.11",
+    "gitbook-plugin-simple-page-toc": "^0.1.2",
+    "gitbook-plugin-splitter": "0.0.8",
+    "gitbook-plugin-tbfed-pagefooter": "0.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "rimraf": "^3.0.0"
+  }
 }

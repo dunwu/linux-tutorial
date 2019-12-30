@@ -10,7 +10,7 @@ root = true
 [*]
 end_of_line = lf
 indent_size = 2
-indent_style = tab
+indent_style = space
 max_line_length = 120
 charset = utf-8
 trim_trailing_whitespace = true
@@ -19,7 +19,7 @@ insert_final_newline = true
 [*.{bat, cmd}]
 end_of_line = crlf
 
-[*.{java, groovy, kt, sh}]
+[*.{java, gradle, groovy, kt, sh}]
 indent_size = 4
 
 [*.md]
