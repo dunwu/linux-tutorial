@@ -10,252 +10,83 @@
       name="viewport"
     />
     <link href="http://dunwu.test.upcdn.net/common/logo/zp_50_50.png" rel="icon" type="image/x-icon" />
-    <link href="//unpkg.com/docsify/lib/themes/vue.css" rel="stylesheet" title="vue" />
+    <link href="//unpkg.com/docsify/lib/themes/vue.css" rel="stylesheet" />
+    <link href="//unpkg.com/gitalk/dist/gitalk.css" rel="stylesheet" />
+    <canvas
+      id="c_n9"
+      width="1920"
+      height="990"
+      style="position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.5;"
+    ></canvas>
     <style>
-      h1 + ul {
-        display: block !important;
-      }
-
-      .content img,
-      .sidebar img {
-        border: none;
-        border-radius: 4px;
-        box-shadow: 2px 2px 5px grey;
-      }
-
-      body,
-      .content,
-      .sidebar,
-      .sidebar-toggle,
-      .search input {
-        color: #6b615f !important;
-        background-color: #fff4e6 !important;
-      }
-
-      body strong,
-      .content strong,
-      .sidebar strong {
-        color: #5c5869 !important;
-      }
-    </style>
-    <style>
-      .cover-main .anchor span {
-        text-align: center;
-        background-image: -webkit-linear-gradient(left, #ffdcb4, #b96972 25%, #e88a57 50%, #804170 75%, #a596cd);
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        -webkit-background-size: 200% 100%;
-        -webkit-animation: masked-animation 1.5s infinite linear;
-        font-family: 'Brush Script MT', 隶书, serif;
-        font-weight: 600;
-      }
-
-      .cover-main blockquote p {
-        color: #5c5869;
-        font-family: 'Arial', 隶书, serif;
-      }
-
-      .cover-main ul a:hover {
-        color: #fe4165 !important;
-      }
-
-      .cover-main a:hover {
-        text-align: center;
-        background-image: -webkit-linear-gradient(left, #ffdcb4, #b96972 25%, #e88a57 50%, #804170 75%, #a596cd);
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        -webkit-background-size: 200% 100%;
-        -webkit-animation: masked-animation 1.5s infinite linear;
-      }
-
-      /* content 样式内容 */
+      /*超链接样式*/
+      .cover-main a,
       .content a,
       .sidebar a,
       .sidebar ul li a,
       .sidebar ul li a strong {
-        color: #399ab2 !important;
         text-decoration: none !important;
       }
 
+      /*超链接悬浮样式*/
       .content a:hover,
       .sidebar a:hover,
       .sidebar ul li a:hover,
       .sidebar ul li a strong:hover {
-        color: #fe4165 !important;
+        color: #0077e6;
         text-decoration: underline !important;
       }
 
-      .sidebar h2 span {
-        font-size: 18px;
-        color: #399ab2 !important;
-        text-decoration: none !important;
-      }
-
-      .sidebar h2 span:hover {
-        color: #fe4165 !important;
-        text-decoration: underline !important;
-      }
-
-      .sidebar .sidebar-nav {
-        padding-left: 20px;
-      }
-
-      .content h1 :hover,
-      .content h2 :hover,
-      .content h3 :hover,
-      .content h4 :hover {
+      /*侧边栏样式*/
+      .sidebar .sidebar-nav h1 {
+        background-color: #f8f8f8;
+        margin: 10px;
+        padding-left: 10px;
         text-align: center;
-        background-image: -webkit-linear-gradient(left, #ffdcb4, #b96972 25%, #e88a57 50%, #804170 75%, #a596cd);
+        font-size: 12px;
+        font-family: 'Microsoft YaHei', 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
+        text-transform: uppercase;
+      }
+
+      /*文章标题加动态刷新颜色效果*/
+      .markdown-section h1 span {
+        background-image: -webkit-linear-gradient(left, #9fa5d5, #c4cdd2 50%, #e8f5ca);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         -webkit-background-size: 200% 100%;
-        -webkit-animation: masked-animation 1.5s infinite linear;
-        font-family: '微软雅黑', serif;
-        font-weight: bold;
+        -webkit-animation: hue 3s infinite linear;
+        text-shadow: 2px 2px 2px transparent;
       }
 
-      @-webkit-keyframes masked-animation {
-        0% {
-          background-position: 0 0;
+      /*动态效果*/
+      @-webkit-keyframes hue {
+        from {
+          -webkit-filter: hue-rotate(0deg);
+          -moz-filter: hue-rotate(0deg);
         }
-        100% {
-          background-position: -100% 0;
-        }
-      }
-
-      .markdown-section h1,
-      .content h1 a,
-      .content h1 span {
-        color: #399ab2 !important;
-        font-size: 30px;
-        text-shadow: 2px 2px 5px grey;
-      }
-
-      .content h2 a,
-      .content h2 span {
-        color: #60497c !important;
-        font-size: 26px;
-        text-shadow: 2px 2px 5px grey;
-      }
-
-      .content h3 a,
-      .content h3 span {
-        color: #346093 !important;
-        font-size: 22px;
-        text-shadow: 2px 2px 5px grey;
-      }
-
-      .content h4 a,
-      .content h4 span {
-        font-size: 18px;
-        color: #78943a;
-        text-shadow: 2px 2px 5px grey;
-      }
-    </style>
-    <style>
-      .markdown-section h1 {
-        font-size: 1rem;
-        margin: 0;
-      }
-
-      .markdown-section h2 {
-        font-size: 1rem;
-        margin: 1rem 0px;
-      }
-
-      .markdown-section h3 {
-        font-size: 1rem;
-        margin: 0;
-      }
-
-      .markdown-section p {
-        word-spacing: 0.05rem;
-      }
-    </style>
-    <style>
-      .content > p {
-        font-size: 16px !important;
-        line-height: 24px;
-      }
-
-      .content blockquote {
-        display: block;
-        padding: 0 16px;
-        border-left: 8px solid #dddfe4;
-        background: #fff2c9;
-        overflow: auto;
-      }
-
-      .content pre {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        border-radius: 8px;
-        box-shadow: 1px 1px 20px 3px #dddddd !important;
-      }
-
-      .content code {
-        background-color: white;
-        box-shadow: 1px 1px 1px lightgrey;
-      }
-
-      .content table {
-        display: table;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        box-shadow: 2px 2px 20px 6px lightgrey !important;
-      }
-
-      .content th {
-        font-weight: bold;
-        font-size: 16px;
-        background-color: #cce6b6;
-      }
-    </style>
-    <style>
-      @media (min-width: 600px) {
-        .markdown-section pre > code {
-          font-size: 0.9rem !important;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .markdown-section pre > code {
-          padding-top: 5px;
-          padding-bottom: 5px;
-        }
-
-        pre:after {
-          content: '' !important;
-        }
-      }
-
-      @media (min-width: 600px) {
-        pre code {
-          padding-left: 20px !important;
-        }
-      }
-
-      @media (max-width: 600px) {
-        pre {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
+        to {
+          -webkit-filter: hue-rotate(-360deg);
+          -moz-filter: hue-rotate(-360deg);
         }
       }
     </style>
   </head>
   <body>
     <div id="app">正在加载...</div>
+
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+
     <script>
       window.$docsify = {
         name: 'linux-tutorial',
         repo: 'https://github.com/dunwu/linux-tutorial',
         logo: 'http://dunwu.test.upcdn.net/common/logo/zp_100_100.png',
+        themeColor: '#6190E8',
         auto2top: true,
         coverpage: 'coverpage.md',
         loadSidebar: 'sidebar.md',
-        autoHeader: true,
+        autoHeader: false,
         maxLevel: 4,
         subMaxLevel: 2,
         formatUpdated: '{MM}/{DD} {HH}:{mm}',
@@ -266,7 +97,11 @@
           noData: '😭 没有结果！',
           depth: 4
         },
-        disqus: 'linux-tutorial',
+        pagination: {
+          previousText: '上一篇',
+          nextText: '下一篇',
+          crossChapter: true
+        },
         plugins: [
           EditOnGithubPlugin.create('https://github.com/dunwu/linux-tutorial/tree/master/docs/', null, function(file) {
             if (file.indexOf('en') === -1) {
@@ -278,14 +113,34 @@
         ]
       }
     </script>
-    <script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
-    <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+
     <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+    <!--聊天插件和配置-->
+    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+    <script>
+      const gitalk = new Gitalk({
+        id: md5(window.location.pathname),
+        clientID: 'e8d4c3d68a873a9da4ce',
+        clientSecret: 'd4550e13edad32bb0cd15e2bc314fc684ac830ef',
+        repo: 'linux-tutorial',
+        owner: 'dunwu',
+        admin: ['dunwu'],
+        distractionFreeMode: true
+      })
+    </script>
 
     <!--代码高亮-->
     <!--@see https://github.com/PrismJS/prism -->
     <script src="//unpkg.com/prismjs/components/prism-basic.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
+
+    <!--    <canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0; left: 0; z-index: -2; opacity: 0.5;"></canvas>-->
+    <script src="https://files.cnblogs.com/files/jingmoxukong/canvas-nest.min.js" async defer></script>
   </body>
 </html>

@@ -80,6 +80,7 @@
   - [Docker 快速入门](docs/docker/docker-quickstart.md)
   - [Dockerfile 最佳实践](docs/docker/docker-dockerfile.md)
   - [Docker Cheat Sheet](docs/docker/docker-cheat-sheet.md)
+  - [Kubernetes 应用指南](docs/docker/kubernetes.md)
 - [一篇文章让你彻底掌握 Python](https://github.com/dunwu/blog/blob/master/source/_posts/coding/python.md)
 - [一篇文章让你彻底掌握 Shell](https://github.com/dunwu/blog/blob/master/source/_posts/coding/shell.md)
 - [Git 从入门到精通](https://github.com/dunwu/blog/blob/master/source/_posts/tools/git.md)

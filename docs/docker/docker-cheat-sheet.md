@@ -114,7 +114,7 @@ sudo systemctl restart docker
 - [`docker rm`](https://docs.docker.com/engine/reference/commandline/rm) 删除容器。
   - 如果要删除一个运行中的容器，可以添加 `-f` 参数。Docker 会发送 `SIGKILL` 信号给容器。
 - [`docker update`](https://docs.docker.com/engine/reference/commandline/update/) 调整容器的资源限制。
-- `docker container prune` 清理掉所有处于终止状态的容器。
+-   清理掉所有处于终止状态的容器。
 
 通常情况下，不使用任何命令行选项启动一个容器，该容器将会立即启动并停止。若需保持其运行，你可以使用 `docker run -td container_id` 命令。选项 `-t` 表示分配一个 pseudo-TTY 会话，`-d` 表示自动将容器与终端分离（也就是说在后台运行容器，并输出容器 ID）。
 
