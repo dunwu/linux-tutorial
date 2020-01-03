@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-# creating and using a temp file
+tempFile=`mktemp test.XXXXXX`
 
-tempfile=`mktemp test.XXXXXX`
+exec 3> ${tempFile}
 
-exec 3> $tempfile
-
-echo "This script writes to temp file $tempfile"
-
+echo "This script writes to temp file ${tempFile}"
 echo "This is the first line" >&3
 echo "This is the second line" >&3
 echo "This is the last line" >&3
@@ -15,8 +12,7 @@ echo "This is the last line" >&3
 exec 3>&-
 
 echo "Done creating temp file. The contents are:"
+cat ${tempFile}
 
-cat $tempfile
-
-rm -f $tempfile 2> /dev/null
+rm -f ${tempFile} 2> /dev/null
 

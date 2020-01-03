@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-#using a library file the wrong way
+# 装载其它脚本
+source lib.sh
 
-../脚本库.sh
-
-result=`addem 10 15`
-echo "The result is $result"
+echo "20 + 10 = $(add 20 10)"
+echo "20 - 10 = $(sub 20 10)"
+echo "20 * 10 = $(mul 20 10)"
+echo "20 / 10 = $(div 20 10)"

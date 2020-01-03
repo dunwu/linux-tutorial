@@ -658,6 +658,10 @@ FROM my-node
 
 是的，只有这么一行。当在各个项目目录中，用这个只有一行的 `Dockerfile` 构建镜像时，之前基础镜像的那三行 `ONBUILD` 就会开始执行，成功的将当前项目的代码复制进镜像、并且针对本项目执行 `npm install`，生成应用镜像。
 
+
+
+有任何的问题或建议，欢迎给我留言 :laughing:
+
 ## 参考资料
 
 - [Dockerfie 官方文档](https://docs.docker.com/engine/reference/builder/)

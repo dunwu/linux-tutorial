@@ -29,12 +29,17 @@
       }
 
       /*超链接悬浮样式*/
+      .cover-main a:hover,
       .content a:hover,
       .sidebar a:hover,
       .sidebar ul li a:hover,
       .sidebar ul li a strong:hover {
         color: #0077e6;
         text-decoration: underline !important;
+      }
+
+      .sidebar-nav ul {
+        padding-left: 15px;
       }
 
       /*侧边栏样式*/
@@ -44,17 +49,19 @@
         padding-left: 10px;
         text-align: center;
         font-size: 12px;
-        font-family: 'Microsoft YaHei', 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
         text-transform: uppercase;
       }
 
       /*文章标题加动态刷新颜色效果*/
+      section.cover h1 span,
       .markdown-section h1 span {
+        font-weight: 600;
+        font-family: zillaslab, Palatino, 'Palatino Linotype', 'Microsoft YaHei', serif;
         background-image: -webkit-linear-gradient(left, #9fa5d5, #c4cdd2 50%, #e8f5ca);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         -webkit-background-size: 200% 100%;
-        -webkit-animation: hue 3s infinite linear;
+        -webkit-animation: hue 5s infinite linear;
         text-shadow: 2px 2px 2px transparent;
       }
 
@@ -89,7 +96,8 @@
         autoHeader: false,
         maxLevel: 4,
         subMaxLevel: 2,
-        formatUpdated: '{MM}/{DD} {HH}:{mm}',
+        mergeNavbar: true,
+        formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
         search: {
           maxAge: 86400000,
           paths: ['/'],
