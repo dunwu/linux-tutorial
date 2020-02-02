@@ -21,7 +21,15 @@
 
 <!-- /TOC -->
 
-## 一、Dockerfile 指令
+## 一、Dockerfile 简介
+
+Docker 镜像的定制实际上就是定制每一层所添加的配置、文件。如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么之前提及的无法重复的问题、镜像构建透明性的问题、体积的问题就都会解决。这个脚本就是 Dockerfile。
+
+Dockerfile 是一个文本文件，其内包含了一条条的 **指令(Instruction)**，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。
+
+### 使用 Dockerfile 构建镜像
+
+## 二、Dockerfile 指令详解
 
 ### FROM(指定基础镜像)
 
@@ -658,6 +666,8 @@ FROM my-node
 
 是的，只有这么一行。当在各个项目目录中，用这个只有一行的 `Dockerfile` 构建镜像时，之前基础镜像的那三行 `ONBUILD` 就会开始执行，成功的将当前项目的代码复制进镜像、并且针对本项目执行 `npm install`，生成应用镜像。
 
+## 二、最佳实践
+
 
 
 有任何的问题或建议，欢迎给我留言 :laughing:
@@ -665,6 +675,6 @@ FROM my-node
 ## 参考资料
 
 - [Dockerfie 官方文档](https://docs.docker.com/engine/reference/builder/)
-- [Dockerfile 最佳实践文档](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [Docker 官方镜像 Dockerfile](https://github.com/docker-library/docs)
 - [Dockerfile 指令详解](https://yeasy.gitbooks.io/docker_practice/content/image/dockerfile/)

@@ -58,9 +58,7 @@
     },
     "sharing": {
       "weibo": true,
-      "all": [
-        "weibo"
-      ]
+      "all": ["weibo"]
     },
     "tbfed-pagefooter": {
       "copyright": "Copyright © Zhang Peng 2017",

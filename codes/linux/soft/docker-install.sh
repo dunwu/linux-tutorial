@@ -26,23 +26,22 @@ printf "${RESET}"
 
 printf "${GREEN}>>>>>>>> install docker begin.${RESET}\n"
 # uninstall old version docker
-sudo yum remove docker  \
- docker-client  \
- docker-client-latest  \
- docker-common  \
- docker-latest  \
- docker-latest-logrotate  \
- docker-logrotate  \
- docker-selinux  \
- docker-engine-selinux  \
- docker-engine
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+
 # install required libs
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 # add docker yum repo
 sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 sudo yum makecache fast
 # install docker
-sudo yum -y install docker-ce
+sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 docker version
 printf "${GREEN}<<<<<<<< install docker end.${RESET}\n"

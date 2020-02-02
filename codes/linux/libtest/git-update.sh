@@ -28,10 +28,9 @@ doCloneOrPullGit ${REPOSITORY} turnon nginx-tutorial master ${ROOT}
 r2=$?
 
 if [[ "${r1}" == "${SUCCEED}" && "${r2}" == "${SUCCEED}" ]]; then
-    printf "\n${C_GREEN}Succeed.${C_RESET}\n"
+    printf "\n${C_B_GREEN}<<<< Init workspace Succeed.${C_RESET}\n\n"
     exit ${SUCCEED}
 else
-    printf "\n${C_RED}Failed.${C_RESET}\n"
+    printf "\n${C_B_RED}<<<< Init workspace Failed.${C_RESET}\n\n"
     exit ${FAILED}
 fi
-

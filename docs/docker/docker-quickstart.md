@@ -117,7 +117,7 @@ $ sudo service docker start
 $ sudo systemctl start docker
 ```
 
-## 三、hello world 实例
+## 三、Hello World 实例
 
 下面，我们通过最简单的 image 文件"[hello world"](https://hub.docker.com/r/library/hello-world/)，感受一下 Docker。
 
@@ -354,3 +354,4 @@ $ sudo systemctl start docker
 ## 参考资料
 
 - [Docker 入门教程](https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
+- [Docker — 从入门到实践](https://github.com/yeasy/docker_practice)

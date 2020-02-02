@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# ------------------------------------------------------------------------------
+# Git 基本操作脚本
+# @author Zhang Peng
+# ------------------------------------------------------------------------------
+
 # 装载其它库
 ROOT=`dirname ${BASH_SOURCE[0]}`
 source ${ROOT}/env.sh
@@ -33,7 +38,7 @@ checkGit() {
       return ${NO}
   fi
 
-  printf "${C_B_B_YELLOW}${source} is invalid dir.${C_RESET}\n"
+  printf "${C_B_YELLOW}${source} is invalid dir.${C_RESET}\n"
   return ${NO}
 }
 
@@ -49,18 +54,18 @@ cloneOrPullGit() {
     local root=$5
 
     if [[ ! ${repository} ]] || [[ ! ${group} ]] || [[ ! ${project} ]] || [[ ! ${branch} ]] || [[ ! ${root} ]]; then
-        printf "${C_B_YELLOW}>>>> Please input root, group, project, branch.${C_RESET}\n"
+        printf "${C_B_YELLOW}Please input root, group, project, branch.${C_RESET}\n"
         return ${FAILED}
     fi
 
     if [[ ! -d "${root}" ]]; then
-        printf "${C_B_YELLOW}>>>> ${root} is not directory.${C_RESET}\n"
+        printf "${C_B_YELLOW}${root} is not directory.${C_RESET}\n"
         return ${FAILED}
     fi
 
     local source=${root}/${group}/${project}
-    printf "${C_B_CYAN}>>>> project directory is ${source}.${C_RESET}\n"
-    printf "${C_B_CYAN}>>>> git url is ${repository}:${group}/${project}.git.${C_RESET}\n"
+    printf "${C_B_MAGENTA}project directory is ${source}.${C_RESET}\n"
+    printf "${C_B_MAGENTA}git url is ${repository}:${group}/${project}.git.${C_RESET}\n"
     mkdir -p ${root}/${group}
 
     checkGit ${source}
@@ -73,21 +78,21 @@ cloneOrPullGit() {
             printf "${C_B_RED}<<<< git checkout ${branch} failed.${C_RESET}\n"
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}>>>> git checkout ${branch} succeed.${C_RESET}\n"
+        printf "${C_B_GREEN}git checkout ${branch} succeed.${C_RESET}\n"
 
         git reset --hard
         if [[ "${SUCCEED}" != "$?" ]]; then
             printf "${C_B_RED}<<<< git reset --hard failed.${C_RESET}\n"
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}>>>> git reset --hard succeed.${C_RESET}\n"
+        printf "${C_B_GREEN}git reset --hard succeed.${C_RESET}\n"
 
         git pull
         if [[ "${SUCCEED}" != "$?" ]]; then
             printf "${C_B_RED}<<<< git pull failed.${C_RESET}\n"
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}>>>> git pull succeed.${C_RESET}\n"
+        printf "${C_B_GREEN}git pull succeed.${C_RESET}\n"
     else
         # 如果 ${source} 不是 git 项目，执行 clone 操作
 
@@ -96,7 +101,7 @@ cloneOrPullGit() {
             printf "${C_B_RED}<<<< git clone ${project} failed.${C_RESET}\n"
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}>>>> git clone ${project} succeed.${C_RESET}\n"
+        printf "${C_B_GREEN}git clone ${project} succeed.${C_RESET}\n"
 
         cd ${source} || return ${FAILED}
 
@@ -105,8 +110,9 @@ cloneOrPullGit() {
             printf "${C_B_RED}<<<< git checkout ${branch} failed.${C_RESET}\n"
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}>>>> git checkout ${branch} succeed.${C_RESET}\n"
+        printf "${C_B_GREEN}git checkout ${branch} succeed.${C_RESET}\n"
     fi
 
+    printf "${C_B_GREEN}Clone or pull git project [$2/$3:$4] succeed.${C_RESET}\n"
     return ${SUCCEED}
 }

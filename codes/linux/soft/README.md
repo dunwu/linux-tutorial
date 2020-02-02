@@ -13,7 +13,7 @@
 - [RocketMQ 安装](#rocketmq-安装)
 - [Nacos 安装](#nacos-安装)
 - [ZooKeeper 安装](#zookeeper-安装)
-- [Nginx 安装](#nginx-安装)
+- [Nginx 运维](#nginx-安装)
 - [Fastdfs 安装](#fastdfs-安装)
 - [Docker 安装](#docker-安装)
 
@@ -190,7 +190,7 @@ curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zoo
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zookeeper-install.sh | bash
 ```
 
-## Nginx 安装
+## Nginx 运维
 
 **安装说明**
 

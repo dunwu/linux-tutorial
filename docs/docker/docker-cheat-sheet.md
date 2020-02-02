@@ -308,6 +308,48 @@ $ docker run --rm -it --net iptastic --ip 203.0.113.2 nginx
 $ curl 203.0.113.2
 ```
 
+## 暴露端口(Exposing ports)
+
+通过宿主容器暴露输入端口相当 [繁琐但有效的](https://docs.docker.com/engine/reference/run/#expose-incoming-ports)。
+
+例如使用 `-p` 将容器端口映射到宿主端口上（只使用本地主机 (localhost) 接口）：
+
+```
+docker run -p 127.0.0.1:$HOSTPORT:$CONTAINERPORT --name CONTAINER -t someimage
+```
+
+你可以使用 [EXPOSE](https://docs.docker.com/engine/reference/builder/#expose) 告知 Docker，该容器在运行时监听指定的端口：
+
+```
+EXPOSE <CONTAINERPORT>
+```
+
+但是注意 EXPOSE 并不会直接暴露端口，你需要用参数 `-p` 。比如说你要在 localhost 上暴露容器的端口:
+
+```
+iptables -t nat -A DOCKER -p tcp --dport <LOCALHOSTPORT> -j DNAT --to-destination <CONTAINERIP>:<PORT>
+```
+
+如果你是在 Virtualbox 中运行 Docker，那么你需要配置端口转发 (forward the port)。使用 [forwarded_port](https://docs.vagrantup.com/v2/networking/forwarded_ports.html) 在 Vagrantfile 上配置暴露的端口范围，这样你就可以动态地映射了：
+
+```
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  ...
+
+  (49000..49900).each do |port|
+    config.vm.network :forwarded_port, :host => port, :guest => port
+  end
+
+  ...
+end
+```
+
+如果你忘记了将什么端口映射到宿主机上的话，可使用 `docker port` 查看：
+
+```
+docker port CONTAINER $CONTAINERPORT
+```
+
 ## 仓管中心和仓库(Registry & Repository)
 
 仓库 (repository) 是 _被托管(hosted)_ 的已命名镜像 (tagged images) 的集合，这组镜像用于构建容器文件系统。
@@ -411,19 +453,27 @@ $ALIAS_PORT_1337_TCP_ADDR
 
 通常，Docker 容器（亦可理解为「服务」）之间的链接，是「服务发现」的一个子集。如果你打算在生产中大规模使用 Docker，这将是一个很大的问题。请参阅[The Docker Ecosystem: Service Discovery and Distributed Configuration Stores](https://www.digitalocean.com/community/tutorials/the-docker-ecosystem-service-discovery-and-distributed-configuration-stores) 获取更多信息。
 
-## 卷标(Volumes)
+## 卷标(Volumes)和挂载
+
+### 卷标
 
 Docker 的卷标 (volumes) 是 [独立的文件系统](https://docs.docker.com/engine/tutorials/dockervolumes/)。它们并非必须连接到特定的容器上。
 
-### 生命周期
+`数据卷` 是一个可供一个或多个容器使用的特殊目录，它绕过 UFS，可以提供很多有用的特性：
 
-- [`docker volume create`](https://docs.docker.com/engine/reference/commandline/volume_create/)
-- [`docker volume rm`](https://docs.docker.com/engine/reference/commandline/volume_rm/)
+- `数据卷` 可以在容器之间共享和重用
+- 对 `数据卷` 的修改会立马生效
+- 对 `数据卷` 的更新，不会影响镜像
+- `数据卷` 默认会一直存在，即使容器被删除
 
-### 信息
+卷标相关命令：
 
-- [`docker volume ls`](https://docs.docker.com/engine/reference/commandline/volume_ls/)
-- [`docker volume inspect`](https://docs.docker.com/engine/reference/commandline/volume_inspect/)
+- [`docker volume create`](https://docs.docker.com/engine/reference/commandline/volume_create/) - 创建卷标
+- [`docker volume rm`](https://docs.docker.com/engine/reference/commandline/volume_rm/) - 删除卷标
+
+- [`docker volume ls`](https://docs.docker.com/engine/reference/commandline/volume_ls/) - 查看卷标
+- [`docker volume inspect`](https://docs.docker.com/engine/reference/commandline/volume_inspect/) - 查看数据卷的具体信息
+- [`docker volume prune`](https://docs.docker.com/engine/reference/commandline/volume_prune/) -  清理无主的数据卷
 
 卷标在不能使用链接（只有 TCP/IP）的情况下非常有用。例如，如果你有两个 Docker 实例需要通讯并在文件系统上留下记录。
 
@@ -445,47 +495,11 @@ docker run -v /Users/wsargent/myapp/src:/src
 
 记得，[文件也可以被挂载为卷标](https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn#将文件挂载为卷标)。
 
-## 暴露端口(Exposing ports)
+### 挂载
 
-通过宿主容器暴露输入端口相当 [繁琐但有效的](https://docs.docker.com/engine/reference/run/#expose-incoming-ports)。
+使用 `--mount` 标记可以指定挂载一个本地主机的目录到容器中去。 
 
-例如使用 `-p` 将容器端口映射到宿主端口上（只使用本地主机 (localhost) 接口）：
-
-```
-docker run -p 127.0.0.1:$HOSTPORT:$CONTAINERPORT --name CONTAINER -t someimage
-```
-
-你可以使用 [EXPOSE](https://docs.docker.com/engine/reference/builder/#expose) 告知 Docker，该容器在运行时监听指定的端口：
-
-```
-EXPOSE <CONTAINERPORT>
-```
-
-但是注意 EXPOSE 并不会直接暴露端口，你需要用参数 `-p` 。比如说你要在 localhost 上暴露容器的端口:
-
-```
-iptables -t nat -A DOCKER -p tcp --dport <LOCALHOSTPORT> -j DNAT --to-destination <CONTAINERIP>:<PORT>
-```
-
-如果你是在 Virtualbox 中运行 Docker，那么你需要配置端口转发 (forward the port)。使用 [forwarded_port](https://docs.vagrantup.com/v2/networking/forwarded_ports.html) 在 Vagrantfile 上配置暴露的端口范围，这样你就可以动态地映射了：
-
-```
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  ...
-
-  (49000..49900).each do |port|
-    config.vm.network :forwarded_port, :host => port, :guest => port
-  end
-
-  ...
-end
-```
-
-如果你忘记了将什么端口映射到宿主机上的话，可使用 `docker port` 查看：
-
-```
-docker port CONTAINER $CONTAINERPORT
-```
+在用 `docker run` 命令的时候，使用 `--mount` 标记来将 `数据卷` 挂载到容器里。在一次 `docker run` 中可以挂载多个 `数据卷`。 
 
 ## 最佳实践
 

@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# ------------------------------------------------------------------------------
+# 常用变量库
+# @author Zhang Peng
+# ------------------------------------------------------------------------------
+
 # ------------------------------------------------------------------------------ 颜色状态
 
 # Regular Color
@@ -51,3 +56,48 @@ YES=0
 NO=1
 SUCCEED=0
 FAILED=1
+
+# 显示打印日志的时间
+DATE=`date "+%Y-%m-%d %H:%M:%S"`
+# 那个用户在操作
+USER=$(whoami)
+
+# ------------------------------------------------------------------------------ log
+
+logInfo() {
+	#（$0脚本本身，$@将参数作为整体传输调用）
+	echo "[${DATE}] [${USER}] [INFO] [$0] [$@] execute succeed." >> /var/log/shell.log
+}
+
+logWarn() {
+	#（$0脚本本身，$@将参数作为整体传输调用）
+	echo "[${DATE}] [${USER}] [WARN] [$0] [$@] execute succeed." >> /var/log/shell.log
+}
+
+logError() {
+	#（$0脚本本身，$@将参数作为整体传输调用）
+	echo "[${DATE}] [${USER}] [ERROR] [$0] [$@] execute failed." >> /var/log/shell.log
+}
+
+printInfo() {
+    echo -e "${C_B_GREEN}[INFO] $@${C_RESET}"
+}
+
+printWarn() {
+    echo -e "${C_B_YELLOW}[WARN] $@${C_RESET}"
+}
+
+printError() {
+    echo -e "${C_B_RED}[ERROR] $@${C_RESET}"
+}
+
+callAndLog () {
+	$*
+	if [[ $? -eq ${SUCCEED} ]]; then
+		logInfo "$@ succeed"
+		echo -e "${C_B_GREEN}[INFO] [$0] [$@] execute succeed.${C_RESET}"
+	else
+		logError "$@ failed"
+		echo -e "${C_B_RED}[ERROR] [$0] [$@] execute failed.${C_RESET}"
+	fi
+}
