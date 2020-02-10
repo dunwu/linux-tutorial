@@ -39,7 +39,7 @@
 
 这里，如果想通过命令方式直接下载（比如用脚本安装），可以在[官方历史发布版本页面](https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3)中找到合适版本，然后执行以下命令：
 
-```sh
+```shell
 wget -O /opt/maven/nexus-unix.tar.gz http://download.sonatype.com/nexus/3/nexus-3.13.0-01-unix.tar.gz
 tar -zxf nexus-unix.tar.gz
 ```
@@ -55,7 +55,7 @@ tar -zxf nexus-unix.tar.gz
 
 执行 `./nexus`，可以查看允许执行的参数，如下所示，含义可谓一目了然：
 
-```sh
+```shell
 $ ./nexus
 Usage: ./nexus {start|stop|run|run-redirect|status|restart|force-reload}
 ```
@@ -203,7 +203,7 @@ Nexus 中的仓库有以下类型：
 
 示例：
 
-```sh
+```shell
 # 编译并打包 maven 项目
 $ mvn clean package -Dmaven.skip.test=true -P zp
 

@@ -1,33 +1,39 @@
 {
   "name": "linux-tutorial",
-  "author": "Zhang Peng",
-  "homepage": "http://dunwu.github.io/linux-tutorial",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:dunwu/linux-tutorial.git"
-  },
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "docsify serve ./ --port 4000",
-    "clean": "rimraf _book",
-    "install": "gitbook install",
-    "serve": "gitbook serve",
-    "build": "npm run clean & gitbook build",
-    "pdf": "gitbook pdf ."
-  },
-  "dependencies": {
-    "gitbook-plugin-advanced-emoji": "^0.2.2",
-    "gitbook-plugin-anchor-navigation-ex": "^1.0.10",
-    "gitbook-plugin-anchors": "^0.7.1",
-    "gitbook-plugin-edit-link": "^2.0.2",
-    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
-    "gitbook-plugin-github": "^2.0.0",
-    "gitbook-plugin-search-plus": "0.0.11",
-    "gitbook-plugin-simple-page-toc": "^0.1.2",
-    "gitbook-plugin-splitter": "0.0.8",
-    "gitbook-plugin-tbfed-pagefooter": "0.0.1"
+    "clean": "rimraf dist && rimraf .temp",
+    "build": "npm run clean && vuepress build ./ --temp .temp",
+    "dev": "vuepress dev ./ --temp .temp",
+    "lint-md": "npm run lint-md:style && npm run lint-md:wording",
+    "lint-md:style": "remark --quiet --frail .",
+    "lint-md:wording": "textlint ./**/*.md",
+    "show-help": "vuepress --help",
+    "view-info": "vuepress view-info ./ --temp .temp"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "rimraf": "^3.0.0"
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
+    "@vuepress/plugin-back-to-top": "^1.3.0",
+    "@vuepress/plugin-medium-zoom": "^1.3.0",
+    "@vuepress/plugin-pwa": "^1.3.0",
+    "@vuepress/theme-vue": "^1.3.0",
+    "remark-cli": "^7.0.0",
+    "remark-lint": "^6.0.5",
+    "remark-preset-lint-consistent": "^2.0.3",
+    "remark-preset-lint-recommended": "^3.0.3",
+    "rimraf": "^3.0.1",
+    "textlint": "^11.3.1",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-apostrophe": "^1.0.0",
+    "textlint-rule-common-misspellings": "^1.0.1",
+    "textlint-rule-diacritics": "^1.0.0",
+    "textlint-rule-en-capitalization": "^2.0.2",
+    "textlint-rule-stop-words": "^1.0.17",
+    "textlint-rule-terminology": "^1.1.30",
+    "textlint-rule-write-good": "^1.6.2",
+    "vue-toasted": "^1.1.25",
+    "vuepress": "^1.3.0",
+    "vuepress-plugin-flowchart": "^1.4.2"
   }
 }

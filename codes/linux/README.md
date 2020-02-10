@@ -6,20 +6,20 @@
 
 （1）下载脚本
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/download.sh | bash
 ```
 
 （2）执行脚本
 
-```sh
+```shell
 cd /tmp/dunwu-ops
 ./dunwu-ops.sh
 ```
 
 （3）清除脚本
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/clear.sh | bash
 ```
 

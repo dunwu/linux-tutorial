@@ -127,7 +127,7 @@ sed '/^test/'d file
 >
 > 参考：http://man.linuxde.net/vi
 >
-> 引申阅读：[Vim 快速指南](https://github.com/dunwu/OS/blob/master/docs/vim.md)
+> 引申阅读：[Vim 入门指南](https://github.com/dunwu/OS/blob/master/docs/vim.md)
 
 ### 2.8. grep
 

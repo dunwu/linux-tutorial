@@ -26,21 +26,21 @@
 
 > 学习 Linux 的第一步：当然是从 [Linux 命令](linux/cli/README.md) 入手了。
 
-- [查看 Linux 命令帮助信息](linux/cli/查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
-- [Linux 文件目录管理](linux/cli/Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
-- [Linux 文件内容查看命令](linux/cli/Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
-- [Linux 文件压缩和解压](linux/cli/Linux文件压缩和解压.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
-- [Linux 用户管理](linux/cli/Linux用户管理.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
-- [Linux 系统管理](linux/cli/Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
-- [Linux 网络管理](linux/cli/Linux网络管理.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
-- [Linux 硬件管理](linux/cli/Linux硬件管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-- [Linux 软件管理](linux/cli/Linux硬件管理.md) - 关键词：`rpm`, `yum`, `apt-get`
+- [查看 Linux 命令帮助信息](linux/cli/linux-cli-help.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
+- [Linux 文件目录管理](linux/cli/linux-cli-dir.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
+- [Linux 文件内容查看命令](linux/cli/linux-cli-file.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
+- [Linux 文件压缩和解压](linux/cli/linux-cli-file-compress.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
+- [Linux 用户管理](linux/cli/linux-cli-user.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
+- [Linux 系统管理](linux/cli/linux-cli-system.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
+- [Linux 网络管理](linux/cli/linux-cli-net.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
+- [Linux 硬件管理](linux/cli/linux-cli-hardware.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
+- [Linux 软件管理](linux/cli/linux-cli-hardware.md) - 关键词：`rpm`, `yum`, `apt-get`
 
 ### Linux 系统运维
 
 > Linux 系统的常见运维工作。
 
-- [linux 典型运维应用](linux/ops/linux典型运维应用.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
+- [linux 典型运维应用](linux/ops/linux-base-ops.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
 - [Samba 应用](linux/ops/samba.md)
 - [Systemd 应用](linux/ops/systemd.md)
 - [Vim 应用](linux/ops/vim.md)
@@ -67,7 +67,7 @@
   - [Elastic 运维](linux/soft/elastic)
   - [Kafka 运维](linux/soft/kafka-install.md)
   - [RocketMQ 运维](linux/soft/rocketmq-install.md)
-  - [Zookeeper 运维](https://github.com/dunwu/javaweb/blob/master/docs/technology/monitor/zookeeper-ops.md)
+  - [Zookeeper 运维](https://github.com/dunwu/javatech/blob/master/docs/technology/monitor/zookeeper-ops.md)
   - [Nacos 运维](linux/soft/nacos-install.md)
 - 服务器
   - [Nginx 教程 📚](https://github.com/dunwu/nginx-tutorial)

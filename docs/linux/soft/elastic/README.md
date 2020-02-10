@@ -14,7 +14,7 @@
 
 ## 目录
 
-[Elastic 技术栈之快速指南](elastic-quickstart.md)
+[Elastic 技术栈之入门指南](elastic-quickstart.md)
 
 [Elastic 技术栈之 Logstash 基础](elastic-logstash.md)
 

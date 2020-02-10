@@ -9,7 +9,6 @@
 </p>
 
 <h1 align="center">linux-tutorial</h1>
-
 > 📚 **linux-tutorial** 是一个 Linux 教程。
 >
 > 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
@@ -26,26 +25,26 @@
 
 > 学习 Linux 的第一步：当然是从 [Linux 命令](docs/linux/cli/README.md) 入手了。
 
-- [查看 Linux 命令帮助信息](docs/linux/cli/查看Linux命令帮助信息.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
-- [Linux 文件目录管理](docs/linux/cli/Linux文件目录管理.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
-- [Linux 文件内容查看命令](docs/linux/cli/Linux文件内容查看编辑.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
-- [Linux 文件压缩和解压](docs/linux/cli/Linux文件压缩和解压.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
-- [Linux 用户管理](docs/linux/cli/Linux用户管理.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
-- [Linux 系统管理](docs/linux/cli/Linux系统管理.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
-- [Linux 网络管理](docs/linux/cli/Linux网络管理.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
-- [Linux 硬件管理](docs/linux/cli/Linux硬件管理.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-- [Linux 软件管理](docs/linux/cli/Linux硬件管理.md) - 关键词：`rpm`, `yum`, `apt-get`
+- [查看 Linux 命令帮助信息](docs/linux/cli/linux-cli-help.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
+- [Linux 文件目录管理](docs/linux/cli/linux-cli-dir.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
+- [Linux 文件内容查看命令](docs/linux/cli/linux-cli-file.md) - 关键词：`cat`, `head`, `tail`, `more`, `less`, `sed`, `vi`, `grep`
+- [Linux 文件压缩和解压](docs/linux/cli/linux-cli-file-compress.md) - 关键词：`tar`, `gzip`, `zip`, `unzip`
+- [Linux 用户管理](docs/linux/cli/linux-cli-user.md) - 关键词：`groupadd`, `groupdel`, `groupmod`, `useradd`, `userdel`, `usermod`, `passwd`, `su`, `sudo`
+- [Linux 系统管理](docs/linux/cli/linux-cli-system.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
+- [Linux 网络管理](docs/linux/cli/linux-cli-net.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
+- [Linux 硬件管理](docs/linux/cli/linux-cli-hardware.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
+- [Linux 软件管理](docs/linux/cli/linux-cli-software.md) - 关键词：`rpm`, `yum`, `apt-get`
 
-### Linux 系统运维
+### Linux 运维
 
 > Linux 系统的常见运维工作。
 
-- [linux 典型运维应用](docs/linux/ops/linux典型运维应用.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
-- [Samba 应用](docs/linux/ops/samba.md)
-- [Systemd 应用](docs/linux/ops/systemd.md)
-- [Vim 应用](docs/linux/ops/vim.md)
-- [Iptables 应用](docs/linux/ops/iptables.md)
-- [oh-my-zsh 应用](docs/linux/ops/zsh.md)
+- [linux 典型运维应用](docs/linux/ops/linux-base-ops.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
+- [Samba](docs/linux/ops/samba.md)
+- [Systemd](docs/linux/ops/systemd.md)
+- [Vim](docs/linux/ops/vim.md)
+- [Iptables](docs/linux/ops/iptables.md)
+- [oh-my-zsh](docs/linux/ops/zsh.md)
 
 ### 软件运维
 
@@ -67,7 +66,7 @@
   - [Elastic 运维](docs/linux/soft/elastic)
   - [Kafka 运维](docs/linux/soft/kafka-install.md)
   - [RocketMQ 运维](docs/linux/soft/rocketmq-install.md)
-  - [Zookeeper 运维](https://github.com/dunwu/javaweb/blob/master/docs/technology/monitor/zookeeper-ops.md)
+  - [Zookeeper 运维](https://github.com/dunwu/javatech/blob/master/docs/technology/monitor/zookeeper-ops.md)
   - [Nacos 运维](docs/linux/soft/nacos-install.md)
 - 服务器
   - [Nginx 教程 📚](https://github.com/dunwu/nginx-tutorial)
@@ -76,13 +75,15 @@
   - [Mysql 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/sql/mysql/mysql-ops.md)
   - [Redis 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/nosql/redis/redis-ops.md)
 
-### 扩展
+### Docker
 
-- [Docker 教程](docs/docker/README.md)
-  - [Docker 快速入门](docs/docker/docker-quickstart.md)
-  - [Dockerfile 最佳实践](docs/docker/docker-dockerfile.md)
-  - [Docker Cheat Sheet](docs/docker/docker-cheat-sheet.md)
-  - [Kubernetes 应用指南](docs/docker/kubernetes.md)
+- [Docker 快速入门](docs/docker/docker-quickstart.md)
+- [Dockerfile 最佳实践](docs/docker/docker-dockerfile.md)
+- [Docker Cheat Sheet](docs/docker/docker-cheat-sheet.md)
+- [Kubernetes 应用指南](docs/docker/kubernetes.md)
+
+### 其他
+
 - [一篇文章让你彻底掌握 Python](https://github.com/dunwu/blog/blob/master/source/_posts/coding/python.md)
 - [一篇文章让你彻底掌握 Shell](https://github.com/dunwu/blog/blob/master/source/_posts/coding/shell.md)
 - [Git 从入门到精通](https://github.com/dunwu/blog/blob/master/source/_posts/tools/git.md)

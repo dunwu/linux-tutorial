@@ -29,7 +29,7 @@
 
 执行以下任意命令即可执行安装脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zsh-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zsh-install.sh | bash
 ```
@@ -44,7 +44,7 @@ JDK8 会被安装到 `/usr/lib/jvm/java` 路径。
 
 执行以下任意命令即可执行安装脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/jdk8-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/jdk8-install.sh | bash
 ```
@@ -60,7 +60,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/jd
 
 执行以下任意命令即可执行安装脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/maven-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/maven-install.sh | bash
 ```
@@ -75,7 +75,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/ma
 
 执行以下任意命令即可执行安装脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nodejs-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nodejs-install.sh | bash
 ```
@@ -90,7 +90,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/no
 
 执行以下任意命令即可执行安装脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/mongodb-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/mongodb-install.sh | bash
 ```
@@ -107,7 +107,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/mo
 
 - 默认安装 - 执行以下任意命令即可：
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/redis-install.sh | bash
 ```
@@ -115,7 +115,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/re
 - 自定义安装 - 下载脚本到本地，并按照以下格式执行：
 
 
-```sh
+```shell
 sh redis-install.sh [version] [port] [password]
 ```
 
@@ -133,7 +133,7 @@ sh redis-install.sh [version] [port] [password]
 
 使用方法：
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/tomcat8-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/tomcat8-install.sh | bash
 ```
@@ -146,7 +146,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/to
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/kafka-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/kafka-install.sh | bash
 ```
@@ -159,7 +159,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/ka
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/rocketmq-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/rocketmq-install.sh | bash
 ```
@@ -172,7 +172,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/ro
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nacos-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nacos-install.sh | bash
 ```
@@ -185,7 +185,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/na
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zookeeper-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zookeeper-install.sh | bash
 ```
@@ -203,7 +203,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/zo
 - 默认安装 - 执行以下任意命令即可：
 
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nginx-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/nginx-install.sh | bash
 ```
@@ -224,7 +224,7 @@ sh nginx-install.sh [version]
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
 ```
@@ -235,7 +235,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fa
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/docker-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/docker-install.sh | bash
 ```
@@ -246,7 +246,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/do
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/fastdfs-install.sh | bash
 ```

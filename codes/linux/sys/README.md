@@ -19,7 +19,7 @@
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/yum/change-yum-repo.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/yum/change-yum-repo.sh | bash
 ```
@@ -44,7 +44,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/yum
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/install-tools.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/install-tools.sh | bash
 ```
@@ -62,7 +62,7 @@ lib 清单（可以根据需要，在 install-libs.sh 中把不需要的工具�
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/install-libs.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/install-libs.sh | bash
 ```
@@ -71,7 +71,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/ins
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/stop-firewall.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/stop-firewall.sh | bash
 ```
@@ -80,7 +80,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/sto
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-dns.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-dns.sh | bash
 ```
@@ -89,7 +89,7 @@ wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set
 
 使用方法：执行以下任意命令即可执行脚本。
 
-```sh
+```shell
 curl -o- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-ntp.sh | bash
 wget -qO- https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/sys/set-ntp.sh | bash
 ```
