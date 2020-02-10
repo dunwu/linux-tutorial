@@ -1,0 +1,24 @@
+# 持续集成 CI
+# @see https://docs.travis-ci.com/user/tutorial/
+
+language: node_js
+
+sudo: required
+
+node_js: stable
+
+branches:
+  only:
+    - master
+
+before_install:
+  - export TZ=Asia/Shanghai
+
+script: bash ./scripts/deploy.sh
+
+notifications:
+  email:
+    recipients:
+      - forbreak@163.com
+    on_success: change
+    on_failure: always

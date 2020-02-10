@@ -6,9 +6,11 @@
 
 <p align="center">
     <img src="https://badgen.net/github/license/dunwu/linux-tutorial" alt="license">
+    <img src="https://travis-ci.com/dunwu/linux-tutorial.svg?branch=master" alt="build">
 </p>
 
 <h1 align="center">linux-tutorial</h1>
+
 > 📚 **linux-tutorial** 是一个 Linux 教程。
 >
 > 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
