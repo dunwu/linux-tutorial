@@ -1,6 +1,6 @@
 # Linux 命令行
 
-## 常用命令
+## 📖 内容
 
 - [查看 Linux 命令帮助信息](linux-cli-help.md) - 关键词：`help`, `whatis`, `info`, `which`, `whereis`, `man`
 - [Linux 文件目录管理](linux-cli-dir.md) - 关键词：`cd`, `ls`, `pwd`, `mkdir`, `rmdir`, `tree`, `touch`, `ln`, `rename`, `stat`, `file`, `chmod`, `chown`, `locate`, `find`, `cp`, `mv`, `rm`
@@ -12,9 +12,12 @@
 - [Linux 硬件管理](linux-cli-hardware.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
 - [Linux 软件管理](linux-cli-hardware.md) - 关键词：`rpm`, `yum`, `apt-get`
 
-## 资料
+## 📚 资料
 
 - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)
 - [Linux命令大全](https://man.linuxde.net/)
 - [linux-command](https://github.com/jaywcjlove/linux-command)
 
+## 🚪 传送门
+
+◾ 🏠 [DB-TUTORIAL 首页](https://github.com/dunwu/linux-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾

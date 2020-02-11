@@ -1,8 +1,17 @@
-#
+# Linux 系统运维
 
-- [linux 典型运维应用](linux-base-ops.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
+## 📖 内容
+
+- [网络运维](network-ops.md)
 - [Samba](samba.md)
+- [NTP](ntp.md)
+- [Firewalld](firewalld.md)
+- [Crontab](crontab.md)
 - [Systemd](systemd.md)
 - [Vim](vim.md)
 - [Iptables](iptables.md)
 - [oh-my-zsh](zsh.md)
+
+## 🚪 传送门
+
+◾ 🏠 [DB-TUTORIAL 首页](https://github.com/dunwu/linux-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾

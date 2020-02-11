@@ -17,11 +17,7 @@
 >
 > 📖 [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
 
-|      📖       |      🐚       |      📚       |
-| :-----------: | :-----------: | :-----------: |
-| [文章](#文章) | [脚本](#脚本) | [资源](#资源) |
-
-## 文章
+## 📖 内容
 
 ### Linux 命令
 
@@ -41,8 +37,11 @@
 
 > Linux 系统的常见运维工作。
 
-- [linux 典型运维应用](docs/linux/ops/linux-base-ops.md) - 关键词：域名解析、防火墙、网卡、NTP、crontab
+- [网络运维](docs/linux/ops/network-ops.md)
 - [Samba](docs/linux/ops/samba.md)
+- [NTP](docs/linux/ops/ntp.md)
+- [Firewalld](docs/linux/ops/firewalld.md)
+- [Crontab](docs/linux/ops/crontab.md)
 - [Systemd](docs/linux/ops/systemd.md)
 - [Vim](docs/linux/ops/vim.md)
 - [Iptables](docs/linux/ops/iptables.md)
@@ -52,7 +51,7 @@
 
 > 部署在 Linux 系统上的软件运维。
 >
-> 配套安装脚本：🐚 [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
+> 配套安装脚本：⌨ [软件运维配置脚本集合](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/soft)
 
 - 开发环境
   - [JDK 安装](docs/linux/soft/jdk-install.md)
@@ -71,9 +70,9 @@
   - [Zookeeper 运维](https://github.com/dunwu/javatech/blob/master/docs/technology/monitor/zookeeper-ops.md)
   - [Nacos 运维](docs/linux/soft/nacos-install.md)
 - 服务器
-  - [Nginx 教程 📚](https://github.com/dunwu/nginx-tutorial)
+  - [Nginx 教程](https://github.com/dunwu/nginx-tutorial) 📚
   - [Tomcat 运维](docs/linux/soft/tomcat-install.md)
-- [数据库 📚](https://github.com/dunwu/db-tutorial)
+- [数据库](https://github.com/dunwu/db-tutorial) 📚
   - [Mysql 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/sql/mysql/mysql-ops.md)
   - [Redis 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/nosql/redis/redis-ops.md)
 
@@ -90,21 +89,21 @@
 - [一篇文章让你彻底掌握 Shell](https://github.com/dunwu/blog/blob/master/source/_posts/coding/shell.md)
 - [Git 从入门到精通](https://github.com/dunwu/blog/blob/master/source/_posts/tools/git.md)
 
-## 脚本
+## ⌨ 脚本
 
 ### Shell 脚本大全
 
 **Shell 脚本大全** 精心收集、整理了 Linux 环境下的常见 Shell 脚本操作片段。
 
-源码：[**Shell 脚本大全**](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
+源码：[**Shell 脚本大全**](https://github.com/dunwu/linux-tutorial/tree/master/codes/shell)
 
 ### CentOS 运维脚本集合
 
 本人作为一名 Java 后端，苦于经常在 CentOS 环境上开荒虚拟机。为提高效率，写了一套 Shell 脚本，提供如下功能：安装常用 lib 库、命令工具、设置 DNS、NTP、配置国内 yum 源、一键安装常用软件等。
 
-源码：[**CentOS 常规操作运维脚本集合**](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux/sys)
+源码：[**CentOS 常规操作运维脚本集合**](https://github.com/dunwu/linux-tutorial/tree/master/codes/linux)
 
-## 资源
+## 📚 资料
 
 - **Linux 命令**
   - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)

@@ -2,13 +2,13 @@
 
 > 💡 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。
 
-## 1. 网络操作
+## 网络操作
 
-### 1.1. 无法访问外网域名
+### 无法访问外网域名
 
 （1）在 hosts 中添加本机实际 IP 和本机实际域名的映射
 
-```bash
+```shell
 echo "192.168.0.1 hostname" >> /etc/hosts
 ```
 
@@ -18,7 +18,7 @@ echo "192.168.0.1 hostname" >> /etc/hosts
 
 执行 `vi /etc/resolv.conf` ，添加以下内容：
 
-```bash
+```shell
 nameserver 114.114.114.114
 nameserver 8.8.8.8
 ```
@@ -31,59 +31,7 @@ nameserver 8.8.8.8
 
 （3）测试一下能否 ping 通 www.baidu.com
 
-### 1.2. 开启、关闭防火墙
-
-firewalld 的基本使用
-
-```bash
-启动：systemctl start firewalld
-关闭：systemctl stop firewalld
-查看状态：systemctl status firewalld
-开机禁用：systemctl disable firewalld
-开机启用：systemctl enable firewalld
-```
-
-systemctl 是 CentOS7 的服务管理工具中主要的工具，它融合之前 service 和 chkconfig 的功能于一体。
-
-```
-启动一个服务：systemctl start firewalld.service
-关闭一个服务：systemctl stop firewalld.service
-重启一个服务：systemctl restart firewalld.service
-显示一个服务的状态：systemctl status firewalld.service
-在开机时启用一个服务：systemctl enable firewalld.service
-在开机时禁用一个服务：systemctl disable firewalld.service
-查看服务是否开机启动：systemctl is-enabled firewalld.service
-查看已启动的服务列表：systemctl list-unit-files|grep enabled
-查看启动失败的服务列表：systemctl --failed
-```
-
-配置 firewalld-cmd
-
-```
-查看版本：firewall-cmd --version
-查看帮助：firewall-cmd --help
-显示状态：firewall-cmd --state
-查看所有打开的端口：firewall-cmd --zone=public --list-ports
-更新防火墙规则：firewall-cmd --reload
-查看区域信息:  firewall-cmd --get-active-zones
-查看指定接口所属区域：firewall-cmd --get-zone-of-interface=eth0
-拒绝所有包：firewall-cmd --panic-on
-取消拒绝状态：firewall-cmd --panic-off
-查看是否拒绝：firewall-cmd --query-panic
-```
-
-开启防火墙端口
-
-```
-添加：firewall-cmd --zone=public --add-port=80/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）
-重新载入：firewall-cmd --reload
-查看：firewall-cmd --zone= public --query-port=80/tcp
-删除：firewall-cmd --zone= public --remove-port=80/tcp --permanent
-```
-
-> :point_right: 参考：[CentOS7 使用 firewalld 打开关闭防火墙与端口](https://www.cnblogs.com/moxiaoan/p/5683743.html)
-
-### 1.3. 配置网卡
+### 配置网卡
 
 使用 root 权限编辑 `/etc/sysconfig/network-scripts/ifcfg-eno16777736X` 文件
 
@@ -114,54 +62,11 @@ DNS1=8.8.8.8                         # DNS域名解析�
 
 修改完后，执行 `systemctl restart network.service` 重启网卡服务。
 
-## 2. 系统维护
+## 系统维护
 
-### 2.1. 使用 NTP 进行时间同步
+## 自动化脚本
 
-（1）先安装时钟同步工具 ntp
-
-```
-yum -y install ntp
-```
-
-ntp 的配置文件路径为： `/etc/ntp.conf`
-
-（2）启动 NTP 服务
-
-```bash
-systemctl start ntpd.service
-```
-
-（3）放开防火墙 123 端口
-
-NTP 服务的端口是 123,使用的是 udp 协议，所以 NTP 服务器的防火墙必须对外开放 udp 123 这个端口。
-
-```
-/sbin/iptables -A INPUT -p UDP -i eth0 -s 192.168.0.0/24 --dport 123 -j ACCEPT
-```
-
-（4）执行时间同步
-
-```
-/usr/sbin/ntpdate ntp.sjtu.edu.cn
-```
-
-ntp.sjtu.edu.cn 是上海交通大学 ntp 服务器。
-
-（5）自动定时同步时间
-
-执行如下命令，就可以在每天凌晨 3 点同步系统时间：
-
-```
-echo "* 3 * * * /usr/sbin/ntpdate ntp.sjtu.edu.cn" >> /etc/crontab
-systemctl restart crond.service
-```
-
-> :point_right: 参考：https://www.cnblogs.com/quchunhui/p/7658853.html
-
-## 3. 自动化脚本
-
-### 3.1. Linux 开机自启动脚本
+### Linux 开机自启动脚本
 
 （1）在 `/etc/rc.local` 文件中添加命令
 
@@ -174,7 +79,7 @@ systemctl restart crond.service
 
 执行 `vim /etc/rc.local` 命令，输入以下内容：
 
-```bash
+```shell
 #!/bin/sh
 #
 # This script will be executed *after* all the other init scripts.
@@ -195,7 +100,7 @@ Linux 开机的时候，会加载运行 `/etc/rc.d/init.d` 目录下的程序，
 
 简单的说，运行级就是操作系统当前正在运行的功能级别。
 
-```
+```shell
 不同的运行级定义如下:
 # 0 - 停机（千万不能把initdefault 设置为0 ）
 # 1 - 单用户模式       　　进入方法#init s = init 1
@@ -216,14 +121,14 @@ Linux 开机的时候，会加载运行 `/etc/rc.d/init.d` 目录下的程序，
 
 （2）查看当前系统的启动级别
 
-```bash
+```shell
 $ runlevel
 N 3
 ```
 
 （3）设定启动级别
 
-```
+```shell
 #  98 为启动序号
 #  2 是系统的运行级别，可自己调整，注意不要忘了结尾的句点
 $ update-rc.d mysql start 98 2 .
@@ -244,69 +149,14 @@ $ update-rc.d mysql start 98 2 .
 
 > :point_right: 参考：
 >
-> - https://blog.csdn.net/linuxshine/article/details/50717272
-> - https://www.cnblogs.com/ssooking/p/6094740.html
+> - [linux 添加开机自启动脚本示例详解](https://blog.csdn.net/linuxshine/article/details/50717272)
+> - [linux 设置开机自启动](https://www.cnblogs.com/ssooking/p/6094740.html)
 
-### 3.2. 定时执行脚本
+### 定时执行脚本
 
-（1）安装 crontab
+## 配置
 
-（2）开启 crontab 服务
-
-开机自动启动 crond 服务：`chkconfig crond on`
-
-或者，按以下命令手动启动：
-
-```bash
-# 启动服务
-systemctl start crond.service
-# 停止服务
-systemctl stop crond.service
-# 重启服务
-systemctl restart crond.service
-# 重新载入配置
-systemctl reload crond.service
-# 查看状态
-systemctl status crond.service
-```
-
-（3）设置需要执行的脚本
-
-有两种方法：
-
-- 在命令行输入：`crontab -e` 然后添加相应的任务，存盘退出。
-- 直接编辑 `/etc/crontab` 文件，即 `vi /etc/crontab`，添加相应的任务。
-
-示例：
-
-```bash
-SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
-MAILTO=root
-
-# For details see man 4 crontabs
-
-# Example of job definition:
-# .---------------- minute (0 - 59)
-# |  .------------- hour (0 - 23)
-# |  |  .---------- day of month (1 - 31)
-# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
-# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
-# |  |  |  |  |
-# *  *  *  *  * user-name  command to be executed
-
-# 每天早上3点时钟同步
-* 3 * * * /usr/sbin/ntpdate ntp.sjtu.edu.cn
-
-# 每两个小时以root身份执行 /home/hello.sh 脚本
-0 */2 * * * root /home/hello.sh
-```
-
-> :point_right: 参考：[linux 定时执行脚本](https://blog.csdn.net/z_yong_cool/article/details/79288397)
-
-## 4. 配置
-
-### 4.1. 设置 Linux 启动模式
+### 设置 Linux 启动模式
 
 1. 停机(记得不要把 initdefault 配置为 0，因为这样会使 Linux 不能启动)
 2. 单用户模式，就像 Win9X 下的安全模式
@@ -318,12 +168,11 @@ MAILTO=root
 
 设置方法：
 
-```bash
-$ sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
+```shell
+sed -i 's/id:5:initdefault:/id:3:initdefault:/' /etc/inittab
 ```
 
-## 5. 参考资料
+## 参考资料
 
 - [CentOS7 使用 firewalld 打开关闭防火墙与端口](https://www.cnblogs.com/moxiaoan/p/5683743.html)
-
 - [linux 定时执行脚本](https://blog.csdn.net/z_yong_cool/article/details/79288397)
