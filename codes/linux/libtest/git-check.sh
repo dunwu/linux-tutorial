@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+source ../lib/utils.sh
 source ../lib/git.sh
 
 ##################################### MAIN #####################################
@@ -9,13 +10,18 @@ else
     DIR=$(pwd)
 fi
 
-printf "${C_B_BLUE}Current path is: ${DIR} ${C_RESET}\n"
+printInfo "Current path is: ${DIR}."
 
+# 判断是否为 git 项目
 checkGit ${DIR}
 if [[ "${YES}" == "$?" ]]; then
-    printf "${C_B_GREEN}${DIR} is git project.${C_RESET}\n"
-    exit ${YES}
+    printInfo "${DIR} is git project."
 else
-    printf "${C_B_RED}${DIR} is not git project.${C_RESET}\n"
-    exit ${NO}
+    printError "${DIR} is not git project."
 fi
+
+# 获取 git 分支
+getGitLocalBranch
+printInfo "git local branch: ${GIT_LOCAL_BRANCH}"
+getGitOriginBranch
+printInfo "git origin branch: ${GIT_ORIGIN_BRANCH}"

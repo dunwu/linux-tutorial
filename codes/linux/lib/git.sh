@@ -6,24 +6,38 @@
 # ------------------------------------------------------------------------------
 
 # 装载其它库
-ROOT=`dirname ${BASH_SOURCE[0]}`
-source ${ROOT}/env.sh
+LINUX_SCRIPTS_LIB_DIR=`dirname ${BASH_SOURCE[0]}`
+
+if [[ ! -x ${LINUX_SCRIPTS_LIB_DIR}/utils.sh ]]; then
+    logError "必要脚本库 ${LINUX_SCRIPTS_LIB_DIR}/utils.sh 不存在！"
+    exit 1
+fi
+
+source ${LINUX_SCRIPTS_LIB_DIR}/utils.sh
 
 # ------------------------------------------------------------------------------ git 操作函数
 
+GIT_LOCAL_BRANCH=
+getGitLocalBranch() {
+    GIT_LOCAL_BRANCH=$(git symbolic-ref -q --short HEAD)
+}
+
+GIT_ORIGIN_BRANCH=
+getGitOriginBranch() {
+    GIT_ORIGIN_BRANCH=$(git rev-parse --abbrev-ref --symbolic-full-name "@{u}")
+}
+
 # 检查指定的路径是不是一个 git 项目
 checkGit() {
-  local source=$1
-  if [[ -d "${source}" ]]; then
-      cd ${source} || return ${NO}
-      # （1）删除git状态零时文件
-      if [[ -f "gitstatus.tmp" ]]; then
+    local source=$1
+    if [[ -d "${source}" ]]; then
+        cd ${source} || return ${NO}
+        # （1）删除git状态零时文件
+        if [[ -f "gitstatus.tmp" ]]; then
         rm -rf gitstatus.tmp
-      fi
+        fi
 
-      # （2）判断是否存在 .git 目录
-      if [[ -d "./.git" ]]; then
-        # （3）判断git是否可用
+        # （2）判断git是否可用
         git status &> gitstatus.tmp
         local gitStatus=false
         grep -iwq 'not a git repository' gitstatus.tmp && gitStatus=false || gitStatus=true
@@ -33,13 +47,12 @@ checkGit() {
         else
             return ${NO}
         fi
-      fi
 
-      return ${NO}
-  fi
+        return ${NO}
+    fi
 
-  printf "${C_B_YELLOW}${source} is invalid dir.${C_RESET}\n"
-  return ${NO}
+    logError "${source} is invalid dir."
+    return ${NO}
 }
 
 # clone 或 fetch 操作
@@ -54,18 +67,18 @@ cloneOrPullGit() {
     local root=$5
 
     if [[ ! ${repository} ]] || [[ ! ${group} ]] || [[ ! ${project} ]] || [[ ! ${branch} ]] || [[ ! ${root} ]]; then
-        printf "${C_B_YELLOW}Please input root, group, project, branch.${C_RESET}\n"
+        logError "Please input root, group, project, branch."
         return ${FAILED}
     fi
 
     if [[ ! -d "${root}" ]]; then
-        printf "${C_B_YELLOW}${root} is not directory.${C_RESET}\n"
+        logError "${root} is not directory."
         return ${FAILED}
     fi
 
     local source=${root}/${group}/${project}
-    printf "${C_B_MAGENTA}project directory is ${source}.${C_RESET}\n"
-    printf "${C_B_MAGENTA}git url is ${repository}:${group}/${project}.git.${C_RESET}\n"
+    logInfo "project directory is ${source}."
+    logInfo "git url is ${repository}:${group}/${project}.git."
     mkdir -p ${root}/${group}
 
     checkGit ${source}
@@ -75,44 +88,46 @@ cloneOrPullGit() {
 
         git checkout -f ${branch}
         if [[ "${SUCCEED}" != "$?" ]]; then
-            printf "${C_B_RED}<<<< git checkout ${branch} failed.${C_RESET}\n"
+            logError "<<<< git checkout ${branch} failed."
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}git checkout ${branch} succeed.${C_RESET}\n"
+        logInfo "git checkout ${branch} succeed."
 
-        git reset --hard
+        getGitOriginBranch
+        git fetch --all
+        git reset --hard ${GIT_ORIGIN_BRANCH}
         if [[ "${SUCCEED}" != "$?" ]]; then
-            printf "${C_B_RED}<<<< git reset --hard failed.${C_RESET}\n"
+            logError "<<<< git reset --hard ${GIT_ORIGIN_BRANCH} failed."
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}git reset --hard succeed.${C_RESET}\n"
+        logInfo "git reset --hard ${GIT_ORIGIN_BRANCH} succeed."
 
         git pull
         if [[ "${SUCCEED}" != "$?" ]]; then
-            printf "${C_B_RED}<<<< git pull failed.${C_RESET}\n"
+            logError "<<<< git pull failed."
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}git pull succeed.${C_RESET}\n"
+        logInfo "git pull succeed."
     else
         # 如果 ${source} 不是 git 项目，执行 clone 操作
 
         git clone "${repository}:${group}/${project}.git" ${source}
         if [[ "${SUCCEED}" != "$?" ]]; then
-            printf "${C_B_RED}<<<< git clone ${project} failed.${C_RESET}\n"
+            logError "<<<< git clone ${project} failed."
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}git clone ${project} succeed.${C_RESET}\n"
+        logInfo "git clone ${project} succeed."
 
         cd ${source} || return ${FAILED}
 
         git checkout -f ${branch}
         if [[ "${SUCCEED}" != "$?" ]]; then
-            printf "${C_B_RED}<<<< git checkout ${branch} failed.${C_RESET}\n"
+            logError "<<<< git checkout ${branch} failed."
             return ${FAILED}
         fi
-        printf "${C_B_GREEN}git checkout ${branch} succeed.${C_RESET}\n"
+        logInfo "git checkout ${branch} succeed."
     fi
 
-    printf "${C_B_GREEN}Clone or pull git project [$2/$3:$4] succeed.${C_RESET}\n"
+    logInfo "Clone or pull git project [$2/$3:$4] succeed."
     return ${SUCCEED}
 }

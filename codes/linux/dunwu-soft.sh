@@ -1,30 +1,38 @@
 #!/usr/bin/env bash
 
-# ---------------------------------------------------------------------------------
-# 控制台颜色
-BLACK="\033[1;30m"
-RED="\033[1;31m"
-GREEN="\033[1;32m"
-YELLOW="\033[1;33m"
-BLUE="\033[1;34m"
-PURPLE="\033[1;35m"
-CYAN="\033[1;36m"
-RESET="$(tput sgr0)"
-# ---------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# CentOS 常用软件一键安装脚本
+# @author Zhang Peng
+# ------------------------------------------------------------------------------
 
-printf "${BLUE}\n"
+# ------------------------------------------------------------------------------ libs
+# 装载其它库
+LINUX_SCRIPTS_DIR=$(cd `dirname $0`; pwd)
+
+if [[ ! -x ${LINUX_SCRIPTS_DIR}/lib/utils.sh ]]; then
+    logError "必要脚本库 ${LINUX_SCRIPTS_DIR}/lib/utils.sh 不存在！"
+    exit 1
+fi
+
+source ${LINUX_SCRIPTS_DIR}/lib/utils.sh
+
+# ------------------------------------------------------------------------------ functions
+# 打印头部信息
+printHeadInfo() {
+printf "${C_B_BLUE}\n"
 cat << EOF
 ###################################################################################
-# 欢迎使用 Dunwu Shell 软件安装脚本
+# 欢迎使用 CentOS 常用软件一键安装脚本
 # 适用于 Linux CentOS 环境
 # @author: Zhang Peng
 ###################################################################################
 EOF
-printf "${RESET}\n"
+printf "${C_RESET}\n"
+}
 
 # print menu
 printMenu() {
-	printf "${PURPLE}"
+	printf "${C_B_MAGENTA}"
 	menus=( docker fastdfs gitlab jdk8 jenkins kafka maven mongodb mysql nacos nexus nginx nodejs redis rocketmq tomcat8 zookeeper zsh exit )
 	for i in "${!menus[@]}"; do
 		index=`expr ${i} + 1`
@@ -35,7 +43,7 @@ printMenu() {
 		fi
 	done
 
-	printf "\n\n${BLUE}请选择需要安装的软件：${RESET}"
+	printf "\n\n${C_B_BLUE}请选择需要安装的软件：${C_RESET}"
 }
 
 # exec shell to install soft
@@ -46,22 +54,24 @@ main() {
 		no=`expr ${index} - 1`
 		len=${#menus[*]}
 		if [[ ${index} -gt ${len} ]]; then
-			printf "${RED}输入项不支持！\n${RESET}"
-			exit -1
+			logWarn "输入项不支持！"
+			exit 1
 		fi
 		key=${menus[$no]}
 		if [[ ${key} == 'exit' ]]; then
-			printf "${GREEN}退出 Dunwu 软件安装脚本。\n${RESET}"
+			logInfo "退出软件安装脚本。"
 			exit 0
 		fi
 		sh soft/${key}-install.sh
 		printf "\n"
 		main
 	else
-		printf "${RED}输入项不支持！\n${RESET}"
-		exit -1
+		logWarn "输入项不支持！"
+		exit 1
 	fi
 }
 
-######################################## MAIN ########################################
+# ------------------------------------------------------------------------------ main
+
+printHeadInfo
 main

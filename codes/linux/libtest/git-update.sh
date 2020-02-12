@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ../lib/env.sh
+source ../lib/utils.sh
 source ../lib/git.sh
 
 doCloneOrPullGit() {

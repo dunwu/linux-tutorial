@@ -8,7 +8,7 @@
 # ------------------------------------------------------------------------------ env preparation
 # load libs
 CURRENT_PATH=`dirname ${BASH_SOURCE[0]}`
-source ${CURRENT_PATH}/env.sh
+source ${CURRENT_PATH}/utils.sh
 
 # ------------------------------------------------------------------------------ functions
 
