@@ -30,7 +30,7 @@ module.exports = {
         }, {
           text: "Docker 教程", link: "/docker/",
         }, {
-          text: "博客", link: "https://github.com/dunwu/blog", target: "_blank", rel: ""
+          text: "🎯 博客", link: "https://github.com/dunwu/blog", target: "_blank", rel: ""
         }], sidebar: "auto", sidebarDepth: 2
       }
     }

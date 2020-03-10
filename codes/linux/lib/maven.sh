@@ -1,37 +1,41 @@
 #!/usr/bin/env bash
 
-# ------------------------------------------------------------------------------
-# maven 项目操作脚本
+# -----------------------------------------------------------------------------------------------------
+# maven operation utils
 # @author Zhang Peng
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------------------
 
-# 装载其它库
+# ------------------------------------------------------------------------------ load libs
+
 LINUX_SCRIPTS_LIB_DIR=`dirname ${BASH_SOURCE[0]}`
 
 if [[ ! -x ${LINUX_SCRIPTS_LIB_DIR}/utils.sh ]]; then
-    echo "必要脚本库 ${LINUX_SCRIPTS_LIB_DIR}/utils.sh 不存在！"
+    echo "${LINUX_SCRIPTS_LIB_DIR}/utils.sh not exists!"
     exit 1
 fi
 
 source ${LINUX_SCRIPTS_LIB_DIR}/utils.sh
 
-# 执行 maven 操作
-# @param $1: 第一个参数为 maven 项目路径
-# @param $2: 第二个参数为 maven 操作，如 package、install、deploy
-# @param $3: 第三个参数为 maven profile 【非必填】
+
+# ------------------------------------------------------------------------------ functions
+
+# execute maven lifecycle operation
+# @param $1: maven project path
+# @param $2: maven lifecycle, eg. package、install、deploy
+# @param $3: maven profile [optional]
 mavenOperation() {
 	local source=$1
 	local lifecycle=$2
 	local profile=$3
 
 	mavenCheck ${source}
-    if [[ "${SUCCEED}" != "$?" ]]; then
-        return ${FAILED}
+    if [[ "${ENV_SUCCEED}" != "$?" ]]; then
+        return ${ENV_FAILED}
     fi
 
     if [[ ! "${lifecycle}" ]]; then
         logError "please input maven lifecycle"
-        return ${FAILED}
+        return ${ENV_FAILED}
     fi
 
     local mvnCli="mvn clean ${lifecycle} -DskipTests=true -B -U"
@@ -47,25 +51,25 @@ mavenOperation() {
 
     callAndLog "${mvnCli}"
     cd -
-    return ${SUCCEED}
+    return ${ENV_SUCCEED}
 }
 
-# 判断指定路径下是否为 maven 工程
-# @param $1: 第一个参数为 maven 项目路径
+# check specified path is maven project or not
+# @param $1: maven project path
 mavenCheck() {
     local source=$1
     if [[ -d "${source}" ]]; then
 		cd ${source}
 		if [[ -f "${source}/pom.xml" ]]; then
-			return ${YES}
+			return ${ENV_YES}
 		else
 			logError "pom.xml is not exists"
-			return ${NO}
+			return ${ENV_NO}
 		fi
 		cd -
-		return ${YES}
+		return ${ENV_YES}
 	else
 		logError "please input valid maven project path"
-		return ${NO}
+		return ${ENV_NO}
 	fi
 }

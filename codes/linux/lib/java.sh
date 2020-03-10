@@ -94,7 +94,7 @@ startServer() {
 
     # >>>> 3. create log dir and console log file
     mkdir -p ${LOG_PATH}
-    if [[ ! -f ${CONSOLE_LOG} ]]; then
+    if [[ ! -x ${CONSOLE_LOG} ]]; then
         touch ${CONSOLE_LOG}
     fi
 
