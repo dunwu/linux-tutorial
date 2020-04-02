@@ -45,3 +45,18 @@ sudo yum install docker-ce docker-ce-cli containerd.io
 sudo systemctl start docker
 docker version
 printf "${GREEN}<<<<<<<< install docker end.${RESET}\n"
+
+printf "${GREEN}>>>>>>>> replace chinese docker mirror registry${RESET}\n"
+if [[ -f "/etc/docker/daemon.json" ]]; then
+    mv /etc/docker/daemon.json /etc/docker/daemon.json.bak
+else
+    mkdir -p /etc/docker
+fi
+touch /etc/docker/daemon.json
+cat >> /etc/docker/daemon.json << EOF
+{
+  "registry-mirrors": ["https://hub-mirror.c.163.com"]
+}
+EOF
+systemctl daemon-reload
+systemctl restart docker
