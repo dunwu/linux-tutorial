@@ -32,7 +32,7 @@ ELK 是 elastic 公司旗下三款产品 [ElasticSearch](https://www.elastic.co/
 
 ### Elastic 架构
 
-<br>![img](https://www.elastic.co/guide/en/logstash/current/static/images/deploy3.png)<br>
+![img](https://www.elastic.co/guide/en/logstash/current/static/images/deploy3.png)
 
 > **说明**
 >
@@ -274,7 +274,7 @@ output {
 
 大功告成，此后，`io.github.dunwu.spring` 包中的 TRACE 及以上级别的日志信息都会被定向输出到 logstash 服务。
 
-<br>![img](http://upload-images.jianshu.io/upload_images/3101171-cd876d79a14955b0.png)<br>
+![img](http://upload-images.jianshu.io/upload_images/3101171-cd876d79a14955b0.png)
 
 ## 资料
 

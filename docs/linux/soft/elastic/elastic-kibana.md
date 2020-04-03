@@ -4,7 +4,7 @@
 
 单击侧面导航栏中的 `Discover` ，可以显示 `Kibana` 的数据查询功能功能。
 
-<br>![img](https://www.elastic.co/guide/en/kibana/current/images/tutorial-discover.png)<br>
+![img](https://www.elastic.co/guide/en/kibana/current/images/tutorial-discover.png)
 
 在搜索栏中，您可以输入Elasticsearch查询条件来搜索您的数据。您可以在 `Discover` 页面中浏览结果并在 `Visualize` 页面中创建已保存搜索条件的可视化。
 
@@ -14,7 +14,7 @@
 
 默认情况下，每个匹配文档都显示所有字段。要选择要显示的文档字段，请将鼠标悬停在“可用字段”列表上，然后单击要包含的每个字段旁边的添加按钮。例如，如果只添加account_number，则显示将更改为包含五个帐号的简单列表：
 
-<br>![img](https://www.elastic.co/guide/en/kibana/6.1/images/tutorial-discover-3.png)<br>
+![img](https://www.elastic.co/guide/en/kibana/6.1/images/tutorial-discover-3.png)
 
 ### 查询语义
 

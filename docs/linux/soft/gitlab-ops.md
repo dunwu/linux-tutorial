@@ -1,31 +1,16 @@
-# Gitlab 安装
+# Gitlab 运维
 
-> 环境：
->
-> OS: CentOS7
+## gitlab 安装
 
-<!-- TOC depthFrom:2 depthTo:3 -->
+### Gitlab 的普通安装
 
-- [安装 gitlab](#安装-gitlab)
-    - [常规安装 gitlab](#常规安装-gitlab)
-    - [Docker 安装 gitlab](#docker-安装-gitlab)
-- [安装 gitlab-ci-multi-runner](#安装-gitlab-ci-multi-runner)
-    - [常规安装 gitlab-ci-multi-runner](#常规安装-gitlab-ci-multi-runner)
-    - [Docker 安装 gitlab-ci-multi-runner](#docker-安装-gitlab-ci-multi-runner)
-- [自签名证书](#自签名证书)
-    - [创建证书](#创建证书)
-- [gitlab 配置](#gitlab-配置)
-- [更多内容](#更多内容)
+#### 下载
 
-<!-- /TOC -->
 
-## 安装 gitlab
-
-### 常规安装 gitlab
 
 进入官方下载地址：https://about.gitlab.com/install/ ，如下图，选择合适的版本。
 
-<br>![img](http://dunwu.test.upcdn.net/snap/20190129155838.png!zp)<br>
+![img](http://dunwu.test.upcdn.net/snap/20190129155838.png!zp)
 
 以 CentOS7 为例：
 
@@ -65,7 +50,7 @@ sudo EXTERNAL_URL="http://gitlab.example.com" yum install -y gitlab-ce
 
 安装完成后，即可通过默认的 root 账户进行登录。更多细节可以参考：[documentation for detailed instructions on installing and configuration](https://docs.gitlab.com/omnibus/README.html#installation-and-configuration-using-omnibus-package)
 
-### Docker 安装 gitlab
+### Gitlab 的 Docker 安装
 
 拉取镜像
 
@@ -87,9 +72,9 @@ docker run -d \
     gitlab/gitlab-ce
 ```
 
-<br>![img](http://dunwu.test.upcdn.net/snap/20190131150515.png!zp)<br>
+![img](http://dunwu.test.upcdn.net/snap/20190131150515.png!zp)
 
-## 安装 gitlab-ci-multi-runner
+## gitlab-ci-multi-runner 安装
 
 > 参考：https://docs.gitlab.com/runner/install/
 
@@ -138,7 +123,7 @@ sudo gitlab-runner register
 
 URL 和令牌信息在 Gitlab 的 Runner 管理页面获取：
 
-<br>![img](http://dunwu.test.upcdn.net/snap/20190129163100.png!zp)<br>
+![img](http://dunwu.test.upcdn.net/snap/20190129163100.png!zp)
 
 ```
 Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
@@ -302,31 +287,31 @@ sudo gitlab-ctl restart
 
 3. 打开 **Profile settings**.
 
-<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings.png)<br>
+![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings.png)
 
 4. 跳转到 **SSH keys** tab 页
 
-<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys.png)<br>
+![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys.png)
 
 5. 黏贴你的 SSH 公钥内容到 Key 文本框
 
-<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_paste_pub.png)<br>
+![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_paste_pub.png)
 
 6. 为了便于识别，你可以为其命名
 
-<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_title.png)<br>
+![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_title.png)
 
 7. 点击 **Add key** 将 SSH 公钥添加到 GitLab
 
-<br>![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_single_key.png)<br>
+![img](https://docs.gitlab.com/ce/gitlab-basics/img/profile_settings_ssh_keys_single_key.png)
 
 ### 创建项目
 
-<br>![img](http://dunwu.test.upcdn.net/snap/20190131150658.png!zp)<br>
+![img](http://dunwu.test.upcdn.net/snap/20190131150658.png!zp)
 
 输入项目信息，点击 Create project 按钮，在 Gitlab 创建项目。
 
-<br>![img](http://dunwu.test.upcdn.net/snap/20190131150759.png!zp)<br>
+![img](http://dunwu.test.upcdn.net/snap/20190131150759.png!zp)
 
 ### 克隆项目到本地
 
@@ -338,25 +323,44 @@ sudo gitlab-ctl restart
 
 依次点击 **Project’s Dashboard** > **Issues** > **New Issue** 可以新建 Issue
 
-<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_tracker_list.png)<br>
+![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_tracker_list.png)
 
 在项目中直接添加 issue
 
-<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue.png)<br>
+![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue.png)
 
 在未关闭 issue 中，点击 **New Issue** 添加 issue
 
-<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_open_issue.png)<br>
+![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_open_issue.png)
 
 通过项目面板添加 issue
 
-<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_projects_dashboard.png)<br>
+![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_projects_dashboard.png)
 
 通过 issue 面板添加 issue
 
-<br>![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png)<br>
+![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png)
 
-## 更多内容
+## gitlab 权限配置
 
-- **引申**
-  - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
+### 用户组的权限
+
+- 用户组有这几种权限的概念：`Guest、Reporter、Developer、Master、Owner`
+- 这个概念在设置用户组的时候会遇到，叫做：`Add user(s) to the group`，比如链接：`https://<gitlab_host>/<group>`
+
+| 行为       | Guest | Reporter | Developer | Master | Owner |
+| ---------- | ----- | -------- | --------- | ------ | ----- |
+| 浏览组     | ✓     | ✓        | ✓         | ✓      | ✓     |
+| 编辑组     |       |          |           |        | ✓     |
+| 创建项目   |       |          |           | ✓      | ✓     |
+| 管理组成员 |       |          |           |        | ✓     |
+| 移除组     |       |          |           |        |       |
+
+## 资料
+
+- 官网：https://about.gitlab.com/
+- 中文网：https://www.gitlab.com.cn/
+- 官网下载：https://about.gitlab.com/downloads/
+- 官网安装说明：https://about.gitlab.com/installation/#centos-7
+
+- [操作系统、运维部署总结系列](https://github.com/dunwu/OS)

@@ -71,18 +71,38 @@ createLogFileIfNotExists() {
     fi
 }
 
+redOutput() {
+    echo -e "${ENV_COLOR_RED} $@${ENV_COLOR_RESET}"
+}
+greenOutput() {
+    echo -e "${ENV_COLOR_B_GREEN} $@${ENV_COLOR_RESET}"
+}
+yellowOutput() {
+    echo -e "${ENV_COLOR_YELLOW} $@${ENV_COLOR_RESET}"
+}
+blueOutput() {
+    echo -e "${ENV_COLOR_BLUE} $@${ENV_COLOR_RESET}"
+}
+magentaOutput() {
+    echo -e "${ENV_COLOR_MAGENTA} $@${ENV_COLOR_RESET}"
+}
+cyanOutput() {
+    echo -e "${ENV_COLOR_CYAN} $@${ENV_COLOR_RESET}"
+}
+whiteOutput() {
+    echo -e "${ENV_COLOR_WHITE} $@${ENV_COLOR_RESET}"
+}
+
 logInfo() {
     echo -e "${ENV_COLOR_B_GREEN}[INFO] $@${ENV_COLOR_RESET}"
     createLogFileIfNotExists
     echo "[${SHELL_LOG_TIMESTAMP}] [${USER}] [INFO] [$0] $@" >> "${LOG_PATH}"
 }
-
 logWarn() {
     echo -e "${ENV_COLOR_B_YELLOW}[WARN] $@${ENV_COLOR_RESET}"
     createLogFileIfNotExists
     echo "[${SHELL_LOG_TIMESTAMP}] [${USER}] [WARN] [$0] $@" >> "${LOG_PATH}"
 }
-
 logError() {
     echo -e "${ENV_COLOR_B_RED}[ERROR] $@${ENV_COLOR_RESET}"
     createLogFileIfNotExists
@@ -92,11 +112,9 @@ logError() {
 printInfo() {
     echo -e "${ENV_COLOR_B_GREEN}[INFO] $@${ENV_COLOR_RESET}"
 }
-
 printWarn() {
     echo -e "${ENV_COLOR_B_YELLOW}[WARN] $@${ENV_COLOR_RESET}"
 }
-
 printError() {
     echo -e "${ENV_COLOR_B_RED}[ERROR] $@${ENV_COLOR_RESET}"
 }

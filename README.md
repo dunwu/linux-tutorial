@@ -59,8 +59,8 @@
   - [Nodejs 安装](docs/linux/soft/nodejs-install.md)
 - 开发工具
   - [Nexus 运维](docs/linux/soft/nexus-ops.md)
-  - [Gitlab 运维](docs/linux/soft/kafka-install.md)
-  - [Jenkins 运维](docs/linux/soft/jenkins.md)
+  - [Gitlab 运维](docs/linux/soft/gitlab-ops.md)
+  - [Jenkins 运维](docs/linux/soft/jenkins-ops.md)
   - [Svn 运维](docs/linux/soft/svn-ops.md)
   - [YApi 运维](docs/linux/soft/yapi-ops.md)
 - 中间件服务

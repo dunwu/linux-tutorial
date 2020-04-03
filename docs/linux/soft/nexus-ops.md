@@ -4,30 +4,11 @@
 >
 > 关键词：maven, nexus
 >
-> 部署环境
+> 部署环境：
 >
 > - Nexus 3.13.0
 > - JDK 1.8
 > - Maven 3.5.4
-
-<!-- TOC depthFrom:2 depthTo:3 -->
-
-- [1. 安装 Nexus](#1-安装-nexus)
-- [2. 启动/停止 Nexus](#2-启动停止-nexus)
-- [3. 搭建 Maven 私服](#3-搭建-maven-私服)
-  - [3.1. 配置仓库](#31-配置仓库)
-  - [3.2. 配置 settings.xml](#32-配置-settingsxml)
-  - [3.3. 配置 pom.xml](#33-配置-pomxml)
-  - [3.4. 执行 maven 构建](#34-执行-maven-构建)
-- [4. 开机自启动](#4-开机自启动)
-- [5. Nexus 备份和迁移](#5-nexus-备份和迁移)
-  - [5.1. 备份](#51-备份)
-  - [5.2. 迁移](#52-迁移)
-- [6. FAQ](#6-faq)
-  - [6.1. 配置 INSTALL4J_JAVA_HOME](#61-配置-install4j_java_home)
-- [7. 参考资料](#7-参考资料)
-
-<!-- /TOC -->
 
 ## 1. 安装 Nexus
 
@@ -35,7 +16,7 @@
 
 ![img](http://dunwu.test.upcdn.net/snap/20181127203029.png!zp)
 
-本人希望将 Nexus 部署在 Linux 机器，所以选用的是 Unix 版本。
+本人将 Nexus 部署在 Linux 机器，所以选用的是 Unix 版本。
 
 这里，如果想通过命令方式直接下载（比如用脚本安装），可以在[官方历史发布版本页面](https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3)中找到合适版本，然后执行以下命令：
 
@@ -46,8 +27,8 @@ tar -zxf nexus-unix.tar.gz
 
 解压后，有两个目录：
 
-- nexus-3.13.0-01 - 包含了 Nexus 运行所需要的文件。是 Nexus 运行必须的。
-- sonatype-work - 包含了 Nexus 生成的配置文件、日志文件、仓库文件等。当我们需要备份 Nexus 的时候默认备份此目录即可。
+- `nexus-3.13.0-01` - 包含了 Nexus 运行所需要的文件。是 Nexus 运行必须的。
+- `sonatype-work` - 包含了 Nexus 生成的配置文件、日志文件、仓库文件等。当我们需要备份 Nexus 的时候默认备份此目录即可。
 
 ## 2. 启动/停止 Nexus
 

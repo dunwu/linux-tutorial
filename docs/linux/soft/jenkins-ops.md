@@ -98,7 +98,7 @@ Jenkins 是一个强大的 CI 工具，虽然本身使用 Java 开发，但也�
 
 General 是构建任务的一些基本配置。名称，描述之类的。
 
-![](http://dunwu.test.upcdn.net/snap/20200310221814.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310221814.png)
 
 重要配置项：
 
@@ -111,7 +111,7 @@ General 是构建任务的一些基本配置。名称，描述之类的。
 
 **Source Code Management**，即源码管理，就是配置你代码的存放位置。
 
-![](http://dunwu.test.upcdn.net/snap/20200310222110.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310222110.png)
 
 - **Git:** 支持主流的 Github 和 Gitlab 代码仓库。因我们的研发团队使用的是 gitlab，所以下面我只会对该项进行介绍。
 - **Repository URL**：仓库地址。
@@ -124,7 +124,7 @@ General 是构建任务的一些基本配置。名称，描述之类的。
 
 **Build Triggers**，即构建触发器，用于构建任务的触发器。
 
-![](http://dunwu.test.upcdn.net/snap/20200310222608.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310222608.png)
 
 配置说明：
 
@@ -138,7 +138,7 @@ General 是构建任务的一些基本配置。名称，描述之类的。
 
 **Build Environment**，即构建环境，配置构建前的一些准备工作，如指定构建工具。
 
-![](http://dunwu.test.upcdn.net/snap/20200310223004.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310223004.png)
 
 ### Build
 
@@ -146,7 +146,7 @@ Build，即构建。
 
 点击下图中的 Add build step 按钮，会弹出一个构建任务菜单，可以根据实际需要来选择。
 
-![](http://dunwu.test.upcdn.net/snap/20200310223241.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310223241.png)
 
 【说明】
 
@@ -162,11 +162,11 @@ Build，即构建。
 
 **Post-build Actions**，即构建后操作，用于构建完本项目的一些后续操作，比如生成相应的代码测试报告。
 
-![](http://dunwu.test.upcdn.net/snap/20200310224106.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310224106.png)
 
-![](http://dunwu.test.upcdn.net/snap/20200310224254.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310224254.png)
 
-![](http://dunwu.test.upcdn.net/snap/20200310224331.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310224331.png)
 
 个人较常用的配置：
 
@@ -182,13 +182,13 @@ Build，即构建。
 
 ### 开始构建
 
-![](http://dunwu.test.upcdn.net/snap/20200310224927.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310224927.png)
 
 如上图所示，一切配置好后，即可点击 **Build Now** 开始构建。
 
 ### 构建结果
 
-![](http://dunwu.test.upcdn.net/snap/20200310225234.png)
+![img](http://dunwu.test.upcdn.net/snap/20200310225234.png)
 
 - **构建状态**
   - **Successful 蓝色**：构建完成，并且被认为是稳定的。
