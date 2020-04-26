@@ -108,7 +108,7 @@ ENV_MYSQL_DATABASES="${ENV_MYSQL_DATABASES:---all-databases}"
 # 备份路径
 ENV_MYSQL_BACKUP_DIR="${ENV_MYSQL_BACKUP_DIR:-/var/lib/mysql/backup}"
 # 备份日志路径
-export ENV_LOG_PATH="${ENV_MYSQL_BACKUP_DIR}/mysql-backup.log"
+ENV_MYSQL_BACKUP_LOG_PATH="${ENV_MYSQL_BACKUP_DIR}/mysql-backup.log"
 
 magentaOutput "------------------------------------------------------------------------------"
 magentaOutput "Mysql 脚本操作环境变量："
@@ -119,7 +119,7 @@ magentaOutput "ENV_MYSQL_PASSWORD：${ENV_MYSQL_PASSWORD}"
 magentaOutput "ENV_BACKUP_MAX_NUM：${ENV_BACKUP_MAX_NUM}"
 magentaOutput "ENV_MYSQL_DATABASES：${ENV_MYSQL_DATABASES}"
 magentaOutput "ENV_MYSQL_BACKUP_DIR：${ENV_MYSQL_BACKUP_DIR}"
-magentaOutput "ENV_LOG_PATH：${ENV_LOG_PATH}"
+magentaOutput "ENV_MYSQL_BACKUP_LOG_PATH：${ENV_MYSQL_BACKUP_LOG_PATH}"
 magentaOutput "------------------------------------------------------------------------------"
 
 
@@ -133,7 +133,7 @@ backupAllDatabase() {
 
     #备份所有数据库
     printInfo ">>>> 备份所有数据库开始"
-    mysqldump -h ${ENV_MYSQL_HOST} -P${ENV_MYSQL_PORT} -u${ENV_MYSQL_USERNAME} -p${ENV_MYSQL_PASSWORD} --all-databases > "${ENV_MYSQL_BACKUP_DIR}/all-${timestamp}.sql" 2>> ${ENV_LOG_PATH};
+    mysqldump -h ${ENV_MYSQL_HOST} -P${ENV_MYSQL_PORT} -u${ENV_MYSQL_USERNAME} -p${ENV_MYSQL_PASSWORD} --all-databases > "${ENV_MYSQL_BACKUP_DIR}/all-${timestamp}.sql" 2>> ${ENV_MYSQL_BACKUP_LOG_PATH};
 
     #检查备份结果是否成功
     if [[ "$?" != ${ENV_SUCCEED} ]]; then
@@ -172,7 +172,7 @@ backupSelectedDatabase() {
     for database in ${databaseList}; do
 
         printInfo "正在备份数据库：${database}"
-        mysqldump -h ${ENV_MYSQL_HOST} -P${ENV_MYSQL_PORT} -u${ENV_MYSQL_USERNAME} -p${ENV_MYSQL_PASSWORD} "${database}" > "${ENV_MYSQL_BACKUP_DIR}/${database}-${timestamp}.sql" 2>> ${ENV_LOG_PATH};
+        mysqldump -h ${ENV_MYSQL_HOST} -P${ENV_MYSQL_PORT} -u${ENV_MYSQL_USERNAME} -p${ENV_MYSQL_PASSWORD} "${database}" > "${ENV_MYSQL_BACKUP_DIR}/${database}-${timestamp}.sql" 2>> ${ENV_MYSQL_BACKUP_LOG_PATH};
         if [[ "$?" != 0 ]]; then
             printError "<<<< 备份 ${database} 失败"
             return ${ENV_FAILED}
@@ -200,8 +200,8 @@ backupSelectedDatabase() {
 backupMysql() {
     #创建备份目录及日志文件
     mkdir -p ${ENV_MYSQL_BACKUP_DIR}
-    if [[ ! -f ${ENV_LOG_PATH} ]]; then
-         touch ${ENV_LOG_PATH}
+    if [[ ! -f ${ENV_MYSQL_BACKUP_LOG_PATH} ]]; then
+         touch ${ENV_MYSQL_BACKUP_LOG_PATH}
     fi
 
     #正式备份数据库
@@ -216,13 +216,13 @@ backupMysql() {
 recoveryMysql() {
     #创建备份目录及日志文件
     mkdir -p ${ENV_MYSQL_BACKUP_DIR}
-    if [[ ! -f ${ENV_LOG_PATH} ]]; then
-         touch ${ENV_LOG_PATH}
+    if [[ ! -f ${ENV_MYSQL_BACKUP_LOG_PATH} ]]; then
+         touch ${ENV_MYSQL_BACKUP_LOG_PATH}
     fi
 
     printInfo ">>>> 恢复数据库开始"
 
-    mysql -h ${ENV_MYSQL_HOST} -P${ENV_MYSQL_PORT} -u${ENV_MYSQL_USERNAME} -p${ENV_MYSQL_PASSWORD} < ${ENV_LOG_PATH}
+    mysql -h ${ENV_MYSQL_HOST} -P${ENV_MYSQL_PORT} -u${ENV_MYSQL_USERNAME} -p${ENV_MYSQL_PASSWORD} < ${ENV_MYSQL_BACKUP_LOG_PATH}
     if [[ "$?" != 0 ]]; then
         printError "<<<< 恢复数据库失败"
         return ${ENV_FAILED}

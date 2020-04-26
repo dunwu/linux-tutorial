@@ -121,8 +121,10 @@ wget -N https://gitee.com/turnon/linux-tutorial/raw/master/codes/linux/soft/conf
 
 printInfo ">>>> create mysql log file"
 mkdir -p /var/log/mysql
-touch /var/log/mysql/mysql-slow.log
-chmod 777 /var/log/mysql/mysql-slow.log
+touch /var/log/mysql/mysql.log
+touch /var/log/mysql/mysql_slow_query_log.log
+chmod 777 /var/log/mysql/mysql.log
+chmod 777 /var/log/mysql/mysql_slow_query_log.log
 chown -R mysql:mysql /var/log/mysql
 
 printInfo ">>>> modify limits.conf"

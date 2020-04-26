@@ -1,12 +1,10 @@
 # Gitlab 运维
 
-## gitlab 安装
+## 一、gitlab 安装
 
 ### Gitlab 的普通安装
 
 #### 下载
-
-
 
 进入官方下载地址：https://about.gitlab.com/install/ ，如下图，选择合适的版本。
 
@@ -74,7 +72,7 @@ docker run -d \
 
 ![img](http://dunwu.test.upcdn.net/snap/20190131150515.png!zp)
 
-## gitlab-ci-multi-runner 安装
+## 二、gitlab-ci-multi-runner 安装
 
 > 参考：https://docs.gitlab.com/runner/install/
 
@@ -246,7 +244,9 @@ sudo rm -v /etc/gitlab/ssl/gitlab.domain.com.csr
 sudo chmod 600 /etc/gitlab/ssl/gitlab.domain.com.*
 ```
 
-## gitlab 配置
+## 三、gitlab 配置
+
+### 基本配置
 
 ```
 sudo vim /etc/gitlab/gitlab.rb
@@ -277,7 +277,6 @@ sudo cp /etc/gitlab/ssl/gitlab.domain.com.crt /etc/gitlab/trusted-certs/
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 ```
-
 
 ### 创建你的 SSH key
 
@@ -341,7 +340,7 @@ sudo gitlab-ctl restart
 
 ![img](https://docs.gitlab.com/ce/user/project/issues/img/new_issue_from_issue_board.png)
 
-## gitlab 权限配置
+## 四、gitlab 权限配置
 
 ### 用户组的权限
 
@@ -355,6 +354,74 @@ sudo gitlab-ctl restart
 | 创建项目   |       |          |           | ✓      | ✓     |
 | 管理组成员 |       |          |           |        | ✓     |
 | 移除组     |       |          |           |        |       |
+
+## 五、备份/迁移/升级
+
+### 备份
+
+#### 手动备份
+
+执行 `gitlab-rake gitlab:backup:create` 开始备份全量数据，成功后，会在 `/var/opt/gitlab/backups` 下生产一个名称类似 `1585910556_2020_04_03_11.3.0_gitlab_backup.tar` 的压缩包。
+
+### 定时自动备份
+
+可以利用 crontab 来定时执行备份命令。
+
+执行 `vim /etc/crontab` 或 `crontab -e` 手动编辑定时任务。
+
+### 迁移
+
+> 迁移前，需要确保新老机器的 Gitlab 版本号一致。
+
+将备份的压缩包拷贝到新机器的备份路径下（默认为 `/var/opt/gitlab/backups`）。
+
+（1）将备份文件权限修改为777，不然可能恢复的时候会出现权限不够，不能解压的问题
+
+```shell
+chmod 777 1585910556_2020_04_03_11.3.0_gitlab_backup.tar
+```
+
+（2）停止相关数据连接服务
+
+```shell
+gitlab-ctl stop unicorn
+gitlab-ctl stop sidekiq
+```
+
+（3）从备份文件中恢复 Gitlab
+
+```shell
+# gitlab-rake gitlab:backup:restore BACKUP=备份文件编号
+gitlab-rake gitlab:backup:restore BACKUP=1585910556_2020_04_03_11.3.0
+```
+
+### 升级
+
+升级前，一定要做好备份，记录当前 gitlab 的版本号。
+
+第一步还是使用官方命令进行升级。
+
+```shell
+sudo yum install -y gitlab-ce
+```
+
+如果下载速度理想，就无需手动升级安装。不理想就需要`停止自动更新`，并手动下载安装包
+
+访问官方地址，下载对应`版本`，对应`系统`的安装包。
+
+注：可以根据`自动升级时下载的版本`，选择对应文件。
+
+```http
+https://packages.gitlab.com/gitlab/gitlab-ce
+```
+
+安装包手动上传至服务器，并`替换`下载未完成的安装包。下面是升级缓存地址：
+
+```
+/var/cache/yum/x86_64/7/gitlab_gitlab-ce/packages/
+```
+
+再次执行官方升级命令即可完成自动安装。
 
 ## 资料
 

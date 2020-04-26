@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------------------------------
-# 安装 Gitlab 脚本
+# Gitlab 安装脚本
 # 仅适用于 CentOS7 发行版本
+# 官方安裝參考：https://about.gitlab.com/install/#centos-7
 # @author: Zhang Peng
 # -----------------------------------------------------------------------------------------------------
 
@@ -36,11 +37,6 @@ export ENV_SUCCEED=0
 export ENV_FAILED=1
 
 # ------------------------------------------------------------------------------ functions
-
-# 显示打印日志的时间
-SHELL_LOG_TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
-# 那个用户在操作
-USER=$(whoami)
 
 redOutput() {
     echo -e "${ENV_COLOR_RED} $@${ENV_COLOR_RESET}"
@@ -95,18 +91,20 @@ callAndLog () {
 
 # ------------------------------------------------------------------------------ main
 
-printInfo ">>>> 安装 gitlab"
-printInfo ">>>> 安装和配置必要依赖"
+# 官方安裝參考：https://about.gitlab.com/install/#centos-7
+printInfo ">>>> install gitlab on Centos7"
+printInfo ">>>> Install and configure the necessary dependencies"
 yum install -y curl policycoreutils-python openssh-server
 systemctl enable sshd
 systemctl start sshd
-printInfo ">>>> 关闭防火墙"
-firewall-cmd --permanent --add-service=http
-systemctl reload firewalld
-printInfo ">>>> 安装和配置邮件服务"
+printInfo ">>>> open http, https and ssh access in the system firewall"
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo systemctl reload firewalld
+printInfo ">>>> install postfix"
 yum install postfix
 systemctl enable postfix
 systemctl start postfix
-printInfo ">>>> 通过 yum 安装 gitlab"
+printInfo ">>>> Add the GitLab package repository and install the package"
 curl -o- https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh | bash
 EXTERNAL_URL="http://gitlab.transwarp.io" yum install -y gitlab-ce

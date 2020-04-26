@@ -29,7 +29,7 @@ firewall-cmd --query-panic                # 查看是否拒绝
 
 firewall-cmd --zone=public --list-ports   # 查看所有打开的端口
 firewall-cmd --zone=public --query-port=80/tcp # 查看是否有开放的 80 TCP 端口
-firewall-cmd --zone=public --add-port=80/tcp --permanent # 添加开发端口（--permanent永久生效，没有此参数重启后失效）
+firewall-cmd --zone=public --add-port=8080/tcp --permanent # 添加开放端口（--permanent永久生效，没有此参数重启后失效）
 firewall-cmd --zone=public --remove-port=80/tcp --permanent # 永久删除开放的 80 TCP 端口
 ```
 
