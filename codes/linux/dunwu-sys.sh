@@ -145,6 +145,7 @@ EOF
 printf "${C_RESET}\n"
 }
 
+LINUX_SCRIPTS_DIR=$(cd `dirname $0`; pwd)
 menus=( "替换yum镜像" "安装基本的命令工具" "安装常用libs" "系统配置" "全部执行" "退出" )
 main() {
 	PS3="请输入命令编号："
