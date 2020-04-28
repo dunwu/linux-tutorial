@@ -72,6 +72,60 @@ docker run -d \
 
 ![img](http://dunwu.test.upcdn.net/snap/20190131150515.png!zp)
 
+### 自签名证书
+
+首先，创建认证目录
+
+```
+sudo mkdir -p /etc/gitlab/ssl
+sudo chmod 700 /etc/gitlab/ssl
+```
+
+（1）创建 Private Key
+
+```
+sudo openssl genrsa -des3 -out /etc/gitlab/ssl/gitlab.domain.com.key 2048
+```
+
+会提示输入密码，请记住
+
+（2）生成 Certificate Request
+
+```
+sudo openssl req -new -key /etc/gitlab/ssl/gitlab.domain.com.key -out /etc/gitlab/ssl/gitlab.domain.com.csr
+```
+
+根据提示，输入信息
+
+```
+Country Name (2 letter code) [XX]:CN
+State or Province Name (full name) []:JS
+Locality Name (eg, city) [Default City]:NJ
+Organization Name (eg, company) [Default Company Ltd]:xxxxx
+Organizational Unit Name (eg, section) []:
+Common Name (eg, your name or your server's hostname) []:gitlab.xxxx.io
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+```
+
+（3）移除 Private Key 中的密码短语
+
+```
+sudo cp -v /etc/gitlab/ssl/gitlab.domain.com.{key,original}
+sudo openssl rsa -in /etc/gitlab/ssl/gitlab.domain.com.original -out /etc/gitlab/ssl/gitlab.domain.com.key
+sudo rm -v /etc/gitlab/ssl/gitlab.domain.com.original
+```
+
+（4）设置文件权限
+
+```
+sudo chmod 600 /etc/gitlab/ssl/gitlab.domain.com.*
+```
+
 ## 二、gitlab-ci-multi-runner 安装
 
 > 参考：https://docs.gitlab.com/runner/install/
@@ -174,74 +228,6 @@ docker run -d --name gitlab-runner --restart always \
    -v /srv/gitlab-runner/config:/etc/gitlab-runner \
    -v /var/run/docker.sock:/var/run/docker.sock \
    gitlab/gitlab-runner:latest
-```
-
-## 自签名证书
-
-首先，创建认证目录
-
-```
-sudo mkdir -p /etc/gitlab/ssl
-sudo chmod 700 /etc/gitlab/ssl
-```
-
-### 创建证书
-
-#### 创建 Private Key
-
-```
-sudo openssl genrsa -des3 -out /etc/gitlab/ssl/gitlab.domain.com.key 2048
-```
-
-会提示输入密码，请记住
-
-#### 生成 Certificate Request
-
-```
-sudo openssl req -new -key /etc/gitlab/ssl/gitlab.domain.com.key -out /etc/gitlab/ssl/gitlab.domain.com.csr
-```
-
-根据提示，输入信息
-
-```
-Country Name (2 letter code) [XX]:CN
-State or Province Name (full name) []:JS
-Locality Name (eg, city) [Default City]:NJ
-Organization Name (eg, company) [Default Company Ltd]:xxxxx
-Organizational Unit Name (eg, section) []:
-Common Name (eg, your name or your server's hostname) []:gitlab.xxxx.io
-Email Address []:
-
-Please enter the following 'extra' attributes
-to be sent with your certificate request
-A challenge password []:
-An optional company name []:
-```
-
-#### 移除 Private Key 中的密码短语
-
-```
-sudo cp -v /etc/gitlab/ssl/gitlab.domain.com.{key,original}
-sudo openssl rsa -in /etc/gitlab/ssl/gitlab.domain.com.original -out /etc/gitlab/ssl/gitlab.domain.com.key
-sudo rm -v /etc/gitlab/ssl/gitlab.domain.com.original
-```
-
-#### 创建证书
-
-```
-sudo openssl x509 -req -days 1460 -in /etc/gitlab/ssl/gitlab.domain.com.csr -signkey /etc/gitlab/ssl/gitlab.domain.com.key -out /etc/gitlab/ssl/gitlab.domain.com.crt
-```
-
-#### 移除证书请求文件
-
-```
-sudo rm -v /etc/gitlab/ssl/gitlab.domain.com.csr
-```
-
-#### 设置文件权限
-
-```
-sudo chmod 600 /etc/gitlab/ssl/gitlab.domain.com.*
 ```
 
 ## 三、gitlab 配置
@@ -375,7 +361,7 @@ sudo gitlab-ctl restart
 
 将备份的压缩包拷贝到新机器的备份路径下（默认为 `/var/opt/gitlab/backups`）。
 
-（1）将备份文件权限修改为777，不然可能恢复的时候会出现权限不够，不能解压的问题
+（1）将备份文件权限修改为 777，不然可能恢复的时候会出现权限不够，不能解压的问题
 
 ```shell
 chmod 777 1585910556_2020_04_03_11.3.0_gitlab_backup.tar
@@ -423,11 +409,10 @@ https://packages.gitlab.com/gitlab/gitlab-ce
 
 再次执行官方升级命令即可完成自动安装。
 
-## 资料
+## 参考资料
 
 - 官网：https://about.gitlab.com/
 - 中文网：https://www.gitlab.com.cn/
 - 官网下载：https://about.gitlab.com/downloads/
 - 官网安装说明：https://about.gitlab.com/installation/#centos-7
-
 - [操作系统、运维部署总结系列](https://github.com/dunwu/OS)
