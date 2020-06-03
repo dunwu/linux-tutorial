@@ -152,3 +152,7 @@
   - [东北大学](http://mirror.neu.edu.cn/)
   - [浙江大学](http://mirrors.zju.edu.cn/)
   - [东软信息学院](http://mirrors.neusoft.edu.cn/)
+
+## 🚪 传送门
+
+◾ 🏠 [LINUX-TUTORIAL 首页](https://github.com/dunwu/linux-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
