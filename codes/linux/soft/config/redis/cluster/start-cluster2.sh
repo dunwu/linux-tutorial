@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-PORT=6380
-NODES=6
-ENDPORT=$((PORT+NODES))
-
 # 启动 4 个 redis server
-while [[ $((PORT < ENDPORT)) != "0" ]]; do
-    PORT=$((PORT+1))
-    echo "Starting $PORT"
-    /opt/redis/src/redis-server /usr/local/redis/conf/${PORT}/redis.conf
-done
+/opt/redis/src/redis-server /usr/local/redis/conf/6381/redis.conf
+/opt/redis/src/redis-server /usr/local/redis/conf/6382/redis.conf
+/opt/redis/src/redis-server /usr/local/redis/conf/6383/redis.conf
+/opt/redis/src/redis-server /usr/local/redis/conf/6384/redis.conf
+/opt/redis/src/redis-server /usr/local/redis/conf/6385/redis.conf
+/opt/redis/src/redis-server /usr/local/redis/conf/6386/redis.conf
 
 # 创建集群模式，设置副本为 1
 # redis cluster 会自动将 4 个节点设置为 一主一从 模式，并且为两个主节点做数据分片
