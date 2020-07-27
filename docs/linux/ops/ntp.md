@@ -148,7 +148,7 @@ $ ntpdate cn.pool.ntp.org
 示例：执行如下命令，就可以在每天凌晨 3 点同步系统时间：
 
 ```shell
-echo "* 3 * * * /usr/sbin/ntpdate cn.pool.ntp.org" >> /etc/crontab # 修改 crond 服务配置
+echo "0 3 * * * /usr/sbin/ntpdate cn.pool.ntp.org" >> /etc/crontab # 修改 crond 服务配置
 systemctl restart crond # 重启 crond 服务以生效
 ```
 
