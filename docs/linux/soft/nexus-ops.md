@@ -103,7 +103,7 @@ Nexus 中的仓库有以下类型：
 
 参考配置如下：
 
-![](http://dunwu.test.upcdn.net/snap/20200403165258.png)
+![img](http://dunwu.test.upcdn.net/snap/20200403165258.png)
 
 推荐配置的代理仓库：
 
@@ -112,7 +112,7 @@ Nexus 中的仓库有以下类型：
 
 ### 配置 yum 仓库
 
-![](http://dunwu.test.upcdn.net/snap/20200403201609.png)
+![img](http://dunwu.test.upcdn.net/snap/20200403201609.png)
 
 推荐配置的 yum 代理仓库：
 
@@ -146,7 +146,7 @@ Nexus 内置了多个定时任务，可以执行清理。
 
 【示例】定期清理 SNAPSHOST
 
-![](http://dunwu.test.upcdn.net/snap/20200403173030.png)
+![img](http://dunwu.test.upcdn.net/snap/20200403173030.png)
 
 ## 三、开机自启动
 
