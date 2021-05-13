@@ -1,13 +1,14 @@
 ---
 home: true
-heroImage: /images/dunwu-logo-200.png
+heroImage: https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo-200.png
 heroText: LINUX-TUTORIAL
 tagline: 📚 linux-tutorial 是一个 Linux 教程。
 actionLink: /
 footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 ---
 
-# Linux 教程
+![license](https://badgen.net/github/license/dunwu/linux-tutorial)
+![build](https://travis-ci.com/dunwu/linux-tutorial.svg?branch=master)
 
 > 📚 **linux-tutorial** 是一个 Linux 教程。
 >

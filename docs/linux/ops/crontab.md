@@ -65,7 +65,7 @@ crontab 要执行的定时任务都被保存在 `/etc/crontab` 文件中。
 
 crontab 的文件格式如下：
 
-![img](http://dunwu.test.upcdn.net/snap/20200211113339.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200211113339.png)
 
 #### 标准字段
 

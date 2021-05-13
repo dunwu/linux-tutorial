@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://dunwu.github.io/linux-tutorial/" target="_blank" rel="noopener noreferrer">
-        <img src="http://dunwu.test.upcdn.net/common/logo/linux.svg" alt="logo" width="100px">
+        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/logo/linux.svg" alt="logo" width="100px">
     </a>
 </p>
 
@@ -13,9 +13,8 @@
 
 > 📚 **linux-tutorial** 是一个 Linux 教程。
 >
-> 🔁 项目同步维护在 [github](https://github.com/dunwu/linux-tutorial) | [gitee](https://gitee.com/turnon/linux-tutorial)
->
-> 📖 [电子书](https://dunwu.github.io/linux-tutorial/) | [电子书（国内）](http://turnon.gitee.io/linux-tutorial/)
+> - 🔁 项目同步维护：[Github](https://github.com/dunwu/linux-tutorial/) | [Gitee](https://gitee.com/turnon/linux-tutorial/)
+> - 📖 电子书阅读：[Github Pages](https://dunwu.github.io/linux-tutorial/) | [Gitee Pages](http://turnon.gitee.io/linux-tutorial/)
 
 ## 📖 内容
 

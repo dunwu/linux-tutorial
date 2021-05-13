@@ -31,7 +31,7 @@ Docker 将应用程序与该程序的依赖，打包在一个文件里面。运�
 - **更轻松的迁移** - 由于 `Docker` 确保了执行环境的一致性，使得应用的迁移更加容易。`Docker` 可以在很多平台上运行，无论是物理机、虚拟机、公有云、私有云，甚至是笔记本，其运行结果是一致的。因此用户可以很轻易的将在一个平台上运行的应用，迁移到另一个平台上，而不用担心运行环境的变化导致应用无法正常运行的情况。
 - **更轻松的维护和扩展** - `Docker` 使用的分层存储以及镜像的技术，使得应用重复部分的复用更为容易，也使得应用的维护更新更加简单，基于基础镜像进一步扩展镜像也变得非常简单。此外，`Docker` 团队同各个开源项目团队一起维护了一大批高质量的 [官方镜像](https://hub.docker.com/search/?type=image&image_filter=official)，既可以直接在生产环境使用，又可以作为基础进一步定制，大大的降低了应用服务的镜像制作成本。
 
-![img](http://dunwu.test.upcdn.net/cs/os/docker/containers-and-vm.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/cs/os/docker/containers-and-vm.png)
 
 ### Docker 的主要用途
 

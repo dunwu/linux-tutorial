@@ -14,7 +14,7 @@
 
 进入[官方下载地址](https://www.sonatype.com/download-oss-sonatype)，选择合适版本下载。
 
-![img](http://dunwu.test.upcdn.net/snap/20181127203029.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20181127203029.png)
 
 本人将 Nexus 部署在 Linux 机器，所以选用的是 Unix 版本。
 
@@ -69,7 +69,7 @@ Usage: ./nexus {start|stop|run|run-redirect|status|restart|force-reload}
 
 Nexus 的默认启动端口为 `8081`，启动成功后，在浏览器中访问 `http://<ip>:8081`，欢迎页面如下图所示：
 
-![img](http://dunwu.test.upcdn.net/snap/20181127203131.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20181127203131.png)
 
 点击右上角 Sign in 登录，默认用户名/密码为：`admin/admin123`。
 
@@ -82,7 +82,7 @@ Nexus 中的仓库有以下类型：
 - `virtual` - 虚拟仓库。用于适配 Maven 1；
 - `group` - 仓库组。Nexus 通过仓库组的概念统一管理多个仓库，这样我们在项目中直接请求仓库组即可请求到仓库组管理的多个仓库。
 
-![img](http://dunwu.test.upcdn.net/cs/java/javalib/maven/nexus.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/cs/java/javalib/maven/nexus.png)
 
 建议配置如下：
 
@@ -95,7 +95,7 @@ Nexus 中的仓库有以下类型：
 - **group 仓库**
   - **maven-public** - 私有仓库的公共空间，把上面三个仓库组合在一起对外提供服务，在本地 maven 基础配置 settings.xml 中使用。
 
-![img](http://dunwu.test.upcdn.net/snap/20181127203156.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20181127203156.png)
 
 > 其中：
 >
@@ -103,7 +103,7 @@ Nexus 中的仓库有以下类型：
 
 参考配置如下：
 
-![img](http://dunwu.test.upcdn.net/snap/20200403165258.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200403165258.png)
 
 推荐配置的代理仓库：
 
@@ -112,7 +112,7 @@ Nexus 中的仓库有以下类型：
 
 ### 配置 yum 仓库
 
-![img](http://dunwu.test.upcdn.net/snap/20200403201609.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200403201609.png)
 
 推荐配置的 yum 代理仓库：
 
@@ -146,7 +146,7 @@ Nexus 内置了多个定时任务，可以执行清理。
 
 【示例】定期清理 SNAPSHOST
 
-![img](http://dunwu.test.upcdn.net/snap/20200403173030.png)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20200403173030.png)
 
 ## 三、开机自启动
 

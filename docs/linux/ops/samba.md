@@ -149,7 +149,7 @@ Windows：
 
 访问：`\\<你的ip>\<你的共享路径>` ：
 
-![img](http://dunwu.test.upcdn.net/snap/20180920180928161334.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20180920180928161334.png)
 
 Mac：
 

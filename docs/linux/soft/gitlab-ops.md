@@ -8,7 +8,7 @@
 
 进入官方下载地址：https://about.gitlab.com/install/ ，如下图，选择合适的版本。
 
-![img](http://dunwu.test.upcdn.net/snap/20190129155838.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20190129155838.png)
 
 以 CentOS7 为例：
 
@@ -70,7 +70,7 @@ docker run -d \
     gitlab/gitlab-ce
 ```
 
-![img](http://dunwu.test.upcdn.net/snap/20190131150515.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20190131150515.png)
 
 ### 自签名证书
 
@@ -175,7 +175,7 @@ sudo gitlab-runner register
 
 URL 和令牌信息在 Gitlab 的 Runner 管理页面获取：
 
-![img](http://dunwu.test.upcdn.net/snap/20190129163100.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20190129163100.png)
 
 ```
 Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com )
@@ -292,11 +292,11 @@ sudo gitlab-ctl restart
 
 ### 创建项目
 
-![img](http://dunwu.test.upcdn.net/snap/20190131150658.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20190131150658.png)
 
 输入项目信息，点击 Create project 按钮，在 Gitlab 创建项目。
 
-![img](http://dunwu.test.upcdn.net/snap/20190131150759.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20190131150759.png)
 
 ### 克隆项目到本地
 

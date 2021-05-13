@@ -59,7 +59,7 @@ yum install -y git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zl
 mkdir -p ${path}
 path=/opt/fdfs
 mkdir -p ${path}/libfastcommon
-curl -o ${path}/libfastcommon.zip http://dunwu.test.upcdn.net/soft/fdfs/libfastcommon.zip
+curl -o ${path}/libfastcommon.zip https://raw.githubusercontent.com/dunwu/images/dev/soft/fdfs/libfastcommon.zip
 if [[ ! -f ${path}/libfastcommon.zip ]]; then
 	printf "${RED}[Error]install libfastcommon failed，exit. ${RESET}\n"
 	exit 1
@@ -73,7 +73,7 @@ chmod +x -R ${path}/libfastcommon/*.sh
 
 printf "${GREEN}>>>>>>>>> install fastdfs${RESET}"
 mkdir -p ${path}/fastdfs
-curl -o ${path}/fastdfs.zip http://dunwu.test.upcdn.net/soft/fdfs/fastdfs.zip
+curl -o ${path}/fastdfs.zip https://raw.githubusercontent.com/dunwu/images/dev/soft/fdfs/fastdfs.zip
 if [[ ! -f ${path}/fastdfs.zip ]]; then
 	printf "${RED}>>>>>>>>> install fastdfs failed，exit. ${RESET}\n"
 fi
@@ -84,7 +84,7 @@ chmod +x -R ${path}/fastdfs/*.sh
 
 printf "${GREEN}>>>>>>>>> install fastdfs-nginx-module${RESET}\n"
 mkdir -p ${path}/fastdfs-nginx-module
-curl -o ${path}/fastdfs-nginx-module.zip http://dunwu.test.upcdn.net/soft/fdfs/fastdfs-nginx-module.zip
+curl -o ${path}/fastdfs-nginx-module.zip https://raw.githubusercontent.com/dunwu/images/dev/soft/fdfs/fastdfs-nginx-module.zip
 if [[ ! -f ${path}/fastdfs-nginx-module.zip ]]; then
 	printf "${RED}>>>>>>>>> install fastdfs-nginx-module failed，exit. ${RESET}\n"
 fi

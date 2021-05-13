@@ -7,7 +7,7 @@
 - [JDK 安装步骤](#jdk-安装步骤)
 - [Windows 系统安装方法](#windows-系统安装方法)
 - [Linux 系统安装方法](#linux-系统安装方法)
-    - [RedHat 发行版本使用 rpm 安装方法](#redhat-发行版本使用-rpm-安装方法)
+  - [RedHat 发行版本使用 rpm 安装方法](#redhat-发行版本使用-rpm-安装方法)
 - [参考资料](#参考资料)
 
 <!-- /TOC -->
@@ -22,13 +22,13 @@ a. 进入 [Java 官网下载页面](https://www.oracle.com/technetwork/java/java
 
 b. 选择需要的版本：
 
-![img](http://dunwu.test.upcdn.net/snap/20180920181010164121.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20180920181010164121.png)
 
 c. 选择对应操作系统的安装包：
 
 Windows 系统选择 exe 安装包；Mac 系统选择 dmp 安装包；Linux 系统选择 tar.gz 压缩包（RedHat 发行版可以安装 rpm 包）。
 
-![img](http://dunwu.test.upcdn.net/snap/20180920181010164308.png!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20180920181010164308.png)
 
 （2）运行安装包，按提示逐步安装
 

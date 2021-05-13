@@ -49,7 +49,7 @@ Kubernetes 主要由以下几个核心组件组成：
 
 K8S 包含若干抽象用来表示系统状态，包括：已部署的容器化应用和负载、与它们相关的网络和磁盘资源以及有关集群正在运行的其他操作的信息。
 
-![img](http://dunwu.test.upcdn.net/cs/os/kubernetes/pod.svg!zp)
+![img](https://raw.githubusercontent.com/dunwu/images/dev/cs/os/kubernetes/pod.svg)
 
 - `Pod` - K8S 使用 Pod 来管理容器，每个 Pod 可以包含一个或多个紧密关联的容器。Pod 是一组紧密关联的容器集合，它们共享 PID、IPC、Network 和 UTS namespace，是 K8S 调度的基本单位。Pod 内的多个容器共享网络和文件系统，可以通过进程间通信和文件共享这种简单高效的方式组合完成服务。
 - `Node` - Node 是 Pod 真正运行的主机，可以是物理机，也可以是虚拟机。为了管理 Pod，每个 Node 节点上至少要运行 container runtime（比如 docker 或者 rkt）、`kubelet` 和 `kube-proxy` 服务。
