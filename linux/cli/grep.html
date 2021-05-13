@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>grep | LINUX-TUTORIAL</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/linux-tutorial/favicon.ico">
+    <meta name="description" content="数据库教程">
+    
+    <link rel="preload" href="/linux-tutorial/assets/css/0.styles.45d9d031.css" as="style"><link rel="preload" href="/linux-tutorial/assets/js/app.79a38eea.js" as="script"><link rel="preload" href="/linux-tutorial/assets/js/4.fb6e0f89.js" as="script"><link rel="preload" href="/linux-tutorial/assets/js/21.1c5a41d7.js" as="script"><link rel="preload" href="/linux-tutorial/assets/js/5.cb43ecfb.js" as="script"><link rel="prefetch" href="/linux-tutorial/assets/js/10.7933187b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/11.b9b41530.js"><link rel="prefetch" href="/linux-tutorial/assets/js/12.70a5dba8.js"><link rel="prefetch" href="/linux-tutorial/assets/js/13.857dcc43.js"><link rel="prefetch" href="/linux-tutorial/assets/js/14.5a603a55.js"><link rel="prefetch" href="/linux-tutorial/assets/js/15.d217acb7.js"><link rel="prefetch" href="/linux-tutorial/assets/js/16.ad565eae.js"><link rel="prefetch" href="/linux-tutorial/assets/js/17.d43e9f56.js"><link rel="prefetch" href="/linux-tutorial/assets/js/18.aa00ff43.js"><link rel="prefetch" href="/linux-tutorial/assets/js/19.43ce44b3.js"><link rel="prefetch" href="/linux-tutorial/assets/js/20.5618e1ff.js"><link rel="prefetch" href="/linux-tutorial/assets/js/22.fbe9fdf1.js"><link rel="prefetch" href="/linux-tutorial/assets/js/23.a4fb0e74.js"><link rel="prefetch" href="/linux-tutorial/assets/js/24.e3a23b69.js"><link rel="prefetch" href="/linux-tutorial/assets/js/25.9896afe9.js"><link rel="prefetch" href="/linux-tutorial/assets/js/26.96164082.js"><link rel="prefetch" href="/linux-tutorial/assets/js/27.391033bb.js"><link rel="prefetch" href="/linux-tutorial/assets/js/28.703f74c2.js"><link rel="prefetch" href="/linux-tutorial/assets/js/29.02a952cb.js"><link rel="prefetch" href="/linux-tutorial/assets/js/30.7e13628f.js"><link rel="prefetch" href="/linux-tutorial/assets/js/31.c4652f75.js"><link rel="prefetch" href="/linux-tutorial/assets/js/32.05d2cbec.js"><link rel="prefetch" href="/linux-tutorial/assets/js/33.3b265df8.js"><link rel="prefetch" href="/linux-tutorial/assets/js/34.26330a03.js"><link rel="prefetch" href="/linux-tutorial/assets/js/35.417d706d.js"><link rel="prefetch" href="/linux-tutorial/assets/js/36.0ed775e0.js"><link rel="prefetch" href="/linux-tutorial/assets/js/37.34430c74.js"><link rel="prefetch" href="/linux-tutorial/assets/js/38.87d5e0ff.js"><link rel="prefetch" href="/linux-tutorial/assets/js/39.7b648b3e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/40.3b7a219e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/41.e727eee9.js"><link rel="prefetch" href="/linux-tutorial/assets/js/42.0134c187.js"><link rel="prefetch" href="/linux-tutorial/assets/js/43.175e982f.js"><link rel="prefetch" href="/linux-tutorial/assets/js/44.72d90888.js"><link rel="prefetch" href="/linux-tutorial/assets/js/45.d49955bd.js"><link rel="prefetch" href="/linux-tutorial/assets/js/46.a9c290ec.js"><link rel="prefetch" href="/linux-tutorial/assets/js/47.cc639f04.js"><link rel="prefetch" href="/linux-tutorial/assets/js/48.98c78321.js"><link rel="prefetch" href="/linux-tutorial/assets/js/49.a7c3afed.js"><link rel="prefetch" href="/linux-tutorial/assets/js/50.22d8c542.js"><link rel="prefetch" href="/linux-tutorial/assets/js/51.28055fcd.js"><link rel="prefetch" href="/linux-tutorial/assets/js/52.f8103df5.js"><link rel="prefetch" href="/linux-tutorial/assets/js/53.76541550.js"><link rel="prefetch" href="/linux-tutorial/assets/js/54.e78d2776.js"><link rel="prefetch" href="/linux-tutorial/assets/js/55.3ce3079c.js"><link rel="prefetch" href="/linux-tutorial/assets/js/56.832958c9.js"><link rel="prefetch" href="/linux-tutorial/assets/js/57.961ce896.js"><link rel="prefetch" href="/linux-tutorial/assets/js/58.6d6fbc82.js"><link rel="prefetch" href="/linux-tutorial/assets/js/59.d5e48112.js"><link rel="prefetch" href="/linux-tutorial/assets/js/6.c8f4721c.js"><link rel="prefetch" href="/linux-tutorial/assets/js/60.7927b23b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/61.ee233f24.js"><link rel="prefetch" href="/linux-tutorial/assets/js/62.6ba50cc7.js"><link rel="prefetch" href="/linux-tutorial/assets/js/63.9cbf9f2b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/64.0be148a4.js"><link rel="prefetch" href="/linux-tutorial/assets/js/65.c520257e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/66.f2335390.js"><link rel="prefetch" href="/linux-tutorial/assets/js/67.e5737218.js"><link rel="prefetch" href="/linux-tutorial/assets/js/68.46427a01.js"><link rel="prefetch" href="/linux-tutorial/assets/js/69.450417bb.js"><link rel="prefetch" href="/linux-tutorial/assets/js/7.046e5a1b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/70.072034d2.js"><link rel="prefetch" href="/linux-tutorial/assets/js/8.77fb8967.js"><link rel="prefetch" href="/linux-tutorial/assets/js/9.ebfa537e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/vendors~flowchart.20a64d45.js"><link rel="prefetch" href="/linux-tutorial/assets/js/vendors~notification.ea176280.js">
+    <link rel="stylesheet" href="/linux-tutorial/assets/css/0.styles.45d9d031.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/linux-tutorial/" class="home-link router-link-active"><img src="images/dunwu-logo-100.png" alt="LINUX-TUTORIAL" class="logo"> <span class="site-name can-hide">LINUX-TUTORIAL</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/linux-tutorial/linux/cli/" class="nav-link router-link-active">
+  Linux 命令
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/ops/" class="nav-link">
+  Linux 运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/soft/" class="nav-link">
+  Linux 软件运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/docker/" class="nav-link">
+  Docker 教程
+</a></div><div class="nav-item"><a href="https://github.com/dunwu/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  🎯 博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/dunwu/linux-tutorial" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/linux-tutorial/linux/cli/" class="nav-link router-link-active">
+  Linux 命令
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/ops/" class="nav-link">
+  Linux 运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/soft/" class="nav-link">
+  Linux 软件运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/docker/" class="nav-link">
+  Docker 教程
+</a></div><div class="nav-item"><a href="https://github.com/dunwu/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  🎯 博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/dunwu/linux-tutorial" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>grep</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux-tutorial/linux/cli/grep.html#补充说明" class="sidebar-link">补充说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux-tutorial/linux/cli/grep.html#选项" class="sidebar-link">选项</a></li><li class="sidebar-sub-header"><a href="/linux-tutorial/linux/cli/grep.html#规则表达式" class="sidebar-link">规则表达式</a></li></ul></li><li><a href="/linux-tutorial/linux/cli/grep.html#grep-命令常见用法" class="sidebar-link">grep 命令常见用法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux-tutorial/linux/cli/grep.html#grep-递归搜索文件" class="sidebar-link">grep 递归搜索文件</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="grep"><a href="#grep" class="header-anchor">#</a> grep</h1> <p>强大的文本搜索工具</p> <h2 id="补充说明"><a href="#补充说明" class="header-anchor">#</a> 补充说明</h2> <p><strong>grep</strong> （global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。</p> <h3 id="选项"><a href="#选项" class="header-anchor">#</a> 选项</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>-a --text  <span class="token comment"># 不要忽略二进制数据。</span>
+-A <span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span>   --after-context<span class="token operator">=</span><span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span>   <span class="token comment"># 除了显示符合范本样式的那一行之外，并显示该行之后的内容。</span>
+-b --byte-offset                           <span class="token comment"># 在显示符合范本样式的那一行之外，并显示该行之前的内容。</span>
+-B<span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span>   --before-context<span class="token operator">=</span><span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span>   <span class="token comment"># 除了显示符合样式的那一行之外，并显示该行之前的内容。</span>
+-c --count    <span class="token comment"># 计算符合范本样式的列数。</span>
+-C<span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span> --context<span class="token operator">=</span><span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span>或-<span class="token operator">&lt;</span>显示行数<span class="token operator">&gt;</span> <span class="token comment"># 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。</span>
+-d<span class="token operator">&lt;</span>进行动作<span class="token operator">&gt;</span> --directories<span class="token operator">=</span><span class="token operator">&lt;</span>动作<span class="token operator">&gt;</span>  <span class="token comment"># 当指定要查找的是目录而非文件时，必须使用这项参数，否则grep命令将回报信息并停止动作。</span>
+-e<span class="token operator">&lt;</span>范本样式<span class="token operator">&gt;</span> --regexp<span class="token operator">=</span><span class="token operator">&lt;</span>范本样式<span class="token operator">&gt;</span>   <span class="token comment"># 指定字符串作为查找文件内容的范本样式。</span>
+-E --extended-regexp             <span class="token comment"># 将范本样式为延伸的普通表示法来使用，意味着使用能使用扩展正则表达式。</span>
+-f<span class="token operator">&lt;</span>范本文件<span class="token operator">&gt;</span> --file<span class="token operator">=</span><span class="token operator">&lt;</span>规则文件<span class="token operator">&gt;</span>     <span class="token comment"># 指定范本文件，其内容有一个或多个范本样式，让grep查找符合范本条件的文件内容，格式为每一列的范本样式。</span>
+-F --fixed-regexp   <span class="token comment"># 将范本样式视为固定字符串的列表。</span>
+-G --basic-regexp   <span class="token comment"># 将范本样式视为普通的表示法来使用。</span>
+-h --no-filename    <span class="token comment"># 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。</span>
+-H --with-filename  <span class="token comment"># 在显示符合范本样式的那一列之前，标示该列的文件名称。</span>
+-i --ignore-case    <span class="token comment"># 忽略字符大小写的差别。</span>
+-l --file-with-matches   <span class="token comment"># 列出文件内容符合指定的范本样式的文件名称。</span>
+-L --files-without-match <span class="token comment"># 列出文件内容不符合指定的范本样式的文件名称。</span>
+-n --line-number         <span class="token comment"># 在显示符合范本样式的那一列之前，标示出该列的编号。</span>
+-P --perl-regexp         <span class="token comment"># PATTERN 是一个 Perl 正则表达式</span>
+-q --quiet或--silent     <span class="token comment"># 不显示任何信息。</span>
+-R/-r  --recursive       <span class="token comment"># 此参数的效果和指定“-d recurse”参数相同。</span>
+-s --no-messages  <span class="token comment"># 不显示错误信息。</span>
+-v --revert-match <span class="token comment"># 反转查找。</span>
+-V --version      <span class="token comment"># 显示版本信息。</span>
+-w --word-regexp  <span class="token comment"># 只显示全字符合的列。</span>
+-x --line-regexp  <span class="token comment"># 只显示全列符合的列。</span>
+-y <span class="token comment"># 此参数效果跟“-i”相同。</span>
+-o <span class="token comment"># 只输出文件中匹配到的部分。</span>
+-m <span class="token operator">&lt;</span>num<span class="token operator">&gt;</span> --max-count<span class="token operator">=</span><span class="token operator">&lt;</span>num<span class="token operator">&gt;</span> <span class="token comment"># 找到num行结果后停止查找，用来限制匹配行数</span>
+</code></pre></div><h3 id="规则表达式"><a href="#规则表达式" class="header-anchor">#</a> 规则表达式</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>^    <span class="token comment"># 锚定行的开始 如：'^grep'匹配所有以grep开头的行。</span>
+$    <span class="token comment"># 锚定行的结束 如：'grep$' 匹配所有以grep结尾的行。</span>
+<span class="token builtin class-name">.</span>    <span class="token comment"># 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p。</span>
+*    <span class="token comment"># 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。</span>
+.*   <span class="token comment"># 一起用代表任意字符。</span>
+<span class="token punctuation">[</span><span class="token punctuation">]</span>   <span class="token comment"># 匹配一个指定范围内的字符，如'[Gg]rep'匹配Grep和grep。</span>
+<span class="token punctuation">[</span>^<span class="token punctuation">]</span>  <span class="token comment"># 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep'匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。</span>
+<span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token punctuation">..</span><span class="token punctuation">\</span><span class="token punctuation">)</span>  <span class="token comment"># 标记匹配字符，如'\(love\)'，love被标记为1。</span>
+<span class="token punctuation">\</span><span class="token operator">&lt;</span>      <span class="token comment"># 锚定单词的开始，如:'\&lt;grep'匹配包含以grep开头的单词的行。</span>
+<span class="token punctuation">\</span><span class="token operator">&gt;</span>      <span class="token comment"># 锚定单词的结束，如'grep\&gt;'匹配包含以grep结尾的单词的行。</span>
+x<span class="token punctuation">\</span><span class="token punctuation">{</span>m<span class="token punctuation">\</span><span class="token punctuation">}</span>  <span class="token comment"># 重复字符x，m次，如：'0\{5\}'匹配包含5个o的行。</span>
+x<span class="token punctuation">\</span><span class="token punctuation">{</span>m,<span class="token punctuation">\</span><span class="token punctuation">}</span>   <span class="token comment"># 重复字符x,至少m次，如：'o\{5,\}'匹配至少有5个o的行。</span>
+x<span class="token punctuation">\</span><span class="token punctuation">{</span>m,n<span class="token punctuation">\</span><span class="token punctuation">}</span>  <span class="token comment"># 重复字符x，至少m次，不多于n次，如：'o\{5,10\}'匹配5--10个o的行。</span>
+<span class="token punctuation">\</span>w    <span class="token comment"># 匹配文字和数字字符，也就是[A-Za-z0-9]，如：'G\w*p'匹配以G后跟零个或多个文字或数字字符，然后是p。</span>
+<span class="token punctuation">\</span>W    <span class="token comment"># \w的反置形式，匹配一个或多个非单词字符，如点号句号等。</span>
+<span class="token punctuation">\</span>b    <span class="token comment"># 单词锁定符，如: '\bgrep\b'只匹配grep。</span>
+</code></pre></div><h2 id="grep-命令常见用法"><a href="#grep-命令常见用法" class="header-anchor">#</a> grep 命令常见用法</h2> <p>在文件中搜索一个单词，命令会返回一个包含 <strong>“match_pattern”</strong> 的文本行：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> match_pattern file_name
+<span class="token function">grep</span> <span class="token string">&quot;match_pattern&quot;</span> file_name
+</code></pre></div><p>在多个文件中查找：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> <span class="token string">&quot;match_pattern&quot;</span> file_1 file_2 file_3 <span class="token punctuation">..</span>.
+</code></pre></div><p>输出除之外的所有行 <strong>-v</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> -v <span class="token string">&quot;match_pattern&quot;</span> file_name
+</code></pre></div><p>标记匹配颜色 <strong>--color=auto</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> <span class="token string">&quot;match_pattern&quot;</span> file_name --color<span class="token operator">=</span>auto
+</code></pre></div><p>使用正则表达式 <strong>-E</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> -E <span class="token string">&quot;[1-9]+&quot;</span>
+<span class="token comment"># 或</span>
+<span class="token function">egrep</span> <span class="token string">&quot;[1-9]+&quot;</span>
+</code></pre></div><p>使用正则表达式 <strong>-P</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> -P <span class="token string">&quot;(\d{3}\-){2}\d{4}&quot;</span> file_name
+</code></pre></div><p>只输出文件中匹配到的部分 <strong>-o</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line. <span class="token operator">|</span> <span class="token function">grep</span> -o -E <span class="token string">&quot;[a-z]+\.&quot;</span>
+line.
+
+<span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line. <span class="token operator">|</span> <span class="token function">egrep</span> -o <span class="token string">&quot;[a-z]+\.&quot;</span>
+line.
+</code></pre></div><p>统计文件或者文本中包含匹配字符串的行数 <strong>-c</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> -c <span class="token string">&quot;text&quot;</span> file_name
+</code></pre></div><p>输出包含匹配字符串的行数 <strong>-n</strong> 选项：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> <span class="token string">&quot;text&quot;</span> -n file_name
+<span class="token comment"># 或</span>
+<span class="token function">cat</span> file_name <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;text&quot;</span> -n
+
+<span class="token comment">#多个文件</span>
+<span class="token function">grep</span> <span class="token string">&quot;text&quot;</span> -n file_1 file_2
+</code></pre></div><p>打印样式匹配所位于的字符或字节偏移：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">echo</span> gun is not unix <span class="token operator">|</span> <span class="token function">grep</span> -b -o <span class="token string">&quot;not&quot;</span>
+<span class="token number">7</span>:not
+<span class="token comment">#一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。</span>
+</code></pre></div><p>搜索多个文件并查找匹配文本在哪些文件中：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> -l <span class="token string">&quot;text&quot;</span> file1 file2 file3<span class="token punctuation">..</span>.
+</code></pre></div><h3 id="grep-递归搜索文件"><a href="#grep-递归搜索文件" class="header-anchor">#</a> grep 递归搜索文件</h3> <p>在多级目录中对文本进行递归搜索：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> <span class="token string">&quot;text&quot;</span> <span class="token builtin class-name">.</span> -r -n
+<span class="token comment"># .表示当前目录。</span>
+</code></pre></div><p>忽略匹配样式中的字符大小写：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;hello world&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> -i <span class="token string">&quot;HELLO&quot;</span>
+<span class="token comment"># hello</span>
+</code></pre></div><p>选项 <strong>-e</strong> 制动多个匹配样式：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">echo</span> this is a text line <span class="token operator">|</span> <span class="token function">grep</span> -e <span class="token string">&quot;is&quot;</span> -e <span class="token string">&quot;line&quot;</span> -o
+is
+line
+
+<span class="token comment">#也可以使用 **-f** 选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。</span>
+<span class="token function">cat</span> patfile
+aaa
+bbb
+
+<span class="token builtin class-name">echo</span> aaa bbb ccc ddd eee <span class="token operator">|</span> <span class="token function">grep</span> -f patfile -o
+</code></pre></div><p>在 grep 搜索结果中包括或者排除指定文件：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 只在目录中所有的.php和.html文件中递归搜索字符&quot;main()&quot;</span>
+<span class="token function">grep</span> <span class="token string">&quot;main()&quot;</span> <span class="token builtin class-name">.</span> -r --include *.<span class="token punctuation">{</span>php,html<span class="token punctuation">}</span>
+
+<span class="token comment"># 在搜索结果中排除所有README文件</span>
+<span class="token function">grep</span> <span class="token string">&quot;main()&quot;</span> <span class="token builtin class-name">.</span> -r --exclude <span class="token string">&quot;README&quot;</span>
+
+<span class="token comment"># 在搜索结果中排除filelist文件列表里的文件</span>
+<span class="token function">grep</span> <span class="token string">&quot;main()&quot;</span> <span class="token builtin class-name">.</span> -r --exclude-from filelist
+
+</code></pre></div><p>使用 0 值字节后缀的 grep 与 xargs：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 测试文件：</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;aaa&quot;</span> <span class="token operator">&gt;</span> file1
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;bbb&quot;</span> <span class="token operator">&gt;</span> file2
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;aaa&quot;</span> <span class="token operator">&gt;</span> file3
+
+<span class="token function">grep</span> <span class="token string">&quot;aaa&quot;</span> file* -lZ <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">rm</span>
+
+<span class="token comment"># 执行后会删除file1和file3，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用。</span>
+</code></pre></div><p>grep 静默输出：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">grep</span> -q <span class="token string">&quot;test&quot;</span> filename
+<span class="token comment"># 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试。</span>
+</code></pre></div><p>打印出匹配文本之前或者之后的行：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 显示匹配某个结果之后的3行，使用 -A 选项：</span>
+<span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;5&quot;</span> -A <span class="token number">3</span>
+<span class="token number">5</span>
+<span class="token number">6</span>
+<span class="token number">7</span>
+<span class="token number">8</span>
+
+<span class="token comment"># 显示匹配某个结果之前的3行，使用 -B 选项：</span>
+<span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;5&quot;</span> -B <span class="token number">3</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+
+<span class="token comment"># 显示匹配某个结果的前三行和后三行，使用 -C 选项：</span>
+<span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;5&quot;</span> -C <span class="token number">3</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span>
+<span class="token number">5</span>
+<span class="token number">6</span>
+<span class="token number">7</span>
+<span class="token number">8</span>
+
+<span class="token comment"># 如果匹配结果有多个，会用“--”作为各匹配结果之间的分隔符：</span>
+<span class="token builtin class-name">echo</span> -e <span class="token string">&quot;a<span class="token entity" title="\n">\n</span>b<span class="token entity" title="\n">\n</span>c<span class="token entity" title="\n">\n</span>a<span class="token entity" title="\n">\n</span>b<span class="token entity" title="\n">\n</span>c&quot;</span> <span class="token operator">|</span> <span class="token function">grep</span> a -A <span class="token number">1</span>
+a
+b
+--
+a
+b
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/dunwu/linux-tutorial/edit/master/docs/linux/cli/grep.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">a year ago</span></div></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/linux-tutorial/assets/js/app.79a38eea.js" defer></script><script src="/linux-tutorial/assets/js/4.fb6e0f89.js" defer></script><script src="/linux-tutorial/assets/js/21.1c5a41d7.js" defer></script><script src="/linux-tutorial/assets/js/5.cb43ecfb.js" defer></script>
+  </body>
+</html>

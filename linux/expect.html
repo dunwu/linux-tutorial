@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>expect shell 脚本 | LINUX-TUTORIAL</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/linux-tutorial/favicon.ico">
+    <meta name="description" content="数据库教程">
+    
+    <link rel="preload" href="/linux-tutorial/assets/css/0.styles.45d9d031.css" as="style"><link rel="preload" href="/linux-tutorial/assets/js/app.79a38eea.js" as="script"><link rel="preload" href="/linux-tutorial/assets/js/4.fb6e0f89.js" as="script"><link rel="preload" href="/linux-tutorial/assets/js/37.34430c74.js" as="script"><link rel="preload" href="/linux-tutorial/assets/js/5.cb43ecfb.js" as="script"><link rel="prefetch" href="/linux-tutorial/assets/js/10.7933187b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/11.b9b41530.js"><link rel="prefetch" href="/linux-tutorial/assets/js/12.70a5dba8.js"><link rel="prefetch" href="/linux-tutorial/assets/js/13.857dcc43.js"><link rel="prefetch" href="/linux-tutorial/assets/js/14.5a603a55.js"><link rel="prefetch" href="/linux-tutorial/assets/js/15.d217acb7.js"><link rel="prefetch" href="/linux-tutorial/assets/js/16.ad565eae.js"><link rel="prefetch" href="/linux-tutorial/assets/js/17.d43e9f56.js"><link rel="prefetch" href="/linux-tutorial/assets/js/18.aa00ff43.js"><link rel="prefetch" href="/linux-tutorial/assets/js/19.43ce44b3.js"><link rel="prefetch" href="/linux-tutorial/assets/js/20.5618e1ff.js"><link rel="prefetch" href="/linux-tutorial/assets/js/21.1c5a41d7.js"><link rel="prefetch" href="/linux-tutorial/assets/js/22.fbe9fdf1.js"><link rel="prefetch" href="/linux-tutorial/assets/js/23.a4fb0e74.js"><link rel="prefetch" href="/linux-tutorial/assets/js/24.e3a23b69.js"><link rel="prefetch" href="/linux-tutorial/assets/js/25.9896afe9.js"><link rel="prefetch" href="/linux-tutorial/assets/js/26.96164082.js"><link rel="prefetch" href="/linux-tutorial/assets/js/27.391033bb.js"><link rel="prefetch" href="/linux-tutorial/assets/js/28.703f74c2.js"><link rel="prefetch" href="/linux-tutorial/assets/js/29.02a952cb.js"><link rel="prefetch" href="/linux-tutorial/assets/js/30.7e13628f.js"><link rel="prefetch" href="/linux-tutorial/assets/js/31.c4652f75.js"><link rel="prefetch" href="/linux-tutorial/assets/js/32.05d2cbec.js"><link rel="prefetch" href="/linux-tutorial/assets/js/33.3b265df8.js"><link rel="prefetch" href="/linux-tutorial/assets/js/34.26330a03.js"><link rel="prefetch" href="/linux-tutorial/assets/js/35.417d706d.js"><link rel="prefetch" href="/linux-tutorial/assets/js/36.0ed775e0.js"><link rel="prefetch" href="/linux-tutorial/assets/js/38.87d5e0ff.js"><link rel="prefetch" href="/linux-tutorial/assets/js/39.7b648b3e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/40.3b7a219e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/41.e727eee9.js"><link rel="prefetch" href="/linux-tutorial/assets/js/42.0134c187.js"><link rel="prefetch" href="/linux-tutorial/assets/js/43.175e982f.js"><link rel="prefetch" href="/linux-tutorial/assets/js/44.72d90888.js"><link rel="prefetch" href="/linux-tutorial/assets/js/45.d49955bd.js"><link rel="prefetch" href="/linux-tutorial/assets/js/46.a9c290ec.js"><link rel="prefetch" href="/linux-tutorial/assets/js/47.cc639f04.js"><link rel="prefetch" href="/linux-tutorial/assets/js/48.98c78321.js"><link rel="prefetch" href="/linux-tutorial/assets/js/49.a7c3afed.js"><link rel="prefetch" href="/linux-tutorial/assets/js/50.22d8c542.js"><link rel="prefetch" href="/linux-tutorial/assets/js/51.28055fcd.js"><link rel="prefetch" href="/linux-tutorial/assets/js/52.f8103df5.js"><link rel="prefetch" href="/linux-tutorial/assets/js/53.76541550.js"><link rel="prefetch" href="/linux-tutorial/assets/js/54.e78d2776.js"><link rel="prefetch" href="/linux-tutorial/assets/js/55.3ce3079c.js"><link rel="prefetch" href="/linux-tutorial/assets/js/56.832958c9.js"><link rel="prefetch" href="/linux-tutorial/assets/js/57.961ce896.js"><link rel="prefetch" href="/linux-tutorial/assets/js/58.6d6fbc82.js"><link rel="prefetch" href="/linux-tutorial/assets/js/59.d5e48112.js"><link rel="prefetch" href="/linux-tutorial/assets/js/6.c8f4721c.js"><link rel="prefetch" href="/linux-tutorial/assets/js/60.7927b23b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/61.ee233f24.js"><link rel="prefetch" href="/linux-tutorial/assets/js/62.6ba50cc7.js"><link rel="prefetch" href="/linux-tutorial/assets/js/63.9cbf9f2b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/64.0be148a4.js"><link rel="prefetch" href="/linux-tutorial/assets/js/65.c520257e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/66.f2335390.js"><link rel="prefetch" href="/linux-tutorial/assets/js/67.e5737218.js"><link rel="prefetch" href="/linux-tutorial/assets/js/68.46427a01.js"><link rel="prefetch" href="/linux-tutorial/assets/js/69.450417bb.js"><link rel="prefetch" href="/linux-tutorial/assets/js/7.046e5a1b.js"><link rel="prefetch" href="/linux-tutorial/assets/js/70.072034d2.js"><link rel="prefetch" href="/linux-tutorial/assets/js/8.77fb8967.js"><link rel="prefetch" href="/linux-tutorial/assets/js/9.ebfa537e.js"><link rel="prefetch" href="/linux-tutorial/assets/js/vendors~flowchart.20a64d45.js"><link rel="prefetch" href="/linux-tutorial/assets/js/vendors~notification.ea176280.js">
+    <link rel="stylesheet" href="/linux-tutorial/assets/css/0.styles.45d9d031.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/linux-tutorial/" class="home-link router-link-active"><img src="images/dunwu-logo-100.png" alt="LINUX-TUTORIAL" class="logo"> <span class="site-name can-hide">LINUX-TUTORIAL</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/linux-tutorial/linux/cli/" class="nav-link">
+  Linux 命令
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/ops/" class="nav-link">
+  Linux 运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/soft/" class="nav-link">
+  Linux 软件运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/docker/" class="nav-link">
+  Docker 教程
+</a></div><div class="nav-item"><a href="https://github.com/dunwu/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  🎯 博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/dunwu/linux-tutorial" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/linux-tutorial/linux/cli/" class="nav-link">
+  Linux 命令
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/ops/" class="nav-link">
+  Linux 运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/linux/soft/" class="nav-link">
+  Linux 软件运维
+</a></div><div class="nav-item"><a href="/linux-tutorial/docker/" class="nav-link">
+  Docker 教程
+</a></div><div class="nav-item"><a href="https://github.com/dunwu/blog" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  🎯 博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/dunwu/linux-tutorial" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>expect shell 脚本</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/linux-tutorial/linux/expect.html#expect-简介" class="sidebar-link">expect 简介</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/linux-tutorial/linux/expect.html#expect-安装" class="sidebar-link">expect 安装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/linux-tutorial/linux/expect.html#yum-安装" class="sidebar-link">yum 安装</a></li><li class="sidebar-sub-header"><a href="/linux-tutorial/linux/expect.html#手动安装" class="sidebar-link">手动安装</a></li></ul></li><li><a href="/linux-tutorial/linux/expect.html#expect-参数" class="sidebar-link">expect 参数</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/linux-tutorial/linux/expect.html#expect-命令" class="sidebar-link">expect 命令</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/linux-tutorial/linux/expect.html#示例场景" class="sidebar-link">示例场景</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/linux-tutorial/linux/expect.html#参考资料" class="sidebar-link">参考资料</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="expect-shell-脚本"><a href="#expect-shell-脚本" class="header-anchor">#</a> expect shell 脚本</h1> <h2 id="expect-简介"><a href="#expect-简介" class="header-anchor">#</a> expect 简介</h2> <p><code>expect</code> 是一个自动化交互套件，主要应用于执行命令和程序时，系统以交互形式要求输入指定字符串，实现交互通信。</p> <p>在实际工作中，我们运行命令、脚本或程序时，这些命令、脚本或程序都需要从终端输入某些继续运行的指令，而这些输入都需要人为的手工进行。而利用 <code>expect</code>，则可以根据程序的提示，模拟标准输入提供给程序，从而实现自动化交互执行。这就是 <code>expect</code> 。</p> <p>expect 自动交互流程：</p> <ol><li>spawn 启动指定进程</li> <li>expect 获取指定关键字</li> <li>send 向指定程序发送指定字符</li> <li>执行完成退出</li></ol> <h2 id="expect-安装"><a href="#expect-安装" class="header-anchor">#</a> expect 安装</h2> <h3 id="yum-安装"><a href="#yum-安装" class="header-anchor">#</a> yum 安装</h3> <p>执行命令：</p> <div class="language-shell extra-class"><pre class="language-shell"><code>yum -y <span class="token function">install</span> <span class="token function">expect</span>
+</code></pre></div><h3 id="手动安装"><a href="#手动安装" class="header-anchor">#</a> 手动安装</h3> <p>expect 依赖 tcl，所以需要先安装 tcl：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> https://nchc.dl.sourceforge.net/project/tcl/Tcl/8.6.9/tcl8.6.9-src.tar.gz
+<span class="token function">tar</span> xf tcl8.6.9-src.tar.gz
+<span class="token builtin class-name">cd</span> tcl8.6.9/unix/
+./configure <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><p>再安装 expect：</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> https://nchc.dl.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz
+<span class="token function">tar</span> xf expect5.45.4.tar.gz
+<span class="token builtin class-name">cd</span> ./expect5.45.4
+./configure <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre></div><h2 id="expect-参数"><a href="#expect-参数" class="header-anchor">#</a> expect 参数</h2> <p>启用选项：</p> <ul><li><code>-c</code> - 执行脚本前先执行的命令，可多次使用。</li> <li><code>-d</code> - debug 模式，可以在运行时输出一些诊断信息，与在脚本开始处使用 <code>exp_internal 1</code> 相似。</li> <li><code>-D</code> - 启用交换调式器，可设一整数参数。</li> <li><code>-f</code> - 从文件读取命令，仅用于使用 <code>#!</code> 时。如果文件名为 <code>-</code>，则从 stdin 读取(使用 <code>./-</code> 从文件名为-的文件读取)。</li> <li><code>-i</code> - 交互式输入命令，使用 <code>exit</code> 或 <code>EOF</code> 退出输入状态。</li> <li><code>--</code> - 标示选项结束(如果你需要传递与 <code>expect</code> 选项相似的参数给脚本时)，可放到 <code>#!</code> 行： <code>#!/usr/bin/expect --</code> 。</li> <li><code>-v</code> - 显示 <code>expect</code> 版本信息。</li></ul> <h2 id="expect-命令"><a href="#expect-命令" class="header-anchor">#</a> expect 命令</h2> <ul><li><code>spawn</code> - 命令用来启动新的进程，<code>spawn</code>后的<code>send</code>和<code>expect</code>命令都是和使用<code>spawn</code>打开的进程进行交互。</li> <li><code>expect</code> - 获取匹配信息，匹配成功则执行 <code>expect</code> 后面的程序动作。
+<ul><li><code>exp_continue</code> - 在 <code>expect</code> 中多次匹配就需要用到。</li></ul></li> <li><code>send</code> - 命令接收一个字符串参数，并将该参数发送到进程。
+<ul><li><code>send exp_send</code> - 用于发送指定的字符串信息。</li></ul></li> <li><code>interact</code> - 命令用的其实不是很多，一般情况下使用<code>spawn</code>、<code>send</code>和<code>expect</code>命令就可以很好的完成我们的任务；但在一些特殊场合下还是需要使用<code>interact</code>命令的，<code>interact</code>命令主要用于退出自动化，进入人工交互。比如我们使用<code>spawn</code>、<code>send</code>和<code>expect</code>命令完成了 ftp 登陆主机，执行下载文件任务，但是我们希望在文件下载结束以后，仍然可以停留在 ftp 命令行状态，以便手动的执行后续命令，此时使用<code>interact</code>命令就可以很好的完成这个任务。</li> <li><code>send_user</code> - 用来打印输出 相当于 shell 中的 echo</li> <li><code>set</code> - 定义变量。
+<ul><li><code>set timeout</code> - 设置超时时间。</li></ul></li> <li><code>puts</code> - 输出变量。</li> <li><code>exit</code> - 退出 expect 脚本</li> <li><code>eof</code> - expect 执行结束，退出。</li></ul> <h2 id="示例场景"><a href="#示例场景" class="header-anchor">#</a> 示例场景</h2> <p>远程登录</p> <p>（1）ssh 登录远程主机执行命令，执行方法 <code>expect 1.sh</code> 或者 <code>source 1.sh</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/usr/bin/expect</span>
+
+spawn <span class="token function">ssh</span> saneri@192.168.56.103 <span class="token function">df</span> -Th
+<span class="token function">expect</span> <span class="token string">&quot;*password&quot;</span>
+send <span class="token string">&quot;123456<span class="token entity" title="\n">\n</span>&quot;</span>
+<span class="token function">expect</span> eof
+</code></pre></div><p>（2）ssh 远程登录主机执行命令，在 shell 脚本中执行 expect 命令,执行方法 sh 2.sh、bash 2.sh 或./2.sh 都可以执行.</p> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+
+passwd='123456'
+
+/usr/bin/expect &lt;&lt;-EOF
+
+set time 30
+spawn ssh saneri@192.168.56.103 df -Th
+expect {
+&quot;*yes/no&quot; { send &quot;yes\r&quot;; exp_continue }
+&quot;*password:&quot; { send &quot;$passwd\r&quot; }
+}
+expect eof
+EOF
+</code></pre></div><p>（3）expect 执行多条命令</p> <div class="language- extra-class"><pre class="language-text"><code>#!/usr/bin/expect -f
+
+set timeout 10
+
+spawn sudo su - root
+expect &quot;*password*&quot;
+send &quot;123456\r&quot;
+expect &quot;#*&quot;
+send &quot;ls\r&quot;
+expect &quot;#*&quot;
+send &quot;df -Th\r&quot;
+send &quot;exit\r&quot;
+expect eof
+</code></pre></div><p>（4）创建 ssh key，将 id_rsa 和 id_rsa.pub 文件分发到各台主机上面。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment"># 判断id_rsa密钥文件是否存在</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> -f ~/.ssh/id_rsa <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+ ssh-keygen -t rsa -P <span class="token string">&quot;&quot;</span> -f ~/.ssh/id_rsa
+<span class="token keyword">else</span>
+ <span class="token builtin class-name">echo</span> <span class="token string">&quot;id_rsa has created ...&quot;</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment">#分发到各个节点,这里分发到host文件中的主机中.</span>
+<span class="token keyword">while</span> <span class="token builtin class-name">read</span> line
+  <span class="token keyword">do</span>
+    <span class="token assign-left variable">user</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> $line <span class="token operator">|</span> <span class="token function">cut</span> -d <span class="token string">&quot; &quot;</span> -f <span class="token number">2</span><span class="token variable">`</span></span>
+    <span class="token assign-left variable">ip</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> $line <span class="token operator">|</span> <span class="token function">cut</span> -d <span class="token string">&quot; &quot;</span> -f <span class="token number">1</span><span class="token variable">`</span></span>
+    <span class="token assign-left variable">passwd</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">echo</span> $line <span class="token operator">|</span> <span class="token function">cut</span> -d <span class="token string">&quot; &quot;</span> -f <span class="token number">3</span><span class="token variable">`</span></span>
+
+    <span class="token function">expect</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+      set timeout 10
+      spawn ssh-copy-id <span class="token variable">$user</span>@<span class="token variable">$ip</span>
+      expect {
+        &quot;yes/no&quot; { send &quot;yes<span class="token entity" title="\n">\n</span>&quot;;exp_continue }
+        &quot;password&quot; { send &quot;<span class="token variable">$passwd</span><span class="token entity" title="\n">\n</span>&quot; }
+      }
+     expect &quot;password&quot; { send &quot;<span class="token variable">$passwd</span><span class="token entity" title="\n">\n</span>&quot; }
+EOF</span>
+  <span class="token keyword">done</span> <span class="token operator">&lt;</span>  hosts
+</code></pre></div><p>（5）shell 调用 expect 执行多行命令.</p> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash
+ip=$1
+user=$2
+password=$3
+
+expect &lt;&lt;EOF
+    set timeout 10
+    spawn ssh $user@$ip
+    expect {
+        &quot;yes/no&quot; { send &quot;yes\n&quot;;exp_continue }
+        &quot;password&quot; { send &quot;$password\n&quot; }
+    }
+    expect &quot;]#&quot; { send &quot;useradd hehe\n&quot; }
+    expect &quot;]#&quot; { send &quot;touch /tmp/test.txt\n&quot; }
+    expect &quot;]#&quot; { send &quot;exit\n&quot; } expect eof
+ EOF
+ #./ssh5.sh 192.168.1.10 root 123456
+</code></pre></div><h2 id="参考资料"><a href="#参考资料" class="header-anchor">#</a> 参考资料</h2> <ul><li><a href="https://blog.csdn.net/u010820857/article/details/89925274" target="_blank" rel="noopener noreferrer">linux expect 自动交互脚本用法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/dunwu/linux-tutorial/edit/master/docs/linux/expect.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">a year ago</span></div></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/linux-tutorial/assets/js/app.79a38eea.js" defer></script><script src="/linux-tutorial/assets/js/4.fb6e0f89.js" defer></script><script src="/linux-tutorial/assets/js/37.34430c74.js" defer></script><script src="/linux-tutorial/assets/js/5.cb43ecfb.js" defer></script>
+  </body>
+</html>
