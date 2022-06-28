@@ -12,7 +12,7 @@
 - [Linux 系统管理](linux-cli-system.md) - 关键词：`reboot`, `exit`, `shutdown`, `date`, `mount`, `umount`, `ps`, `kill`, `systemctl`, `service`, `crontab`
 - [Linux 网络管理](linux-cli-net.md) - 关键词：关键词：`curl`, `wget`, `telnet`, `ip`, `hostname`, `ifconfig`, `route`, `ssh`, `ssh-keygen`, `firewalld`, `iptables`, `host`, `nslookup`, `nc`/`netcat`, `ping`, `traceroute`, `netstat`
 - [Linux 硬件管理](linux-cli-hardware.md) - 关键词：`df`, `du`, `top`, `free`, `iotop`
-- [Linux 软件管理](linux-cli-hardware.md) - 关键词：`rpm`, `yum`, `apt-get`
+- [Linux 软件管理](linux-cli-software.md) - 关键词：`rpm`, `yum`, `apt-get`
 
 ## 📚 资料
 
@@ -22,4 +22,4 @@
 
 ## 🚪 传送门
 
-◾ 🏠 [DB-TUTORIAL 首页](https://github.com/dunwu/linux-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
+◾ 💧 [钝悟的 IT 知识图谱](https://dunwu.github.io/waterdrop/) ◾ 🎯 [钝悟的博客](https://dunwu.github.io/blog/) ◾

@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo-200.png
+heroImage: https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo.png
 heroText: LINUX-TUTORIAL
 tagline: 📚 linux-tutorial 是一个 Linux 教程。
 actionLink: /
@@ -154,4 +154,4 @@ footer: CC-BY-SA-4.0 Licensed | Copyright © 2018-Now Dunwu
 
 ## 🚪 传送门
 
-◾ 🏠 [LINUX-TUTORIAL 首页](https://github.com/dunwu/linux-tutorial) ◾ 🎯 [我的博客](https://github.com/dunwu/blog) ◾
+◾ 💧 [钝悟的 IT 知识图谱](https://dunwu.github.io/waterdrop/) ◾ 🎯 [钝悟的博客](https://dunwu.github.io/blog/) ◾
