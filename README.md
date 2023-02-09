@@ -84,9 +84,9 @@
 
 ### 其他
 
-- [一篇文章让你彻底掌握 Python](https://github.com/dunwu/blog/blob/master/source/_posts/coding/python.md)
-- [一篇文章让你彻底掌握 Shell](https://github.com/dunwu/blog/blob/master/source/_posts/coding/shell.md)
-- [Git 从入门到精通](https://github.com/dunwu/blog/blob/master/source/_posts/tools/git.md)
+- [一篇文章让你彻底掌握 Python](https://dunwu.github.io/blog/pages/ef501b/)
+- [一篇文章让你彻底掌握 Shell](https://dunwu.github.io/blog/pages/ea6ae1/)
+- [如何优雅的玩转 Git](https://dunwu.github.io/blog/pages/2fc8b1/)
 
 ## ⌨ 脚本
 
