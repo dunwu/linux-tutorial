@@ -151,6 +151,7 @@
   - [东北大学](http://mirror.neu.edu.cn/)
   - [浙江大学](http://mirrors.zju.edu.cn/)
   - [东软信息学院](http://mirrors.neusoft.edu.cn/)
+  - [校园网联合镜像站](https://mirrors.cernet.edu.cn)
 
 ## 🚪 传送门
 
