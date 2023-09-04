@@ -276,7 +276,7 @@ systemctl status nfs-server.service
 systemctl restart nfs-server.service
 
 # 6.查看所有已启动的服务
-systemctl list -units --type=service
+systemctl list-units --type=service
 
 # 7. 开启防火墙 22 端口
 iptables -I INPUT -p tcp --dport 22 -j accept
