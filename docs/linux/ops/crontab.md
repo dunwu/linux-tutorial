@@ -170,7 +170,7 @@ MAILTO=root
 #### 实例 11：每一小时重启 smb
 
 ```shell
-* */1 * * * /etc/init.d/smb restart
+0 * * * * /etc/init.d/smb restart
 ```
 
 #### 实例 12：晚上 11 点到早上 7 点之间，每隔一小时重启 smb
