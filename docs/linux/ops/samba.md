@@ -149,7 +149,7 @@ Windows：
 
 访问：`\\<你的ip>\<你的共享路径>` ：
 
-![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/20180920180928161334.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/20180920180928161334.png)
 
 Mac：
 

@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://dunwu.github.io/linux-tutorial/" target="_blank" rel="noopener noreferrer">
-        <img src="https://raw.githubusercontent.com/dunwu/images/dev/common/logo/linux.svg" alt="logo" width="100px">
+        <img src="https://raw.githubusercontent.com/dunwu/images/master/common/logo/linux.svg" alt="logo" width="100px">
     </a>
 </p>
 

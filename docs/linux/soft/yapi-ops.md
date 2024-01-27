@@ -4,7 +4,7 @@
 >
 > 本文目的在于记录 svn 的安装、配置、使用。
 
-![img](https://raw.githubusercontent.com/dunwu/images/dev/snap/1562814562978.png)
+![img](https://raw.githubusercontent.com/dunwu/images/master/snap/1562814562978.png)
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 

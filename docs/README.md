@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://raw.githubusercontent.com/dunwu/images/dev/common/dunwu-logo.png
+heroImage: https://raw.githubusercontent.com/dunwu/images/master/common/dunwu-logo.png
 heroText: LINUX-TUTORIAL
 tagline: 📚 linux-tutorial 是一个 Linux 教程。
 actionLink: /
