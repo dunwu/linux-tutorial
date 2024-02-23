@@ -73,7 +73,7 @@
   - [Tomcat 运维](docs/linux/soft/tomcat-install.md)
 - [数据库](https://github.com/dunwu/db-tutorial) 📚
   - [Mysql 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/sql/mysql/mysql-ops.md)
-  - [Redis 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/nosql/redis/redis-ops.md)
+  - [Redis 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/12.%E6%95%B0%E6%8D%AE%E5%BA%93/05.KV%E6%95%B0%E6%8D%AE%E5%BA%93/01.Redis/20.Redis%E8%BF%90%E7%BB%B4.md)
 
 ### Docker
 
