@@ -72,7 +72,7 @@
   - [Nginx 教程](https://github.com/dunwu/nginx-tutorial) 📚
   - [Tomcat 运维](docs/linux/soft/tomcat-install.md)
 - [数据库](https://github.com/dunwu/db-tutorial) 📚
-  - [Mysql 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/sql/mysql/mysql-ops.md)
+  - [MySQL 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/12.%E6%95%B0%E6%8D%AE%E5%BA%93/03.%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93/02.Mysql/20.Mysql%E8%BF%90%E7%BB%B4.md)
   - [Redis 运维](https://github.com/dunwu/db-tutorial/blob/master/docs/12.%E6%95%B0%E6%8D%AE%E5%BA%93/05.KV%E6%95%B0%E6%8D%AE%E5%BA%93/01.Redis/20.Redis%E8%BF%90%E7%BB%B4.md)
 
 ### Docker
