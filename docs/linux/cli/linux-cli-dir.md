@@ -18,7 +18,7 @@ Linux 系统是一种典型的多用户系统，不同的用户处于不同的�
 ```bash
 $ ls -l
 total 64
-dr-xr-xr-x 2 root root 4096 Dec 14 2012 bin
+drwxr-xr-x 2 root root 4096 Dec 14 2012 bin
 dr-xr-xr-x 4 root root 4096 Apr 19 2012 boot
 ```
 
@@ -52,7 +52,7 @@ dr-xr-xr-x 4 root root 4096 Apr 19 2012 boot
 ```bash
 $ ls -l
 total 64
-dr-xr-xr-x   2 root root 4096 Dec 14  2012 bin
+drwxr-xr-x   2 root root 4096 Dec 14  2012 bin
 dr-xr-xr-x   4 root root 4096 Apr 19  2012 boot
 ```
 
