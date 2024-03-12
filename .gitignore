@@ -30,7 +30,7 @@ hs_err_pid*
 # maven plugin temp files
 .flattened-pom.xml
 package-lock.json
-
+pnpm-lock.yaml
 
 # ------------------------------- javascript -------------------------------
 # dependencies
@@ -50,11 +50,9 @@ yarn-error.log*
 bundle*.js
 book.pdf
 
-
 # ------------------------------- intellij -------------------------------
 .idea
 *.iml
-
 
 # ------------------------------- eclipse -------------------------------
 .classpath
