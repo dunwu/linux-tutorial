@@ -2,10 +2,10 @@
 
 ## 📖 内容
 
-- [Docker 快速入门](docker/docker-quickstart.md)
-- [Dockerfile 最佳实践](docker/docker-dockerfile.md)
-- [Docker Cheat Sheet](docker/docker-cheat-sheet.md)
-- [Kubernetes 应用指南](docker/kubernetes.md)
+- [Docker 快速入门](docker-quickstart.md)
+- [Dockerfile 最佳实践](docker-dockerfile.md)
+- [Docker Cheat Sheet](docker-cheat-sheet.md)
+- [Kubernetes 应用指南](kubernetes.md)
 
 ## 📚 资料
 
