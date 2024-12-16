@@ -97,7 +97,7 @@ $ tar -zxf jdk-8u162-linux-x64.tar.gz
 
 （3）配置系统环境变量
 
-执行 `/etc/profile` 命令，添加以下内容：
+执行 `vi /etc/profile` 命令，添加以下内容：
 
 ```bash
 # JDK 的根路径

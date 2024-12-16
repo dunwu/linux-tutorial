@@ -32,7 +32,7 @@
 ```
 # MAVEN 的根路径
 export MAVEN_HOME=/opt/maven/apache-maven-3.5.2
-export PATH=\$MAVEN_HOME/bin:\$PATH
+export PATH=$MAVEN_HOME/bin:$PATH
 ```
 
 执行 `source /etc/profile` ，立即生效
