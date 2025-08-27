@@ -110,17 +110,16 @@
   - [linux-command](https://github.com/jaywcjlove/linux-command)
 - **社区网站**
   - [Linux 中国](https://linux.cn/) - 各种资讯、文章、技术
-  - [实验楼](https://www.shiyanlou.com/) - 免费提供了 Linux 在线环境，不用在自己机子上装系统也可以学习 Linux，超方便实用。
+  - [LabEx 中国](https://labex.io/) - 免费提供了 Linux 在线环境，不用在自己机子上装系统也可以学习 Linux，超方便实用。
   - [鸟哥的 linux 私房菜](http://linux.vbird.org/) - 非常适合 Linux 入门初学者看的教程。
   - [Linux 公社](http://www.linuxidc.com/) - Linux 相关的新闻、教程、主题、壁纸都有。
   - [Linux Today](http://www.linuxde.net) - Linux 新闻资讯发布，Linux 职业技术学习！。
 - **知识相关**
   - [Linux 思维导图整理](http://www.jianshu.com/p/59f759207862)
   - [Linux 初学者进阶学习资源整理](http://www.jianshu.com/p/fe2a790b41eb)
-  - [Linux 基础入门（新版）](https://www.shiyanlou.com/courses/1)
+  - [Linux 快速入门（动手实验）](https://labex.io/zh/courses/quick-start-with-linux)
   - [【译】Linux 概念架构的理解](http://www.jianshu.com/p/c5ae8f061cfe) [En](http://oss.org.cn/ossdocs/linux/kernel/a1/index.html)
   - [Linux 守护进程的启动方法](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)
-  - [Linux 编程之内存映射](https://www.shiyanlou.com/questions/2992)
   - [Linux 知识点小结](https://blog.huachao.me/2016/1/Linux%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/)
   - [10 大白帽黑客专用的 Linux 操作系统](https://linux.cn/article-6971-1.html)
 - **软件工具**
